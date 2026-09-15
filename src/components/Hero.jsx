@@ -26,7 +26,7 @@ export default function Hero() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.play().catch(() => {});
+          el.play().catch(() => { });
         } else {
           el.pause();
         }
