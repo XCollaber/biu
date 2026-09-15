@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TermsPage from '../components/pages/TermsPage.jsx';
+---
+
+<Layout title="Terms & Conditions - Bareilly International University">
+  <TermsPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

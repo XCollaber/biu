@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrivacyPolicyPage from '../components/pages/PrivacyPolicyPage.jsx';
+---
+
+<Layout title="Privacy Policy - Bareilly International University">
+  <PrivacyPolicyPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

@@ -1,0 +1,32 @@
+{
+  "badge": "Legal & Privacy Governance",
+  "title": "Privacy Policy",
+  "subtitle": "At Bareilly International University (BIU), protecting your privacy and personal information is central to our educational commitment.",
+  "backButtonLabel": "Back to Home",
+  "sections": [
+    {
+      "icon": "Eye",
+      "title": "1. Information We Collect",
+      "content": [
+        "At Bareilly International University, we collect personal information necessary to deliver academic counseling, process admission applications, and maintain student portal services.",
+        "Information collected includes applicant name, contact number, email, academic transcripts, entrance exam scores (NEET/JEE), and demographic details.",
+        "We also collect non-personal website analytics data such as IP address and browser type to optimize site performance."
+      ]
+    },
+    {
+      "icon": "Lock",
+      "title": "2. How We Use Your Information",
+      "content": [
+        "Your data is used exclusively to evaluate admission eligibility, send course updates, process fee payments, and issue academic communications.",
+        "We do not sell, rent, or lease applicant or student data to third-party marketing entities under any circumstances."
+      ]
+    },
+    {
+      "icon": "ShieldCheck",
+      "title": "3. Data Security & Governance",
+      "content": [
+        "BIU implements strict administrative, technical, and encryption safeguards to protect student records in compliance with Indian higher education regulations."
+      ]
+    }
+  ]
+}

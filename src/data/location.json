@@ -1,0 +1,17 @@
+{
+  "titleLine1": "Prime Location",
+  "titleLine2": "Seamless Campus Connectivity",
+  "venueName": "Bareilly International University (BIU)",
+  "address": "Pilibhit Bypass Road, Bareilly, Uttar Pradesh 243006, India",
+  "rating": "4.8",
+  "reviews": "1,250+",
+  "directionsButtonLabel": "Get Campus Directions",
+  "distances": [
+    "Located prominently on Pilibhit Bypass Road, Bareilly",
+    "12 minutes drive from Bareilly Junction Railway Station",
+    "15 minutes drive from Bareilly Airport (Civil Enclave)",
+    "Direct connectivity via Delhi-Lucknow National Highway (NH 30)"
+  ],
+  "travelTimeDisclaimer": "Campus shuttles & public transit available 24/7.",
+  "parkingText": "Campus parking & visitor bays available"
+}

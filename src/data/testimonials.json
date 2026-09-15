@@ -1,0 +1,24 @@
+{
+  "badge": "Alumni & Student Voices",
+  "titleLine1": "What Our Students & Alumni",
+  "titleLine2": "Say About BIU",
+  "googleRating": "4.8 ★ Ranked Top Private University in UP",
+  "videoBadge": "BIU Campus Life Highlight",
+  "reviews": [
+    {
+      "quote": "Studying MBBS at Rohilkhand Medical College was the best decision of my life. The 1,000+ bed hospital provided invaluable clinical exposure that helped me clear NEET-PG in my first attempt.",
+      "name": "Dr. Ananya Sharma",
+      "meta": "MBBS Alumna (Resident at Max Healthcare)"
+    },
+    {
+      "quote": "The Computer Science faculty and AI labs at BIU Engineering are world-class. Pre-placement coding bootcamps prepared me to crack a ₹18 LPA package at HCL Technologies!",
+      "name": "Rohan Malhotra",
+      "meta": "B.Tech CSE Graduate (Software Engineer at HCL)"
+    },
+    {
+      "quote": "State-of-the-art phantom head dental labs and expert MDS faculty gave me hands-on confidence. Today I run a successful multi-chair dental clinic in Delhi.",
+      "name": "Dr. Vikram Singhal",
+      "meta": "BDS Alumnus (Prosthodontist Specialist)"
+    }
+  ]
+}

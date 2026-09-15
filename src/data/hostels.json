@@ -1,0 +1,29 @@
+{
+  "badge": "Student Housing",
+  "title": "Hostels & Residential Life",
+  "subtitle": "Modern, secure, and fully air-conditioned residential blocks for boys and girls with 24/7 security, mess halls, and study lounges.",
+  "accommodationsPage": {
+    "badge": "On-Campus Living",
+    "titlePrefix": "Modern AC Hostels &",
+    "titleHighlight": "Student Residencies",
+    "subtitle": "Safe, comfortable, and hygienic living spaces equipped with Wi-Fi, 24/7 power backup, nutritious dining halls, and recreational lounges.",
+    "list": [
+      {
+        "id": "boys-hostel",
+        "name": "Boys AC Residential Block",
+        "category": "Single / Twin Sharing",
+        "desc": "Spacious rooms with attached washrooms, study desks, ergonomic chairs, and high-speed Wi-Fi.",
+        "capacity": "1,200 Students",
+        "price": "Fully AC | Attached Washroom"
+      },
+      {
+        "id": "girls-hostel",
+        "name": "Girls AC Residential Block",
+        "category": "Single / Twin Sharing",
+        "desc": "Secure residential complex with biometric entry, female warden supervision, and 24/7 CCTV surveillance.",
+        "capacity": "1,000 Students",
+        "price": "Fully AC | Biometric Security"
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NewsEventsPage from '../components/pages/NewsEventsPage.jsx';
+---
+
+<Layout title="News & Events - Bareilly International University">
+  <NewsEventsPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

@@ -1,0 +1,65 @@
+{
+  "badge": "Campus Gallery",
+  "titlePrefix": "Life at",
+  "titleSuffix": "BIU Campus",
+  "subtitle": "Explore the vibrant academic ecosystem, high-tech research labs, teaching hospital, and campus events at BIU.",
+  "ctaLabel": "View Full Gallery",
+  "galleryPage": {
+    "badge": "Visual Archives",
+    "titlePrefix": "BIU Campus",
+    "titleHighlight": "Photo & Video Gallery",
+    "subtitle": "Explore the visual journey of Bareilly International University — featuring clinical simulation labs, super-specialty hospital suites, central library, sports grounds, and annual convocation ceremonies.",
+    "backButtonLabel": "Back to Home",
+    "emptyStateMessage": "No photos available in gallery."
+  },
+  "images": [
+    {
+      "name": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000&auto=format&fit=crop",
+      "alt": "BIU Annual Convocation Ceremony",
+      "caption": "Annual Convocation & Graduation Ceremony",
+      "seed": "biu-convocation"
+    },
+    {
+      "name": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop",
+      "alt": "Students at Tech Hackathon",
+      "caption": "National Tech & Robotics Hackathon",
+      "seed": "biu-hackathon"
+    },
+    {
+      "name": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
+      "alt": "Medical students in simulation lab",
+      "caption": "Rohilkhand Hospital Clinical Training",
+      "seed": "biu-medical"
+    },
+    {
+      "name": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop",
+      "alt": "Dental simulation lab",
+      "caption": "Institute of Dental Sciences Phantom Head Lab",
+      "seed": "biu-dental"
+    },
+    {
+      "name": "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1000&auto=format&fit=crop",
+      "alt": "Cultural performance at Spandan Fest",
+      "caption": "'Spandan' Annual Cultural Fest",
+      "seed": "biu-fest"
+    },
+    {
+      "name": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1000&auto=format&fit=crop",
+      "alt": "Pharmacy research lab",
+      "caption": "Faculty of Pharmacy Analytical Research Lab",
+      "seed": "biu-pharmacy"
+    },
+    {
+      "name": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000&auto=format&fit=crop",
+      "alt": "Central Library reading suite",
+      "caption": "24/7 Central Digital E-Library",
+      "seed": "biu-library"
+    },
+    {
+      "name": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1000&auto=format&fit=crop",
+      "alt": "Sports complex night match",
+      "caption": "Inter-Collegiate Night Cricket League",
+      "seed": "biu-sports"
+    }
+  ]
+}

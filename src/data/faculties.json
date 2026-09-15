@@ -1,0 +1,114 @@
+{
+  "badge": "Academic Excellence",
+  "title": "Colleges & Faculties",
+  "subtitle": "Explore world-class academic institutions at BIU offering industry-aligned undergraduate, postgraduate, and doctoral degrees.",
+  "featured": [
+    {
+      "name": "Rohilkhand Medical College & Hospital",
+      "desc": "Premier medical institution with 1,000+ bed hospital, MBBS, MD/MS super-specialty degrees.",
+      "stats": "MBBS / MD / MS / Super-Specialty",
+      "img": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      "name": "Institute of Dental Sciences",
+      "desc": "DCI-recognized dental college featuring advanced phantom head labs, BDS & MDS specializations.",
+      "stats": "BDS / MDS Programs",
+      "img": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop"
+    }
+  ],
+  "secondary": [
+    {
+      "name": "Faculty of Engineering & Technology",
+      "stats": "B.Tech / M.Tech / AI & CS",
+      "img": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      "name": "Faculty of Pharmacy",
+      "stats": "B.Pharm / M.Pharm / Pharm.D",
+      "img": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      "name": "Faculty of Nursing & Paramedical",
+      "stats": "B.Sc Nursing / GNM / M.Sc",
+      "img": "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      "name": "Faculty of Management & Law",
+      "stats": "MBA / BBA / BA LLB / LLM",
+      "img": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop"
+    }
+  ],
+  "ctaLabel": "View All Faculties",
+  "spacesPage": {
+    "backButtonLabel": "Back to Home",
+    "badge": "Academic Departments",
+    "titlePrefix": "Explore Our",
+    "titleHighlight": "Colleges & Faculties",
+    "subtitle": "Bareilly International University houses specialized colleges recognized by national regulatory bodies including NMC, DCI, PCI, INC, BCI, and AICTE.",
+    "heroImage": "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1200&auto=format&fit=crop",
+    "heroImageAlt": "BIU Faculty of Engineering & Technology",
+    "heroImageCaption": "BIU Campus • Excellence in Professional Education",
+    "spacesList": [
+      {
+        "id": "rohilkhand-medical-college",
+        "name": "Rohilkhand Medical College & Hospital",
+        "category": "Medical Sciences",
+        "desc": "Recognized by NMC, offering MBBS and postgraduate MD/MS courses supported by a 1,000+ bed super-specialty hospital.",
+        "capacity": "150 MBBS Annual Seats",
+        "area": "1,000+ Bed Hospital",
+        "idealFor": "MBBS, MD, MS, Clinical Research",
+        "img": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop"
+      },
+      {
+        "id": "institute-of-dental-sciences",
+        "name": "Institute of Dental Sciences",
+        "category": "Dental Surgery",
+        "desc": "Premier dental institution providing BDS and MDS degrees with high-end clinical OPDs and phantom head simulation labs.",
+        "capacity": "100 BDS Annual Seats",
+        "area": "Advanced Dental Clinics",
+        "idealFor": "BDS, MDS, Maxillofacial Surgery",
+        "img": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop"
+      },
+      {
+        "id": "faculty-of-engineering",
+        "name": "Faculty of Engineering & Technology",
+        "category": "Technology & AI",
+        "desc": "Modern engineering school focusing on Computer Science, AI & Machine Learning, Data Science, Mechanical, and Civil Engineering.",
+        "capacity": "300+ Annual Intake",
+        "area": "Robotics & AI Labs",
+        "idealFor": "B.Tech, M.Tech, BCA, MCA",
+        "img": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1000&auto=format&fit=crop"
+      },
+      {
+        "id": "faculty-of-pharmacy",
+        "name": "Faculty of Pharmacy",
+        "category": "Pharmaceutical Sciences",
+        "desc": "PCI-approved institution specializing in Drug Formulation, Clinical Pharmacy, B.Pharm, M.Pharm, and Pharm.D degrees.",
+        "capacity": "100 B.Pharm Seats",
+        "area": "HPLC & Analytical Labs",
+        "idealFor": "B.Pharm, M.Pharm, Pharm.D",
+        "img": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1000&auto=format&fit=crop"
+      },
+      {
+        "id": "faculty-of-nursing",
+        "name": "Faculty of Nursing & Allied Health",
+        "category": "Nursing & Paramedical",
+        "desc": "INC-recognized nursing college offering B.Sc Nursing, Post Basic Nursing, GNM, and Paramedical degree programs.",
+        "capacity": "120 Nursing Seats",
+        "area": "Clinical Simulation Suites",
+        "idealFor": "B.Sc Nursing, GNM, BPT, BMLT",
+        "img": "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1000&auto=format&fit=crop"
+      },
+      {
+        "id": "faculty-of-management-law",
+        "name": "Faculty of Management & Commerce",
+        "category": "Business & Law",
+        "desc": "Dynamic business school offering MBA, BBA, B.Com (Hons), along with 5-year integrated BA LLB law degree programs.",
+        "capacity": "200 Business & Law Seats",
+        "area": "Moot Court & Incubation Center",
+        "idealFor": "MBA, BBA, BA LLB, B.Com",
+        "img": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop"
+      }
+    ]
+  }
+}

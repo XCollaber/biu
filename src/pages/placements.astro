@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PlacementsPage from '../components/pages/PlacementsPage.jsx';
+---
+
+<Layout title="Training & Placements - Bareilly International University">
+  <PlacementsPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

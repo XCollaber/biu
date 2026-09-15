@@ -1,0 +1,66 @@
+{
+  "badge": "Career & Placements",
+  "titleLine1": "Where Education Meets",
+  "titleLine2": "Global Placement Success",
+  "bgImage": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop",
+  "subtitle": "At Bareilly International University, our dedicated Training & Placement Cell bridges academic excellence with industry demand, driving 95%+ campus placement record across healthcare, IT, and corporate sectors.",
+  "stats": [
+    { "value": "95%", "label": "Placement Record" },
+    { "value": "₹24 LPA", "label": "Highest Package" },
+    { "value": "250+", "label": "Recruiting Partners" }
+  ],
+  "ctaPrimaryLabel": "View Placement Report",
+  "ctaSecondaryLabel": "Campus Location",
+
+  "corporatePage": {
+    "badge": "Corporate Resource Center",
+    "titlePrefix": "Global Partnerships &",
+    "titleHighlight": "Career Placements",
+    "subtitle": "Bareilly International University partners with top multi-specialty healthcare networks, Fortune 500 tech firms, and pharmaceutical leaders to ensure guaranteed career pathways for our graduates.",
+    "backButtonLabel": "Back to Home",
+    "heroImage": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop",
+    "heroCaption": "BIU Annual Campus Placement Drive",
+
+    "stats": [
+      { "value": "₹24 LPA", "label": "Highest Package Offered" },
+      { "value": "₹6.8 LPA", "label": "Average Package" },
+      { "value": "250+", "label": "Top Corporate Recruiters" },
+      { "value": "100%", "label": "Clinical Internship Support" }
+    ],
+
+    "venues": [
+      {
+        "id": "healthcare-recruitment",
+        "name": "Clinical & Healthcare Placements",
+        "tagline": "Top hospitals & clinical research networks recruiting MBBS, Nursing & Dental graduates",
+        "capacity": "1,000+ Placed Doctors & Nurses",
+        "area": "100% Hospital Internships",
+        "image": "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1000&auto=format&fit=crop",
+        "layouts": ["Fortis Healthcare", "Apollo Hospitals", "Max Healthcare", "Medanta The Medicity"],
+        "description": "Graduates from Rohilkhand Medical College and Dental Sciences secure prestigious clinical residency and medical officer roles across India's top super-specialty hospital chains.",
+        "features": [
+          "1-Year Mandatory Rotational Internship at Rohilkhand Hospital",
+          "NEET-PG Coaching & International Licensing Exam Support (USMLE/PLAB)",
+          "Campus Placement Drives by Max, Fortis, Apollo & Medanta",
+          "Super-Specialty Clinical Research & Fellowship Opportunities"
+        ]
+      },
+      {
+        "id": "engineering-tech-recruitment",
+        "name": "Engineering, IT & Tech Placements",
+        "tagline": "Leading MNCs and IT giants recruiting Computer Science, AI & Engineering graduates",
+        "capacity": "250+ Corporate Partners",
+        "area": "Highest Package ₹24 LPA",
+        "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop",
+        "layouts": ["TCS", "Infosys", "Wipro", "HCL Tech", "Cognizant", "Tech Mahindra"],
+        "description": "BIU Engineering & Computer Science students undergo rigorous pre-placement training including DSA, AI/ML capstone projects, mock interviews, and hackathons.",
+        "features": [
+          "Pre-Placement Aptitude & Technical Skill Bootcamps",
+          "On-Campus Hackathons & Industry Mentorship Programs",
+          "Core Engineering & Software Development Roles",
+          "Paid Summer Internships in Top Tech Hubs"
+        ]
+      }
+    ]
+  }
+}

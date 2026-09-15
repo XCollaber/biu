@@ -1,0 +1,31 @@
+{
+  "badge": "Admissions FAQ",
+  "titlePrefix": "Frequently",
+  "titleSuffix": "Asked Questions",
+  "questions": [
+    {
+      "q": "Where is Bareilly International University (BIU) located?",
+      "a": "BIU is situated on a sprawling 100-acre lush green campus on Pilibhit Bypass Road, Bareilly, Uttar Pradesh 243006. It is easily accessible from Bareilly Junction Railway Station and Bareilly Airport."
+    },
+    {
+      "q": "Is BIU approved by UGC and regulatory bodies?",
+      "a": "Yes! Bareilly International University is established under the UP State University Act and recognized by UGC. Its professional programs are approved by NMC (Medical Council), DCI (Dental Council), PCI (Pharmacy Council), INC (Nursing Council), BCI (Bar Council), and AICTE."
+    },
+    {
+      "q": "What programs are offered at BIU?",
+      "a": "BIU offers 150+ undergraduate, postgraduate, and doctoral degrees across Medical Sciences (MBBS, MD/MS), Dental Surgery (BDS, MDS), Engineering (B.Tech, M.Tech, AI & CS), Pharmacy (B.Pharm, Pharm.D), Nursing, Paramedical, MBA, BBA, and Law (BA LLB)."
+    },
+    {
+      "q": "Does BIU have its own teaching hospital for medical students?",
+      "a": "Yes! Rohilkhand Medical College & Hospital is a 1,000+ bed super-specialty teaching hospital on campus providing extensive clinical exposure to MBBS, MD/MS, Nursing, and Paramedical students."
+    },
+    {
+      "q": "What is the placement record at BIU?",
+      "a": "BIU boasts a 95% placement rate with highest packages reaching ₹24 LPA. Top recruiters include Fortis Healthcare, Apollo Hospitals, Max Healthcare, TCS, Infosys, Wipro, and HCL Tech."
+    },
+    {
+      "q": "How can I apply for 2026-27 admissions?",
+      "a": "You can fill out the online admission inquiry form on our website, call our counseling helpline at +91 7455002900, or visit our Admission Cell on campus for walk-in counseling."
+    }
+  ]
+}

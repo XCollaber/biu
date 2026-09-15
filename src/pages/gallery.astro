@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GalleryPage from '../components/pages/GalleryPage.jsx';
+---
+
+<Layout title="Campus Gallery - Bareilly International University">
+  <GalleryPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

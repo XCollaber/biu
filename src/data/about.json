@@ -1,0 +1,115 @@
+{
+  "badge": "About BIU",
+  "title": "Bareilly International University",
+  "image": "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1200&auto=format&fit=crop",
+  "imageAlt": "Aerial view of Bareilly International University Campus",
+  "paragraph1": "Bareilly International University (BIU) stands as a beacon of academic excellence, innovation, and holistic human development in Uttar Pradesh, India.",
+  "paragraph2": "Established under the UP State Act, BIU brings together world-class faculties including Rohilkhand Medical College & Hospital, Institute of Dental Sciences, School of Engineering, Faculty of Pharmacy, and School of Management across a sprawling 100-acre green campus.",
+  "stats": [
+    { "value": "NAAC A+", "label": "Accreditation" },
+    { "value": "150+", "label": "Programs Offered" },
+    { "value": "500+", "label": "Expert Faculty" },
+    { "value": "50,000+", "label": "Global Alumni" }
+  ],
+  "ctaLabel": "Learn More About BIU",
+  "aboutPage": {
+    "badge": "University Legacy & Vision",
+    "titlePrefix": "Pioneering Higher Education &",
+    "titleHighlight": "Global Research Excellence",
+    "subtitle": "Welcome to Bareilly International University — where academic rigor meets cutting-edge innovation and compassionate healthcare training.",
+    "backButtonLabel": "Back to Home",
+    "mainImage": "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1200&auto=format&fit=crop",
+    "mainImageAlt": "BIU Campus Infrastructure",
+    "storyBadge": "The BIU Journey",
+    "storyTitle": "Building a Legacy of Knowledge, Ethics, and Global Leadership",
+    "storyParagraph1": "Bareilly International University was founded with a transformative vision: to establish an institution of international standards in Rohilkhand region that delivers holistic education, high-impact clinical research, and industry-aligned skills.",
+    "storyParagraph2": "Spread across a lush 100-acre campus along Pilibhit Bypass Road, BIU encompasses state-of-the-art super-specialty teaching hospitals, advanced simulation labs, smart lecture halls, central digital libraries, and modern sports facilities.",
+    "storyParagraph3": "With over 150 undergraduate, postgraduate, and doctoral degree programs, BIU fosters an inclusive ecosystem where students are empowered to solve real-world healthcare, technological, and economic challenges.",
+    "features": [
+      {
+        "title": "UGC Approved & NAAC A+",
+        "desc": "Recognized by UGC, Medical Council of India (NMC), Dental Council of India (DCI), Pharmacy Council (PCI), and INC."
+      },
+      {
+        "title": "Super-Specialty Teaching Hospital",
+        "desc": "Rohilkhand Medical College & Hospital provides hands-on clinical exposure with 1,000+ bed hospital infrastructure."
+      },
+      {
+        "title": "Global Academic Partnerships",
+        "desc": "Collaborations with international universities and research labs for student exchanges, internships, and joint publications."
+      },
+      {
+        "title": "95% Placement Record",
+        "desc": "Dedicated Corporate Resource Center connecting graduates with leading healthcare networks, IT giants, and MNCs."
+      }
+    ],
+    "pillarsBadge": "Core Educational Pillars",
+    "pillarsTitle": "What Defines the BIU Student Experience",
+    "pillars": [
+      {
+        "title": "Academic Rigor & Research",
+        "desc": "Curricula designed in consultation with industry leaders, supported by funded research labs and clinical trials."
+      },
+      {
+        "title": "Ethics & Human Values",
+        "desc": "Instilling social responsibility, ethical practice, and community service through rural health clinics and legal aid centers."
+      },
+      {
+        "title": "State-of-the-Art Infrastructure",
+        "desc": "High-speed Wi-Fi campus, digital cadaveric labs, robotic surgery simulators, and 24/7 central e-library."
+      },
+      {
+        "title": "Holistic Development",
+        "desc": "Active student clubs, national sports tournaments, cultural fests, and leadership incubators."
+      }
+    ],
+    "ctaTitle": "Shape Your Future at Bareilly International University",
+    "ctaSubtitle": "Join thousands of successful professionals and healthcare leaders. Apply for 2026-27 admissions today.",
+    "ctaButtonLabel": "Apply Now 2026",
+    "facilitiesBadge": "Campus Facilities & Amenities",
+    "facilitiesTitle": "World-Class Infrastructure for Learning & Living",
+    "facilitiesSubtitle": "Every facility at BIU is designed to foster academic productivity, health, and campus well-being.",
+    "campusFacilities": [
+      {
+        "title": "Teaching Hospital",
+        "desc": "1000+ bed super-specialty hospital providing round-the-clock emergency, ICU, and clinical training.",
+        "icon": "Heart"
+      },
+      {
+        "title": "Smart Lecture Halls",
+        "desc": "Air-conditioned audio-visual lecture theatres equipped with interactive smart boards and lecture capture.",
+        "icon": "Users"
+      },
+      {
+        "title": "Central Digital Library",
+        "desc": "50,000+ books, IEEE/PubMed journal subscriptions, and 24/7 quiet reading suites.",
+        "icon": "Coffee"
+      },
+      {
+        "title": "Advanced Simulation Labs",
+        "desc": "High-fidelity clinical mannequins, dental phantom head labs, and CAD/CAM engineering workshops.",
+        "icon": "Sparkle"
+      },
+      {
+        "title": "AC Student Hostels",
+        "desc": "Separate secure residential blocks for boys & girls with attached washrooms and dining halls.",
+        "icon": "Bed"
+      },
+      {
+        "title": "High-Speed Wi-Fi",
+        "desc": "1 Gbps fiber internet backbone covering all academic blocks, hostels, and campus grounds.",
+        "icon": "WifiHigh"
+      },
+      {
+        "title": "Sports Complex & Gym",
+        "desc": "Olympic-size sports grounds for cricket, football, tennis, basketball, and indoor gym.",
+        "icon": "Crown"
+      },
+      {
+        "title": "Multi-Cuisine Cafeterias",
+        "desc": "Hygienic food courts serving nutritious meals, snacks, coffee bars, and fresh juices.",
+        "icon": "ForkKnife"
+      }
+    ]
+  }
+}

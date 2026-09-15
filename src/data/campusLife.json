@@ -1,0 +1,38 @@
+{
+  "badge": "Student Experience",
+  "title": "Vibrant Campus Life & Culture",
+  "subtitle": "At BIU, learning extends beyond lecture halls. Experience a thriving campus ecosystem with student clubs, sports leagues, technical hackathons, and cultural festivals.",
+  "offerings": [
+    {
+      "title": "Student Clubs & Societies",
+      "desc": "Robotics Club, Literary Society, Music & Fine Arts, Coding Guild, and Rotaract Youth wing."
+    },
+    {
+      "title": "Sports & Fitness Complex",
+      "desc": "Olympic-sized cricket and football grounds, tennis courts, basketball courts, and indoor gymnasium."
+    },
+    {
+      "title": "Annual Fests & Hackathons",
+      "desc": "'Spandan' Annual Cultural Fest, National Tech-Spardha, hackathons, and inter-collegiate sports meets."
+    },
+    {
+      "title": "Social Impact & NCC/NSS",
+      "desc": "Community health outreach, rural health camps, blood donation drives, and active NCC cadet training."
+    }
+  ],
+  "ctaLabel": "Explore Campus Life",
+  "images": [
+    {
+      "img": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop",
+      "alt": "BIU Campus Grounds & Student Hub"
+    },
+    {
+      "img": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000&auto=format&fit=crop",
+      "alt": "Students at Central Library Suite"
+    },
+    {
+      "img": "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1000&auto=format&fit=crop",
+      "alt": "Annual Cultural Fest Performance"
+    }
+  ]
+}

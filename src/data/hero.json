@@ -1,0 +1,15 @@
+{
+  "headlineLine1": "Empowering Minds",
+  "headlineLine2": "Shaping Global Leaders",
+  "subtitle": "Bareilly International University — NAAC Accredited A+ Premier Private University offering world-class programs in Medical Sciences, Engineering, Dental, Pharmacy, Management & Law.",
+  "ctaPrimaryLabel": "Admissions 2026-27",
+  "ctaSecondaryLabel": "Explore Faculties",
+  "badgePrefix": "Applications Open",
+  "badgeText": "NAAC Accredited Grade A+ University",
+  "stats": [
+    { "value": "150+", "label": "UG & PG Programs" },
+    { "value": "10,000+", "label": "Enrolled Students" },
+    { "value": "95%", "label": "Placement Rate" },
+    { "value": "100+", "label": "Acre Modern Campus" }
+  ]
+}

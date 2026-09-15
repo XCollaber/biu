@@ -1,0 +1,31 @@
+{
+  "badge": "Admissions 2026-27",
+  "title": "Begin Your BIU Journey",
+  "subtitle": "Share your details below and our Admissions Cell will contact you with course brochures, fee structures, and campus visit counseling.",
+  "submitButtonText": "Submit Admission Inquiry",
+  "thankYouTitle": "Inquiry Received!",
+  "thankYouMessage": "Thank you for reaching out to Bareilly International University. Our counselors will contact you shortly.",
+  "defaultTemplate": "Hello BIU Admissions Team, I would like to inquire about program eligibility, fee structure, and seat availability for the 2026-27 academic session.",
+  "templates": [
+    {
+      "icon": "Crown",
+      "label": "Medical & Dental",
+      "text": "Hello BIU Admissions Team, I am interested in MBBS / BDS degree programs. Please share eligibility criteria, NEET cutoff, and seat counseling details."
+    },
+    {
+      "icon": "CalendarCheck",
+      "label": "Engineering & Tech",
+      "text": "Hello BIU Admissions Team, I would like information regarding B.Tech Computer Science / AI & ML admissions, lab facilities, and campus placements."
+    },
+    {
+      "icon": "Bed",
+      "label": "Nursing & Paramedical",
+      "text": "Hello BIU Admissions Team, I am inquiring about B.Sc Nursing and Paramedical courses. Please share fee structure and clinical hospital training details."
+    },
+    {
+      "icon": "Buildings",
+      "label": "Management & Law",
+      "text": "Hello BIU Admissions Team, I am interested in MBA / BBA / BA LLB programs. Please share syllabus details, industry tie-ups, and placement records."
+    }
+  ]
+}

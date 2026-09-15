@@ -1,0 +1,23 @@
+{
+  "badge": "Academic Guidelines & Policy",
+  "title": "Terms & Conditions",
+  "subtitle": "Rules and regulations governing admissions, website use, and academic enrollment at Bareilly International University (BIU).",
+  "backButtonLabel": "Back to Home",
+  "sections": [
+    {
+      "icon": "FileText",
+      "title": "1. Admissions & Eligibility",
+      "content": [
+        "Admissions to professional courses (MBBS, BDS, B.Tech, B.Pharm, MBA, Law) are strictly subject to eligibility criteria, qualifying entrance cutoffs, and document verification by BIU Admission Cell.",
+        "Submission of fraudulent documents or misrepresentation of academic scores will lead to immediate cancellation of admission and legal action as per University statutes."
+      ]
+    },
+    {
+      "icon": "Lock",
+      "title": "2. Academic Conduct & Regulations",
+      "content": [
+        "Enrolled students are bound by University discipline, anti-ragging codes, 75% mandatory lecture attendance, and code of conduct outlined by respective regulatory councils (NMC, DCI, PCI, BCI)."
+      ]
+    }
+  ]
+}

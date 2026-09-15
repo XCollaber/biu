@@ -1,0 +1,84 @@
+{
+  "badge": "University Bulletin",
+  "title": "News, Research & Campus Highlights",
+  "viewAllLabel": "View All News & Events",
+  "featuredStory": {
+    "id": "biu-medical-research-symposium-2026",
+    "date": "2026-08-15",
+    "readTime": "5 min read",
+    "category": "Medical & Clinical Innovation",
+    "title": "Rohilkhand Medical College Host International Research Symposium on Genomic Medicine",
+    "excerpt": "BIU's flagship medical institute brings together over 400 global clinical researchers and surgeons to present cutting-edge breakthroughs in precision oncology and AI diagnostic imaging.",
+    "content": "Bareilly International University successfully inaugurated its Annual International Research Symposium at the Central Auditorium. Hosted by Rohilkhand Medical College & Hospital (RMCH), the conference focused on early-stage cancer screening algorithms and non-invasive surgical procedures.\n\n### Key Highlights of the Conference:\n1. **AI Diagnostic Integration**: Faculty presented clinical trial findings of deep-learning algorithms identifying micro-calcifications in digital mammography with 98.4% accuracy.\n2. **Surgical Simulation Showcase**: Medical residents demonstrated robotic-assisted minimally invasive procedures in our state-of-the-art simulation suites.\n3. **Global Academic Alliances**: MoU agreements signed with international research bodies for joint doctoral fellowships and student exchange programs.\n4. **Community Healthcare Vision**: Announcement of 12 free rural diagnostic camps serving over 25,000 residents across Uttar Pradesh.",
+    "img": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop"
+  },
+  "posts": [
+    {
+      "id": "record-placements-2026-tech-medicine",
+      "date": "2026-07-28",
+      "readTime": "4 min read",
+      "category": "Placement Milestones",
+      "title": "BIU Campus Placement Drive 2026 Achieves Highest Package of ₹45 LPA",
+      "excerpt": "Over 220 top healthcare networks, MNCs, and technology leaders recruit BIU graduates with a stellar 94% placement conversion rate across all faculties.",
+      "content": "The Corporate Relations & Training Cell at Bareilly International University celebrated another landmark placement season. Top tier health systems, pharmaceutical conglomerates, and IT firms extended lucrative offers to graduating batches across MBBS, B.Tech, BDS, and MBA programs.\n\n### Placement Season Key Highlights:\n1. **Highest Package**: ₹45.0 LPA secured by CSE Artificial Intelligence graduates at premier global tech firms.\n2. **Average Package Surge**: 28% increase in median compensation packages for Nursing and Pharmacy graduates.\n3. **Top Recruiters**: Apollo Hospitals, Max Healthcare, Fortis, Infosys, Wipro, TCS, Cognizant, and Biocon.\n4. **Clinical Residency Placements**: 100% internship placement for medical graduates at Rohilkhand Super Speciality Hospital.",
+      "img": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop",
+      "seed": "biu-placements-drive"
+    },
+    {
+      "id": "biu-dental-college-implantology-center",
+      "date": "2026-07-16",
+      "readTime": "4 min read",
+      "category": "Departmental Expansion",
+      "title": "Institute of Dental Sciences Inaugurates Advanced 3D Maxillofacial Implantology Center",
+      "excerpt": "Equipped with CBCT 3D radiology and intraoral digital scanners, the new dental center offers sub-specialized training and high-end patient care.",
+      "content": "The Institute of Dental Sciences at BIU has opened its newly expanded Center for Advanced Implantology and Digital Dentistry. This facility enables BDS and MDS scholars to perform complex surgical restorations under direct guidance of senior consultants.\n\n### Center Features:\n- **Cone Beam CT Imaging**: High-resolution 3D anatomical modeling for precision implant placement.\n- **CAD/CAM Prosthetic Milling**: On-site automated crown and bridge fabrication within 60 minutes.\n- **Subsidized Patient Care**: High-quality specialized dental treatments made affordable for the regional community.",
+      "img": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop",
+      "seed": "biu-dental-center"
+    },
+    {
+      "id": "biu-annual-sports-cultural-fest-2026",
+      "date": "2026-07-02",
+      "readTime": "5 min read",
+      "category": "Campus Life",
+      "title": "BIU 'Spandan 2026' Annual Sports & Cultural Fest Draws 8,000+ Participants",
+      "excerpt": "A 4-day extravaganza of inter-college cricket tournaments, hackathons, fashion showcases, and live musical performances on campus grounds.",
+      "content": "The annual university festival 'Spandan 2026' illuminated the BIU campus with vibrant athletic and creative energy. Students from over 35 regional colleges competed in inter-varsity championships.\n\n### Fest Highlights:\n- **Inter-College Hackathon**: 24-hour coding marathon building AI solutions for healthcare management.\n- **Athletic Championship**: Track & field records shattered on the university's Olympic-size synthetic running track.\n- **Celebrity Gala Concert**: Star-studded musical evening celebrating student talent and cultural diversity.",
+      "img": "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1000&auto=format&fit=crop",
+      "seed": "biu-fest-spandan"
+    },
+    {
+      "id": "nursing-pharmacy-national-accreditation",
+      "date": "2026-06-20",
+      "readTime": "3 min read",
+      "category": "Accreditation & Standards",
+      "title": "BIU Nursing & Pharmacy Faculties Receive Top Academic Accreditation",
+      "excerpt": "Recognized for world-class laboratory infrastructure, clinical rotation quality, and outstanding licensure exam pass rates.",
+      "content": "The Faculty of Nursing and Faculty of Pharmacy at Bareilly International University have earned top-tier re-accreditation scores from national regulatory councils. The audit committee commended BIU's 1000+ bed teaching hospital integration and hands-on clinical training protocols.",
+      "img": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1000&auto=format&fit=crop",
+      "seed": "biu-nursing-accreditation"
+    },
+    {
+      "id": "biu-admissions-open-2026-2027",
+      "date": "2026-06-05",
+      "readTime": "4 min read",
+      "category": "Admissions Guide",
+      "title": "Admissions Open 2026-27: Step-by-Step Guide to Applying for Undergraduate & Postgraduate Programs",
+      "excerpt": "Comprehensive walkthrough of eligibility criteria, national entrance scores, campus counseling schedules, and merit scholarship schemes.",
+      "content": "Bareilly International University has opened online applications for the 2026-27 academic session across Medicine, Dentistry, Nursing, Pharmacy, Applied Sciences, Engineering, and Business Administration.\n\n### Application Milestones:\n- **Online Portal Open**: Apply directly at biu.ac.in for swift document verification.\n- **Merit Scholarships**: Up to 100% tuition waiver for national rank holders and top academic performers.\n- **Campus Guided Tours**: Visit our 100-acre green campus and clinical labs every Monday through Saturday.",
+      "img": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop",
+      "seed": "biu-admissions-guide"
+    }
+  ],
+  "journalPage": {
+    "backButtonLabel": "Back to Home",
+    "badge": "BIU Newsroom • Stories & Updates",
+    "titlePrefix": "BIU",
+    "titleHighlight": "News & Campus Stories",
+    "subtitle": "Explore official university announcements, medical research breakthroughs, academic milestones, and campus life stories curated by BIU media cell.",
+    "featuredPostId": "biu-medical-research-symposium-2026",
+    "featuredCaption": "Featured Report • Medical Research Symposium 2026",
+    "ctaTitle": "Begin Your Academic Journey at BIU",
+    "ctaSubtitle": "Have questions about course admissions, fee structures, or campus facilities? Our academic counselors are here to help.",
+    "ctaButtonLabel": "Contact Admissions Office"
+  }
+}

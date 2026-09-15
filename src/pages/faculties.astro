@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FacultiesPage from '../components/pages/FacultiesPage.jsx';
+---
+
+<Layout title="Colleges & Faculties - Bareilly International University">
+  <FacultiesPage client:load onBack={() => window.location.href = '/'} />
+</Layout>
