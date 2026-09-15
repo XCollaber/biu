@@ -75,7 +75,7 @@ export default function NotFoundPage({ onGoHome }) {
           >
             <button
               onClick={handleHomeClick}
-              className="group inline-flex h-12 w-full sm:w-auto items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light border border-gold-light/60 px-8 font-sans text-xs font-extrabold uppercase tracking-[0.16em] text-forest-dark shadow-[0_8px_30px_rgba(212,175,55,0.4)] transition-all duration-300 ease-premium hover:scale-105 hover:shadow-[0_12px_40px_rgba(212,175,55,0.65)] hover:from-gold-light hover:to-gold-dark active:scale-95 cursor-pointer"
+              className="group inline-flex h-12 w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light border border-gold-light/60 px-8 font-sans text-xs font-extrabold uppercase tracking-[0.16em] text-forest-dark shadow-md transition-all duration-300 ease-premium hover:scale-105 hover:shadow-lg hover:from-gold-light hover:to-gold-dark active:scale-95 cursor-pointer"
             >
               <House size={18} weight="fill" className="text-forest-dark shrink-0" />
               <span>Return to Home</span>

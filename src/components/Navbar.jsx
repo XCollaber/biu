@@ -124,7 +124,7 @@ export default function Navbar() {
         <div className="flex items-center gap-1.5 sm:gap-3 pr-1 sm:pr-0">
           <a
             href="/#contact"
-            className="group flex items-center gap-1.5 sm:gap-2 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light px-3.5 sm:px-6 py-2 sm:py-2.5 font-sans text-[10px] sm:text-[12px] font-extrabold uppercase tracking-[0.10em] sm:tracking-[0.14em] text-forest-dark shadow-[0_4px_20px_rgba(212,175,55,0.4)] border border-gold-light/50 transition-all duration-300 ease-premium hover:scale-105 hover:shadow-[0_6px_25px_rgba(212,175,55,0.65)] hover:from-gold-light hover:to-gold-dark active:scale-95 cursor-pointer whitespace-nowrap"
+            className="group flex items-center gap-1.5 sm:gap-2 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light px-3.5 sm:px-6 py-2 sm:py-2.5 font-sans text-[10px] sm:text-[12px] font-extrabold uppercase tracking-[0.10em] sm:tracking-[0.14em] text-forest-dark shadow-md border border-gold-light/50 transition-all duration-300 ease-premium hover:scale-105 hover:shadow-lg hover:from-gold-light hover:to-gold-dark active:scale-95 cursor-pointer whitespace-nowrap"
           >
             <GraduationCap size={16} weight="fill" className="text-forest-dark shrink-0 transition-transform duration-300 group-hover:scale-110 sm:w-[18px] sm:h-[18px]" />
             <span>{siteData.bookButtonLabel || 'Apply Now 2026'}</span>
@@ -168,7 +168,7 @@ export default function Navbar() {
             <a
               href="/#contact"
               onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light px-6 py-3 text-center font-sans text-xs font-extrabold uppercase tracking-[0.14em] text-forest-dark shadow-[0_4px_15px_rgba(212,175,55,0.35)] border border-gold-light/50"
+              className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light px-6 py-3 text-center font-sans text-xs font-extrabold uppercase tracking-[0.14em] text-forest-dark shadow-md border border-gold-light/50"
             >
               <GraduationCap size={18} weight="fill" className="text-forest-dark shrink-0" />
               <span>{siteData.bookButtonLabel || 'Apply Now 2026'}</span>

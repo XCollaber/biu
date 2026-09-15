@@ -175,7 +175,7 @@ export default function FacultiesPage({ onBack }) {
               <div className="mt-6 sm:mt-10 flex justify-center">
                 <a
                   href="/#contact"
-                  className="group inline-flex h-12 sm:h-14 max-w-full items-center justify-center gap-2 sm:gap-3 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light border border-gold-light/60 px-4 sm:px-10 font-sans shadow-[0_8px_32px_rgba(212,175,55,0.45)] transition-all duration-300 ease-premium hover:scale-105 hover:shadow-[0_12px_40px_rgba(212,175,55,0.65)] hover:from-gold-light hover:to-gold-dark active:scale-95 cursor-pointer"
+                  className="group inline-flex h-12 sm:h-14 max-w-full items-center justify-center gap-2 sm:gap-3 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light border border-gold-light/60 px-4 sm:px-10 font-sans shadow-md transition-all duration-300 ease-premium hover:scale-105 hover:shadow-lg hover:from-gold-light hover:to-gold-dark active:scale-95 cursor-pointer"
                 >
                   <span className="whitespace-nowrap text-[10.5px] sm:text-[13px] font-extrabold uppercase tracking-[0.08em] sm:tracking-[0.16em] text-forest-dark">Apply Now 2026</span>
                   <span className="flex h-5 w-5 sm:h-6 sm:w-6 shrink-0 items-center justify-center rounded-lg bg-forest-dark/20 text-forest-dark transition-transform duration-300 ease-premium group-hover:translate-x-1">

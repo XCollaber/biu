@@ -286,9 +286,9 @@ export default function Contact() {
                           key={tIdx}
                           type="button"
                           onClick={() => handleTemplateSelect(tpl.text)}
-                          className={`inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border px-3.5 py-1.5 font-sans text-xs font-semibold tracking-wide transition-all duration-300 cursor-pointer ${
+                          className={`inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg border px-3.5 py-1.5 font-sans text-xs font-semibold tracking-wide transition-all duration-300 cursor-pointer ${
                             isSelected
-                              ? 'border-gold bg-gradient-to-r from-gold/25 to-gold/10 text-forest-dark shadow-[0_4px_16px_rgba(212,175,55,0.25)] scale-[1.02]'
+                              ? 'border-gold bg-gradient-to-r from-gold/25 to-gold/10 text-forest-dark shadow-sm scale-[1.02]'
                               : 'border-forest/15 bg-white/80 text-forest/75 hover:border-gold/60 hover:bg-gold/10 hover:text-forest-dark hover:shadow-sm'
                           }`}
                         >
@@ -326,7 +326,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="group mt-2 flex h-14 w-full items-center justify-center gap-3 rounded-xl bg-[#0c2340] border border-gold/50 px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#f7e7b4] shadow-[0_8px_30px_rgba(12,35,64,0.3)] transition-all duration-300 ease-premium hover:bg-[#163860] hover:border-gold hover:scale-[1.01] hover:shadow-[0_10px_35px_rgba(212,175,55,0.35)] active:scale-95 cursor-pointer"
+                className="group mt-2 flex h-14 w-full items-center justify-center gap-3 rounded-xl bg-[#0c2340] border border-gold/50 px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#f7e7b4] shadow-md transition-all duration-300 ease-premium hover:bg-[#163860] hover:border-gold hover:scale-[1.01] hover:shadow-lg active:scale-95 cursor-pointer"
               >
                 <PaperPlaneTilt size={18} weight="fill" className="text-gold shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 <span>{contactData.submitButtonText || 'Submit Inquiry'}</span>

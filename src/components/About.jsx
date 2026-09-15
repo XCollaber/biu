@@ -99,7 +99,7 @@ export default function About() {
           <motion.div variants={rise} className="mt-10 flex flex-wrap items-center justify-center sm:justify-start gap-4">
             <a
               href="/about"
-              className="group inline-flex h-14 items-center gap-3 rounded-xl bg-[#0c2340] border border-gold/50 px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-[#f7e7b4] shadow-[0_8px_30px_rgba(12,35,64,0.3)] transition-all duration-300 ease-premium hover:bg-[#163860] hover:border-gold hover:scale-105 hover:shadow-[0_10px_35px_rgba(212,175,55,0.35)] active:scale-95 cursor-pointer"
+              className="group inline-flex h-14 items-center gap-3 rounded-xl bg-[#0c2340] border border-gold/50 px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-[#f7e7b4] shadow-md transition-all duration-300 ease-premium hover:bg-[#163860] hover:border-gold hover:scale-105 hover:shadow-lg active:scale-95 cursor-pointer"
             >
               <BookOpenText size={18} weight="fill" className="text-gold shrink-0 transition-transform duration-300 group-hover:scale-110" />
               <span>Explore Our Story</span>

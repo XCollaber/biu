@@ -83,7 +83,7 @@ export default function Placements() {
           <motion.div variants={rise} className="mt-10 flex flex-wrap gap-4">
             <a
               href="/placements"
-              className="group inline-flex items-center gap-3 rounded-xl border border-gold/60 bg-gold px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.18em] text-[#0c2340] transition-all duration-500 ease-premium hover:bg-gold-light hover:shadow-[0_4px_20px_rgba(212,175,55,0.4)] active:scale-[0.98]"
+              className="group inline-flex items-center gap-3 rounded-xl border border-gold/60 bg-gold px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.18em] text-[#0c2340] transition-all duration-500 ease-premium hover:bg-gold-light hover:shadow-lg active:scale-[0.98]"
             >
               <Briefcase size={15} weight="bold" />
               {corpData.ctaPrimaryLabel || 'View Placement Report'}

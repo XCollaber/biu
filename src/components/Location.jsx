@@ -149,7 +149,7 @@ export default function Location() {
                   href={MAP.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex w-full sm:w-auto h-12 items-center justify-center gap-2 rounded-xl bg-[#0c2340] border border-gold/50 px-6 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-[#f7e7b4] shadow-[0_8px_30px_rgba(12,35,64,0.3)] transition-all duration-300 ease-premium hover:bg-[#163860] hover:border-gold hover:scale-105 hover:shadow-[0_8px_30px_rgba(212,175,55,0.35)] active:scale-95 cursor-pointer"
+                  className="group inline-flex w-full sm:w-auto h-12 items-center justify-center gap-2 rounded-xl bg-[#0c2340] border border-gold/50 px-6 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-[#f7e7b4] shadow-md transition-all duration-300 ease-premium hover:bg-[#163860] hover:border-gold hover:scale-105 hover:shadow-lg active:scale-95 cursor-pointer"
                 >
                   <NavigationArrow size={18} weight="fill" className="text-gold shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
                   <span>{locData.directionsButtonLabel || 'Get Directions'}</span>
