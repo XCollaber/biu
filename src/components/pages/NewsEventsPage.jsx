@@ -48,7 +48,7 @@ export default function NewsEventsPage({ onBack }) {
                 if (onBack) onBack();
                 else window.location.href = '/';
               }}
-              className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-gold/90 backdrop-blur-md transition-all duration-300 hover:border-gold/40 hover:bg-white/10 hover:text-gold"
+              className="group inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-1.5 font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-gold/90 backdrop-blur-md transition-all duration-300 hover:border-gold/40 hover:bg-white/10 hover:text-gold"
             >
               <ArrowLeft size={16} weight="bold" className="transition-transform duration-300 group-hover:-translate-x-1" />
               {cmsPage.backButtonLabel || 'Back to Home'}

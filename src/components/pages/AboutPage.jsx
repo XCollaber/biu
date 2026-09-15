@@ -112,7 +112,7 @@ export default function AboutPage({ onBack }) {
                 if (onBack) onBack();
                 else window.location.hash = 'home';
               }}
-              className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-gold/90 backdrop-blur-md transition-all duration-300 hover:border-gold/40 hover:bg-white/10 hover:text-gold active:scale-[0.97]"
+              className="group inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-1.5 font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-gold/90 backdrop-blur-md transition-all duration-300 hover:border-gold/40 hover:bg-white/10 hover:text-gold active:scale-[0.97]"
             >
               <ArrowLeft size={16} weight="bold" className="transition-transform duration-300 group-hover:-translate-x-1" />
               {cmsAbout.backButtonLabel || 'Back to Home'}
@@ -323,7 +323,7 @@ export default function AboutPage({ onBack }) {
             <div className="pointer-events-none absolute -top-24 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-gold/15 blur-3xl" />
 
             <div className="relative z-10 mx-auto max-w-2xl sm:max-w-3xl lg:max-w-4xl">
-              <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3.5 py-1 sm:px-5 sm:py-2 font-sans text-[10px] sm:text-[12px] font-semibold uppercase tracking-[0.25em] text-gold">
+              <span className="inline-flex items-center gap-2 rounded-lg border border-gold/30 bg-gold/10 px-3.5 py-1 sm:px-5 sm:py-2 font-sans text-[10px] sm:text-[12px] font-semibold uppercase tracking-[0.25em] text-gold">
                 <Sparkle size={14} weight="fill" />
                 Visit BIU Campus
               </span>
@@ -341,11 +341,11 @@ export default function AboutPage({ onBack }) {
                     const message = encodeURIComponent('Hello BIU Admissions Cell, I would like to inquire about course admissions and schedule a campus visit.');
                     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
                   }}
-                  className="group inline-flex h-12 sm:h-14 max-w-full items-center justify-center gap-2 sm:gap-3 rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light border border-gold-light/60 px-4 sm:px-10 font-sans shadow-[0_8px_32px_rgba(212,175,55,0.45)] transition-all duration-300 ease-premium hover:scale-105 hover:shadow-[0_12px_40px_rgba(212,175,55,0.65)] hover:from-gold-light hover:to-gold-dark active:scale-95 cursor-pointer"
+                  className="group inline-flex h-12 sm:h-14 max-w-full items-center justify-center gap-2 sm:gap-3 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light border border-gold-light/60 px-4 sm:px-10 font-sans shadow-[0_8px_32px_rgba(212,175,55,0.45)] transition-all duration-300 ease-premium hover:scale-105 hover:shadow-[0_12px_40px_rgba(212,175,55,0.65)] hover:from-gold-light hover:to-gold-dark active:scale-95 cursor-pointer"
                 >
                   <WhatsappLogo size={22} weight="fill" className="text-forest-dark shrink-0 transition-transform duration-300 group-hover:scale-110 sm:w-7 sm:h-7" />
                   <span className="whitespace-nowrap text-[10.5px] sm:text-[13px] font-extrabold uppercase tracking-[0.08em] sm:tracking-[0.16em] text-forest-dark">{cmsAbout.ctaButtonLabel || 'Book a Site Tour'}</span>
-                  <span className="flex h-5 w-5 sm:h-6 sm:w-6 shrink-0 items-center justify-center rounded-full bg-forest-dark/20 text-forest-dark transition-transform duration-300 ease-premium group-hover:translate-x-1">
+                  <span className="flex h-5 w-5 sm:h-6 sm:w-6 shrink-0 items-center justify-center rounded-lg bg-forest-dark/20 text-forest-dark transition-transform duration-300 ease-premium group-hover:translate-x-1">
                     <ArrowRight size={12} weight="bold" />
                   </span>
                 </button>

@@ -71,7 +71,7 @@ export default function Faculties() {
           className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
         >
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-white/60 px-3.5 py-1 font-sans text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-dark backdrop-blur-md">
+            <span className="inline-flex items-center gap-2 rounded-lg border border-[#0c2340]/15 bg-white/60 px-3.5 py-1 font-sans text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-dark backdrop-blur-md">
               <SquaresFour size={14} weight="bold" />
               {spacesData.badge || 'Academic Colleges'}
             </span>
@@ -85,7 +85,7 @@ export default function Faculties() {
 
           <a
             href="/faculties"
-            className="group inline-flex items-center gap-3 self-start rounded-full border border-forest-dark/20 bg-forest-dark px-6 py-3 font-sans text-[12px] font-semibold uppercase tracking-[0.16em] text-white transition-all duration-500 ease-premium hover:border-gold hover:bg-gold hover:text-forest-dark active:scale-[0.98]"
+            className="group inline-flex items-center gap-3 self-start rounded-xl border border-[#0c2340] bg-[#0c2340] px-6 py-3 font-sans text-[12px] font-semibold uppercase tracking-[0.16em] text-white transition-all duration-500 ease-premium hover:border-gold hover:bg-gold hover:text-[#0c2340] active:scale-[0.98]"
           >
             {spacesData.ctaLabel || 'View All Faculties'}
             <ArrowRight

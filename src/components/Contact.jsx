@@ -326,7 +326,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="group mt-2 flex h-14 w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#0c2417] via-[#163e28] to-[#081b11] border border-gold/50 px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#f7e7b4] shadow-[0_8px_30px_rgba(20,57,43,0.3)] transition-all duration-300 ease-premium hover:from-[#163e28] hover:to-[#0c2417] hover:border-gold hover:scale-[1.01] hover:shadow-[0_10px_35px_rgba(212,175,55,0.35)] active:scale-95 cursor-pointer"
+                className="group mt-2 flex h-14 w-full items-center justify-center gap-3 rounded-xl bg-[#0c2340] border border-gold/50 px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#f7e7b4] shadow-[0_8px_30px_rgba(12,35,64,0.3)] transition-all duration-300 ease-premium hover:bg-[#163860] hover:border-gold hover:scale-[1.01] hover:shadow-[0_10px_35px_rgba(212,175,55,0.35)] active:scale-95 cursor-pointer"
               >
                 <PaperPlaneTilt size={18} weight="fill" className="text-gold shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 <span>{contactData.submitButtonText || 'Submit Inquiry'}</span>

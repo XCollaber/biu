@@ -96,7 +96,7 @@ export default function Location() {
       : DEFAULT_DISTANCES;
 
   return (
-    <section id="location" className="relative w-full bg-cream py-24 md:py-32">
+    <section id="location" className="relative w-full bg-gradient-to-br from-[#f0f4f8] via-[#e8eef5] to-[#f0f4f8] py-24 md:py-32">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-8 px-5 sm:px-8 lg:grid-cols-2 lg:gap-10">
         {/* Left: info card */}
         <motion.div
@@ -104,7 +104,7 @@ export default function Location() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.05 }}
-          className="rounded-2xl border border-forest/10 bg-white/70 p-8 md:p-10"
+          className="rounded-2xl border border-[#0c2340]/10 bg-white/70 p-8 md:p-10"
         >
           <h2 className="font-serif text-[28px] font-medium leading-tight text-forest-dark sm:text-4xl">
             {locData.titleLine1 || 'Conveniently Connected'}
@@ -149,7 +149,7 @@ export default function Location() {
                   href={MAP.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex w-full sm:w-auto h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#0c2417] via-[#163e28] to-[#081b11] border border-gold/50 px-6 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-[#f7e7b4] shadow-[0_8px_30px_rgba(20,57,43,0.3)] transition-all duration-300 ease-premium hover:from-[#163e28] hover:to-[#0c2417] hover:border-gold hover:scale-105 hover:shadow-[0_8px_30px_rgba(212,175,55,0.35)] active:scale-95 cursor-pointer"
+                  className="group inline-flex w-full sm:w-auto h-12 items-center justify-center gap-2 rounded-xl bg-[#0c2340] border border-gold/50 px-6 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-[#f7e7b4] shadow-[0_8px_30px_rgba(12,35,64,0.3)] transition-all duration-300 ease-premium hover:bg-[#163860] hover:border-gold hover:scale-105 hover:shadow-[0_8px_30px_rgba(212,175,55,0.35)] active:scale-95 cursor-pointer"
                 >
                   <NavigationArrow size={18} weight="fill" className="text-gold shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
                   <span>{locData.directionsButtonLabel || 'Get Directions'}</span>

@@ -99,22 +99,22 @@ export default function About() {
           <motion.div variants={rise} className="mt-10 flex flex-wrap items-center justify-center sm:justify-start gap-4">
             <a
               href="/about"
-              className="group inline-flex h-14 items-center gap-3 rounded-full bg-gradient-to-r from-[#0c2417] via-[#163e28] to-[#081b11] border border-gold/50 px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-[#f7e7b4] shadow-[0_8px_30px_rgba(20,57,43,0.3)] transition-all duration-300 ease-premium hover:from-[#163e28] hover:to-[#0c2417] hover:border-gold hover:scale-105 hover:shadow-[0_10px_35px_rgba(212,175,55,0.35)] active:scale-95 cursor-pointer"
+              className="group inline-flex h-14 items-center gap-3 rounded-xl bg-[#0c2340] border border-gold/50 px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-[#f7e7b4] shadow-[0_8px_30px_rgba(12,35,64,0.3)] transition-all duration-300 ease-premium hover:bg-[#163860] hover:border-gold hover:scale-105 hover:shadow-[0_10px_35px_rgba(212,175,55,0.35)] active:scale-95 cursor-pointer"
             >
               <BookOpenText size={18} weight="fill" className="text-gold shrink-0 transition-transform duration-300 group-hover:scale-110" />
               <span>Explore Our Story</span>
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gold/20 text-gold transition-transform duration-300 ease-premium group-hover:translate-x-1">
+              <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-gold/20 text-gold transition-transform duration-300 ease-premium group-hover:translate-x-1">
                 <ArrowRight size={13} weight="bold" />
               </span>
             </a>
 
             <a
               href="#contact"
-              className="group inline-flex h-14 items-center gap-3 rounded-full border border-forest/20 bg-white/90 px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-forest-dark shadow-sm transition-all duration-300 ease-premium hover:border-gold-dark hover:bg-white hover:scale-105 hover:shadow-[0_8px_30px_rgba(20,57,43,0.15)] active:scale-95 cursor-pointer"
+              className="group inline-flex h-14 items-center gap-3 rounded-xl border border-[#0c2340]/20 bg-white/90 px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-forest-dark shadow-sm transition-all duration-300 ease-premium hover:border-gold-dark hover:bg-white hover:scale-105 hover:shadow-[0_8px_30px_rgba(12,35,64,0.15)] active:scale-95 cursor-pointer"
             >
               <CalendarPlus size={18} weight="fill" className="text-gold-dark shrink-0 transition-transform duration-300 group-hover:scale-110" />
               <span>{aboutData.ctaLabel || 'Schedule a Visit'}</span>
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-forest/10 text-forest-dark transition-all duration-300 ease-premium group-hover:translate-x-1 group-hover:bg-gold/20 group-hover:text-gold-dark">
+              <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#0c2340]/10 text-forest-dark transition-all duration-300 ease-premium group-hover:translate-x-1 group-hover:bg-gold/20 group-hover:text-gold-dark">
                 <ArrowRight size={13} weight="bold" />
               </span>
             </a>

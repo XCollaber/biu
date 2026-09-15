@@ -62,7 +62,7 @@ export default function Footer() {
           <div className="mt-9 flex justify-center">
             <a
               href={footerData.ctaButtonLink || '#contact'}
-              className="group inline-flex items-center gap-3 rounded-full border border-white/40 px-8 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-500 ease-premium hover:border-gold hover:bg-gold hover:text-forest-dark active:scale-[0.98]"
+              className="group inline-flex items-center gap-3 rounded-xl border border-white/40 px-8 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-500 ease-premium hover:border-gold hover:bg-gold hover:text-[#0c2340] active:scale-[0.98]"
             >
               {footerData.ctaButtonLabel || 'Contact Us'}
               <ArrowRight
@@ -145,7 +145,7 @@ export default function Footer() {
                     aria-label={label}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white/80 transition-all duration-500 ease-premium hover:border-gold hover:bg-gold hover:text-forest-dark"
+                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 text-white/80 transition-all duration-500 ease-premium hover:border-gold hover:bg-gold hover:text-[#0c2340]"
                   >
                     <Icon size={20} weight="fill" />
                   </a>
@@ -217,7 +217,7 @@ export default function Footer() {
                       aria-label={label}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/80 transition-all duration-500 ease-premium hover:border-gold hover:bg-gold hover:text-forest-dark"
+                      className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 text-white/80 transition-all duration-500 ease-premium hover:border-gold hover:bg-gold hover:text-[#0c2340]"
                     >
                       <Icon size={18} weight="fill" />
                     </a>

@@ -110,18 +110,18 @@ export default function Hero() {
         <motion.div variants={rise} className="mt-8 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
           <a
             href="#book"
-            className="group flex h-11 sm:h-14 w-full items-center justify-center gap-2.5 sm:gap-3 rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light px-5 sm:px-8 font-sans text-[11px] sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-forest-dark shadow-[0_8px_32px_rgba(212,175,55,0.45)] border border-gold-light/60 transition-all duration-300 ease-premium hover:scale-105 hover:shadow-[0_12px_40px_rgba(212,175,55,0.65)] hover:from-gold-light hover:to-gold-dark active:scale-95 sm:w-auto cursor-pointer"
+            className="group flex h-11 sm:h-14 w-full items-center justify-center gap-2.5 sm:gap-3 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light px-5 sm:px-8 font-sans text-[11px] sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-forest-dark shadow-[0_8px_32px_rgba(212,175,55,0.45)] border border-gold-light/60 transition-all duration-300 ease-premium hover:scale-105 hover:shadow-[0_12px_40px_rgba(212,175,55,0.65)] hover:from-gold-light hover:to-gold-dark active:scale-95 sm:w-auto cursor-pointer"
           >
             <CalendarCheck size={18} weight="fill" className="text-forest-dark shrink-0 transition-transform duration-300 group-hover:scale-110 sm:h-[18px] sm:w-[18px]" />
             <span>{heroData.ctaPrimaryLabel || 'Plan Your Event'}</span>
-            <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-forest-dark/20 text-forest-dark transition-transform duration-300 ease-premium group-hover:translate-x-1">
+            <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-lg bg-forest-dark/20 text-forest-dark transition-transform duration-300 ease-premium group-hover:translate-x-1">
               <ArrowRight size={12} weight="bold" />
             </span>
           </a>
 
           <a
             href="#rooms-page"
-            className="group flex h-11 sm:h-14 w-full items-center justify-center gap-2.5 sm:gap-3 rounded-full bg-gradient-to-r from-[#0c2417] via-[#163e28] to-[#081b11] border border-gold/60 px-5 sm:px-8 font-sans text-[11px] sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-[#f7e7b4] backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] transition-all duration-300 ease-premium hover:from-[#163e28] hover:to-[#0c2417] hover:border-gold hover:scale-105 hover:shadow-[0_8px_35px_rgba(212,175,55,0.4)] active:scale-95 sm:w-auto cursor-pointer"
+            className="group flex h-11 sm:h-14 w-full items-center justify-center gap-2.5 sm:gap-3 rounded-xl bg-[#0c2340] border border-gold/60 px-5 sm:px-8 font-sans text-[11px] sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-[#f7e7b4] backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] transition-all duration-300 ease-premium hover:bg-[#163860] hover:border-gold hover:scale-105 hover:shadow-[0_8px_35px_rgba(212,175,55,0.4)] active:scale-95 sm:w-auto cursor-pointer"
           >
             <Bed size={18} weight="fill" className="text-gold shrink-0 transition-transform duration-300 group-hover:scale-110 sm:h-[18px] sm:w-[18px]" />
             <span>{heroData.ctaSecondaryLabel || 'Book Rooms'}</span>
@@ -131,7 +131,7 @@ export default function Hero() {
         {/* University accreditation badge pill */}
         <motion.div
           variants={rise}
-          className="mt-12 flex items-center gap-3 rounded-full border border-white/15 bg-black/30 px-5 py-2.5 backdrop-blur-md"
+          className="mt-12 flex items-center gap-3 rounded-xl border border-white/15 bg-[#0c2340]/80 px-5 py-2.5 backdrop-blur-md"
         >
           <Sparkle size={18} weight="fill" className="shrink-0 text-gold" />
           <p className="font-sans text-[12px] font-light leading-snug text-white/85 sm:text-sm">
@@ -162,7 +162,7 @@ export default function Hero() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1.6, duration: 0.6, ease: EASE }}
         aria-label="Contact us on WhatsApp"
-        className="group fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-gold text-forest-dark shadow-[0_10px_35px_rgba(198,161,91,0.5)] ring-1 ring-inset ring-white/20 transition-all duration-500 ease-premium hover:bg-gold-light active:scale-95"
+        className="group fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-2xl bg-gold text-[#0c2340] shadow-[0_10px_35px_rgba(198,161,91,0.5)] ring-1 ring-inset ring-white/20 transition-all duration-500 ease-premium hover:bg-gold-light active:scale-95"
       >
         <WhatsappLogo size={28} weight="fill" className="transition-transform duration-500 ease-premium group-hover:scale-110" />
       </motion.a>
