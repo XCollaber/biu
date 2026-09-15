@@ -7,12 +7,12 @@ import locData from '../data/location.json';
 const EASE = [0.16, 1, 0.3, 1];
 
 const MAP = {
-  lat: 28.385388,
-  lng: 79.490695,
-  link: 'https://maps.app.goo.gl/WAZpvuSe3wtQNKCu5',
+  lat: 28.381389,
+  lng: 79.458119,
+  link: 'https://www.google.com/maps/place/Bareilly+international+University+new+building/@28.3813889,79.4581194,17z/data=!3m1!4b1!4m6!3m5!1s0x39a007eaa171012f:0x535e385f86dbef22!8m2!3d28.3813889!4d79.4581194',
 };
 const MAP_EMBED =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.52!2d79.490695!3d28.385388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a005003b175ef5%3A0x4ea934bf65de24!2sAMRITAARA!5e0!3m2!1sen!2sin!5m2!1sen!2sin';
+  'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3510.254210388375!2d79.45811936197623!3d28.381388942361564!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a007eaa171012f%3A0x535e385f86dbef22!2sBareilly%20international%20University%20new%20building!5e0!3m2!1sen!2sin!4v1789470009685!5m2!1sen!2sin';
 
 const VENUE = {
   name: 'Bareilly International University',

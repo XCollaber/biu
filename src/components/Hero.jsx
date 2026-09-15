@@ -90,10 +90,10 @@ export default function Hero() {
           variants={rise}
           className="font-serif leading-[1.06] tracking-tight text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.35)]"
         >
-          <span className="block text-[2.35rem] font-light text-white/90 sm:text-5xl md:text-6xl lg:text-[4.5rem]">
+          <span className="block text-[2.35rem] font-light text-white/90 sm:text-5xl md:text-6xl lg:text-[4.0rem]">
             {heroData.headlineLine1}
           </span>
-          <span className="block text-[2.75rem] font-medium text-white mt-1 sm:mt-2 sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+          <span className="block text-[2.75rem] font-medium text-white mt-1 sm:mt-2 sm:text-6xl md:text-7xl lg:text-[4.5rem]">
             {heroData.headlineLine2}
           </span>
         </motion.h1>
@@ -101,7 +101,7 @@ export default function Hero() {
         {/* Subtitle */}
         <motion.p
           variants={rise}
-          className="mt-6 max-w-xl font-sans text-lg font-light leading-relaxed text-white/85 sm:text-xl md:text-2xl"
+          className="mt-6 max-w-xl font-sans text-lg font-light leading-relaxed text-white/85 sm:text-xl md:text-[21px]"
         >
           {heroData.subtitle}
         </motion.p>
