@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx,astro}",
   ],
   theme: {
     extend: {
@@ -12,17 +12,27 @@ export default {
         heading: ['Outfit', 'system-ui', 'sans-serif'],
       },
       colors: {
+        navy: {
+          DEFAULT: '#0c2340',
+          light: '#163860',
+          dark: '#08172b',
+        },
+        forest: {
+          DEFAULT: '#0c2340',
+          light: '#163860',
+          dark: '#08172b',
+        },
         gold: {
           DEFAULT: '#C6A15B',
           light: '#D8BE84',
           dark: '#A8843F',
         },
-        forest: {
-          DEFAULT: '#14392B',
-          light: '#1E5140',
-          dark: '#0D271D',
-        },
-        cream: '#F5F1E8',
+        cream: '#f0f4f8',
+        ice: '#e8eef5',
+      },
+      backgroundImage: {
+        'cool-gradient': 'linear-gradient(160deg, #f0f4f8 0%, #e8eef5 55%, #f0f4f8 100%)',
+        'navy-gradient': 'linear-gradient(160deg, #0c2340 0%, #08172b 100%)',
       },
       letterSpacing: {
         'widest-xl': '0.25em',

@@ -35,11 +35,11 @@ export default function PlacementsPage({ onBack }) {
   const [activeVenueModal, setActiveVenueModal] = useState(null);
 
   return (
-    <div className="min-h-screen bg-cream text-forest-dark selection:bg-gold selection:text-forest-dark">
+    <div className="min-h-screen bg-white text-forest-dark selection:bg-gold selection:text-forest-dark">
       <Navbar />
 
       {/* Hero Header */}
-      <section className="relative overflow-hidden bg-forest-dark pt-28 pb-16 md:pt-32 md:pb-20 text-white">
+      <section className="relative overflow-hidden bg-[#0c2340] pt-28 pb-16 md:pt-32 md:pb-20 text-white">
         <div className="pointer-events-none absolute inset-0 opacity-[0.04]" aria-hidden="true">
           <svg className="h-full w-full" width="100%" height="100%">
             <defs>
@@ -114,13 +114,13 @@ export default function PlacementsPage({ onBack }) {
       </section>
 
       {/* Recruitment Sectors Grid */}
-      <section className="relative z-10 bg-cream pt-16 pb-20">
+      <section className="relative z-10 bg-gradient-to-br from-[#f0f4f8] via-[#e8eef5] to-[#f0f4f8] pt-16 pb-20">
         <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {venues.map((venue) => (
               <div
                 key={venue.id || venue.name}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-b from-[#0a231b] via-[#0E4533] to-[#0a231b] text-white shadow-xl transition-all duration-500 hover:border-gold/60 hover:shadow-2xl"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/20 bg-[#0c2340] text-white shadow-xl transition-all duration-500 hover:border-gold/60 hover:shadow-2xl"
               >
                 <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-forest/20">
                   <Img
@@ -128,7 +128,7 @@ export default function PlacementsPage({ onBack }) {
                     alt={venue.name}
                     className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a231b] via-[#0a231b]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0c2340] via-[#0c2340]/40 to-transparent" />
                 </div>
 
                 <div className="relative z-10 p-6 sm:p-8">

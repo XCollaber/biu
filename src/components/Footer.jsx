@@ -76,7 +76,7 @@ export default function Footer() {
       </div>
 
       {/* Footer body */}
-      <div className="bg-black">
+      <div className="bg-[#0c2340] border-t border-white/10">
         <div className="mx-auto max-w-[1400px] px-5 pb-16 pt-10 sm:px-8">
           {/* Desktop Layout (md+) */}
           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 lg:gap-8 gap-12">

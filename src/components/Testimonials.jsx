@@ -71,7 +71,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="relative w-full overflow-hidden bg-forest-dark py-24 md:py-32">
+    <section id="testimonials" className="relative w-full overflow-hidden bg-[#0c2340] py-24 md:py-32">
       {/* Faint hexagon texture */}
       <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.05]" aria-hidden="true">
         <defs>

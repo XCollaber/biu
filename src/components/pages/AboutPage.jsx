@@ -77,11 +77,11 @@ export default function AboutPage({ onBack }) {
   };
 
   return (
-    <div className="min-h-screen bg-cream text-forest-dark selection:bg-gold selection:text-forest-dark">
+    <div className="min-h-screen bg-white text-forest-dark selection:bg-gold selection:text-forest-dark">
       <Navbar />
 
       {/* Hero Banner Section (Luxury Forest Dark Header) */}
-      <section className="relative overflow-hidden bg-forest-dark pt-28 pb-16 md:pt-32 md:pb-20 text-white">
+      <section className="relative overflow-hidden bg-[#0c2340] pt-28 pb-16 md:pt-32 md:pb-20 text-white">
         {/* Background Hex Pattern */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.04]" aria-hidden="true">
           <svg className="h-full w-full" width="100%" height="100%">
@@ -170,7 +170,7 @@ export default function AboutPage({ onBack }) {
       </section>
 
       {/* Story & Philosophy Section (Warm Luxury Light Canvas) */}
-      <section className="relative z-10 bg-cream pt-8 pb-16 sm:pt-14 sm:pb-24">
+      <section className="relative z-10 bg-gradient-to-br from-[#f0f4f8] via-[#e8eef5] to-[#f0f4f8] pt-8 pb-16 sm:pt-14 sm:pb-24">
         <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
             {/* Story Text */}
@@ -220,7 +220,7 @@ export default function AboutPage({ onBack }) {
       </section>
 
       {/* Core Pillars / Values Section */}
-      <section className="relative z-10 bg-white/60 py-14 sm:py-20">
+      <section className="relative z-10 bg-white py-14 sm:py-20">
         <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, y: 25 }}
@@ -259,7 +259,7 @@ export default function AboutPage({ onBack }) {
       </section>
 
       {/* Campus Facilities & Amenities Bento Section */}
-      <section className="relative z-10 bg-cream py-16 sm:py-24 border-t border-forest/10">
+      <section className="relative z-10 bg-gradient-to-br from-[#f0f4f8] via-[#e8eef5] to-[#f0f4f8] py-16 sm:py-24 border-t border-forest/10">
         <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <span className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-forest/5 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-forest">
@@ -298,14 +298,14 @@ export default function AboutPage({ onBack }) {
       </section>
 
       {/* Luxury Invitation Card (Bridging Light Cream to Dark Footer) */}
-      <section className="relative z-10 bg-cream pb-12 pt-6 sm:pb-20 sm:pt-10">
+      <section className="relative z-10 bg-white pb-12 pt-6 sm:pb-20 sm:pt-10">
         <div className="mx-auto max-w-[1200px] px-5 sm:px-8">
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, ease: EASE }}
-            className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-forest/15 bg-forest-dark p-6 sm:p-20 md:p-16 text-center text-white shadow-2xl"
+            className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-forest/15 bg-[#0c2340] p-6 sm:p-20 md:p-16 text-center text-white shadow-2xl"
           >
             {/* Background Texture */}
             <div className="pointer-events-none absolute inset-0 opacity-[0.04]" aria-hidden="true">

@@ -63,7 +63,7 @@ export default function Accommodations() {
   };
 
   return (
-    <section id="stay" className="relative w-full bg-cream py-24 md:py-32">
+    <section id="stay" className="relative w-full bg-gradient-to-br from-[#f0f4f8] via-[#e8eef5] to-[#f0f4f8] py-24 md:py-32">
       <div
         className="mx-auto max-w-[1400px] px-5 sm:px-8"
         onMouseEnter={() => setPaused(true)}

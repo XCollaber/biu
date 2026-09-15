@@ -16,11 +16,11 @@ export default function NewsEventsPage({ onBack }) {
   const [activeArticle, setActiveArticle] = useState(null);
 
   return (
-    <div className="min-h-screen bg-cream text-forest-dark selection:bg-gold selection:text-forest-dark">
+    <div className="min-h-screen bg-white text-forest-dark selection:bg-gold selection:text-forest-dark">
       <Navbar />
 
       {/* Hero Banner Section */}
-      <section className="relative overflow-hidden bg-forest-dark pt-28 pb-16 md:pt-32 md:pb-20 text-white">
+      <section className="relative overflow-hidden bg-[#0c2340] pt-28 pb-16 md:pt-32 md:pb-20 text-white">
         <div className="pointer-events-none absolute inset-0 opacity-[0.04]" aria-hidden="true">
           <svg className="h-full w-full" width="100%" height="100%">
             <defs>
@@ -78,14 +78,14 @@ export default function NewsEventsPage({ onBack }) {
       </section>
 
       {/* News & Events Grid */}
-      <section className="relative z-10 bg-cream pt-12 sm:pt-16 pb-16 sm:pb-24">
+      <section className="relative z-10 bg-gradient-to-br from-[#f0f4f8] via-[#e8eef5] to-[#f0f4f8] pt-12 sm:pt-16 pb-16 sm:pb-24">
         <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
           <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
               <div
                 key={post.id || post.title}
                 onClick={() => setActiveArticle(post)}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-b from-[#0a231b] via-[#0E4533] to-[#0a231b] text-white shadow-xl transition-all duration-500 hover:border-gold/60 hover:shadow-2xl cursor-pointer"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/20 bg-[#0c2340] text-white shadow-xl transition-all duration-500 hover:border-gold/60 hover:shadow-2xl cursor-pointer"
               >
                 <div>
                   <div className="relative h-56 sm:h-64 lg:h-56 xl:h-64 w-full overflow-hidden bg-forest/20">

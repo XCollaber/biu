@@ -30,7 +30,7 @@ export default function GalleryPage({ onBack }) {
   }, [lightboxIndex, allImages.length]);
 
   return (
-    <div className="min-h-screen bg-forest-dark text-white selection:bg-gold selection:text-forest-dark">
+    <div className="min-h-screen bg-[#0c2340] text-white selection:bg-gold selection:text-forest-dark">
       <Navbar />
 
       {/* Hero Banner Section */}

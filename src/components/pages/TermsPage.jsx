@@ -46,11 +46,11 @@ export default function TermsPage({ onBack }) {
   const { badge, title, subtitle, backButtonLabel, sections } = termsData;
 
   return (
-    <div className="min-h-screen bg-cream text-forest selection:bg-gold/30">
+    <div className="min-h-screen bg-white text-forest selection:bg-gold/30">
       <Navbar />
 
       {/* Hero Header */}
-      <section className="relative overflow-hidden bg-forest-dark pb-16 pt-28 sm:pb-24 sm:pt-36">
+      <section className="relative overflow-hidden bg-[#0c2340] pb-16 pt-28 sm:pb-24 sm:pt-36">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-forest/40 via-forest-dark to-forest-dark opacity-90" />
         <div className="absolute -left-20 top-10 h-72 w-72 rounded-full bg-gold/10 blur-3xl" />
         <div className="absolute -right-20 bottom-10 h-72 w-72 rounded-full bg-gold/10 blur-3xl" />

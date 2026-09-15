@@ -14,11 +14,11 @@ export default function FacultiesPage({ onBack }) {
   const amenities = cmsPage.amenities || [];
 
   return (
-    <div className="min-h-screen bg-cream text-forest-dark selection:bg-gold selection:text-forest-dark">
+    <div className="min-h-screen bg-white text-forest-dark selection:bg-gold selection:text-forest-dark">
       <Navbar />
 
       {/* Hero Banner Section */}
-      <section className="relative overflow-hidden bg-forest-dark pt-28 pb-16 md:pt-32 md:pb-20 text-white">
+      <section className="relative overflow-hidden bg-[#0c2340] pt-28 pb-16 md:pt-32 md:pb-20 text-white">
         <div className="pointer-events-none absolute inset-0 opacity-[0.04]" aria-hidden="true">
           <svg className="h-full w-full" width="100%" height="100%">
             <defs>
@@ -103,13 +103,13 @@ export default function FacultiesPage({ onBack }) {
       </section>
 
       {/* Detailed Faculties Collection Grid */}
-      <section className="relative z-10 bg-cream pt-12 sm:pt-16 pb-16 sm:pb-24">
+      <section className="relative z-10 bg-gradient-to-br from-[#f0f4f8] via-[#e8eef5] to-[#f0f4f8] pt-12 sm:pt-16 pb-16 sm:pb-24">
         <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
           <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {spacesList.map((space) => (
               <div
                 key={space.id || space.name}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-b from-[#0a231b] via-[#0E4533] to-[#0a231b] text-white shadow-xl transition-all duration-500 hover:border-gold/60 hover:shadow-2xl hover:-translate-y-1"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/20 bg-[#0c2340] text-white shadow-xl transition-all duration-500 hover:border-gold/60 hover:shadow-2xl hover:-translate-y-1"
               >
                 <div className="pointer-events-none absolute -top-20 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-gold/40 blur-3xl opacity-85 transition-all duration-500 group-hover:bg-gold/55 group-hover:opacity-100" />
 
@@ -150,14 +150,14 @@ export default function FacultiesPage({ onBack }) {
       </section>
 
       {/* Admissions CTA Banner */}
-      <section className="relative z-10 bg-cream pb-12 pt-6 sm:pb-20 sm:pt-10">
+      <section className="relative z-10 bg-white pb-12 pt-6 sm:pb-20 sm:pt-10">
         <div className="mx-auto max-w-[1200px] px-5 sm:px-8">
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, ease: EASE }}
-            className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-forest/15 bg-forest-dark p-8 sm:p-20 md:p-24 text-center text-white shadow-2xl"
+            className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-forest/15 bg-[#0c2340] p-8 sm:p-20 md:p-24 text-center text-white shadow-2xl"
           >
             <div className="relative z-10 mx-auto max-w-2xl sm:max-w-3xl lg:max-w-4xl">
               <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3.5 py-1 sm:px-5 sm:py-2 font-sans text-[10px] sm:text-[12px] font-semibold uppercase tracking-[0.25em] text-gold">

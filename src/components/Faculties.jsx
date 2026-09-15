@@ -61,7 +61,7 @@ export default function Faculties() {
   const secondary = spacesData.secondary || [];
 
   return (
-    <section id="faculties" className="relative w-full overflow-hidden bg-cream py-24 sm:py-32">
+    <section id="faculties" className="relative w-full overflow-hidden bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <motion.div
           variants={rise}

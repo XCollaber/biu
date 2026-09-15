@@ -23,7 +23,7 @@ export default function Placements() {
   const stats = corpData.stats || [];
 
   return (
-    <section id="placements" className="relative w-full overflow-hidden bg-forest-dark">
+    <section id="placements" className="relative w-full overflow-hidden bg-[#0c2340]">
       <Img
         src={corpData.bgImage || 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop'}
         alt=""
@@ -34,8 +34,8 @@ export default function Placements() {
         }}
         className="absolute inset-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 bg-forest-dark/80" />
-      <div className="absolute inset-0 bg-gradient-to-r from-forest-dark/85 via-forest-dark/40 to-forest-dark/30" />
+      <div className="absolute inset-0 bg-[#0c2340]/85" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0c2340] via-[#0c2340]/60 to-transparent" />
 
       <div className="relative z-10 mx-auto flex min-h-[85vh] max-w-[1400px] items-center px-5 py-24 sm:px-8">
         <motion.div

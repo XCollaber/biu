@@ -4,5 +4,10 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), /* cloudflare() */]
+  integrations: [react()],
+  vite: {
+    optimizeDeps: {
+      include: ['@phosphor-icons/react', 'framer-motion', 'react', 'react-dom']
+    }
+  }
 });

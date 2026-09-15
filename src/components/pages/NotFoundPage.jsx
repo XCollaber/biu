@@ -23,7 +23,7 @@ export default function NotFoundPage({ onGoHome }) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-forest-dark text-white selection:bg-gold/30">
+    <div className="min-h-screen flex flex-col justify-between bg-[#0c2340] text-white selection:bg-gold/30">
       <Navbar />
 
       {/* Main 404 Showcase */}

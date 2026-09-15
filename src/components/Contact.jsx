@@ -157,7 +157,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative w-full bg-cream py-24 md:py-32">
+    <section id="contact" className="relative w-full bg-gradient-to-br from-[#f0f4f8] via-[#e8eef5] to-[#f0f4f8] py-24 md:py-32">
       <div id="book" className="mx-auto max-w-[760px] px-5 sm:px-8">
         <motion.div
           variants={fade}

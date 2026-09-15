@@ -54,7 +54,7 @@ export default function NewsEvents() {
   };
 
   return (
-    <section id="news" className="relative w-full overflow-hidden bg-cream py-24 sm:py-32">
+    <section id="news" className="relative w-full overflow-hidden bg-gradient-to-br from-[#f0f4f8] via-[#e8eef5] to-[#f0f4f8] py-24 sm:py-32">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <motion.div
           variants={rise}

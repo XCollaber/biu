@@ -58,7 +58,7 @@ export default function Hero() {
   const whatsappUrl = `https://wa.me/${siteData.whatsappPhone || '917455002900'}`;
 
   return (
-    <section id="home" className="relative flex min-h-[100svh] sm:min-h-screen w-full flex-col overflow-hidden bg-forest-dark">
+    <section id="home" className="relative flex min-h-[100svh] sm:min-h-screen w-full flex-col overflow-hidden bg-[#0c2340]">
       {/* Background video */}
       <video
         ref={videoRef}
@@ -74,7 +74,7 @@ export default function Hero() {
       />
 
       {/* Cinematic overlays for legibility */}
-      <div className="absolute inset-0 bg-forest-dark/45" />
+      <div className="absolute inset-0 bg-[#0c2340]/50" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/70" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/50" />
 

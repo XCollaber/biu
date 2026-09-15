@@ -54,7 +54,7 @@ export default function Experiences() {
   const col2Images = imageList.slice(half);
 
   return (
-    <section id="experiences" className="relative w-full bg-cream py-24 md:py-32">
+    <section id="experiences" className="relative w-full bg-white py-24 md:py-32">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-14 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
         {/* Left: content */}
         <motion.div
