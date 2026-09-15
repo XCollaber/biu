@@ -4,6 +4,8 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
+  // site: 'https://biu.edu.in',
+  site: 'https://biu-edu.vercel.app',
   integrations: [react()],
   vite: {
     optimizeDeps: {
