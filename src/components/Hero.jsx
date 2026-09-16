@@ -120,17 +120,17 @@ export default function Hero() {
               variants={rise}
               className="font-serif leading-[1.08] tracking-tight text-white drop-shadow-md"
             >
-              <span className="block text-[2.5rem] font-light text-white/95 sm:text-6xl lg:text-[4.2rem]">
-                {heroData.headlineLine1 || 'Empowering Minds'}
+              <span className="block text-[2.5rem] font-light text-white/95 sm:text-6xl lg:text-[3.8rem]">
+                {heroData.headlineLine1 || 'Translating Knowledge'}
               </span>
-              <span className="block text-[2.8rem] font-medium text-white mt-1 sm:mt-2 sm:text-6xl lg:text-[4.5rem]">
-                {heroData.headlineLine2 || 'Shaping Global Leaders'}
+              <span className="block text-[2.8rem] font-medium text-white mt-1 sm:mt-2 sm:text-6xl lg:text-[4.0rem]">
+                {heroData.headlineLine2 || 'Into Clinical Excellence'}
               </span>
             </motion.h1>
 
             <motion.p
               variants={rise}
-              className="mt-6 max-w-xl font-sans text-base sm:text-lg lg:text-[20px] font-light leading-relaxed text-white/90 drop-shadow"
+              className="mt-6 max-w-xl font-sans text-base sm:text-lg lg:text-[18px] font-light leading-relaxed text-white/90 drop-shadow"
             >
               {heroData.subtitle}
             </motion.p>

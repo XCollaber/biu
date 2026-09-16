@@ -173,12 +173,12 @@ export default function Navbar() {
 
       {/* Main Navigation Bar */}
       <nav className="relative w-full flex items-center justify-between px-3 sm:px-6 lg:px-8 py-1.5 border-t border-slate-100/80">
-        {/* Heritage Diamond Lattice Watermark Pattern Overlay (Fade-out from bottom to top) */}
+        {/* Heritage Diamond Lattice Watermark Pattern Overlay (Fade-out from bottom to top, covering only bottom half) */}
         <div
           className="pointer-events-none absolute inset-0 -z-10 opacity-[0.12] overflow-hidden"
           style={{
-            maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0) 95%)',
-            WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0) 95%)',
+            maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0) 70%)',
+            WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0) 70%)',
           }}
           aria-hidden="true"
         >
