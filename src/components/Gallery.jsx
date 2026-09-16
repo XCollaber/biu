@@ -5,7 +5,7 @@ import galleryData from '../data/gallery.json';
 
 const EASE = [0.16, 1, 0.3, 1];
 
-const fallback = (seed) => `https://picsum.photos/seed/${seed || 'biu'}/700/800`;
+const fallback = (seed) => `https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1000&auto=format&fit=crop`;
 
 const GImg = ({ name, alt, seed, className }) => {
   if (!name) return null;

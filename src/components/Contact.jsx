@@ -174,7 +174,7 @@ export default function Contact() {
             <h2 className="mt-3 font-serif text-3xl font-medium text-forest-dark sm:text-4xl md:text-[2.75rem]">
               {contactData.title}
             </h2>
-            <p className="mx-auto mt-3 max-w-md font-sans text-[15px] font-light leading-relaxed text-forest/60">
+            <p className="mx-auto mt-3 max-w-md font-sans text-[14px] font-light leading-relaxed text-forest/60">
               {contactData.subtitle}
             </p>
           </div>
@@ -277,7 +277,7 @@ export default function Contact() {
 
                 {/* Quick Luxury Template Chips */}
                 {contactData.templates && contactData.templates.length > 0 && (
-                  <div className="flex w-full items-center gap-2 overflow-x-auto pt-0.5 pb-1.5 no-scrollbar [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden [mask-image:linear-gradient(to_right,black_92%,transparent_100%)] sm:[mask-image:none] sm:flex-wrap">
+                  <div className="flex w-full items-center gap-2 overflow-x-auto pt-0.5 pb-2 no-scrollbar [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden flex-nowrap">
                     {contactData.templates.map((tpl, tIdx) => {
                       const IconComponent = ICON_MAP[tpl.icon] || Sparkle;
                       const isSelected = form.message === tpl.text;
@@ -326,9 +326,9 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="group mt-2 flex h-14 w-full items-center justify-center gap-3 rounded-xl bg-[#0c2340] border border-gold/50 px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#f7e7b4] shadow-md transition-all duration-300 ease-premium hover:bg-[#163860] hover:border-gold hover:scale-[1.01] hover:shadow-lg active:scale-95 cursor-pointer"
+                className="group mt-2 flex h-14 w-full items-center justify-center gap-3 rounded-xl border border-white/20 bg-gradient-to-r from-[#0c2340]/95 via-[#102d52]/90 to-[#163860]/95 backdrop-blur-md px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_10px_25px_rgba(8,23,43,0.35),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-white/40 hover:from-[#163860]/95 hover:via-[#102d52]/90 hover:to-[#0c2340]/95 hover:shadow-[0_14px_32px_rgba(8,23,43,0.5),inset_0_1px_0_rgba(255,255,255,0.3)] active:translate-y-0 active:scale-[0.99] cursor-pointer"
               >
-                <PaperPlaneTilt size={18} weight="fill" className="text-gold shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                <PaperPlaneTilt size={18} weight="fill" className="text-gold-light shrink-0 transition-transform duration-200 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 <span>{contactData.submitButtonText || 'Submit Inquiry'}</span>
               </button>
             </form>

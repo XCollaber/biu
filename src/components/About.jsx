@@ -17,11 +17,9 @@ export default function About() {
     show: { transition: { staggerChildren: 0.1 } },
   };
 
-  const stats = aboutData.stats || [];
-
   return (
-    <section id="about" className="relative w-full bg-gradient-to-br from-[#f0f4f8] via-[#e8eef5] to-[#f0f4f8] py-24 md:py-32">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
+    <section id="about" className="relative w-full bg-gradient-to-br from-[#f0f4f8] via-[#e8eef5] to-[#f0f4f8] py-20 md:py-28">
+      <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.18fr_1fr] lg:gap-12 xl:gap-16">
         {/* Left: aerial image with double-bezel frame */}
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, scale: 0.96 }}
@@ -35,7 +33,7 @@ export default function About() {
               src={aboutData.image}
               alt={aboutData.imageAlt || 'BIU University Campus'}
               loading="lazy"
-              className="aspect-[4/5] w-full rounded-[1.375rem] object-cover md:aspect-[9/10]"
+              className="aspect-[16/9] w-full rounded-[1.375rem] object-cover object-center"
             />
           </div>
           {/* Soft gold accent glow behind the frame */}
@@ -52,14 +50,14 @@ export default function About() {
         >
           <motion.span
             variants={rise}
-            className="block text-center sm:text-left font-sans text-[12px] font-medium uppercase tracking-[0.28em] text-gold-dark"
+            className="block text-center sm:text-left font-sans text-[13px] font-medium uppercase tracking-[0.28em] text-gold-dark"
           >
             {aboutData.badge}
           </motion.span>
 
           <motion.h2
             variants={rise}
-            className="mt-4 text-center sm:text-left font-serif text-4xl font-medium leading-tight text-forest-dark sm:text-5xl md:text-[3.25rem]"
+            className="mt-4 text-center sm:text-left font-serif text-4xl font-medium leading-tight text-forest-dark sm:text-5xl md:text-[2.85rem]"
           >
             {aboutData.title}
           </motion.h2>
@@ -78,44 +76,28 @@ export default function About() {
             {aboutData.paragraph2}
           </motion.p>
 
-          {/* Stats grid */}
-          <motion.div variants={rise} className="mt-10 grid grid-cols-2 gap-3 sm:gap-4">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="group rounded-2xl border border-forest/10 bg-white/80 px-5 py-5 text-center sm:px-6 sm:py-6 sm:text-left transition-all duration-500 ease-premium hover:border-gold/50 hover:bg-white hover:shadow-[0_20px_50px_-20px_rgba(20,57,43,0.25)] hover:-translate-y-1"
-              >
-                <div className="font-serif text-3xl font-medium text-forest sm:text-4xl md:text-5xl">
-                  {stat.value}
-                </div>
-                <div className="mt-1.5 font-sans text-[10px] font-medium uppercase tracking-[0.16em] text-forest/50 sm:mt-2 sm:text-[11px] sm:tracking-[0.2em]">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </motion.div>
 
-          {/* CTA Buttons */}
-          <motion.div variants={rise} className="mt-10 flex flex-wrap items-center justify-center sm:justify-start gap-4">
+          {/* CTA Buttons — Single Horizontal Row */}
+          <motion.div variants={rise} className="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center justify-center sm:justify-start gap-3 sm:gap-3.5 flex-nowrap">
             <a
               href="/about"
-              className="group inline-flex h-14 items-center gap-3 rounded-xl bg-[#0c2340] border border-gold/50 px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-[#f7e7b4] shadow-md transition-all duration-300 ease-premium hover:bg-[#163860] hover:border-gold hover:scale-105 hover:shadow-lg active:scale-95 cursor-pointer"
+              className="group inline-flex h-13 sm:h-14 items-center justify-center gap-2.5 rounded-xl border border-white/20 bg-gradient-to-r from-[#0c2340]/95 via-[#102d52]/90 to-[#163860]/95 backdrop-blur-md px-5 sm:px-6 font-sans text-xs sm:text-[12.5px] font-extrabold uppercase tracking-[0.14em] text-white shadow-[0_10px_25px_rgba(8,23,43,0.35),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-white/40 hover:from-[#163860]/95 hover:via-[#102d52]/90 hover:to-[#0c2340]/95 hover:shadow-[0_14px_32px_rgba(8,23,43,0.5),inset_0_1px_0_rgba(255,255,255,0.3)] active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap shrink-0"
             >
-              <BookOpenText size={18} weight="fill" className="text-gold shrink-0 transition-transform duration-300 group-hover:scale-110" />
+              <BookOpenText size={18} weight="fill" className="text-gold-light shrink-0 transition-transform duration-200 group-hover:scale-110" />
               <span>Explore Our Story</span>
-              <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-gold/20 text-gold transition-transform duration-300 ease-premium group-hover:translate-x-1">
-                <ArrowRight size={13} weight="bold" />
+              <span className="flex h-5 w-5 items-center justify-center rounded-md bg-white/10 text-gold-light transition-all duration-200 group-hover:translate-x-1 group-hover:bg-white/20 group-hover:text-white">
+                <ArrowRight size={12} weight="bold" />
               </span>
             </a>
 
             <a
               href="#contact"
-              className="group inline-flex h-14 items-center gap-3 rounded-xl border border-[#0c2340]/20 bg-white/90 px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-forest-dark shadow-sm transition-all duration-300 ease-premium hover:border-gold-dark hover:bg-white hover:scale-105 hover:shadow-[0_8px_30px_rgba(12,35,64,0.15)] active:scale-95 cursor-pointer"
+              className="group inline-flex h-13 sm:h-14 items-center justify-center gap-2.5 rounded-xl border border-white/20 bg-gradient-to-r from-[#0c2340]/95 via-[#102d52]/90 to-[#163860]/95 backdrop-blur-md px-5 sm:px-6 font-sans text-xs sm:text-[12.5px] font-extrabold uppercase tracking-[0.14em] text-white shadow-[0_10px_25px_rgba(8,23,43,0.35),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-white/40 hover:from-[#163860]/95 hover:via-[#102d52]/90 hover:to-[#0c2340]/95 hover:shadow-[0_14px_32px_rgba(8,23,43,0.5),inset_0_1px_0_rgba(255,255,255,0.3)] active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap shrink-0"
             >
-              <CalendarPlus size={18} weight="fill" className="text-gold-dark shrink-0 transition-transform duration-300 group-hover:scale-110" />
+              <CalendarPlus size={18} weight="fill" className="text-gold-light shrink-0 transition-transform duration-200 group-hover:scale-110" />
               <span>{aboutData.ctaLabel || 'Schedule a Visit'}</span>
-              <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#0c2340]/10 text-forest-dark transition-all duration-300 ease-premium group-hover:translate-x-1 group-hover:bg-gold/20 group-hover:text-gold-dark">
-                <ArrowRight size={13} weight="bold" />
+              <span className="flex h-5 w-5 items-center justify-center rounded-md bg-white/10 text-gold-light transition-all duration-200 group-hover:translate-x-1 group-hover:bg-white/20 group-hover:text-white">
+                <ArrowRight size={12} weight="bold" />
               </span>
             </a>
           </motion.div>

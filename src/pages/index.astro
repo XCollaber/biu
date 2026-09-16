@@ -6,6 +6,8 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.jsx';
 import Hero from '../components/Hero.jsx';
 import About from '../components/About.jsx';
+import ChancellorMessage from '../components/ChancellorMessage.jsx';
+import Leadership from '../components/Leadership.jsx';
 import Faculties from '../components/Faculties.jsx';
 import Experiences from '../components/Experiences.jsx';
 import Placements from '../components/Placements.jsx';
@@ -29,15 +31,17 @@ import SmoothScroll from '../components/SmoothScroll.jsx';
     
     <!-- Progressive Island Hydration: Loads JS ONLY when visible on scroll -->
     <About client:visible />
-    <Faculties client:visible />
-    <Experiences client:visible />
-    <Placements client:visible />
+    <ChancellorMessage client:visible />
+    <Leadership client:visible />
+    <!-- <Faculties client:visible /> -->
+    <!-- <Experiences client:visible /> -->
+    <!-- <Placements client:visible /> -->
     <Gallery client:visible />
     <Accommodations client:visible />
-    <NewsEvents client:visible />
+    <!-- <NewsEvents client:visible /> -->
     <Testimonials client:visible />
-    <Location client:visible />
     <Contact client:visible />
+    <Location client:visible />
     <Faq client:visible />
   </main>
 

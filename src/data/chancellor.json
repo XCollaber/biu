@@ -1,0 +1,16 @@
+{
+  "badge": "CHANCELLOR'S MESSAGE",
+  "title": "Translating Knowledge into Action",
+  "quote": "Our mission at Bareilly International University is to serve as a catalyst for educational transformation. Through Rohilkhand Medical College & Hospital and our sister science academies, we couple rigorous academic study with deep clinical bedside research and modern computer engineering labs. We prepare graduates who do not just secure jobs, but lead healthcare systems and technical sectors.",
+  "paragraph": "BIU has successfully built a robust ecosystem connecting medicine, dental care, nursing, business strategies, and web-scale computing. We welcome students from all across India to discover a world of hands-on opportunities in our modern outpatient clinics and simulation laboratories.",
+  "chancellor": {
+    "name": "Dr. Keshav Kumar Agarwal",
+    "role": "Chancellor, BIU",
+    "image": "/chancellor.webp",
+    "imageAlt": "Dr. Keshav Kumar Agarwal - Chancellor, Bareilly International University"
+  },
+  "meta": [
+    { "label": "BIU ESTD. 2016" },
+    { "label": "NAAC GRADE A+ CAMPUS" }
+  ]
+}

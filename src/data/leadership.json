@@ -1,0 +1,31 @@
+{
+  "badge": "LEADERSHIP",
+  "title": "Our Honourable Leadership",
+  "subtitle": "Meet the visionary leadership steering Bareilly International University's academic and administrative excellence.",
+  "leaders": [
+    {
+      "role": "CHANCELLOR",
+      "name": "Dr. Keshav Kumar Agarwal",
+      "image": "/chancellor.webp",
+      "imageAlt": "Dr. Keshav Kumar Agarwal - Chancellor"
+    },
+    {
+      "role": "VICE CHANCELLOR",
+      "name": "Dr. Lata Agrawal",
+      "image": "/Lata-Mam.webp",
+      "imageAlt": "Dr. Lata Agrawal - Vice Chancellor"
+    },
+    {
+      "role": "PRO CHANCELLOR",
+      "name": "Dr. Ashok Agarwal",
+      "image": "/Ashok-Sir.jpg-1280x1536.webp",
+      "imageAlt": "Dr. Ashok Agarwal - Pro Chancellor"
+    },
+    {
+      "role": "PRO VICE CHANCELLOR",
+      "name": "Dr. Kiran Agarwal",
+      "image": "/Kiran-Mam.jpg-1280x1536.webp",
+      "imageAlt": "Dr. Kiran Agarwal - Pro Vice Chancellor"
+    }
+  ]
+}

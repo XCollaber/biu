@@ -1,8 +1,8 @@
 {
   "badge": "About BIU",
   "title": "Bareilly International University",
-  "image": "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1200&auto=format&fit=crop",
-  "imageAlt": "Aerial view of Bareilly International University Campus",
+  "image": "/hero-section2.png",
+  "imageAlt": "Bareilly International University Main Entrance Gate",
   "paragraph1": "Bareilly International University (BIU) stands as a beacon of academic excellence, innovation, and holistic human development in Uttar Pradesh, India.",
   "paragraph2": "Established under the UP State Act, BIU brings together world-class faculties including Rohilkhand Medical College & Hospital, Institute of Dental Sciences, School of Engineering, Faculty of Pharmacy, and School of Management across a sprawling 100-acre green campus.",
   "stats": [
