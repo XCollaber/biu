@@ -129,7 +129,7 @@ export default function Navbar() {
         transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
         className="overflow-hidden bg-[#0c2340] text-white/90 font-sans text-[11px] sm:text-[12px] border-b border-white/10"
       >
-        <div className="mx-auto flex max-w-[1560px] items-center justify-between gap-3 px-3 sm:px-6 py-1.5">
+        <div className="w-full flex items-center justify-between gap-3 px-3 sm:px-6 lg:px-8 py-1.5">
           {/* Left Side: Campus Identity */}
           <div className="flex items-center gap-2 text-white font-medium text-[11px] sm:text-[12px] tracking-wide">
             <span>BIU (Bareilly International University)</span>
@@ -172,7 +172,27 @@ export default function Navbar() {
       </motion.div>
 
       {/* Main Navigation Bar */}
-      <nav className="mx-auto flex max-w-[1560px] items-center justify-between pl-4 pr-2 sm:px-6 py-1 border-t border-slate-100/80">
+      <nav className="relative w-full flex items-center justify-between px-3 sm:px-6 lg:px-8 py-1.5 border-t border-slate-100/80">
+        {/* Heritage Diamond Lattice Watermark Pattern Overlay (Fade-out from bottom to top) */}
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.08] overflow-hidden"
+          style={{
+            maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0) 90%)',
+            WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0) 90%)',
+          }}
+          aria-hidden="true"
+        >
+          <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <defs>
+              <pattern id="biu-heritage-lattice" width="48" height="48" patternUnits="userSpaceOnUse">
+                <path d="M24 0 L48 24 L24 48 L0 24 Z" fill="none" stroke="#0c2340" strokeWidth="1" />
+                <path d="M24 6 L42 24 L24 42 L6 24 Z" fill="none" stroke="#0c2340" strokeWidth="0.6" strokeDasharray="2,2" />
+                <path d="M0 0 L24 24 L48 0 M0 48 L24 24 L48 48" fill="none" stroke="#0c2340" strokeWidth="0.75" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#biu-heritage-lattice)" />
+          </svg>
+        </div>
         {/* University Logo & Brand */}
         <a href="/" className="group flex items-center gap-2.5 sm:gap-3" aria-label="BIU Home">
           <img
@@ -207,20 +227,18 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={() => setActive(link.label)}
-                  className={`inline-flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-1.5 font-sans text-[11px] xl:text-[12px] font-semibold uppercase tracking-[0.08em] transition-all duration-200 whitespace-nowrap border ${
-                    isActive || isHovered
+                  className={`inline-flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-1.5 font-sans text-[11px] xl:text-[12px] font-semibold uppercase tracking-[0.08em] transition-all duration-200 whitespace-nowrap border ${isActive || isHovered
                       ? 'bg-[#0c2340]/10 text-cyan-900 border-[#0c2340]/10 shadow-xs'
                       : 'border-transparent text-slate-800 hover:bg-[#0c2340]/10 hover:text-cyan-900'
-                  }`}
+                    }`}
                 >
                   <span>{link.label}</span>
                   {hasDropdown && (
                     <CaretDown
                       size={12}
                       weight="bold"
-                      className={`transition-transform duration-200 ${
-                        isHovered ? 'rotate-180 text-cyan-900' : 'text-slate-500'
-                      }`}
+                      className={`transition-transform duration-200 ${isHovered ? 'rotate-180 text-cyan-900' : 'text-slate-500'
+                        }`}
                     />
                   )}
                 </a>
@@ -233,7 +251,7 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 6, scale: 0.96 }}
                       transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                      className="absolute top-full left-0 w-72 rounded-2xl bg-white backdrop-blur-xl border border-slate-200/90 shadow-2xl p-2.5 z-50 overflow-hidden"
+                      className="absolute top-full left-0 w-72 rounded-2xl bg-[#fdfbf7] backdrop-blur-xl border border-slate-200/90 shadow-2xl p-2.5 z-50 overflow-hidden"
                     >
                       <div className="flex flex-col gap-0.5">
                         {link.dropdown.map((item) => (
@@ -294,7 +312,7 @@ export default function Navbar() {
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className="overflow-hidden lg:hidden"
       >
-        <ul className="flex flex-col gap-1 bg-white px-6 py-5 border-t border-slate-200/80 shadow-xl">
+        <ul className="flex flex-col gap-1 bg-[#fdfbf7] px-6 py-5 border-t border-amber-200/60 shadow-xl">
           {NAV_LINKS.map((link) => {
             const hasDropdown = Boolean(link.dropdown && link.dropdown.length > 0);
             const isAccordionOpen = mobileAccordion === link.label;
