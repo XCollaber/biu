@@ -11,6 +11,7 @@
 | Skill | Primary Purpose | Use When... |
 | --- | --- | --- |
 | **emil-design-eng** | UI implementation and frontend engineering best practices | Building React.js components, layouts, responsive UIs, translating designs into production-quality React.js/Tailwind code |
+| **astro-islands-hydration** | Astro True Island Hydration architecture & 0 KB JS defaults | Creating/modifying Astro pages, setting hydration directives (<Comp />, client:load, client:visible, client:idle, client:only="react"), and decomposing React components into granular islands |
 | **animation-vocabulary** | Motion design terminology and animation planning— Helps describe motion and animation using proper terminology | Designing or describing animations, transitions, easing, timing, motion systems |
 | **review-animations** | Reviews animations for smoothness, timing, easing, UX | Reviewing existing animations for smoothness, timing, consistency and UX |
 | **impeccable** | Code quality, UI review, polish, accessibility, consistency, production-level frontend reviews | Reviewing existing frontend code, improving accessibility, maintainability, consistency and quality |
