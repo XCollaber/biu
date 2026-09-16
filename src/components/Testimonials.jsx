@@ -71,9 +71,9 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="relative w-full overflow-hidden bg-[#0c2340] py-24 md:py-32">
-      {/* Faint hexagon texture */}
-      <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.05]" aria-hidden="true">
+    <section id="testimonials" className="relative w-full overflow-hidden bg-gradient-to-b from-[#07162c] via-[#0c2340] to-[#07162c] py-24 md:py-32">
+      {/* Hexagon pattern overlay */}
+      <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.06]" aria-hidden="true">
         <defs>
           <pattern id="hexPattern" width="56" height="48" patternUnits="userSpaceOnUse">
             <path
@@ -86,6 +86,10 @@ export default function Testimonials() {
         </defs>
         <rect width="100%" height="100%" fill="url(#hexPattern)" />
       </svg>
+
+      {/* Subtle ambient glows */}
+      <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
+      <div className="pointer-events-none absolute -left-24 -bottom-24 h-96 w-96 rounded-full bg-navy-light/30 blur-3xl" />
 
       <div
         className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8"

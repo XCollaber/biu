@@ -113,8 +113,8 @@ export default function Navbar() {
       initial={reduceMotion ? false : { y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,backdrop-filter,border-color,shadow] duration-500 ease-premium ${scrolled
-        ? 'bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-md'
+      className={`fixed inset-x-0 top-0 z-50 bg-white transition-[background-color,border-color,shadow] duration-500 ease-premium ${scrolled
+        ? 'bg-white border-b border-slate-200/80 shadow-md'
         : 'bg-white border-b border-slate-200/60'
         }`}
     >

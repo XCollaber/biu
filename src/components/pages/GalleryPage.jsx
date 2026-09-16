@@ -7,7 +7,7 @@ import Footer from '../Footer';
 import Img from '../Img';
 
 const EASE = [0.16, 1, 0.3, 1];
-const fallback = (seed) => `https://picsum.photos/seed/${seed || 'biu'}/1000/800`;
+const fallback = (seed) => `https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1000&auto=format&fit=crop`;
 
 export default function GalleryPage({ onBack }) {
   const reduceMotion = useReducedMotion();

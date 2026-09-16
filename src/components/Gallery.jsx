@@ -142,18 +142,17 @@ export default function Gallery() {
           className="mt-12 flex justify-center"
         >
           <a
-            href="#gallery-page"
+            href="/gallery"
             onClick={(e) => {
               e.preventDefault();
-              window.location.hash = 'gallery-page';
-              window.scrollTo(0, 0);
+              window.location.href = '/gallery';
             }}
-            className="group inline-flex h-14 items-center gap-3 rounded-xl bg-[#0c2340] border border-gold/50 px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-[#f7e7b4] shadow-md transition-all duration-300 ease-premium hover:bg-[#163860] hover:border-gold hover:scale-105 hover:shadow-lg active:scale-95 cursor-pointer"
+            className="group inline-flex h-13 sm:h-14 items-center justify-center gap-2.5 rounded-xl border border-white/20 bg-gradient-to-r from-[#0c2340]/95 via-[#102d52]/90 to-[#163860]/95 backdrop-blur-md px-6 font-sans text-xs sm:text-[12.5px] font-extrabold uppercase tracking-[0.14em] text-white shadow-[0_10px_25px_rgba(8,23,43,0.35),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-white/40 hover:from-[#163860]/95 hover:via-[#102d52]/90 hover:to-[#0c2340]/95 hover:shadow-[0_14px_32px_rgba(8,23,43,0.5),inset_0_1px_0_rgba(255,255,255,0.3)] active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap shrink-0"
           >
-            <Images size={18} weight="fill" className="text-gold shrink-0 transition-transform duration-300 group-hover:scale-110" />
+            <Images size={18} weight="fill" className="text-gold-light shrink-0 transition-transform duration-200 group-hover:scale-110" />
             <span>View Full Gallery</span>
-            <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-gold/20 text-gold transition-transform duration-300 ease-premium group-hover:translate-x-1">
-              <ArrowRight size={13} weight="bold" />
+            <span className="flex h-5 w-5 items-center justify-center rounded-md bg-white/10 text-gold-light transition-all duration-200 group-hover:translate-x-1 group-hover:bg-white/20 group-hover:text-white">
+              <ArrowRight size={12} weight="bold" />
             </span>
           </a>
         </motion.div>
