@@ -1,0 +1,411 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Bareilly International University - World-class Medical &amp; Health Sciences</title>
+<!-- Tailwind CSS CDN with forms and container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter and Montserrat for crisp university typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style data-purpose="typography">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-heading {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+<style data-purpose="custom-utilities">
+    /* Subtle text shadows and overlay gradients matching the editorial reference */
+    .hero-text-shadow {
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+    }
+    .header-text-shadow {
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    }
+    /* Smooth transitions for interactive elements */
+    .nav-item-transition {
+      transition: color 0.2s ease, opacity 0.2s ease;
+    }
+  </style>
+</head>
+<body class="bg-neutral-900 text-white min-h-screen antialiased overflow-x-hidden selection:bg-red-600 selection:text-white">
+<!-- BEGIN: MainHeroSection -->
+<section id="hero-section" class="relative w-full min-h-[680px] lg:h-[88vh] xl:h-[92vh] max-h-[920px] flex flex-col justify-between overflow-hidden" data-purpose="hero-carousel-container">
+<!-- Background Operating Theatre Image with Multi-layer Directional Shadows -->
+<div class="absolute inset-0 z-0">
+    <img
+  id="hero-bg-img"
+  src="/public/hero-section2.png"
+  alt="hero section img"
+  class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
+/>
+
+<video id="hero-bg-video" autoplay muted loop playsinline 
+class =" absolute inset-0 w-full h-full object-cover">
+  <source src="/public/herosection.mp4" type="video/mp4">
+
+</video>
+
+<!-- Primary Dark Vignette & Left Gradient Overlay for Text Readability -->
+<div class="absolute inset-0 bg-gradient-to-r from-neutral-450/95 via-neutral-950/70 to-neutral-950/25"></div>
+<!-- Top Gradient to ensure crisp header contrast -->
+<div class="absolute inset-0 bg-gradient-to-b from-neutral-950/80 via-transparent to-neutral-950/70"></div>
+</div>
+<!-- BEGIN: HeaderNavigation -->
+<header class="relative z-20 w-full pt-4 pb-2 px-6 lg:px-12 header-text-shadow" data-purpose="transparent-header">
+<div class="max-w-[1520px] mx-auto">
+<!-- Top Row: Utility & Quick Portal Links -->
+<div class="flex items-center justify-between pb-3">
+<!-- BIU Seal & University Identity Branding -->
+<div class="flex items-center space-x-3.5">
+<!-- University Crest Emblem SVG -->
+<div class="w-12 h-14 border border-white/80 rounded-b-xl flex flex-col items-center justify-center p-1 bg-white/5 backdrop-blur-xs">
+<svg class="w-6 h-6 text-white mb-0.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+<path d="M6 6h10"></path>
+<path d="M6 10h10"></path>
+<path d="M12 2v20"></path>
+</svg>
+<div class="w-7 h-0.5 bg-amber-400"></div>
+</div>
+<!-- Institution Title and Regional Tag -->
+<div class="flex flex-col justify-center">
+<span class="font-heading text-xs lg:text-sm font-extrabold tracking-wider uppercase leading-tight text-white">
+                Bareilly<br>International<br>University
+              </span>
+<div class="w-6 h-[1.5px] bg-white/70 my-1"></div>
+<span class="text-[11px] lg:text-xs font-medium tracking-wide text-neutral-200">
+                Bareilly, Uttar Pradesh, India
+              </span>
+</div>
+</div>
+<!-- Utility Links (Search, Students, Staff, Global) -->
+<div class="flex items-center space-x-5 lg:space-x-7 text-xs lg:text-[13px] font-semibold tracking-wider uppercase">
+<!-- Search -->
+<a class="flex items-center space-x-1.5 hover:text-amber-400 nav-item-transition group" href="#search">
+<span class="">SEARCH</span>
+<svg class="w-3.5 h-3.5 text-neutral-300 group-hover:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</a>
+<span class="text-neutral-500 font-normal">|</span>
+<!-- Students Portal -->
+<a class="flex items-center space-x-2.5 hover:text-amber-400 nav-item-transition group" href="#students">
+<span class="">STUDENTS</span>
+<svg class="w-3.5 h-3.5 text-neutral-300 group-hover:text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<span class="text-neutral-500 font-normal">|</span>
+<!-- Staff Portal -->
+<a class="flex items-center space-x-1.5 hover:text-amber-400 nav-item-transition group" href="#staff">
+<span class="">STAFF</span>
+<svg class="w-3.5 h-3.5 text-neutral-300 group-hover:text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<span class="text-neutral-500 font-normal">|</span>
+<!-- Global Gateway Dropdown -->
+<button class="flex items-center space-x-1 hover:text-amber-400 nav-item-transition focus:outline-none">
+<span class="">BIU GLOBAL</span>
+<svg class="w-3.5 h-3.5 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Bottom Row: Primary Navigation Menu -->
+<nav class="flex items-center justify-end border-t border-white/10 pt-3" data-purpose="primary-navigation">
+<ul class="flex flex-wrap items-center gap-5 lg:gap-8 text-xs lg:text-[13.5px] font-bold tracking-wider uppercase">
+<li class="">
+<a class="text-white hover:text-amber-400 nav-item-transition" href="#enquire">ENQUIRE NOW</a>
+</li>
+<li class="">
+<a class="text-white hover:text-amber-400 nav-item-transition" href="#apply">APPLY NOW</a>
+</li>
+<li class="">
+<a class="text-white hover:text-amber-400 nav-item-transition" href="#courses">COURSES</a>
+</li>
+<li class="">
+<button class="flex items-center space-x-1 text-white hover:text-amber-400 nav-item-transition uppercase font-bold focus:outline-none">
+<span class="">CAREER OUTCOMES</span>
+<svg class="w-3 h-3 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+</li>
+<li class="">
+<button class="flex items-center space-x-1 text-white hover:text-amber-400 nav-item-transition uppercase font-bold focus:outline-none">
+<span class="">ABOUT BIU</span>
+<svg class="w-3 h-3 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+</li>
+<li class="">
+<button class="flex items-center space-x-1 text-white hover:text-amber-400 nav-item-transition uppercase font-bold focus:outline-none">
+<span class="">QUICK LINKS</span>
+<svg class="w-3 h-3 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<!-- END: HeaderNavigation -->
+<!-- BEGIN: HeroMainContent -->
+<div class="relative z-10 w-full px-6 lg:px-14 xl:px-20 py-8 my-auto" data-purpose="hero-copy-block">
+<div class="max-w-[1520px] mx-auto">
+<div class="max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+<!-- Main Hero Headline -->
+<h1 id="hero-headline" class="font-heading font-semibold text-4xl sm:text-5xl lg:text-6xl xl:text-[40px] leading-[1.08] tracking-tight text-white mb-6 hero-text-shadow transition-all duration-300 ease-out transform translate-y-0 opacity-100">
+            World-class Medical <br class="hidden sm:inline">
+            Facilities, now at BIU's <br class="hidden sm:inline">
+            State-of-Art Campus
+          </h1>
+<!-- Body Description -->
+<p id="hero-body" class="text-base sm:text-lg lg:text-[20px] text-neutral-400 font-normal leading-relaxed max-w-2xl hero-text-shadow mb-8 opacity-95 transition-all duration-300 ease-out transform translate-y-0">
+            Study clinical MBBS, Advanced Endoscopic Surgery, Allied Health Sciences, and Nursing at a premier medical and research university. Admissions open for 2026–27 academic session.
+          </p>
+<!-- Primary Call to Action Button -->
+<div class="flex flex-wrap items-center gap-4">
+<a id="hero-cta" class="inline-flex items-center space-x-2 text-white font-heading font-bold text-sm lg:text-base tracking-wider uppercase bg-transparent hover:text-amber-400 transition-colors duration-200 group py-2" href="#enquire">
+<span id="hero-cta-text">ENQUIRE NOW</span>
+<span class="text-xl font-bold leading-none transform group-hover:translate-x-1 transition-transform duration-200">&gt;</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- END: HeroMainContent -->
+<!-- BEGIN: CarouselControlsAndPagination -->
+<div class="relative z-20 w-full pb-6 px-6 lg:px-12" data-purpose="carousel-pagination-and-controls">
+<!-- Slide Left/Right Indicators on Screen Edges -->
+<button id="hero-prev-btn" aria-label="Previous slide" class="absolute left-4 top-1/2 -translate-y-1/2 p-2.5 text-white/60 hover:text-white hover:bg-black/30 rounded-full transition-all focus:outline-none cursor-pointer">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+<button id="hero-next-btn" aria-label="Next slide" class="absolute right-4 top-1/2 -translate-y-1/2 p-2.5 text-white/60 hover:text-white hover:bg-black/30 rounded-full transition-all focus:outline-none cursor-pointer">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+<!-- Central Pagination Dots Matching UOW Reference Design (Ring Active + Solid Dots) -->
+<div id="hero-dots-container" class="flex items-center justify-center space-x-3">
+<!-- Dots dynamically rendered via JS -->
+</div>
+</div>
+<!-- END: CarouselControlsAndPagination -->
+</section>
+<!-- END: MainHeroSection -->
+<!-- BEGIN: SupplementalStatStrip -->
+<!-- Subtle university highlight bar directly below hero to anchor layout -->
+<aside class="bg-neutral-950 border-t border-neutral-800 py-3.5 px-6" data-purpose="accreditation-highlights">
+<div class="max-w-[1520px] mx-auto flex flex-wrap items-center justify-between gap-4 text-xs tracking-wider text-neutral-400 font-medium">
+<div class="flex items-center space-x-6">
+<span class="text-white font-semibold">CAMPUS HIGHLIGHTS:</span>
+<span class="hover:text-neutral-200 transition-colors">National Medical Commission (NMC) Recognised</span>
+<span class="hidden md:inline text-neutral-600">•</span>
+<span class="hover:text-neutral-200 transition-colors hidden md:inline">Rohilkhand Medical College &amp; Hospital</span>
+<span class="hidden lg:inline text-neutral-600">•</span>
+<span class="hover:text-neutral-200 transition-colors hidden lg:inline">NABH &amp; NABL Accredited Facilities</span>
+</div>
+<div class="text-neutral-500 text-[11px]">
+        Admissions Helpline: +91 581 252 6053 / 54
+      </div>
+</div>
+</aside>
+<!-- END: SupplementalStatStrip -->
+
+<script>
+  (function () {
+    const slides = [
+      {
+        video: '/public/herosection.mp4',
+        headline: 'World-class Medical <br class="hidden sm:inline"> degrees, now at BIU\'s <br class="hidden sm:inline"> State-of-Art Campus',
+        body: 'Study clinical MBBS, Advanced Endoscopic Surgery, Allied Health Sciences, and Nursing at a premier medical and research university. Admissions open for 2025–26 academic session.',
+        ctaText: 'ENQUIRE NOW',
+        ctaHref: '#enquire'
+      },
+      {
+        image: '/public/hero-section.webp',
+        headline: 'Leading Research &amp; <br class="hidden sm:inline"> Clinical Innovations in <br class="hidden sm:inline"> Modern Healthcare',
+        body: 'Empowering medical aspirants with state-of-the-art super-specialty hospital exposure, high-tech simulation labs, and expert faculty mentorship.',
+        ctaText: 'EXPLORE COURSES',
+        ctaHref: '#courses'
+      },
+      {
+        image: '/public/hero-section2.png',
+        headline: '1000+ Bedded <br class="hidden sm:inline"> Teaching Hospital for <br class="hidden sm:inline"> Hands-on Exposure',
+        body: 'Gain real clinical experience with NABH &amp; NABL accredited facilities, advanced ICUs, and 24/7 emergency medical center support.',
+        ctaText: 'VIEW FACILITIES',
+        ctaHref: '#facilities'
+      },
+      {
+        image: '/public/hero-section.webp',
+        headline: 'Global Pathways &amp; <br class="hidden sm:inline"> Multi-Disciplinary <br class="hidden sm:inline"> Career Excellence',
+        body: 'Join a vibrant community of over 5,000+ medical, nursing, and dental professionals serving top international health organizations.',
+        ctaText: 'CAREER OUTCOMES',
+        ctaHref: '#outcomes'
+      },
+      {
+        image: '/public/hero-section2.png',
+        headline: 'Premier Nursing &amp; <br class="hidden sm:inline"> Allied Health Sciences <br class="hidden sm:inline"> Programs',
+        body: 'Rigorous academic curricula paired with patient-first practice environments to foster next-generation compassionate health pioneers.',
+        ctaText: 'APPLY NOW',
+        ctaHref: '#apply'
+      },
+      {
+        image: '/public/hero-section.webp',
+        headline: 'Admissions Open for <br class="hidden sm:inline"> Academic Session <br class="hidden sm:inline"> 2025–2026',
+        body: 'Take the next big step in your healthcare career. Merit scholarships and financial aid programs available for qualifying students.',
+        ctaText: 'START APPLICATION',
+        ctaHref: '#apply'
+      }
+    ];
+
+    let currentIndex = 0;
+    let autoPlayTimer = null;
+    const intervalTime = 6000;
+
+    const heroSection = document.getElementById('hero-section');
+    const heroBgImg = document.getElementById('hero-bg-img');
+    const heroHeadline = document.getElementById('hero-headline');
+    const heroBody = document.getElementById('hero-body');
+    const heroCtaText = document.getElementById('hero-cta-text');
+    const heroCta = document.getElementById('hero-cta');
+    const prevBtn = document.getElementById('hero-prev-btn');
+    const nextBtn = document.getElementById('hero-next-btn');
+    const dotsContainer = document.getElementById('hero-dots-container');
+
+    function renderDots() {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = slides.map((_, index) => {
+        if (index === currentIndex) {
+          return `<button aria-label="Slide ${index + 1} active" data-slide="${index}" class="relative w-4 h-4 flex items-center justify-center rounded-full border-2 border-white focus:outline-none cursor-pointer transition-all duration-300">
+            <span class="w-2 h-2 rounded-full bg-white"></span>
+          </button>`;
+        }
+        return `<button aria-label="Slide ${index + 1}" data-slide="${index}" class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 focus:outline-none cursor-pointer"></button>`;
+      }).join('');
+    }
+
+    function goToSlide(newIndex) {
+      if (newIndex === currentIndex) return;
+      currentIndex = (newIndex + slides.length) % slides.length;
+      const slide = slides[currentIndex];
+
+
+      const heroBgVideo = document.getElementById('hero-bg-video');
+
+// Inside goToSlide(newIndex):
+if (slide.video) {
+  heroBgImg.classList.add('hidden');
+  heroBgVideo.classList.remove('hidden');
+  heroBgVideo.src = slide.video;
+  heroBgVideo.play().catch(() => {});
+} else {
+  heroBgVideo.classList.add('hidden');
+  heroBgVideo.pause();
+  heroBgImg.classList.remove('hidden');
+  heroBgImg.src = slide.image;
+}
+
+
+
+
+      // Smooth text transition
+      if (heroHeadline && heroBody) {
+        heroHeadline.style.opacity = '0';
+        heroHeadline.style.transform = 'translateY(6px)';
+        heroBody.style.opacity = '0';
+        heroBody.style.transform = 'translateY(6px)';
+      }
+
+      // Smooth background image transition
+      if (heroBgImg) {
+        heroBgImg.style.opacity = '0.4';
+        setTimeout(() => {
+          heroBgImg.src = slide.image;
+          heroBgImg.style.opacity = '1';
+        },150);
+      }
+
+      setTimeout(() => {
+        if (heroHeadline) heroHeadline.innerHTML = slide.headline;
+        if (heroBody) heroBody.innerHTML = slide.body;
+        if (heroCtaText) heroCtaText.textContent = slide.ctaText;
+        if (heroCta) heroCta.setAttribute('href', slide.ctaHref);
+
+        if (heroHeadline && heroBody) {
+          heroHeadline.style.opacity = '1';
+          heroHeadline.style.transform = 'translateY(0)';
+          heroBody.style.opacity = '0.95';
+          heroBody.style.transform = 'translateY(0)';
+        }
+      },150);
+
+      renderDots();
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      autoPlayTimer = setInterval(nextSlide, intervalTime);
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayTimer) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+      }
+    }
+
+    // Event Listeners
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        startAutoPlay();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        startAutoPlay();
+      });
+    }
+
+    if (dotsContainer) {
+      dotsContainer.addEventListener('click', (e) => {
+        const dot = e.target.closest('[data-slide]');
+        if (dot) {
+          const slideIdx = parseInt(dot.getAttribute('data-slide'), 10);
+          goToSlide(slideIdx);
+          startAutoPlay();
+        }
+      });
+    }
+
+    if (heroSection) {
+      heroSection.addEventListener('mouseenter', stopAutoPlay);
+      heroSection.addEventListener('mouseleave', startAutoPlay);
+    }
+
+    renderDots();
+    startAutoPlay();
+  })();
+</script>
+</body></html>
