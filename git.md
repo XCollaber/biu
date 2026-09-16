@@ -1,4 +1,6 @@
-# 1. Switch to your local main branch
+# GIT Setup
+
+## 1. Switch to your local main branch
 git switch main 
 git checkout main
 
