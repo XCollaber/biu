@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
-import { Sparkle, CaretDown, WhatsappLogo, ArrowRight, GraduationCap, CaretRight } from '@phosphor-icons/react';
+import { motion, useReducedMotion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { Sparkle, CaretDown, ArrowRight, GraduationCap, CaretRight } from '@phosphor-icons/react';
 import heroData from '../data/hero.json';
 import siteData from '../data/site.json';
 
@@ -9,6 +9,26 @@ const EASE = [0.16, 1, 0.3, 1];
 export default function Hero() {
   const reduceMotion = useReducedMotion();
   const videoRef = useRef(null);
+
+  // 3D Interactive Mouse Tilt - Defaulted to top-left perspective angle
+  const mouseX = useMotionValue(-0.5);
+  const mouseY = useMotionValue(-0.5);
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [3.5, -3.5]), { damping: 28, stiffness: 220 });
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-4.5, 4.5]), { damping: 28, stiffness: 220 });
+
+  const handleMouseMove = (e) => {
+    if (reduceMotion) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    mouseX.set(x);
+    mouseY.set(y);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(-0.5);
+    mouseY.set(-0.5);
+  };
 
   // Signal hero video is ready for sequential testimonial preloading
   const handleCanPlay = () => {
@@ -55,18 +75,23 @@ export default function Hero() {
     },
   };
 
-  const whatsappUrl = `https://wa.me/${siteData.whatsappPhone || '917455002900'}`;
-
   return (
-    <section id="home" className="relative w-full bg-white pt-24 sm:pt-28 lg:pt-28 pb-6 sm:pb-10 px-2 sm:px-4 lg:px-6">
-      {/* Outer Container Card Frame */}
-      <div className="relative mx-auto max-w-[1560px] w-full min-h-[520px] sm:min-h-[580px] lg:min-h-[620px] overflow-hidden rounded-[1.75rem] sm:rounded-[2.25rem] bg-[#0c2340] shadow-2xl border border-slate-200/50">
-        
-        {/* Background video inside rounded frame */}
+    <section id="home" className="relative w-full bg-white pt-24 sm:pt-28 lg:pt-28 pb-6 sm:pb-10 px-3 sm:px-5 md:px-10 lg:px-12 xl:px-18 [perspective:1400px]">
+      {/* 3D Container Card Frame with subtle tilt and layered depth */}
+      <motion.div
+        style={reduceMotion ? { rotateX: 3.5, rotateY: -4.5 } : { rotateX, rotateY, transformStyle: 'preserve-3d' }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className="relative mx-auto max-w-[1560px] w-full min-h-[490px] sm:min-h-[540px] lg:min-h-[570px] overflow-hidden rounded-xl sm:rounded-2xl bg-[#0c2340] shadow-[0_30px_70px_-15px_rgba(12,35,64,0.4),0_15px_35px_-5px_rgba(0,0,0,0.3),0_0_0_1px_rgba(255,255,255,0.15)_inset] border border-slate-300/80 transition-shadow duration-500 will-change-transform"
+      >
+        {/* 3D Glass Specular Top Highlight */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-white/20 via-white/5 to-transparent z-20" />
+
+        {/* Background video inside 3D frame */}
         <video
           ref={videoRef}
           src="/hero_video.mp4"
-          className="absolute inset-0 h-full w-full object-cover rounded-[2rem] sm:rounded-[2.5rem]"
+          className="absolute inset-0 h-full w-full object-cover rounded-xl sm:rounded-2xl"
           autoPlay
           muted
           loop
@@ -86,11 +111,11 @@ export default function Hero() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="relative z-10 flex h-full min-h-[520px] sm:min-h-[580px] lg:min-h-[620px] flex-col justify-between p-6 sm:p-10 lg:p-14 text-left"
+          className="relative z-10 flex h-full min-h-[490px] sm:min-h-[540px] lg:min-h-[570px] flex-col justify-between p-6 sm:p-9 lg:p-12 text-left"
         >
 
           {/* Center Main Headline & Subtitle */}
-          <div className="my-auto max-w-2xl lg:max-w-3xl pt-6 pb-12">
+          <div className="my-auto max-w-2xl lg:max-w-3xl pt-4 pb-8">
             <motion.h1
               variants={rise}
               className="font-serif leading-[1.08] tracking-tight text-white drop-shadow-md"
@@ -143,21 +168,7 @@ export default function Hero() {
         >
           <CaretDown size={24} weight="thin" className="animate-scroll-bob" />
         </motion.a>
-      </div>
-
-      {/* Floating WhatsApp chat button */}
-      <motion.a
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        initial={reduceMotion ? false : { scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 1.6, duration: 0.6, ease: EASE }}
-        aria-label="Contact us on WhatsApp"
-        className="group fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-2xl bg-gold text-[#0c2340] shadow-xl ring-1 ring-inset ring-white/20 transition-all duration-500 ease-premium hover:bg-gold-light hover:shadow-2xl active:scale-95"
-      >
-        <WhatsappLogo size={28} weight="fill" className="transition-transform duration-500 ease-premium group-hover:scale-110" />
-      </motion.a>
+      </motion.div>
     </section>
   );
 }
