@@ -127,7 +127,7 @@ export default function Navbar() {
             : { height: 'auto', opacity: 1 }
         }
         transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-        className="overflow-hidden bg-[#0c2340] text-white/90 font-sans text-[11px] sm:text-[12px] border-b border-white/10"
+        className="overflow-hidden bg-gradient-to-r from-[#143966] via-[#0c2340] to-[#07192e] text-white/90 font-sans text-[11px] sm:text-[12px] border-b border-white/10"
       >
         <div className="w-full flex items-center justify-between gap-3 px-3 sm:px-6 lg:px-8 py-1.5">
           {/* Left Side: Campus Identity */}
@@ -201,10 +201,10 @@ export default function Navbar() {
             className="h-9 w-auto sm:h-12 object-contain transition-transform duration-500 ease-premium group-hover:scale-105"
           />
           <span className="flex flex-col leading-tight">
-            <span className="mt-1 font-serif text-sm font-extrabold tracking-wide text-slate-950 sm:text-[20px]">
+            <span className="mt-1 font-serif text-sm font-extrabold tracking-wide text-slate-950 sm:text-[22px]">
               {siteData.name || 'Bareilly International University'}
             </span>
-            <span className="mt-0.5 font-sans text-[8.5px] uppercase tracking-[0.16em] text-cyan-800 font-semibold sm:text-[10px]">
+            <span className="mt-1 font-sans text-[8.5px] uppercase tracking-[0.16em] text-cyan-800 font-semibold sm:text-[10px]">
               {siteData.accreditation || 'UGC Approved | NAAC A+ Grade'}
             </span>
           </span>
@@ -246,14 +246,14 @@ export default function Navbar() {
                 {/* Dropdown Menu Container */}
                 <AnimatePresence>
                   {hasDropdown && isHovered && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10, scale: 0.96 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 6, scale: 0.96 }}
-                      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                      className="absolute top-full left-0 w-72 rounded-2xl bg-[#fdfbf7] backdrop-blur-xl border border-slate-200/90 shadow-2xl p-2.5 z-50 overflow-hidden"
-                    >
-                      <div className="flex flex-col gap-0.5">
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 z-50 pt-1">
+                      <motion.div
+                        initial={{ opacity: 0, y: 8, scale: 0.97 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 6, scale: 0.97 }}
+                        transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                        className="w-[440px] lg:w-[460px] grid grid-cols-2 gap-x-4 gap-y-2 rounded-2xl bg-gradient-to-br from-[#0c2340]/90 via-[#091b30]/90 to-[#07172b]/88 backdrop-blur-2xl border border-white/5 shadow-[0_22px_50px_rgba(4,14,27,0.65),inset_0_1px_0_rgba(255,255,255,0.12)] p-4 sm:p-5"
+                      >
                         {link.dropdown.map((item) => (
                           <a
                             key={item.name}
@@ -262,20 +262,23 @@ export default function Navbar() {
                               setActive(link.label);
                               setOpenDropdown(null);
                             }}
-                            className="group flex flex-col p-2.5 rounded-xl hover:bg-slate-100/90 transition-colors text-left"
+                            className="group flex items-start gap-2.5 p-2 rounded-xl transition-all duration-200 hover:bg-white/[0.09] text-left"
                           >
-                            <span className="font-heading text-[13px] font-semibold tracking-tight text-slate-900 group-hover:text-cyan-900 transition-colors">
-                              {item.name}
-                            </span>
-                            {item.desc && (
-                              <span className="font-sans text-[11px] font-normal text-slate-500 mt-0.5 leading-snug">
-                                {item.desc}
+                            <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-300 transition-all duration-200 group-hover:bg-cyan-400 group-hover:scale-125 group-hover:shadow-[0_0_8px_rgba(34,211,238,0.85)] shrink-0" />
+                            <div className="flex flex-col">
+                              <span className="font-heading text-[13px] font-medium text-white/90 group-hover:text-white transition-colors leading-snug">
+                                {item.name}
                               </span>
-                            )}
+                              {item.desc && (
+                                <span className="font-sans text-[11px] font-normal text-white/60 group-hover:text-white/80 mt-0.5 leading-snug transition-colors">
+                                  {item.desc}
+                                </span>
+                              )}
+                            </div>
                           </a>
                         ))}
-                      </div>
-                    </motion.div>
+                      </motion.div>
+                    </div>
                   )}
                 </AnimatePresence>
               </li>
@@ -287,9 +290,9 @@ export default function Navbar() {
         <div className="flex items-center gap-1.5 sm:gap-3 pr-1 sm:pr-0">
           <a
             href="/#contact"
-            className="group hidden sm:flex items-center gap-1.5 sm:gap-2 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light px-3.5 sm:px-6 py-2 sm:py-2.5 font-sans text-[10px] sm:text-[12px] font-extrabold uppercase tracking-[0.10em] sm:tracking-[0.14em] text-forest-dark shadow-md border border-gold-light/50 transition-all duration-300 ease-premium hover:scale-105 hover:shadow-lg hover:from-gold-light hover:to-gold-dark active:scale-95 cursor-pointer whitespace-nowrap"
+            className="group hidden sm:flex items-center gap-1.5 sm:gap-2 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light px-3.5 sm:px-6 py-2 sm:py-2.5 font-sans text-[10px] sm:text-[12px] font-extrabold uppercase tracking-[0.10em] sm:tracking-[0.14em] text-forest-dark shadow-md border border-gold-light/50 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-lg hover:brightness-105 hover:from-gold-light hover:to-gold-dark active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap"
           >
-            <GraduationCap size={16} weight="fill" className="text-forest-dark shrink-0 transition-transform duration-300 group-hover:scale-110 sm:w-[18px] sm:h-[18px]" />
+            <GraduationCap size={20} weight="fill" className="text-forest-dark shrink-0 transition-transform duration-300 group-hover:scale-110 sm:w-[20px] sm:h-[20px]" />
             <span>{siteData.bookButtonLabel || 'Apply Now 2026'}</span>
           </a>
 

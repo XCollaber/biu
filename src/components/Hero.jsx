@@ -139,19 +139,19 @@ export default function Hero() {
             <motion.div variants={rise} className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <a
                 href="#contact"
-                className="group flex h-12 sm:h-14 items-center justify-center gap-2.5 rounded-lg bg-gradient-to-r from-gold-dark via-gold to-gold-light px-7 font-sans text-xs sm:text-sm font-extrabold uppercase tracking-[0.14em] text-forest-dark shadow-xl transition-all duration-300 ease-premium hover:scale-105 hover:shadow-2xl active:scale-95 cursor-pointer whitespace-nowrap"
+                className="group flex h-12 sm:h-14 items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light px-7 font-sans text-xs sm:text-sm font-extrabold uppercase tracking-[0.14em] text-forest-dark shadow-xl transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-2xl hover:brightness-105 hover:from-gold-light hover:to-gold-dark active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap"
               >
-                <GraduationCap size={20} weight="fill" className="text-forest-dark shrink-0 transition-transform group-hover:scale-110" />
+                <GraduationCap size={24} weight="fill" className="text-forest-dark shrink-0 transition-transform duration-200 group-hover:scale-110" />
                 <span>{heroData.ctaPrimaryLabel || 'Admissions 2026-27'}</span>
-                <ArrowRight size={14} weight="bold" className="transition-transform group-hover:translate-x-1 text-forest-dark" />
+                <ArrowRight size={16} weight="bold" className="transition-transform duration-200 group-hover:translate-x-1 text-forest-dark" />
               </a>
 
               <a
                 href="/faculties"
-                className="group flex h-12 sm:h-14 items-center justify-center gap-2 rounded-lg border border-white/40 bg-white/10 backdrop-blur-md px-7 font-sans text-xs sm:text-sm font-extrabold uppercase tracking-[0.14em] text-white transition-all duration-300 ease-premium hover:bg-white/20 hover:border-white hover:scale-105 active:scale-95 cursor-pointer whitespace-nowrap"
+                className="group flex h-12 sm:h-14 items-center justify-center gap-2 rounded-xl border border-white/20 bg-gradient-to-r from-navy-dark/90 via-navy/80 to-navy-light/85 backdrop-blur-md px-7 font-sans text-xs sm:text-sm font-extrabold uppercase tracking-[0.14em] text-white shadow-[0_8px_20px_rgba(8,23,43,0.35),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-white/25 hover:from-navy-light/95 hover:via-navy/90 hover:to-navy-dark/95 hover:shadow-[0_12px_28px_rgba(8,23,43,0.5),inset_0_1px_0_rgba(255,255,255,0.35)] active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap"
               >
                 <span>{heroData.ctaSecondaryLabel || 'Explore Faculties'}</span>
-                <CaretRight size={14} weight="bold" className="transition-transform group-hover:translate-x-1" />
+                <CaretRight size={16} weight="bold" className="text-white/80 transition-all duration-200 group-hover:translate-x-1 group-hover:text-white" />
               </a>
             </motion.div>
           </div>
