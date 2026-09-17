@@ -23,16 +23,16 @@
   "ctaLabel": "Explore Campus Life",
   "images": [
     {
-      "img": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop",
-      "alt": "BIU Campus Grounds & Student Hub"
+      "img": "/biu-campus1.webp",
+      "alt": "Bareilly International University Campus Infrastructure"
     },
     {
-      "img": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000&auto=format&fit=crop",
-      "alt": "Students at Central Library Suite"
+      "img": "/biu-campus2.webp",
+      "alt": "BIU Modern Academic Blocks & Student Facilities"
     },
     {
-      "img": "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1000&auto=format&fit=crop",
-      "alt": "Annual Cultural Fest Performance"
+      "img": "/bui-campus3.webp",
+      "alt": "BIU Campus Grounds & Environment"
     }
   ]
 }

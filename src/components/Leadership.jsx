@@ -58,7 +58,7 @@ export default function Leadership() {
             <motion.div
               key={idx}
               variants={cardVariants}
-              className="group relative overflow-hidden rounded-2xl border border-white/20 bg-[#07162c] shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/40 hover:shadow-2xl"
+              className="group relative overflow-hidden rounded-lg border border-white/20 bg-[#07162c] shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/40 hover:shadow-2xl"
             >
               {/* Image Frame */}
               <div className="relative aspect-[4/4.8] w-full overflow-hidden bg-[#051120]">

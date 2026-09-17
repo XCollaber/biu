@@ -79,7 +79,7 @@ export default function Hero() {
     <section id="home" className="relative w-full bg-white pt-24 sm:pt-28 lg:pt-28 pb-6 sm:pb-10 px-3 sm:px-5 md:px-10 lg:px-12 xl:px-18 [perspective:1400px]">
       {/* 3D Container Card Frame with subtle tilt and layered depth */}
       <motion.div
-        style={reduceMotion ? { rotateX: 0, rotateY: -9.5 } : { rotateX, rotateY, transformStyle: 'preserve-3d' }}
+        style={reduceMotion ? { rotateX: 0, rotateY: -9.5, x: -32, y: 8 } : { rotateX, rotateY, x: -32, y: 8, transformStyle: 'preserve-3d' }}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         className="relative mx-auto max-w-[1560px] w-full min-h-[490px] sm:min-h-[540px] lg:min-h-[570px] overflow-hidden rounded-xl sm:rounded-xl bg-[#0c2340] shadow-[0_30px_70px_-15px_rgba(12,35,64,0.4),0_15px_35px_-5px_rgba(0,0,0,0.3),0_0_0_1px_rgba(255,255,255,0.15)_inset] border border-slate-300/80 transition-shadow duration-500 will-change-transform"

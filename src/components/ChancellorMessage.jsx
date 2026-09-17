@@ -24,7 +24,7 @@ export default function ChancellorMessage() {
           whileInView="show"
           viewport={{ once: true, amount: 0.15 }}
           variants={fadeIn}
-          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-white/15 bg-gradient-to-br from-[#07162c] via-[#0c2340] to-[#08192d] p-6 sm:p-8 lg:p-10 shadow-[0_25px_60px_rgba(7,22,44,0.4)]"
+          className="relative overflow-hidden border border-white/15 bg-gradient-to-br from-[#07162c] via-[#0c2340] to-[#08192d] p-6 sm:p-8 lg:p-10 shadow-[0_25px_60px_rgba(7,22,44,0.4)]"
         >
           {/* Subtle background glow effect */}
           <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-gold/10 blur-3xl" />
@@ -43,7 +43,7 @@ export default function ChancellorMessage() {
               </div>
 
               {/* Name & Role Card Overlay */}
-              <div className="mt-1.5 w-full max-w-[320px] lg:max-w-none rounded-xl border border-white/10 bg-white/10 p-4 backdrop-blur-md shadow-lg">
+              <div className="mt-1.5 w-full max-w-[320px] lg:max-w-none rounded-md border border-white/10 bg-white/10 p-4 backdrop-blur-md shadow-lg">
                 <h3 className="font-sans text-base sm:text-[17px] font-bold tracking-wide text-gold-light">
                   {chancellorData.chancellor.name}
                 </h3>

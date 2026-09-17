@@ -48,8 +48,8 @@ export default function About() {
           {stats.map((stat, idx) => (
             <div key={idx} className="flex flex-col items-center max-w-[100px] sm:max-w-[125px] group">
               {/* Circular Badge */}
-              <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-22 md:h-22 rounded-full bg-white border-2 border-amber-200/50 shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-105 group-hover:shadow-xl">
-                <span className="font-extrabold text-xl sm:text-2xl md:text-3xl text-[#0A2540] tracking-tight font-['Montserrat',sans-serif]">
+              <div className="w-21 h-21 sm:w-24 sm:h-24 md:w-22 md:h-22 rounded-full bg-white border-2 border-amber-200/50 shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-105 group-hover:shadow-xl">
+                <span className="font-extrabold text-xl sm:text-2xl md:text-[26px] text-[#0A2540] tracking-tight font-['Montserrat',sans-serif]">
                   {stat.value}
                 </span>
               </div>

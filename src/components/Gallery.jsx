@@ -112,6 +112,11 @@ export default function Gallery() {
                   <GImg name={images[4].name} alt={images[4].alt} seed={images[4].seed} className="aspect-[3/4]" />
                 </motion.div>
               )}
+              {images[8] && (
+                <motion.div variants={rise}>
+                  <GImg name={images[8].name} alt={images[8].alt} seed={images[8].seed} className="aspect-[4/3]" />
+                </motion.div>
+              )}
             </div>
             <div className="flex flex-col gap-3 lg:gap-4">
               {images[5] && (
@@ -127,6 +132,11 @@ export default function Gallery() {
               {images[7] && (
                 <motion.div variants={rise}>
                   <GImg name={images[7].name} alt={images[7].alt} seed={images[7].seed} className="aspect-[3/3]" />
+                </motion.div>
+              )}
+              {images[9] && (
+                <motion.div variants={rise}>
+                  <GImg name={images[9].name} alt={images[9].alt} seed={images[9].seed} className="aspect-[4/3]" />
                 </motion.div>
               )}
             </div>

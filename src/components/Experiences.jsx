@@ -4,8 +4,7 @@ import expData from '../data/campusLife.json';
 
 const EASE = [0.16, 1, 0.3, 1];
 
-const FALLBACK =
-  'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=900&q=80';
+const FALLBACK = '/hero-section.webp';
 
 function CollageImg({ src, alt, className }) {
   return (

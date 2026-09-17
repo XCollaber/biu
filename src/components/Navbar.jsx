@@ -162,7 +162,7 @@ export default function Navbar() {
             </a>
             <a
               href="/#contact"
-              className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-0.5 text-[10.5px] sm:text-[12px] font-medium text-white border border-white/20 transition-all hover:bg-white/25 hover:border-white/30"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-white/15 px-3 py-0.5 text-[10.5px] sm:text-[12px] font-medium text-white border border-white/20 transition-all hover:bg-white/25 hover:border-white/30"
             >
               <Briefcase size={14} weight="fill" className="mb-0.5 text-cyan-300 shrink-0" />
               <span>Careers</span>
@@ -227,7 +227,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={() => setActive(link.label)}
-                  className={`inline-flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-1.5 font-sans text-[11px] xl:text-[12px] font-semibold uppercase tracking-[0.08em] transition-all duration-200 whitespace-nowrap border ${isActive || isHovered
+                  className={`inline-flex items-center justify-center gap-1.5 rounded-md px-3.5 py-1.5 font-sans text-[11px] xl:text-[12px] font-semibold uppercase tracking-[0.08em] transition-all duration-200 whitespace-nowrap border ${isActive || isHovered
                       ? 'bg-[#0c2340]/10 text-cyan-900 border-[#0c2340]/10 shadow-xs'
                       : 'border-transparent text-slate-800 hover:bg-[#0c2340]/10 hover:text-cyan-900'
                     }`}
@@ -252,7 +252,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 6, scale: 0.97 }}
                         transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                        className="w-[440px] lg:w-[460px] grid grid-cols-2 gap-x-4 gap-y-2 rounded-2xl bg-gradient-to-br from-[#0c2340]/90 via-[#091b30]/90 to-[#07172b]/88 backdrop-blur-2xl border border-white/5 shadow-[0_22px_50px_rgba(4,14,27,0.65),inset_0_1px_0_rgba(255,255,255,0.12)] p-4 sm:p-5"
+                        className="w-[440px] lg:w-[460px] grid grid-cols-2 gap-x-4 gap-y-2 rounded-xl bg-gradient-to-br from-[#0c2340]/90 via-[#091b30]/90 to-[#07172b]/88 backdrop-blur-2xl border border-white/5 shadow-[0_22px_50px_rgba(4,14,27,0.65),inset_0_1px_0_rgba(255,255,255,0.12)] p-4 sm:p-5"
                       >
                         {link.dropdown.map((item) => (
                           <a
@@ -290,7 +290,7 @@ export default function Navbar() {
         <div className="flex items-center gap-1.5 sm:gap-3 pr-1 sm:pr-0">
           <a
             href="/#contact"
-            className="group hidden sm:flex items-center gap-1.5 sm:gap-2 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light px-3.5 sm:px-6 py-2 sm:py-2.5 font-sans text-[10px] sm:text-[12px] font-extrabold uppercase tracking-[0.10em] sm:tracking-[0.14em] text-forest-dark shadow-md border border-gold-light/50 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-lg hover:brightness-105 hover:from-gold-light hover:to-gold-dark active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap"
+            className="group hidden sm:flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-gold-dark via-gold to-gold-light px-3.5 sm:px-6 py-2 sm:py-2.5 font-sans text-[10px] sm:text-[12px] font-extrabold uppercase tracking-[0.10em] sm:tracking-[0.14em] text-forest-dark shadow-md border border-gold-light/50 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-lg hover:brightness-105 hover:from-gold-light hover:to-gold-dark active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap"
           >
             <GraduationCap size={20} weight="fill" className="text-forest-dark shrink-0 transition-transform duration-300 group-hover:scale-110 sm:w-[20px] sm:h-[20px]" />
             <span>{siteData.bookButtonLabel || 'Apply Now 2026'}</span>

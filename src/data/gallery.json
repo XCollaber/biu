@@ -14,52 +14,64 @@
   },
   "images": [
     {
-      "name": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop",
-      "alt": "BIU Annual Convocation Ceremony",
-      "caption": "Annual Convocation & Graduation Ceremony",
-      "seed": "biu-convocation"
+      "name": "biu-campus11.webp",
+      "alt": "Bareilly International University Campus Infrastructure",
+      "caption": "BIU Main Academic Campus Infrastructure",
+      "seed": "biu-campus11"
     },
     {
-      "name": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop",
-      "alt": "Students at Tech Hackathon",
-      "caption": "National Tech & Robotics Hackathon",
-      "seed": "biu-hackathon"
+      "name": "biu-campus12.webp",
+      "alt": "Rohilkhand Medical College & Hospital",
+      "caption": "Rohilkhand Medical College Super-Specialty Hospital",
+      "seed": "biu-campus12"
     },
     {
-      "name": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
-      "alt": "Medical students in simulation lab",
-      "caption": "Rohilkhand Hospital Clinical Training",
-      "seed": "biu-medical"
+      "name": "biu-campus4.webp",
+      "alt": "BIU Academic Block",
+      "caption": "Faculty of Engineering & Technology",
+      "seed": "biu-campus4"
     },
     {
-      "name": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop",
-      "alt": "Dental simulation lab",
-      "caption": "Institute of Dental Sciences Phantom Head Lab",
-      "seed": "biu-dental"
+      "name": "biu-campus5.webp",
+      "alt": "Institute of Dental Sciences",
+      "caption": "Institute of Dental Sciences & Clinics",
+      "seed": "biu-campus5"
     },
     {
-      "name": "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1000&auto=format&fit=crop",
-      "alt": "Cultural performance at Spandan Fest",
-      "caption": "'Spandan' Annual Cultural Fest",
-      "seed": "biu-fest"
-    },
-    {
-      "name": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1000&auto=format&fit=crop",
-      "alt": "Pharmacy research lab",
+      "name": "biu-campus6.webp",
+      "alt": "Faculty of Pharmacy",
       "caption": "Faculty of Pharmacy Analytical Research Lab",
-      "seed": "biu-pharmacy"
+      "seed": "biu-campus6"
     },
     {
-      "name": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000&auto=format&fit=crop",
-      "alt": "Central Library reading suite",
-      "caption": "24/7 Central Digital E-Library",
-      "seed": "biu-library"
+      "name": "biu-campus7.webp",
+      "alt": "Central Digital Library",
+      "caption": "24/7 Digital E-Library & Reading Suite",
+      "seed": "biu-campus7"
     },
     {
-      "name": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1000&auto=format&fit=crop",
-      "alt": "Sports complex night match",
-      "caption": "Inter-Collegiate Night Cricket League",
-      "seed": "biu-sports"
+      "name": "biu-campus8.webp",
+      "alt": "Sports Complex Grounds",
+      "caption": "University Sports Complex & Stadium",
+      "seed": "biu-campus8"
+    },
+    {
+      "name": "biu-campus9.webp",
+      "alt": "Student Hostels & Residences",
+      "caption": "AC Student Residences & Amenities",
+      "seed": "biu-campus9"
+    },
+    {
+      "name": "biu-campus10.webp",
+      "alt": "Robotics & AI Innovation Lab",
+      "caption": "High-Tech Computer Science & AI Labs",
+      "seed": "biu-campus10"
+    },
+    {
+      "name": "biu-campus13.webp",
+      "alt": "BIU Green Campus Environment",
+      "caption": "Sprawling 100-Acre Green Campus Environment",
+      "seed": "biu-campus13"
     }
   ]
 }

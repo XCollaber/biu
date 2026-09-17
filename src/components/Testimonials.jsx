@@ -71,7 +71,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="relative w-full overflow-hidden bg-gradient-to-b from-[#07162c] via-[#0c2340] to-[#07162c] py-24 md:py-32">
+    <section id="testimonials" className="relative w-full overflow-hidden bg-gradient-to-tr from-[#07162c]/90 via-[#0c2340]/85 to-[#07162c]/50 py-24 md:py-32">
       {/* Hexagon pattern overlay */}
       <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.06]" aria-hidden="true">
         <defs>
