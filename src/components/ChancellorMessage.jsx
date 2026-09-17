@@ -43,7 +43,7 @@ export default function ChancellorMessage() {
               </div>
 
               {/* Name & Role Card Overlay */}
-              <div className="mt-1.5 w-full max-w-[320px] lg:max-w-none rounded-xl border border-white/10 bg-[#061426]/90 p-4 backdrop-blur-md shadow-lg">
+              <div className="mt-1.5 w-full max-w-[320px] lg:max-w-none rounded-xl border border-white/10 bg-white/10 p-4 backdrop-blur-md shadow-lg">
                 <h3 className="font-sans text-base sm:text-[17px] font-bold tracking-wide text-gold-light">
                   {chancellorData.chancellor.name}
                 </h3>

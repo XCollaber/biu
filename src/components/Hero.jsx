@@ -10,11 +10,11 @@ export default function Hero() {
   const reduceMotion = useReducedMotion();
   const videoRef = useRef(null);
 
-  // 3D Interactive Mouse Tilt - Defaulted to top-left perspective angle
+  // 3D Interactive Mouse Tilt - Left side coming forward out of screen, right side tilted back into depth
   const mouseX = useMotionValue(-0.5);
-  const mouseY = useMotionValue(-0.5);
-  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [3.5, -3.5]), { damping: 28, stiffness: 220 });
-  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-4.5, 4.5]), { damping: 28, stiffness: 220 });
+  const mouseY = useMotionValue(0);
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [3, -3]), { damping: 28, stiffness: 220 });
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-11.5, -4.5]), { damping: 28, stiffness: 220 });
 
   const handleMouseMove = (e) => {
     if (reduceMotion) return;
@@ -27,7 +27,7 @@ export default function Hero() {
 
   const handleMouseLeave = () => {
     mouseX.set(-0.5);
-    mouseY.set(-0.5);
+    mouseY.set(0);
   };
 
   // Signal hero video is ready for sequential testimonial preloading
@@ -79,12 +79,12 @@ export default function Hero() {
     <section id="home" className="relative w-full bg-white pt-24 sm:pt-28 lg:pt-28 pb-6 sm:pb-10 px-3 sm:px-5 md:px-10 lg:px-12 xl:px-18 [perspective:1400px]">
       {/* 3D Container Card Frame with subtle tilt and layered depth */}
       <motion.div
-        style={reduceMotion ? { rotateX: 3.5, rotateY: -4.5 } : { rotateX, rotateY, transformStyle: 'preserve-3d' }}
+        style={reduceMotion ? { rotateX: 0, rotateY: -9.5 } : { rotateX, rotateY, transformStyle: 'preserve-3d' }}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="relative mx-auto max-w-[1560px] w-full min-h-[490px] sm:min-h-[540px] lg:min-h-[570px] overflow-hidden rounded-xl sm:rounded-2xl bg-[#0c2340] shadow-[0_30px_70px_-15px_rgba(12,35,64,0.4),0_15px_35px_-5px_rgba(0,0,0,0.3),0_0_0_1px_rgba(255,255,255,0.15)_inset] border border-slate-300/80 transition-shadow duration-500 will-change-transform"
+        className="relative mx-auto max-w-[1560px] w-full min-h-[490px] sm:min-h-[540px] lg:min-h-[570px] overflow-hidden rounded-xl sm:rounded-xl bg-[#0c2340] shadow-[0_30px_70px_-15px_rgba(12,35,64,0.4),0_15px_35px_-5px_rgba(0,0,0,0.3),0_0_0_1px_rgba(255,255,255,0.15)_inset] border border-slate-300/80 transition-shadow duration-500 will-change-transform"
       >
-        {/* 3D Glass Specular Top Highlight */}
+        {/* 3D Glass Specular Top Highlight*/}
         <div className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-white/20 via-white/5 to-transparent z-20" />
 
         {/* Background video inside 3D frame */}
@@ -139,7 +139,7 @@ export default function Hero() {
             <motion.div variants={rise} className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <a
                 href="#contact"
-                className="group flex h-12 sm:h-14 items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light px-7 font-sans text-xs sm:text-sm font-extrabold uppercase tracking-[0.14em] text-forest-dark shadow-xl transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-2xl hover:brightness-105 hover:from-gold-light hover:to-gold-dark active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap"
+                className="group flex h-12 sm:h-14 items-center justify-center gap-2.5 bg-gradient-to-r from-gold-dark via-gold to-gold-light px-7 font-sans text-xs sm:text-sm font-extrabold uppercase tracking-[0.14em] text-forest-dark shadow-xl transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-2xl hover:brightness-105 hover:from-gold-light hover:to-gold-dark active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap"
               >
                 <GraduationCap size={24} weight="fill" className="text-forest-dark shrink-0 transition-transform duration-200 group-hover:scale-110" />
                 <span>{heroData.ctaPrimaryLabel || 'Admissions 2026-27'}</span>
@@ -148,7 +148,7 @@ export default function Hero() {
 
               <a
                 href="/faculties"
-                className="group flex h-12 sm:h-14 items-center justify-center gap-2 rounded-xl border border-white/20 bg-gradient-to-r from-navy-dark/90 via-navy/80 to-navy-light/85 backdrop-blur-md px-7 font-sans text-xs sm:text-sm font-extrabold uppercase tracking-[0.14em] text-white shadow-[0_8px_20px_rgba(8,23,43,0.35),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-white/25 hover:from-navy-light/95 hover:via-navy/90 hover:to-navy-dark/95 hover:shadow-[0_12px_28px_rgba(8,23,43,0.5),inset_0_1px_0_rgba(255,255,255,0.35)] active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap"
+                className="group flex h-12 sm:h-14 items-center justify-center gap-2 border border-white/20 bg-gradient-to-r from-navy-dark/90 via-navy/80 to-navy-light/85 backdrop-blur-md px-7 font-sans text-xs sm:text-sm font-extrabold uppercase tracking-[0.14em] text-white shadow-[0_8px_20px_rgba(8,23,43,0.35),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-white/25 hover:from-navy-light/95 hover:via-navy/90 hover:to-navy-dark/95 hover:shadow-[0_12px_28px_rgba(8,23,43,0.5),inset_0_1px_0_rgba(255,255,255,0.35)] active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap"
               >
                 <span>{heroData.ctaSecondaryLabel || 'Explore Faculties'}</span>
                 <CaretRight size={16} weight="bold" className="text-white/80 transition-all duration-200 group-hover:translate-x-1 group-hover:text-white" />

@@ -28,7 +28,7 @@ export default function Leadership() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-slate-100/30 py-16 sm:py-20 md:py-24">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-slate-100/30 py-16 sm:py-20 md:py-14">
       {/* Background visual accents */}
       <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-96 w-full max-w-7xl bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent blur-3xl" />
 
@@ -69,8 +69,8 @@ export default function Leadership() {
                   className="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
                 />
 
-                {/* Dark Gradient Overlay for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#061426] via-[#061426]/60 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-95" />
+                {/* Soft Gradient Overlay at bottom for text readability, leaving faces bright & clear */}
+                <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-[#061426] via-[#061426]/35 to-transparent transition-opacity duration-300 group-hover:from-[#061426]" />
               </div>
 
               {/* Bottom Card Content */}

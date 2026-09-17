@@ -33,7 +33,7 @@ const LABEL = 'font-sans text-[11px] font-semibold uppercase tracking-[0.18em] t
 export default function Contact() {
   const reduceMotion = useReducedMotion();
   const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', course: '', message: '' });
   const [errors, setErrors] = useState({});
 
   // Sanitized input handlers to enforce desired values only
@@ -57,6 +57,12 @@ export default function Contact() {
     const digitsOnly = e.target.value.replace(/\D/g, '').slice(0, 10);
     setForm((f) => ({ ...f, phone: digitsOnly }));
     if (errors.phone) setErrors((prev) => ({ ...prev, phone: '' }));
+  };
+
+  const handleCourseChange = (e) => {
+    const val = e.target.value;
+    setForm((f) => ({ ...f, course: val }));
+    if (errors.course) setErrors((prev) => ({ ...prev, course: '' }));
   };
 
   const handleMessageChange = (e) => {
@@ -126,6 +132,7 @@ export default function Contact() {
         name: form.name.trim(),
         email: form.email.trim(),
         phone: form.phone.trim(),
+        course: form.course.trim(),
         message: form.message.trim(),
       };
 
@@ -135,7 +142,8 @@ export default function Contact() {
       const targetPhone = (siteData.whatsappPhone || '917455002900').replace(/\D/g, '');
       const hasGreeting = /^hello (biu)/i.test(payload.message.trim());
       const bodyText = hasGreeting ? payload.message.trim() : `Hello BIU Admissions Team,\n\n${payload.message.trim()}`;
-      const formattedMessage = `${bodyText}\n\n*Name:* ${payload.name}\n*Email:* ${payload.email}\n*Phone:* ${payload.phone}`;
+      const coursePart = payload.course ? `\n*Course:* ${payload.course}` : '';
+      const formattedMessage = `${bodyText}\n\n*Name:* ${payload.name}\n*Email:* ${payload.email}\n*Phone:* ${payload.phone}${coursePart}`;
 
       const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(formattedMessage)}`;
       window.open(waUrl, '_blank', 'noopener,noreferrer');
@@ -195,7 +203,7 @@ export default function Contact() {
                 type="button"
                 onClick={() => {
                   setSent(false);
-                  setForm({ name: '', email: '', phone: '', message: '' });
+                  setForm({ name: '', email: '', phone: '', course: '', message: '' });
                   setErrors({});
                 }}
                 className="mt-6 font-sans text-[12px] font-semibold uppercase tracking-[0.16em] text-gold-dark underline-offset-4 transition-colors hover:text-gold hover:underline"
@@ -248,26 +256,47 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-2">
-                <label htmlFor="c-phone" className={LABEL}>
-                  Phone Number
-                </label>
-                <input
-                  id="c-phone"
-                  type="tel"
-                  required
-                  maxLength={10}
-                  autoComplete="tel"
-                  placeholder="e.g. 9876543210"
-                  value={form.phone}
-                  onChange={handlePhoneChange}
-                  className={`${FIELD} ${errors.phone ? 'border-red-500/60 ring-1 ring-red-500/20' : ''}`}
-                />
-                {errors.phone && (
-                  <span className="font-sans text-[12px] text-red-600 font-medium">
-                    {errors.phone}
-                  </span>
-                )}
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="c-phone" className={LABEL}>
+                    Phone Number
+                  </label>
+                  <input
+                    id="c-phone"
+                    type="tel"
+                    required
+                    maxLength={10}
+                    autoComplete="tel"
+                    placeholder="e.g. 9876543210"
+                    value={form.phone}
+                    onChange={handlePhoneChange}
+                    className={`${FIELD} ${errors.phone ? 'border-red-500/60 ring-1 ring-red-500/20' : ''}`}
+                  />
+                  {errors.phone && (
+                    <span className="font-sans text-[12px] text-red-600 font-medium">
+                      {errors.phone}
+                    </span>
+                  )}
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="c-course" className={LABEL}>
+                    Course Name
+                  </label>
+                  <input
+                    id="c-course"
+                    type="text"
+                    placeholder="e.g. MBBS, B.Tech, B.Pharm, MBA"
+                    value={form.course}
+                    onChange={handleCourseChange}
+                    className={`${FIELD} ${errors.course ? 'border-red-500/60 ring-1 ring-red-500/20' : ''}`}
+                  />
+                  {errors.course && (
+                    <span className="font-sans text-[12px] text-red-600 font-medium">
+                      {errors.course}
+                    </span>
+                  )}
+                </div>
               </div>
 
               <div className="flex flex-col gap-2.5">

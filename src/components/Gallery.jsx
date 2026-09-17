@@ -44,7 +44,7 @@ export default function Gallery() {
   const images = galleryData.images || [];
 
   return (
-    <section id="gallery" className="relative w-full bg-white py-24 md:py-32">
+    <section id="gallery" className="relative w-full bg-white py-24 md:py-20">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         {/* Header */}
         <motion.div
