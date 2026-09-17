@@ -71,7 +71,7 @@ export default function Footer() {
           <div className="mt-9 flex justify-center">
             <a
               href={footerData.ctaButtonLink || '#contact'}
-              className="group inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light px-8 py-3.5 font-sans text-xs sm:text-sm font-extrabold uppercase tracking-[0.14em] text-forest-dark shadow-xl transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-2xl hover:brightness-105 hover:from-gold-light hover:to-gold-dark active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap"
+              className="group inline-flex items-center gap-3 rounded-md bg-gradient-to-r from-gold-dark via-gold to-gold-light px-8 py-3.5 font-sans text-xs sm:text-sm font-extrabold uppercase tracking-[0.14em] text-forest-dark shadow-xl transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-2xl hover:brightness-105 hover:from-gold-light hover:to-gold-dark active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap"
             >
               <span>{footerData.ctaButtonLabel || 'Apply Now 2026'}</span>
               <ArrowRight

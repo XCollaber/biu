@@ -27,7 +27,7 @@ const ICON_MAP = {
 };
 
 const FIELD =
-  'w-full rounded-xl border border-forest/15 bg-white px-4 py-3.5 font-sans text-[15px] text-forest-dark placeholder:text-forest/30 outline-none transition-all duration-300 focus:border-gold focus:ring-2 focus:ring-gold/20';
+  'w-full rounded-md border border-forest/15 bg-white px-4 py-3.5 font-sans text-[15px] text-forest-dark placeholder:text-forest/30 outline-none transition-all duration-300 focus:border-gold focus:ring-2 focus:ring-gold/20';
 const LABEL = 'font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-dark';
 
 export default function Contact() {
@@ -172,7 +172,7 @@ export default function Contact() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.05 }}
-          className="rounded-2xl border border-forest/10 bg-white/80 p-8 shadow-[0_30px_80px_-45px_rgba(20,57,43,0.4)] sm:p-10 md:p-12"
+          className="rounded-lg border border-forest/10 bg-white/80 p-8 shadow-[0_30px_80px_-45px_rgba(20,57,43,0.4)] sm:p-10 md:p-12"
         >
           {/* Header */}
           <div className="text-center">
@@ -355,7 +355,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="group mt-2 flex h-14 w-full items-center justify-center gap-3 rounded-xl border border-white/20 bg-gradient-to-r from-[#0c2340]/95 via-[#102d52]/90 to-[#163860]/95 backdrop-blur-md px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_10px_25px_rgba(8,23,43,0.35),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-white/40 hover:from-[#163860]/95 hover:via-[#102d52]/90 hover:to-[#0c2340]/95 hover:shadow-[0_14px_32px_rgba(8,23,43,0.5),inset_0_1px_0_rgba(255,255,255,0.3)] active:translate-y-0 active:scale-[0.99] cursor-pointer"
+                className="group mt-2 flex h-14 w-full items-center justify-center gap-3 rounded-md border border-white/20 bg-gradient-to-r from-[#0c2340]/95 via-[#102d52]/90 to-[#163860]/95 backdrop-blur-md px-8 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_10px_25px_rgba(8,23,43,0.35),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-white/40 hover:from-[#163860]/95 hover:via-[#102d52]/90 hover:to-[#0c2340]/95 hover:shadow-[0_14px_32px_rgba(8,23,43,0.5),inset_0_1px_0_rgba(255,255,255,0.3)] active:translate-y-0 active:scale-[0.99] cursor-pointer"
               >
                 <PaperPlaneTilt size={18} weight="fill" className="text-gold-light shrink-0 transition-transform duration-200 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 <span>{contactData.submitButtonText || 'Submit Inquiry'}</span>

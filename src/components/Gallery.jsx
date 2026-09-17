@@ -157,7 +157,7 @@ export default function Gallery() {
               e.preventDefault();
               window.location.href = '/gallery';
             }}
-            className="group inline-flex h-13 sm:h-14 items-center justify-center gap-2.5 rounded-xl border border-white/20 bg-gradient-to-r from-[#0c2340]/95 via-[#102d52]/90 to-[#163860]/95 backdrop-blur-md px-6 font-sans text-xs sm:text-[12.5px] font-extrabold uppercase tracking-[0.14em] text-white shadow-[0_10px_25px_rgba(8,23,43,0.35),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-white/40 hover:from-[#163860]/95 hover:via-[#102d52]/90 hover:to-[#0c2340]/95 hover:shadow-[0_14px_32px_rgba(8,23,43,0.5),inset_0_1px_0_rgba(255,255,255,0.3)] active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap shrink-0"
+            className="group inline-flex h-13 sm:h-14 items-center justify-center gap-2.5 rounded-md border border-white/20 bg-gradient-to-r from-[#0c2340]/95 via-[#102d52]/90 to-[#163860]/95 backdrop-blur-md px-6 font-sans text-xs sm:text-[12.5px] font-extrabold uppercase tracking-[0.14em] text-white shadow-[0_10px_25px_rgba(8,23,43,0.35),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-white/40 hover:from-[#163860]/95 hover:via-[#102d52]/90 hover:to-[#0c2340]/95 hover:shadow-[0_14px_32px_rgba(8,23,43,0.5),inset_0_1px_0_rgba(255,255,255,0.3)] active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap shrink-0"
           >
             <Images size={18} weight="fill" className="text-gold-light shrink-0 transition-transform duration-200 group-hover:scale-110" />
             <span>View Full Gallery</span>

@@ -1,6 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { MapPin, NavigationArrow, Car } from '@phosphor-icons/react';
-import Logo from './Logo';
+import { MapPin, Clock, ArrowUpRight, QrCode as QrCodeIcon } from '@phosphor-icons/react';
 import Img from './Img';
 import locData from '../data/location.json';
 
@@ -15,72 +14,10 @@ const MAP_EMBED =
   'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3510.254210388375!2d79.45811936197623!3d28.381388942361564!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a007eaa171012f%3A0x535e385f86dbef22!2sBareilly%20international%20University%20new%20building!5e0!3m2!1sen!2sin!4v1789470009685!5m2!1sen!2sin';
 
 const VENUE = {
-  name: 'Bareilly International University',
+  name: 'Bareilly International University Main Campus',
   address: 'Pilibhit Bypass Road, Bareilly, Uttar Pradesh 243006',
+  note: '(Main Road, Near Rohilkhand Medical College & Hospital)',
 };
-
-const QR_CONFIG = {
-  mode: 'generated',
-  data: MAP.link,
-  imageSrc: '/qr/location-qr.png',
-  showLogo: true,
-};
-
-function QrCode() {
-  const src =
-    QR_CONFIG.mode === 'image'
-      ? QR_CONFIG.imageSrc
-      : `https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=10&ecc=H&data=${encodeURIComponent(
-        QR_CONFIG.data
-      )}`;
-
-  return (
-    <a
-      href={MAP.link}
-      target="_blank"
-      rel="noreferrer"
-      aria-label="Open location in Google Maps"
-      className="group relative inline-block h-40 w-40 shrink-0 rounded-xl bg-white p-3 ring-1 ring-black/10 shadow-sm transition-transform duration-500 ease-premium hover:scale-[1.03]"
-    >
-      <Img
-        src={src}
-        alt="Scan to open the venue location"
-        loading="lazy"
-        className="h-full w-full object-contain"
-        onError={(e) => {
-          const gen = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=10&ecc=H&data=${encodeURIComponent(
-            QR_CONFIG.data
-          )}`;
-          if (e.currentTarget.src !== gen) e.currentTarget.src = gen;
-        }}
-      />
-      {QR_CONFIG.showLogo && (
-        <span className="absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-lg bg-forest-dark ring-2 ring-white">
-          <Logo className="h-6 w-6 text-gold" />
-        </span>
-      )}
-    </a>
-  );
-}
-
-const DEFAULT_DISTANCES = [
-  'Conveniently located on Dohra Road, near G.D. Goenka School, Bareilly',
-  'Approximately 15 minutes from Bareilly Railway Station (Junction)',
-  'Approximately 20 minutes from Bareilly Airport (Civil Enclave)',
-  'Easy access from Delhi-Lucknow Highway (NH 30 / Bareilly Bypass)',
-];
-
-function Block({ icon: Icon, label, children }) {
-  return (
-    <div>
-      <div className="flex items-center gap-2 font-sans text-[12px] font-semibold uppercase tracking-[0.2em] text-gold-dark">
-        <Icon size={16} weight="fill" />
-        {label}
-      </div>
-      <div className="mt-3 space-y-1.5">{children}</div>
-    </div>
-  );
-}
 
 export default function Location() {
   const reduceMotion = useReducedMotion();
@@ -90,72 +27,112 @@ export default function Location() {
     show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE } },
   };
 
-  const distanceList =
-    locData.distances && locData.distances.length > 0
-      ? locData.distances.map((d) => (typeof d === 'string' ? d : d.text || d))
-      : DEFAULT_DISTANCES;
+  const qrSrc = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=10&ecc=H&data=${encodeURIComponent(MAP.link)}`;
 
   return (
     <section id="location" className="relative w-full bg-gradient-to-br from-[#f0f4f8] via-[#e8eef5] to-[#f0f4f8] py-24 md:py-20">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-8 px-5 sm:px-8 lg:grid-cols-2 lg:gap-10">
-        {/* Left: info card */}
+        {/* Left: info card matching reference design layout */}
         <motion.div
           variants={fade}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.05 }}
-          className="rounded-2xl border border-[#0c2340]/10 bg-white/70 p-8 md:p-10"
+          className="flex flex-col justify-between rounded-2xl border border-[#0c2340]/10 bg-white/70 p-6 sm:p-8 md:p-10 shadow-sm"
         >
-          <h2 className="font-serif text-[28px] font-medium leading-tight text-forest-dark sm:text-4xl">
-            {locData.titleLine1 || 'Conveniently Connected'}
-            <br />
-            {locData.titleLine2 || 'Naturally Secluded'}
-          </h2>
+          <div>
+            {/* Header Headline */}
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-[32px] font-medium leading-tight text-forest-dark">
+              Find Bareilly International University <span className="text-forest/60 font-serif font-normal">in Bareilly</span>
+            </h2>
 
-          <div className="mt-8 grid gap-8 md:grid-cols-[1fr_auto] md:gap-6">
-            <div className="space-y-8">
-              <Block icon={MapPin} label="Distance">
-                {distanceList.map((d) => (
-                  <p key={d} className="font-sans text-[14px] font-light leading-relaxed text-forest/70">
-                    {d}
-                  </p>
-                ))}
-                <p className="pt-1 font-sans text-[12px] font-light italic text-forest/45">
-                  {locData.travelTimeDisclaimer || 'Travel times are estimates and vary with traffic.'}
-                </p>
-              </Block>
+            {/* Address Block */}
+            <div className="mt-7 flex flex-col gap-1.5">
+              <div className="flex items-center gap-2 font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-gold-dark">
+                <MapPin size={15} weight="fill" className="text-gold-dark" />
+                <span>ADDRESS</span>
+              </div>
+              <h3 className="font-sans text-base sm:text-[17px] font-bold text-slate-900 mt-0.5">
+                {VENUE.name}
+              </h3>
+              <p className="font-sans text-xs sm:text-sm text-slate-700 font-light leading-relaxed">
+                {VENUE.address}
+              </p>
+              <p className="font-sans text-xs text-slate-500 font-light italic mt-0.5">
+                {VENUE.note}
+              </p>
             </div>
 
-            {/* QR */}
-            <div className="flex justify-center md:justify-end">
-              <QrCode />
+            {/* Hours Block */}
+            <div className="mt-6 flex flex-col gap-1.5">
+              <div className="flex items-center gap-2 font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-gold-dark">
+                <Clock size={15} weight="fill" className="text-gold-dark" />
+                <span>HOURS</span>
+              </div>
+              <div className="mt-1 flex flex-col gap-1.5 font-sans text-xs sm:text-sm text-slate-800">
+                <p><strong className="font-semibold text-slate-900">Admissions Cell:</strong> Mon – Sat (9:00am to 5:00pm)</p>
+                <p><strong className="font-semibold text-slate-900">Hospital & Emergency:</strong> 24x7 Round the Clock</p>
+                <p><strong className="font-semibold text-slate-900">Campus Visits:</strong> Mon – Sat (10:00am to 4:00pm)</p>
+              </div>
             </div>
           </div>
 
-          <div className="mt-8 grid gap-8 sm:grid-cols-2">
-            <div className="hidden sm:block">
-              <Block icon={Car} label="Parking">
-                <p className="font-sans text-[14px] font-light text-forest/70">
-                  {locData.parkingText || '500 car spaces available'}
+          <div>
+            {/* Horizontal Divider */}
+            <div className="my-7 border-t border-slate-200/80" />
+
+            {/* Bottom QR & Navigation Row */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6">
+              {/* QR Code Container */}
+              <a
+                href={MAP.link}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open location in Google Maps"
+                className="group relative h-28 w-28 sm:h-32 sm:w-32 shrink-0 rounded-2xl bg-white p-2.5 ring-1 ring-black/10 shadow-sm transition-transform duration-300 hover:scale-[1.03]"
+              >
+                <Img
+                  src={qrSrc}
+                  alt="Scan to open venue location"
+                  loading="lazy"
+                  className="h-full w-full object-contain"
+                />
+                <span className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-lg bg-white ring-2 ring-[#0c2340]/20 shadow-xs">
+                  <Img
+                    src="/biu-logo.webp"
+                    alt="BIU Logo"
+                    className="h-9 w-9 object-contain"
+                  />
+                </span>
+              </a>
+
+              {/* Right Details & Action Button */}
+              <div className="flex flex-col items-start gap-1.5">
+                {/* Scan Badge */}
+                <div className="inline-flex items-center gap-1.5 rounded-full border border-cyan-800/20 bg-cyan-900/5 px-3 py-1 font-sans text-[11px] font-bold text-cyan-600">
+                  <QrCodeIcon size={18} weight="bold" />
+                  <span>Scan for Directions</span>
+                </div>
+
+                <h3 className="font-sans text-base sm:text-lg font-bold text-slate-900 mt-0.5">
+                  Instant Navigation
+                </h3>
+                <p className="font-sans text-xs sm:text-sm text-slate-600 font-light leading-relaxed max-w-sm">
+                  Scan this QR code with your mobile camera to open exact GPS directions in Google Maps.
                 </p>
-              </Block>
-            </div>
-            <Block icon={NavigationArrow} label="Directions">
-              <p className="font-sans text-[14px] font-light leading-relaxed text-forest/70">
-                {locData.address || VENUE.address}
-              </p>
-              <div className="pt-3">
+
+                {/* Pill Button */}
                 <a
                   href={MAP.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex w-full sm:w-auto h-12 items-center justify-center gap-2 rounded-xl bg-[#0c2340] border border-gold/50 px-6 font-sans text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.16em] text-[#f7e7b4] shadow-md transition-all duration-300 ease-premium hover:bg-[#163860] hover:border-gold hover:scale-105 hover:shadow-lg active:scale-95 cursor-pointer"
+                  className="group mt-2 inline-flex h-10 items-center justify-center gap-2 rounded-md border border-slate-300 bg-gradient-to-r from-[#0c2340]/95 via-[#102d52]/90 to-[#163860]/65 px-5 font-sans text-xs font-semibold text-white shadow-xs transition-all duration-200 hover:bg-slate-50 hover:border-slate-400 hover:-translate-y-0.5"
                 >
-                  <NavigationArrow size={18} weight="fill" className="text-gold shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
-                  <span>{locData.directionsButtonLabel || 'Get Directions'}</span>
+                  <span>Open in Google Maps</span>
+                  <ArrowUpRight size={14} weight="bold" className="text-white transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               </div>
-            </Block>
+            </div>
           </div>
         </motion.div>
 
@@ -165,7 +142,7 @@ export default function Location() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.05 }}
-          className="relative min-h-[420px] overflow-hidden rounded-2xl ring-1 ring-black/10 shadow-[0_30px_80px_-40px_rgba(20,57,43,0.4)]"
+          className="relative min-h-[440px] overflow-hidden rounded-2xl ring-1 ring-black/10 shadow-[0_30px_80px_-40px_rgba(20,57,43,0.4)]"
         >
           <iframe
             title={`Map showing ${locData.venueName || VENUE.name}`}
