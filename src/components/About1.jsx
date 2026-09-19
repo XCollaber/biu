@@ -34,7 +34,7 @@ export default function About() {
           transition={{ duration: 0.8, ease: EASE }}
           className="max-w-4xl text-2xl sm:text-4xl md:text-[40px] font-bold uppercase leading-[1.25] tracking-tight text-[#1e3a60] font-['Montserrat',sans-serif]"
         >
-          STEP INTO THE WORLD OF EVIDENCE-DRIVEN, COMPETENCY-BASED LEARNING.
+          WELCOME TO BAREILLY INTERNATIONAL UNIVERSITY
         </motion.h2>
 
         {/* Row of 6 Gold Stat Circles */}
@@ -63,15 +63,16 @@ export default function About() {
         </motion.div>
 
         {/* Bottom Narrative Description */}
-        <motion.p
+        <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: EASE, delay: 0.3 }}
-          className="max-w-3xl text-sm sm:text-base text-neutral-600 font-normal leading-relaxed text-center px-4 mb-6 sm:mb-10"
+          className="max-w-3xl text-sm sm:text-base text-neutral-600 font-normal leading-relaxed text-center px-4 mb-6 sm:mb-10 flex flex-col gap-3"
         >
-          Founded in 2016 and recognized as a premier university, BIU is a dynamic hub of multidisciplinary learning. With exceptional faculty, state-of-the-art facilities, and an industry-aligned curriculum, it fuels innovation, research, and a vibrant campus life — shaping future leaders ready to make an impact.
-        </motion.p>
+          <p>Bareilly International University (BIU), is established in accordance with UGC Act 1956 by the Uttar Pradesh Govt. Act No. 26 (dated 16th Sept 2016).</p>
+          <p>Promoted by Rohilkhand Charitable Educational Trust and functional from session 2016-17 with various courses, our endeavor is to impart knowledge and develop skills to attain success in professional and personal life by providing a growing learning and research environment with world-class faculty, infrastructure and technology.</p>
+        </motion.div>
       </div>
     </section>
   );

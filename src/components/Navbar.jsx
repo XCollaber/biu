@@ -341,7 +341,7 @@ export default function Navbar() {
                 >
                   <a
                     href={item.href}
-                    className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-sans text-[13px] font-bold tracking-tight transition-all duration-300 ${isHovered
+                    className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-sans text-[13.5px] font-bold tracking-tight transition-all duration-300 ${isHovered
                       ? 'bg-slate-100 text-[#0c2340] opacity-100'
                       : isDimmed
                         ? 'text-slate-600 opacity-70 hover:opacity-100'
@@ -350,7 +350,7 @@ export default function Navbar() {
                   >
                     <span>{item.label}</span>
                     <CaretDown
-                      size={12}
+                      size={13}
                       weight="bold"
                       className={`transition-transform duration-200 ${isHovered ? 'rotate-180 text-[#0c2340]' : 'text-slate-400'
                         }`}
