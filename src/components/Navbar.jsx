@@ -211,7 +211,7 @@ export default function Navbar() {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setActiveItem(null);
-    }, 150);
+    }, 100);
   };
 
   // Close mobile menu on click outside
@@ -234,9 +234,8 @@ export default function Navbar() {
       initial={reduceMotion ? false : { y: -10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed inset-x-0 top-0 z-50 bg-white transition-[border-color,box-shadow] duration-300 ${
-        scrolled ? 'border-b border-slate-200/80 shadow-xs' : 'border-b border-slate-200/60'
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 bg-white transition-[border-color,box-shadow] duration-300 ${scrolled ? 'border-b border-slate-200/80 shadow-xs' : 'border-b border-slate-200/60'
+        }`}
     >
       {/* Top Utility Ribbon - Stripe Tier Clean Top Strip */}
       <motion.div
@@ -310,6 +309,8 @@ export default function Navbar() {
         <nav className="hidden items-center gap-1 lg:flex">
           {NAV_ITEMS.map((item) => {
             const isHovered = activeItem === item.id;
+            const isDimmed = activeItem && !isHovered;
+
             return (
               <div
                 key={item.id}
@@ -318,19 +319,19 @@ export default function Navbar() {
               >
                 <a
                   href={item.href}
-                  className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-sans text-[13px] font-bold tracking-tight transition-all duration-200 ${
-                    isHovered
-                      ? 'bg-slate-100 text-[#0c2340]'
-                      : 'text-slate-700 hover:text-[#0c2340] hover:bg-slate-50'
-                  }`}
+                  className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-sans text-[13px] font-bold tracking-tight transition-all duration-300 ${isHovered
+                      ? 'bg-slate-100 text-[#0c2340] opacity-100'
+                      : isDimmed
+                        ? 'text-slate-600 opacity-70 hover:opacity-100'
+                        : 'text-slate-700 hover:text-[#0c2340] hover:bg-slate-50 opacity-100'
+                    }`}
                 >
                   <span>{item.label}</span>
                   <CaretDown
                     size={12}
                     weight="bold"
-                    className={`transition-transform duration-200 ${
-                      isHovered ? 'rotate-180 text-[#0c2340]' : 'text-slate-400'
-                    }`}
+                    className={`transition-transform duration-200 ${isHovered ? 'rotate-180 text-[#0c2340]' : 'text-slate-400'
+                      }`}
                   />
                 </a>
               </div>
@@ -399,13 +400,12 @@ export default function Navbar() {
                   {/* Left Multi-Column Layout */}
                   <div className="col-span-8 lg:col-span-9 p-7 sm:p-8">
                     <div
-                      className={`grid gap-8 ${
-                        activeNavData.columns.length === 3 ? 'grid-cols-3' : 'grid-cols-2'
-                      }`}
+                      className={`grid gap-8 ${activeNavData.columns.length === 3 ? 'grid-cols-3' : 'grid-cols-2'
+                        }`}
                     >
                       {activeNavData.columns.map((col) => (
                         <div key={col.title} className="flex flex-col gap-4">
-                          <h4 className="font-sans text-[11px] font-bold uppercase tracking-[0.16em] text-slate-400">
+                          <h4 className="font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
                             {col.title}
                           </h4>
                           <div className="flex flex-col gap-3.5">
@@ -416,7 +416,7 @@ export default function Navbar() {
                                 onClick={() => setActiveItem(null)}
                                 className="group flex flex-col items-start rounded-lg transition-colors"
                               >
-                                <span className="flex items-center gap-1 font-sans text-[13.5px] font-bold tracking-tight text-slate-900 transition-colors group-hover:text-cyan-800">
+                                <span className="flex items-center gap-1 font-sans text-[13.5px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-cyan-800">
                                   <span>{item.title}</span>
                                   <CaretRight
                                     size={12}
@@ -438,7 +438,7 @@ export default function Navbar() {
                   {/* Right Featured Column (Stripe Style Light Tint Panel) */}
                   <div className="col-span-4 lg:col-span-3 bg-[#f8f9fc] p-6 sm:p-7 flex flex-col justify-between">
                     <div>
-                      <h4 className="font-sans text-[11px] font-bold uppercase tracking-[0.16em] text-slate-400 mb-4">
+                      <h4 className="font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400 mb-4">
                         {activeNavData.featured.tag}
                       </h4>
 
@@ -454,13 +454,13 @@ export default function Navbar() {
                             className="h-28 w-full rounded-lg object-cover mb-3.5"
                           />
                         )}
-                        <h5 className="font-sans text-xs font-bold text-slate-900 group-hover:text-cyan-800 transition-colors">
+                        <h5 className="font-sans text-xs font-semibold text-slate-900 group-hover:text-cyan-800 transition-colors">
                           {activeNavData.featured.title}
                         </h5>
                         <p className="font-sans text-[11.5px] text-slate-500 mt-1 leading-relaxed">
                           {activeNavData.featured.desc}
                         </p>
-                        <div className="mt-3.5 inline-flex items-center gap-1 font-sans text-xs font-bold text-[#0c2340] group-hover:text-cyan-800 transition-colors">
+                        <div className="mt-3.5 inline-flex items-center gap-1 font-sans text-xs font-semibold text-[#0c2340] group-hover:text-cyan-800 transition-colors">
                           <span>{activeNavData.featured.linkText}</span>
                           <CaretRight size={12} weight="bold" className="transition-transform group-hover:translate-x-0.5" />
                         </div>
@@ -475,7 +475,7 @@ export default function Navbar() {
                     <a
                       href={activeNavData.bottomLink.href}
                       onClick={() => setActiveItem(null)}
-                      className="group inline-flex items-center gap-1.5 font-sans text-xs font-bold text-[#0c2340] hover:text-cyan-800 transition-colors"
+                      className="group inline-flex items-center gap-1.5 font-sans text-xs font-semibold text-[#0c2340] hover:text-cyan-800 transition-colors"
                     >
                       <span>{activeNavData.bottomLink.text}</span>
                       <CaretRight size={13} weight="bold" className="transition-transform group-hover:translate-x-0.5" />
@@ -485,6 +485,20 @@ export default function Navbar() {
               </motion.div>
             </div>
           </div>
+        )}
+      </AnimatePresence>
+
+      {/* Desktop Backdrop Blur Overlay when Mega Menu is focused (Hero Section Only) */}
+      <AnimatePresence>
+        {activeNavData && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute inset-x-0 top-full h-[100vh] -z-10 bg-slate-900/15 backdrop-blur-[4px] pointer-events-none hidden lg:block"
+            aria-hidden="true"
+          />
         )}
       </AnimatePresence>
 
