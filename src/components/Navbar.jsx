@@ -234,7 +234,7 @@ export default function Navbar() {
       initial={reduceMotion ? false : { y: -10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed inset-x-0 top-0 z-50 bg-white transition-[border-color,box-shadow] duration-300 ${scrolled ? 'border-b border-slate-200/80 shadow-xs' : 'border-b border-slate-200/60'
+      className={`fixed inset-x-0 top-0 z-50 bg-white transition-shadow duration-300 ${scrolled ? 'shadow-lg' : 'shadow-md'
         }`}
     >
       {/* Top Utility Ribbon - Stripe Tier Clean Top Strip */}
@@ -243,29 +243,29 @@ export default function Navbar() {
         animate={scrolled ? { height: 0, opacity: 0 } : { height: 'auto', opacity: 1 }}
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         onMouseEnter={handleMouseLeave}
-        className="overflow-hidden bg-[#0c2340] text-white/90 font-sans text-[11px] sm:text-[12px] border-b border-white/10"
+        className="overflow-hidden bg-gradient-to-r from-[#143966] via-[#0c2340] to-[#07192e] text-white/90 font-sans text-[11px] sm:text-[12px] border-b border-white/10"
       >
         <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-3 px-4 sm:px-6 lg:px-8 py-1.5">
           <div className="flex items-center gap-2 text-white font-medium text-[11px] sm:text-[12px] tracking-wide">
             <span className="font-semibold text-white">BIU</span>
-            <span className="text-white/40">•</span>
+            <span className="text-white/60">•</span>
             <span className="text-white/80">Bareilly International University Main Campus</span>
           </div>
 
           <div className="flex items-center gap-4 sm:gap-6 text-white/90 text-[11px] sm:text-[12.5px]">
-            <a href="mailto:admissions@biu.edu.in" className="flex items-center gap-1.5 transition-colors hover:text-cyan-300">
-              <EnvelopeSimple size={14} weight="fill" className="text-cyan-400 shrink-0" />
+            <a href="mailto:admissions@biu.edu.in" className="flex items-center gap-1.5 transition-colors hover:text-blue-200/95">
+              <EnvelopeSimple size={15} weight="fill" className="text-blue-300 shrink-0" />
               <span>admissions@biu.edu.in</span>
             </a>
-            <a href="tel:+915812526244" className="hidden sm:flex items-center gap-1.5 transition-colors hover:text-cyan-300">
-              <Phone size={14} weight="fill" className="text-cyan-400 shrink-0" />
+            <a href="tel:+915812526244" className="hidden sm:flex items-center gap-1.5 transition-colors hover:text-blue-200/95">
+              <Phone size={14} weight="fill" className="text-blue-300 shrink-0" />
               <span>+91 (581) 2526244</span>
             </a>
             <a
               href="https://test.biu.edu.in/#erp"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-block font-medium text-white transition-colors hover:text-cyan-300"
+              className="hidden sm:inline-block font-medium text-white transition-colors hover:text-blue-200/95"
             >
               Student Portal
             </a>
@@ -273,7 +273,7 @@ export default function Navbar() {
               href="/#contact"
               className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2.5 py-0.5 text-[11px] font-semibold text-white border border-white/20 transition-all hover:bg-white/20"
             >
-              <Briefcase size={13} weight="fill" className="text-amber-400 shrink-0" />
+              <Briefcase size={14} weight="fill" className="text-blue-300 shrink-0" />
               <span>Careers</span>
             </a>
           </div>
@@ -281,94 +281,107 @@ export default function Navbar() {
       </motion.div>
 
       {/* Main Stripe Navigation Bar */}
-      <div
-        className="relative mx-auto flex max-w-[1400px] items-center justify-between px-4 sm:px-6 lg:px-8 py-2.5"
-        onMouseEnter={() => {
-          if (timeoutRef.current) clearTimeout(timeoutRef.current);
-        }}
-        onMouseLeave={handleMouseLeave}
-      >
-        {/* University Brand Logo */}
-        <a href="/" className="group flex items-center gap-3 shrink-0" aria-label="BIU Home">
-          <img
-            src="/biu-logo.webp"
-            alt="Bareilly International University"
-            className="h-9 w-auto sm:h-11 object-contain transition-transform duration-300 group-hover:scale-105"
-          />
-          <span className="flex flex-col leading-tight">
-            <span className="font-serif text-base font-extrabold tracking-tight text-slate-900 sm:text-[21px]">
-              {siteData.name || 'Bareilly International University'}
-            </span>
-            <span className="font-sans text-[9px] uppercase tracking-[0.16em] text-[#0c2340] font-bold sm:text-[10px]">
-              {siteData.accreditation || 'UGC Approved | NAAC A+ Grade'}
-            </span>
-          </span>
-        </a>
+      <div className="relative w-full overflow-hidden">
+        {/* Heritage Diamond Lattice Watermark Pattern Overlay (Fade-out from bottom to top, covering only bottom half) */}
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.11] overflow-hidden"
+          style={{
+            maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0) 70%)',
+            WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0) 70%)',
+          }}
+          aria-hidden="true"
+        >
+          <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <defs>
+              <pattern id="biu-heritage-lattice" width="48" height="48" patternUnits="userSpaceOnUse">
+                <path d="M24 0 L48 24 L24 48 L0 24 Z" fill="none" stroke="#0c2340" strokeWidth="1" />
+                <path d="M24 6 L42 24 L24 42 L6 24 Z" fill="none" stroke="#0c2340" strokeWidth="0.6" strokeDasharray="2,2" />
+                <path d="M0 0 L24 24 L48 0 M0 48 L24 24 L48 48" fill="none" stroke="#0c2340" strokeWidth="0.75" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#biu-heritage-lattice)" />
+          </svg>
+        </div>
 
-        {/* Desktop Nav Tabs (Stripe Style) */}
-        <nav className="hidden items-center gap-1 lg:flex">
-          {NAV_ITEMS.map((item) => {
-            const isHovered = activeItem === item.id;
-            const isDimmed = activeItem && !isHovered;
+        <div
+          className="mx-auto flex max-w-[1400px] items-center justify-between px-4 sm:px-6 lg:px-8 py-2.5"
+          onMouseEnter={() => {
+            if (timeoutRef.current) clearTimeout(timeoutRef.current);
+          }}
+          onMouseLeave={handleMouseLeave}
+        >
+          {/* University Brand Logo */}
+          <a href="/" className="group flex items-center gap-3 shrink-0" aria-label="BIU Home">
+            <img
+              src="/biu-logo.webp"
+              alt="Bareilly International University"
+              className="h-9 w-auto sm:h-11 object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+            <span className="flex flex-col leading-tight">
+              <span className="font-serif text-base font-extrabold tracking-tight text-slate-900 sm:text-[21px]">
+                {siteData.name || 'Bareilly International University'}
+              </span>
+              <span className="font-sans text-[9px] uppercase tracking-[0.16em] text-[#0c2340] font-bold sm:text-[10px]">
+                {siteData.accreditation || 'UGC Approved | NAAC A+ Grade'}
+              </span>
+            </span>
+          </a>
 
-            return (
-              <div
-                key={item.id}
-                className="relative py-1"
-                onMouseEnter={() => handleMouseEnter(item.id)}
-              >
-                <a
-                  href={item.href}
-                  className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-sans text-[13px] font-bold tracking-tight transition-all duration-300 ${isHovered
+          {/* Desktop Nav Tabs (Stripe Style) */}
+          <nav className="hidden items-center gap-1 lg:flex">
+            {NAV_ITEMS.map((item) => {
+              const isHovered = activeItem === item.id;
+              const isDimmed = activeItem && !isHovered;
+
+              return (
+                <div
+                  key={item.id}
+                  className="relative py-1"
+                  onMouseEnter={() => handleMouseEnter(item.id)}
+                >
+                  <a
+                    href={item.href}
+                    className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-sans text-[13px] font-bold tracking-tight transition-all duration-300 ${isHovered
                       ? 'bg-slate-100 text-[#0c2340] opacity-100'
                       : isDimmed
                         ? 'text-slate-600 opacity-70 hover:opacity-100'
                         : 'text-slate-700 hover:text-[#0c2340] hover:bg-slate-50 opacity-100'
-                    }`}
-                >
-                  <span>{item.label}</span>
-                  <CaretDown
-                    size={12}
-                    weight="bold"
-                    className={`transition-transform duration-200 ${isHovered ? 'rotate-180 text-[#0c2340]' : 'text-slate-400'
                       }`}
-                  />
-                </a>
-              </div>
-            );
-          })}
-        </nav>
+                  >
+                    <span>{item.label}</span>
+                    <CaretDown
+                      size={12}
+                      weight="bold"
+                      className={`transition-transform duration-200 ${isHovered ? 'rotate-180 text-[#0c2340]' : 'text-slate-400'
+                        }`}
+                    />
+                  </a>
+                </div>
+              );
+            })}
+          </nav>
 
-        {/* Right Buttons: Sign In & Apply Now (Stripe Style) */}
-        <div className="flex items-center gap-3 shrink-0">
-          <a
-            href="https://test.biu.edu.in/#erp"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-1.5 font-sans text-xs font-bold text-[#0c2340] hover:text-[#102d52] px-3.5 py-2 transition-colors"
-          >
-            <User size={15} weight="bold" />
-            <span>Sign in</span>
-          </a>
+          {/* Right Buttons: Apply Now (Stripe Style) */}
+          <div className="flex items-center gap-3 shrink-0">
+            <a
+              href="/#contact"
+              className="group hidden sm:inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-3.5 py-2.5 font-sans text-xs font-semibold text-white shadow-xs brightness-125 transition-all duration-200 hover:shadow-lg hover:brightness-125 active:scale-[0.98]"
+            >
+              <GraduationCap size={18} weight="fill" className="text-blue-100 transition-transform duration-200 group-hover:scale-110" />
+              <span>Apply Now 2026</span>
+              <CaretRight size={12} weight="bold" className="text-white/90 transition-transform duration-200 group-hover:translate-x-0.5" />
+            </a>
 
-          <a
-            href="/#contact"
-            className="group hidden sm:inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0c2340] via-[#102d52] to-[#163860] px-5 py-2.5 font-sans text-xs font-bold text-white shadow-xs transition-all duration-200 hover:shadow-md hover:brightness-110 active:scale-[0.98]"
-          >
-            <GraduationCap size={16} weight="fill" className="text-amber-400 transition-transform duration-200 group-hover:scale-110" />
-            <span>Apply Now 2026</span>
-            <CaretRight size={12} weight="bold" className="text-white/80 transition-transform duration-200 group-hover:translate-x-0.5" />
-          </a>
-
-          {/* Mobile hamburger */}
-          <button
-            type="button"
-            onClick={() => setMenuOpen((v) => !v)}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-800 ring-1 ring-inset ring-slate-300 transition-colors duration-200 hover:bg-slate-100 lg:hidden shrink-0"
-          >
-            {menuOpen ? <X size={20} weight="bold" /> : <List size={20} weight="bold" />}
-          </button>
+            {/* Mobile hamburger */}
+            <button
+              type="button"
+              onClick={() => setMenuOpen((v) => !v)}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-800 ring-1 ring-inset ring-slate-300 transition-colors duration-200 hover:bg-slate-100 lg:hidden shrink-0"
+            >
+              {menuOpen ? <X size={20} weight="bold" /> : <List size={20} weight="bold" />}
+            </button>
+          </div>
         </div>
       </div>
 
