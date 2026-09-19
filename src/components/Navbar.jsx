@@ -1,53 +1,190 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent, useReducedMotion } from 'framer-motion';
-import { List, X, GraduationCap, Phone, EnvelopeSimple, MapPin, CaretDown, Briefcase } from '@phosphor-icons/react';
-import Logo from './Logo';
+import { List, X, GraduationCap, EnvelopeSimple, Phone, CaretDown, CaretRight, Briefcase, User } from '@phosphor-icons/react';
 import siteData from '../data/site.json';
 
-const NAV_LINKS = [
-  { label: 'HOME', href: '/' },
+const NAV_ITEMS = [
   {
-    label: 'PROGRAMMES OFFERED',
+    id: 'programmes',
+    label: 'Programmes',
     href: '/faculties',
-    dropdown: [
-      { name: 'Medical Sciences (MBBS, MD, MS)', href: '/faculties', desc: 'Premier NMC approved medical degree programs' },
-      { name: 'Dental Sciences (BDS, MDS)', href: '/faculties', desc: 'DCI recognized dental surgery & specialization' },
-      { name: 'Engineering & Technology', href: '/faculties', desc: 'B.Tech, M.Tech, Computer Science & AI' },
-      { name: 'Pharmacy & Drug Research', href: '/faculties', desc: 'B.Pharm, D.Pharm & Pharmaceutical Sciences' },
-      { name: 'Nursing & Allied Health', href: '/faculties', desc: 'B.Sc Nursing, GNM & Clinical Training' },
-      { name: 'Management & Law', href: '/faculties', desc: 'BBA, MBA, BA LLB & Corporate Law' },
+    columns: [
+      {
+        title: 'Medical & Dental',
+        items: [
+          { title: 'MBBS & MD/MS', href: '/faculties', desc: 'Premier NMC approved medical degree programs' },
+          { title: 'BDS & MDS', href: '/faculties', desc: 'DCI recognized dental surgery & specialization' },
+          { title: 'Super Specialty Medicine', href: '/faculties', desc: 'DM, M.Ch & Clinical Fellowships' },
+        ],
+      },
+      {
+        title: 'Healthcare & Sciences',
+        items: [
+          { title: 'Pharmacy', href: '/faculties', desc: 'B.Pharm, D.Pharm & Drug Research' },
+          { title: 'Nursing Sciences', href: '/faculties', desc: 'B.Sc Nursing, GNM & Clinical Training' },
+          { title: 'Paramedical & Allied', href: '/faculties', desc: 'BMLT, BRIT & Physiotherapy' },
+        ],
+      },
+      {
+        title: 'Technology & Business',
+        items: [
+          { title: 'Engineering & AI', href: '/faculties', desc: 'B.Tech, M.Tech & Artificial Intelligence' },
+          { title: 'Computer Applications', href: '/faculties', desc: 'BCA, MCA & Cyber Security' },
+          { title: 'Management & Law', href: '/faculties', desc: 'BBA, MBA, BA LLB & Corporate Law' },
+        ],
+      },
     ],
+    featured: {
+      tag: 'Admissions 2026',
+      title: 'Academic Catalogue 2026',
+      desc: 'Explore 50+ undergraduate & postgraduate degree programmes across 9 constituent colleges.',
+      image: '/biu-campus1.webp',
+      linkText: 'Download Brochure',
+      linkHref: '/#contact',
+    },
+    bottomLink: { text: 'See all 50+ degree programmes & faculties', href: '/faculties' },
   },
   {
-    label: 'ADMISSIONS DESK',
+    id: 'admissions',
+    label: 'Admissions',
     href: '/#contact',
-    dropdown: [
-      { name: 'Admission Procedure 2026-27', href: '/#contact', desc: 'Step-by-step application guidance & seat status' },
-      { name: 'Fee Structure & Scholarships', href: '/#contact', desc: 'Merit-based scholarships & tuition details' },
-      { name: 'Online Application Form', href: '/#contact', desc: 'Direct online registration portal' },
-      { name: 'Entrance Examinations', href: '/#contact', desc: 'NEET, JEE & University entrance guidelines' },
-      { name: 'Counseling & Helpline', href: 'tel:+915812526244', desc: 'Talk to our academic counselors directly' },
+    columns: [
+      {
+        title: 'Applications',
+        items: [
+          { title: 'Online Application Form', href: '/#contact', desc: 'Direct online registration portal' },
+          { title: 'Admission Guidelines 2026', href: '/#contact', desc: 'Step-by-step application guidance & seat status' },
+          { title: 'Fee Structure & Scholarships', href: '/#contact', desc: 'Merit-based scholarships & tuition details' },
+        ],
+      },
+      {
+        title: 'Entrance & Counseling',
+        items: [
+          { title: 'Entrance Examinations', href: '/#contact', desc: 'NEET, JEE & BIU Entrance guidelines' },
+          { title: 'Eligibility Criteria', href: '/#contact', desc: 'Stream requirements & minimum cutoffs' },
+          { title: 'Document Verification', href: '/#contact', desc: 'Checklist for physical counseling' },
+        ],
+      },
+      {
+        title: 'Helpline & Aid',
+        items: [
+          { title: 'Academic Counselors', href: 'tel:+915812526244', desc: 'Talk to our admissions desk directly' },
+          { title: 'Education Loans', href: '/#contact', desc: 'Bank tie-ups & zero-interest assistance' },
+          { title: 'Campus Visit Booking', href: '/#contact', desc: 'Schedule a guided 1-on-1 campus tour' },
+        ],
+      },
     ],
+    featured: {
+      tag: 'Helpline Desk',
+      title: 'Direct Counsel Helpline',
+      desc: 'Have questions about eligibility or fees? Talk directly with senior university counselors.',
+      image: '/chancellor.webp',
+      linkText: 'Talk to Counselor',
+      linkHref: 'tel:+915812526244',
+    },
+    bottomLink: { text: 'Check eligibility & application deadlines for 2026-27', href: '/#contact' },
   },
   {
-    label: 'STUDENT ERP',
+    id: 'erp',
+    label: 'Student ERP',
     href: 'https://test.biu.edu.in/#erp',
-    dropdown: [
-      { name: 'Student Portal Login', href: 'https://test.biu.edu.in/#erp', desc: 'Access attendance, grades & course materials' },
-      { name: 'Examinations & Results', href: 'https://test.biu.edu.in/#erp', desc: 'Schedules, admit cards & semester results' },
-      { name: 'Academic Calendar 2026', href: 'https://test.biu.edu.in/#erp', desc: 'Key term dates, holidays & events' },
-      { name: 'Digital E-Library', href: 'https://test.biu.edu.in/#erp', desc: 'Access journals, e-books & research papers' },
+    columns: [
+      {
+        title: 'Digital Portals',
+        items: [
+          { title: 'Student Portal Login', href: 'https://test.biu.edu.in/#erp', desc: 'Access attendance, grades & fee receipts' },
+          { title: 'Faculty Desk', href: 'https://test.biu.edu.in/#erp', desc: 'Internal portal for academic management' },
+          { title: 'Parent Portal', href: 'https://test.biu.edu.in/#erp', desc: 'Monitor student progress & attendance' },
+        ],
+      },
+      {
+        title: 'Academics & Exams',
+        items: [
+          { title: 'Examination Cell', href: 'https://test.biu.edu.in/#erp', desc: 'Schedules, admit cards & semester results' },
+          { title: 'Academic Calendar 2026', href: 'https://test.biu.edu.in/#erp', desc: 'Key term dates, holidays & events' },
+          { title: 'Digital E-Library', href: 'https://test.biu.edu.in/#erp', desc: 'Access IEEE, PubMed & digital archives' },
+        ],
+      },
+      {
+        title: 'Campus Services',
+        items: [
+          { title: 'Hostel Management', href: 'https://test.biu.edu.in/#erp', desc: 'Room allocation & mess menu' },
+          { title: 'Transport Network', href: 'https://test.biu.edu.in/#erp', desc: 'Bus routes & timetable tracking' },
+        ],
+      },
     ],
+    featured: {
+      tag: 'Digital Campus',
+      title: 'BIU Mobile App',
+      desc: 'Track lectures, download assignment materials & get instant exam alerts on your phone.',
+      image: '/biu-campus2.webp',
+      linkText: 'Launch Student Portal',
+      linkHref: 'https://test.biu.edu.in/#erp',
+    },
+    bottomLink: { text: 'Log in to BIU Digital Student & ERP Portal', href: 'https://test.biu.edu.in/#erp' },
   },
   {
-    label: 'CAMPUS TOUR',
+    id: 'campus',
+    label: 'Campus Life',
     href: '/gallery',
-    dropdown: [
-      { name: 'Virtual 360° Campus Tour', href: '/gallery', desc: 'Explore our 100+ acre modern campus' },
-      { name: 'Hostels & Accommodation', href: '/gallery', desc: 'AC/Non-AC student residences & amenities' },
-      { name: 'Sports & Gymnasium', href: '/gallery', desc: 'Complexes, grounds & fitness centers' },
-      { name: 'Labs & Research Infrastructure', href: '/gallery', desc: 'State-of-the-art super-specialty labs' },
+    columns: [
+      {
+        title: 'Infrastructure',
+        items: [
+          { title: 'Virtual 360° Campus Tour', href: '/gallery', desc: 'Explore our 100+ acre modern campus' },
+          { title: 'Super-Specialty Hospital', href: '/gallery', desc: '750+ bed hospital & emergency unit' },
+          { title: 'Research Laboratories', href: '/gallery', desc: 'Advanced diagnostic & AI research labs' },
+        ],
+      },
+      {
+        title: 'Living & Wellness',
+        items: [
+          { title: 'Hostels & Accommodation', href: '/gallery', desc: 'AC/Non-AC student residences & amenities' },
+          { title: 'Food Courts & Dining', href: '/gallery', desc: 'Hygienic multi-cuisine mess & cafes' },
+          { title: 'Sports & Gymnasium', href: '/gallery', desc: 'Complexes, grounds & fitness centers' },
+        ],
+      },
     ],
+    featured: {
+      tag: 'Campus Gallery',
+      title: 'Life at BIU Campus',
+      desc: 'Take a visual walk through state-of-the-art facilities, campus events, and green lawns.',
+      image: '/gallery/biu-campus4.webp',
+      linkText: 'View Full Gallery',
+      linkHref: '/gallery',
+    },
+    bottomLink: { text: 'Explore campus facilities, hostels & sports grounds', href: '/gallery' },
+  },
+  {
+    id: 'about',
+    label: 'About BIU',
+    href: '/#location',
+    columns: [
+      {
+        title: 'University Overview',
+        items: [
+          { title: 'Vision & Mission', href: '/#location', desc: 'Premier NAAC A+ accredited university' },
+          { title: 'Leadership & Deans', href: '/#location', desc: 'Meet our visionaries & academic heads' },
+          { title: 'Accreditation & Approvals', href: '/#location', desc: 'UGC, NMC, DCI & INC recognitions' },
+        ],
+      },
+      {
+        title: 'Location & Contact',
+        items: [
+          { title: 'Bareilly Main Campus', href: '/#location', desc: 'Pilibhit Bypass Road, Bareilly, UP' },
+          { title: 'Hospital & Emergency', href: '/#location', desc: '24x7 medical assistance & trauma center' },
+        ],
+      },
+    ],
+    featured: {
+      tag: 'Leadership',
+      title: "Chancellor's Message",
+      desc: 'Empowering minds through world-class education, research, and healthcare excellence.',
+      image: '/chancellor.webp',
+      linkText: 'Read Message',
+      linkHref: '/#location',
+    },
+    bottomLink: { text: 'Learn more about Bareilly International University', href: '/#location' },
   },
 ];
 
@@ -55,245 +192,171 @@ export default function Navbar() {
   const reduceMotion = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [active, setActive] = useState('HOME');
-  const [openDropdown, setOpenDropdown] = useState(null);
+  const [activeItem, setActiveItem] = useState(null);
+  const [activeTab, setActiveTab] = useState('programmes');
   const [mobileAccordion, setMobileAccordion] = useState(null);
   const { scrollY } = useScroll();
   const navRef = useRef(null);
+  const timeoutRef = useRef(null);
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setScrolled(latest > 20);
   });
 
-  // Sync active nav item with URL path and hash
-  useEffect(() => {
-    const updateActiveItem = () => {
-      const path = window.location.pathname;
-      const hash = window.location.hash;
+  const handleMouseEnter = (itemId) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setActiveItem(itemId);
+  };
 
-      if (path === '/faculties') {
-        setActive('PROGRAMMES OFFERED');
-      } else if (path === '/gallery') {
-        setActive('CAMPUS TOUR');
-      } else if (hash === '#contact') {
-        setActive('ADMISSIONS DESK');
-      } else {
-        setActive('HOME');
-      }
-    };
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setActiveItem(null);
+    }, 150);
+  };
 
-    updateActiveItem();
-    window.addEventListener('hashchange', updateActiveItem);
-    window.addEventListener('popstate', updateActiveItem);
-    return () => {
-      window.removeEventListener('hashchange', updateActiveItem);
-      window.removeEventListener('popstate', updateActiveItem);
-    };
-  }, []);
-
-  // Close mobile navbar menu when clicking anywhere outside of it
+  // Close mobile menu on click outside
   useEffect(() => {
     if (!menuOpen) return;
-
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
         setMenuOpen(false);
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [menuOpen]);
+
+  const activeNavData = NAV_ITEMS.find((item) => item.id === activeItem);
 
   return (
     <motion.header
       ref={navRef}
-      initial={reduceMotion ? false : { y: -40, opacity: 0 }}
+      initial={reduceMotion ? false : { y: -10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-      className={`fixed inset-x-0 top-0 z-50 bg-white transition-[background-color,border-color,shadow] duration-500 ease-premium ${scrolled
-        ? 'bg-white border-b border-slate-200/80 shadow-md'
-        : 'bg-white border-b border-slate-200/60'
-        }`}
+      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+      className={`fixed inset-x-0 top-0 z-50 bg-white transition-[border-color,box-shadow] duration-300 ${
+        scrolled ? 'border-b border-slate-200/80 shadow-xs' : 'border-b border-slate-200/60'
+      }`}
     >
-      {/* Top Utility Strip - Matches Reference Design */}
+      {/* Top Utility Ribbon - Stripe Tier Clean Top Strip */}
       <motion.div
         initial={false}
-        animate={
-          scrolled
-            ? { height: 0, opacity: 0 }
-            : { height: 'auto', opacity: 1 }
-        }
-        transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-        className="overflow-hidden bg-gradient-to-r from-[#143966] via-[#0c2340] to-[#07192e] text-white/90 font-sans text-[11px] sm:text-[12px] border-b border-white/10"
+        animate={scrolled ? { height: 0, opacity: 0 } : { height: 'auto', opacity: 1 }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        onMouseEnter={handleMouseLeave}
+        className="overflow-hidden bg-[#0c2340] text-white/90 font-sans text-[11px] sm:text-[12px] border-b border-white/10"
       >
-        <div className="w-full flex items-center justify-between gap-3 px-3 sm:px-6 lg:px-8 py-1.5">
-          {/* Left Side: Campus Identity */}
+        <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-3 px-4 sm:px-6 lg:px-8 py-1.5">
           <div className="flex items-center gap-2 text-white font-medium text-[11px] sm:text-[12px] tracking-wide">
-            <span>BIU (Bareilly International University)</span>
-            <span className="text-white/90">|</span>
-            <span className="text-white">Main Campus</span>
+            <span className="font-semibold text-white">BIU</span>
+            <span className="text-white/40">•</span>
+            <span className="text-white/80">Bareilly International University Main Campus</span>
           </div>
 
-          {/* Right Side: Quick Links & Careers */}
-          <div className="flex items-center gap-4 sm:gap-6 text-white text-[11px] sm:text-[13px]">
-            <a
-              href="mailto:admissions@biu.edu.in"
-              className="flex items-center gap-1.5 transition-colors hover:text-cyan-300"
-            >
-              <EnvelopeSimple size={15} weight="fill" className="mb-0.5 text-white hover:text-cyan-300 shrink-0" />
+          <div className="flex items-center gap-4 sm:gap-6 text-white/90 text-[11px] sm:text-[12.5px]">
+            <a href="mailto:admissions@biu.edu.in" className="flex items-center gap-1.5 transition-colors hover:text-cyan-300">
+              <EnvelopeSimple size={14} weight="fill" className="text-cyan-400 shrink-0" />
               <span>admissions@biu.edu.in</span>
             </a>
-            <a
-              href="/#contact"
-              className="hidden sm:inline-block transition-colors hover:text-cyan-300 text-white"
-            >
-              Alumni
+            <a href="tel:+915812526244" className="hidden sm:flex items-center gap-1.5 transition-colors hover:text-cyan-300">
+              <Phone size={14} weight="fill" className="text-cyan-400 shrink-0" />
+              <span>+91 (581) 2526244</span>
             </a>
             <a
               href="https://test.biu.edu.in/#erp"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-block transition-colors hover:text-cyan-300 text-white"
+              className="hidden sm:inline-block font-medium text-white transition-colors hover:text-cyan-300"
             >
               Student Portal
             </a>
             <a
               href="/#contact"
-              className="inline-flex items-center gap-1.5 rounded-lg bg-white/15 px-3 py-0.5 text-[10.5px] sm:text-[12px] font-medium text-white border border-white/20 transition-all hover:bg-white/25 hover:border-white/30"
+              className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2.5 py-0.5 text-[11px] font-semibold text-white border border-white/20 transition-all hover:bg-white/20"
             >
-              <Briefcase size={14} weight="fill" className="mb-0.5 text-cyan-300 shrink-0" />
+              <Briefcase size={13} weight="fill" className="text-amber-400 shrink-0" />
               <span>Careers</span>
             </a>
           </div>
         </div>
       </motion.div>
 
-      {/* Main Navigation Bar */}
-      <nav className="relative w-full flex items-center justify-between px-3 sm:px-6 lg:px-8 py-1.5 border-t border-slate-100/80">
-        {/* Heritage Diamond Lattice Watermark Pattern Overlay (Fade-out from bottom to top, covering only bottom half) */}
-        <div
-          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.12] overflow-hidden"
-          style={{
-            maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0) 70%)',
-            WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0) 70%)',
-          }}
-          aria-hidden="true"
-        >
-          <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-            <defs>
-              <pattern id="biu-heritage-lattice" width="48" height="48" patternUnits="userSpaceOnUse">
-                <path d="M24 0 L48 24 L24 48 L0 24 Z" fill="none" stroke="#0c2340" strokeWidth="1" />
-                <path d="M24 6 L42 24 L24 42 L6 24 Z" fill="none" stroke="#0c2340" strokeWidth="0.6" strokeDasharray="2,2" />
-                <path d="M0 0 L24 24 L48 0 M0 48 L24 24 L48 48" fill="none" stroke="#0c2340" strokeWidth="0.75" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#biu-heritage-lattice)" />
-          </svg>
-        </div>
-        {/* University Logo & Brand */}
-        <a href="/" className="group flex items-center gap-2.5 sm:gap-3" aria-label="BIU Home">
+      {/* Main Stripe Navigation Bar */}
+      <div
+        className="relative mx-auto flex max-w-[1400px] items-center justify-between px-4 sm:px-6 lg:px-8 py-2.5"
+        onMouseEnter={() => {
+          if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        }}
+        onMouseLeave={handleMouseLeave}
+      >
+        {/* University Brand Logo */}
+        <a href="/" className="group flex items-center gap-3 shrink-0" aria-label="BIU Home">
           <img
             src="/biu-logo.webp"
-            alt="Bareilly International University Logo"
-            className="h-9 w-auto sm:h-12 object-contain transition-transform duration-500 ease-premium group-hover:scale-105"
+            alt="Bareilly International University"
+            className="h-9 w-auto sm:h-11 object-contain transition-transform duration-300 group-hover:scale-105"
           />
           <span className="flex flex-col leading-tight">
-            <span className="mt-1 font-serif text-sm font-extrabold tracking-wide text-slate-950 sm:text-[22px]">
+            <span className="font-serif text-base font-extrabold tracking-tight text-slate-900 sm:text-[21px]">
               {siteData.name || 'Bareilly International University'}
             </span>
-            <span className="mt-1 font-sans text-[8.5px] uppercase tracking-[0.16em] text-cyan-800 font-semibold sm:text-[10px]">
+            <span className="font-sans text-[9px] uppercase tracking-[0.16em] text-[#0c2340] font-bold sm:text-[10px]">
               {siteData.accreditation || 'UGC Approved | NAAC A+ Grade'}
             </span>
           </span>
         </a>
 
-        {/* Desktop nav links with Dropdown Menus */}
-        <ul className="hidden items-center gap-2 lg:flex xl:gap-2.5">
-          {NAV_LINKS.map((link) => {
-            const isActive = active === link.label;
-            const hasDropdown = Boolean(link.dropdown && link.dropdown.length > 0);
-            const isHovered = openDropdown === link.label;
-
+        {/* Desktop Nav Tabs (Stripe Style) */}
+        <nav className="hidden items-center gap-1 lg:flex">
+          {NAV_ITEMS.map((item) => {
+            const isHovered = activeItem === item.id;
             return (
-              <li
-                key={link.label}
-                className="relative shrink-0 py-2"
-                onMouseEnter={() => hasDropdown && setOpenDropdown(link.label)}
-                onMouseLeave={() => hasDropdown && setOpenDropdown(null)}
+              <div
+                key={item.id}
+                className="relative py-1"
+                onMouseEnter={() => handleMouseEnter(item.id)}
               >
                 <a
-                  href={link.href}
-                  onClick={() => setActive(link.label)}
-                  className={`inline-flex items-center justify-center gap-1.5 rounded-md px-3.5 py-1.5 font-sans text-[11px] xl:text-[12px] font-semibold uppercase tracking-[0.08em] transition-all duration-200 whitespace-nowrap border ${isActive || isHovered
-                      ? 'bg-[#0c2340]/10 text-cyan-900 border-[#0c2340]/10 shadow-xs'
-                      : 'border-transparent text-slate-800 hover:bg-[#0c2340]/10 hover:text-cyan-900'
-                    }`}
+                  href={item.href}
+                  className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-sans text-[13px] font-bold tracking-tight transition-all duration-200 ${
+                    isHovered
+                      ? 'bg-slate-100 text-[#0c2340]'
+                      : 'text-slate-700 hover:text-[#0c2340] hover:bg-slate-50'
+                  }`}
                 >
-                  <span>{link.label}</span>
-                  {hasDropdown && (
-                    <CaretDown
-                      size={12}
-                      weight="bold"
-                      className={`transition-transform duration-200 ${isHovered ? 'rotate-180 text-cyan-900' : 'text-slate-500'
-                        }`}
-                    />
-                  )}
+                  <span>{item.label}</span>
+                  <CaretDown
+                    size={12}
+                    weight="bold"
+                    className={`transition-transform duration-200 ${
+                      isHovered ? 'rotate-180 text-[#0c2340]' : 'text-slate-400'
+                    }`}
+                  />
                 </a>
-
-                {/* Dropdown Menu Container */}
-                <AnimatePresence>
-                  {hasDropdown && isHovered && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 z-50 pt-1">
-                      <motion.div
-                        initial={{ opacity: 0, y: 8, scale: 0.97 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 6, scale: 0.97 }}
-                        transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                        className="w-[440px] lg:w-[460px] grid grid-cols-2 gap-x-4 gap-y-2 rounded-xl bg-gradient-to-br from-[#0c2340]/90 via-[#091b30]/90 to-[#07172b]/88 backdrop-blur-2xl border border-white/5 shadow-[0_22px_50px_rgba(4,14,27,0.65),inset_0_1px_0_rgba(255,255,255,0.12)] p-4 sm:p-5"
-                      >
-                        {link.dropdown.map((item) => (
-                          <a
-                            key={item.name}
-                            href={item.href}
-                            onClick={() => {
-                              setActive(link.label);
-                              setOpenDropdown(null);
-                            }}
-                            className="group flex items-start gap-2.5 p-2 rounded-xl transition-all duration-200 hover:bg-white/[0.09] text-left"
-                          >
-                            <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-300 transition-all duration-200 group-hover:bg-cyan-400 group-hover:scale-125 group-hover:shadow-[0_0_8px_rgba(34,211,238,0.85)] shrink-0" />
-                            <div className="flex flex-col">
-                              <span className="font-heading text-[13px] font-medium text-white/90 group-hover:text-white transition-colors leading-snug">
-                                {item.name}
-                              </span>
-                              {item.desc && (
-                                <span className="font-sans text-[11px] font-normal text-white/60 group-hover:text-white/80 mt-0.5 leading-snug transition-colors">
-                                  {item.desc}
-                                </span>
-                              )}
-                            </div>
-                          </a>
-                        ))}
-                      </motion.div>
-                    </div>
-                  )}
-                </AnimatePresence>
-              </li>
+              </div>
             );
           })}
-        </ul>
+        </nav>
 
-        {/* Apply Now CTA */}
-        <div className="flex items-center gap-1.5 sm:gap-3 pr-1 sm:pr-0">
+        {/* Right Buttons: Sign In & Apply Now (Stripe Style) */}
+        <div className="flex items-center gap-3 shrink-0">
+          <a
+            href="https://test.biu.edu.in/#erp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center gap-1.5 font-sans text-xs font-bold text-[#0c2340] hover:text-[#102d52] px-3.5 py-2 transition-colors"
+          >
+            <User size={15} weight="bold" />
+            <span>Sign in</span>
+          </a>
+
           <a
             href="/#contact"
-            className="group hidden sm:flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-gold-dark via-gold to-gold-light px-3.5 sm:px-6 py-2 sm:py-2.5 font-sans text-[10px] sm:text-[12px] font-extrabold uppercase tracking-[0.10em] sm:tracking-[0.14em] text-forest-dark shadow-md border border-gold-light/50 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-lg hover:brightness-105 hover:from-gold-light hover:to-gold-dark active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap"
+            className="group hidden sm:inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0c2340] via-[#102d52] to-[#163860] px-5 py-2.5 font-sans text-xs font-bold text-white shadow-xs transition-all duration-200 hover:shadow-md hover:brightness-110 active:scale-[0.98]"
           >
-            <GraduationCap size={20} weight="fill" className="text-forest-dark shrink-0 transition-transform duration-300 group-hover:scale-110 sm:w-[20px] sm:h-[20px]" />
-            <span>{siteData.bookButtonLabel || 'Apply Now 2026'}</span>
+            <GraduationCap size={16} weight="fill" className="text-amber-400 transition-transform duration-200 group-hover:scale-110" />
+            <span>Apply Now 2026</span>
+            <CaretRight size={12} weight="bold" className="text-white/80 transition-transform duration-200 group-hover:translate-x-0.5" />
           </a>
 
           {/* Mobile hamburger */}
@@ -301,95 +364,207 @@ export default function Navbar() {
             type="button"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-800 ring-1 ring-inset ring-slate-300 transition-colors duration-300 hover:bg-slate-100 lg:hidden shrink-0"
+            className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-800 ring-1 ring-inset ring-slate-300 transition-colors duration-200 hover:bg-slate-100 lg:hidden shrink-0"
           >
-            {menuOpen ? <X size={18} weight="bold" /> : <List size={18} weight="bold" />}
+            {menuOpen ? <X size={20} weight="bold" /> : <List size={20} weight="bold" />}
           </button>
         </div>
-      </nav>
+      </div>
 
-      {/* Mobile menu overlay */}
-      <motion.div
-        initial={false}
-        animate={menuOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
-        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        className="overflow-hidden lg:hidden"
-      >
-        <ul className="flex flex-col gap-1 bg-[#fdfbf7] px-6 py-5 border-t border-amber-200/60 shadow-xl">
-          {NAV_LINKS.map((link) => {
-            const hasDropdown = Boolean(link.dropdown && link.dropdown.length > 0);
-            const isAccordionOpen = mobileAccordion === link.label;
+      {/* Stripe Mega Menu Dropdown Container */}
+      <AnimatePresence>
+        {activeNavData && (
+          <div className="absolute inset-x-0 top-full z-50 pointer-events-none">
+            <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.62, ease: [0.16, 1, 0.3, 1] }}
+                onMouseEnter={() => {
+                  if (timeoutRef.current) clearTimeout(timeoutRef.current);
+                }}
+                onMouseLeave={handleMouseLeave}
+                className="relative pointer-events-auto overflow-hidden rounded-xl bg-white border border-slate-200/80 shadow-[0_30px_90px_-20px_rgba(12,35,64,0.18)] font-sans"
+              >
+                {/* Invisible Hover Bridge to prevent gap mouseleave flicker */}
+                <div
+                  className="absolute -top-4 inset-x-0 h-4"
+                  onMouseEnter={() => {
+                    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+                  }}
+                />
 
-            return (
-              <li key={link.label} className="border-b border-slate-100 last:border-0 pb-1">
-                <div className="flex items-center justify-between py-2">
-                  <a
-                    href={link.href}
-                    onClick={() => {
-                      setActive(link.label);
-                      setMenuOpen(false);
-                    }}
-                    className="font-sans text-sm font-semibold uppercase tracking-[0.14em] text-slate-800 transition-colors hover:text-cyan-800"
-                  >
-                    {link.label}
-                  </a>
-                  {hasDropdown && (
+                <div className="grid grid-cols-12 divide-x divide-slate-100 font-sans">
+                  {/* Left Multi-Column Layout */}
+                  <div className="col-span-8 lg:col-span-9 p-7 sm:p-8">
+                    <div
+                      className={`grid gap-8 ${
+                        activeNavData.columns.length === 3 ? 'grid-cols-3' : 'grid-cols-2'
+                      }`}
+                    >
+                      {activeNavData.columns.map((col) => (
+                        <div key={col.title} className="flex flex-col gap-4">
+                          <h4 className="font-sans text-[11px] font-bold uppercase tracking-[0.16em] text-slate-400">
+                            {col.title}
+                          </h4>
+                          <div className="flex flex-col gap-3.5">
+                            {col.items.map((item) => (
+                              <a
+                                key={item.title}
+                                href={item.href}
+                                onClick={() => setActiveItem(null)}
+                                className="group flex flex-col items-start rounded-lg transition-colors"
+                              >
+                                <span className="flex items-center gap-1 font-sans text-[13.5px] font-bold tracking-tight text-slate-900 transition-colors group-hover:text-cyan-800">
+                                  <span>{item.title}</span>
+                                  <CaretRight
+                                    size={12}
+                                    weight="bold"
+                                    className="opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 text-cyan-800"
+                                  />
+                                </span>
+                                <span className="font-sans text-xs text-slate-500 font-normal leading-relaxed mt-0.5 group-hover:text-slate-700">
+                                  {item.desc}
+                                </span>
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Right Featured Column (Stripe Style Light Tint Panel) */}
+                  <div className="col-span-4 lg:col-span-3 bg-[#f8f9fc] p-6 sm:p-7 flex flex-col justify-between">
+                    <div>
+                      <h4 className="font-sans text-[11px] font-bold uppercase tracking-[0.16em] text-slate-400 mb-4">
+                        {activeNavData.featured.tag}
+                      </h4>
+
+                      <a
+                        href={activeNavData.featured.linkHref}
+                        onClick={() => setActiveItem(null)}
+                        className="group block rounded-xl bg-white p-4 border border-slate-200/70 shadow-xs transition-all duration-200 hover:shadow-md hover:border-slate-300"
+                      >
+                        {activeNavData.featured.image && (
+                          <img
+                            src={activeNavData.featured.image}
+                            alt={activeNavData.featured.title}
+                            className="h-28 w-full rounded-lg object-cover mb-3.5"
+                          />
+                        )}
+                        <h5 className="font-sans text-xs font-bold text-slate-900 group-hover:text-cyan-800 transition-colors">
+                          {activeNavData.featured.title}
+                        </h5>
+                        <p className="font-sans text-[11.5px] text-slate-500 mt-1 leading-relaxed">
+                          {activeNavData.featured.desc}
+                        </p>
+                        <div className="mt-3.5 inline-flex items-center gap-1 font-sans text-xs font-bold text-[#0c2340] group-hover:text-cyan-800 transition-colors">
+                          <span>{activeNavData.featured.linkText}</span>
+                          <CaretRight size={12} weight="bold" className="transition-transform group-hover:translate-x-0.5" />
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Footer Strip inside Mega Menu */}
+                {activeNavData.bottomLink && (
+                  <div className="bg-slate-50/90 border-t border-slate-100 px-7 py-3 flex items-center justify-between">
+                    <a
+                      href={activeNavData.bottomLink.href}
+                      onClick={() => setActiveItem(null)}
+                      className="group inline-flex items-center gap-1.5 font-sans text-xs font-bold text-[#0c2340] hover:text-cyan-800 transition-colors"
+                    >
+                      <span>{activeNavData.bottomLink.text}</span>
+                      <CaretRight size={13} weight="bold" className="transition-transform group-hover:translate-x-0.5" />
+                    </a>
+                  </div>
+                )}
+              </motion.div>
+            </div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* Mobile Drawer (Accordion) */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="overflow-hidden lg:hidden bg-white border-t border-slate-100 shadow-xl"
+          >
+            <div className="flex flex-col gap-2 px-5 py-6">
+              {NAV_ITEMS.map((item) => {
+                const isOpen = mobileAccordion === item.id;
+                return (
+                  <div key={item.id} className="border-b border-slate-100 pb-2">
                     <button
                       type="button"
-                      onClick={() => setMobileAccordion(isAccordionOpen ? null : link.label)}
-                      className="p-1 text-slate-500 hover:text-cyan-900"
+                      onClick={() => setMobileAccordion(isOpen ? null : item.id)}
+                      className="flex w-full items-center justify-between py-2 text-left font-sans text-sm font-bold text-slate-800"
                     >
+                      <span>{item.label}</span>
                       <CaretDown
                         size={16}
                         weight="bold"
-                        className={`transition-transform duration-300 ${isAccordionOpen ? 'rotate-180' : ''}`}
+                        className={`transition-transform duration-200 ${isOpen ? 'rotate-180 text-[#0c2340]' : 'text-slate-400'}`}
                       />
                     </button>
-                  )}
-                </div>
 
-                {/* Mobile Accordion Items */}
-                {hasDropdown && isAccordionOpen && (
-                  <div className="flex flex-col gap-1 pl-3 pb-2 pt-1">
-                    {link.dropdown.map((sub) => (
-                      <a
-                        key={sub.name}
-                        href={sub.href}
-                        onClick={() => {
-                          setActive(link.label);
-                          setMenuOpen(false);
-                        }}
-                        className="py-1.5 font-sans text-xs text-slate-600 hover:text-cyan-900"
-                      >
-                        {sub.name}
-                      </a>
-                    ))}
+                    {isOpen && (
+                      <div className="flex flex-col gap-3 pl-3 pt-2 pb-3">
+                        {item.columns.map((col) => (
+                          <div key={col.title} className="flex flex-col gap-2">
+                            <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                              {col.title}
+                            </span>
+                            {col.items.map((sub) => (
+                              <a
+                                key={sub.title}
+                                href={sub.href}
+                                onClick={() => setMenuOpen(false)}
+                                className="font-sans text-xs text-slate-600 hover:text-[#0c2340]"
+                              >
+                                {sub.title}
+                              </a>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                )}
-              </li>
-            );
-          })}
-          <li className="pt-3">
-            <a
-              href="/#contact"
-              onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light px-6 py-3 text-center font-sans text-xs font-extrabold uppercase tracking-[0.14em] text-forest-dark shadow-md border border-gold-light/50"
-            >
-              <GraduationCap size={18} weight="fill" className="text-forest-dark shrink-0" />
-              <span>{siteData.bookButtonLabel || 'Apply Now 2026'}</span>
-            </a>
-          </li>
-        </ul>
-      </motion.div>
+                );
+              })}
 
-      {/* Mobile Backdrop overlay for instant outside click dismissal */}
-      {menuOpen && (
-        <div
-          onClick={() => setMenuOpen(false)}
-          className="fixed inset-0 -z-10 bg-black/40 backdrop-blur-sm lg:hidden"
-          aria-hidden="true"
-        />
-      )}
+              <div className="flex flex-col gap-2.5 pt-3">
+                <a
+                  href="https://test.biu.edu.in/#erp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white py-2.5 font-sans text-xs font-bold text-slate-800 shadow-xs"
+                >
+                  <User size={16} weight="bold" />
+                  <span>Student ERP Portal</span>
+                </a>
+                <a
+                  href="/#contact"
+                  onClick={() => setMenuOpen(false)}
+                  className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0c2340] to-[#163860] py-3 font-sans text-xs font-bold text-white shadow-md"
+                >
+                  <GraduationCap size={18} weight="fill" className="text-amber-400 shrink-0" />
+                  <span>Apply Now 2026</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }
+

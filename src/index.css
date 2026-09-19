@@ -8,8 +8,8 @@
 
 /* 1. Global Variables */
 :root {
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-heading: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Instrument Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Instrument Sans', sans-serif;
 
   /* Radius */
   --radius-sm: 8px;
