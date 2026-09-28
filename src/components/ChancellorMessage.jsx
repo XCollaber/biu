@@ -24,11 +24,26 @@ export default function ChancellorMessage() {
           whileInView="show"
           viewport={{ once: true, amount: 0.15 }}
           variants={fadeIn}
-          className="relative overflow-hidden border border-white/15 bg-gradient-to-br from-[#07162c] via-[#0c2340] to-[#08192d] p-6 sm:p-8 lg:p-10 shadow-[0_25px_60px_rgba(7,22,44,0.4)]"
+          className="relative overflow-hidden border border-white/15 bg-gradient-to-tr from-[#07162c]/90 via-[#0c2340]/85 to-[#07162c]/50 p-6 sm:p-8 lg:p-10 shadow-[0_25px_60px_rgba(7,22,44,0.4)]"
         >
-          {/* Subtle background glow effect */}
-          <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-gold/10 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-navy-light/30 blur-3xl" />
+          {/* Hexagon pattern overlay */}
+          <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.06]" aria-hidden="true">
+            <defs>
+              <pattern id="chancellorHexPattern" width="56" height="48" patternUnits="userSpaceOnUse">
+                <path
+                  d="M28 2 L52 15 V39 L28 52 L4 39 V15 Z"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="1"
+                />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#chancellorHexPattern)" />
+          </svg>
+
+          {/* Subtle ambient glows */}
+          <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
+          <div className="pointer-events-none absolute -left-24 -bottom-24 h-96 w-96 rounded-full bg-navy-light/30 blur-3xl" />
 
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10 lg:items-center">
             {/* Left: Photo Frame & Chancellor Name Badge */}

@@ -319,7 +319,7 @@ export default function Navbar() {
               className="h-9 w-auto sm:h-11 object-contain transition-transform duration-300 group-hover:scale-110"
             />
             <span className="flex flex-col leading-tight">
-              <span className="font-newsreader text-[18px] sm:text-[19px] font-semibold tracking-[0.2px] text-slate-900">
+              <span className="font-newsreader text-[18px] sm:text-[19px] font-semibold text-slate-900">
                 {siteData.name || 'Bareilly International University'}
               </span>
               <span className="font-fraunces text-[9px] uppercase tracking-[0.16em] text-[#0c2340]/85 font-semibold sm:text-[9.5px]">

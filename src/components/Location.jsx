@@ -15,7 +15,7 @@ const MAP_EMBED =
 
 const VENUE = {
   name: 'Bareilly International University Main Campus',
-  address: 'Pilibhit Bypass Road, Bareilly, Uttar Pradesh 243006',
+  address: 'Pilibhit Bypass Road, Bareilly, Uttar Pradesh, 243006',
   note: '(Main Road, Near Rohilkhand Medical College & Hospital)',
 };
 
@@ -42,8 +42,8 @@ export default function Location() {
         >
           <div>
             {/* Header Headline */}
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-[32px] font-medium leading-tight text-forest-dark">
-              Find Bareilly International University <span className="text-forest/60 font-serif font-normal">in Bareilly</span>
+            <h2 className="font-times text-2xl sm:text-3xl lg:text-[32px] font-medium leading-tight text-forest/60">
+              Find Bareilly International University.
             </h2>
 
             {/* Address Block */}
@@ -52,13 +52,10 @@ export default function Location() {
                 <MapPin size={15} weight="fill" className="text-gold-dark" />
                 <span>ADDRESS</span>
               </div>
-              <h3 className="font-sans text-base sm:text-[17px] font-bold text-slate-900 mt-0.5">
-                {VENUE.name}
-              </h3>
-              <p className="font-sans text-xs sm:text-sm text-slate-700 font-light leading-relaxed">
+              <h3 className="font-sans text-sm sm:text-[15px] font-bold text-slate-900 mt-0.5">
                 {VENUE.address}
-              </p>
-              <p className="font-sans text-xs text-slate-500 font-light italic mt-0.5">
+              </h3>
+              <p className="font-fraunces text-sm text-slate-600 font-light italic">
                 {VENUE.note}
               </p>
             </div>
@@ -70,9 +67,9 @@ export default function Location() {
                 <span>HOURS</span>
               </div>
               <div className="mt-1 flex flex-col gap-1.5 font-sans text-xs sm:text-sm text-slate-800">
-                <p><strong className="font-semibold text-slate-900">Admissions Cell:</strong> Mon – Sat (9:00am to 5:00pm)</p>
-                <p><strong className="font-semibold text-slate-900">Hospital & Emergency:</strong> 24x7 Round the Clock</p>
-                <p><strong className="font-semibold text-slate-900">Campus Visits:</strong> Mon – Sat (10:00am to 4:00pm)</p>
+                <p><strong className="font-bold text-slate-900">Admissions Cell :</strong> Mon – Sat (9:00am to 5:00pm)</p>
+                <p><strong className="font-bold text-slate-900">Hospital & Emergency :</strong> 24x7 Round the Clock</p>
+                <p><strong className="font-bold text-slate-900">Campus Visits :</strong> Mon – Sat (10:00am to 4:00pm)</p>
               </div>
             </div>
           </div>
@@ -109,15 +106,15 @@ export default function Location() {
               {/* Right Details & Action Button */}
               <div className="flex flex-col items-start gap-1.5">
                 {/* Scan Badge */}
-                <div className="inline-flex items-center gap-1.5 rounded-full border border-cyan-800/20 bg-cyan-900/5 px-3 py-1 font-sans text-[11px] font-bold text-cyan-600">
+                <div className="inline-flex items-center gap-1.5 rounded-full border border-cyan-800/20 bg-cyan-900/5 px-2.5 py-1 font-fraunces text-[12px] font-bold text-cyan-600">
                   <QrCodeIcon size={18} weight="bold" />
                   <span>Scan for Directions</span>
                 </div>
 
-                <h3 className="font-sans text-base sm:text-lg font-bold text-slate-900 mt-0.5">
+                {/* <h3 className="font-sans text-base sm:text-lg font-bold text-slate-900 mt-0.5">
                   Instant Navigation
-                </h3>
-                <p className="font-sans text-xs sm:text-sm text-slate-600 font-light leading-relaxed max-w-sm">
+                </h3> */}
+                <p className="font-fraunces text-xs sm:text-[13px] text-slate-700 font-light italic   leading-relaxed max-w-sm">
                   Scan this QR code with your mobile camera to open exact GPS directions in Google Maps.
                 </p>
 

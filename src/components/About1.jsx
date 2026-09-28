@@ -35,7 +35,7 @@ export default function About() {
   return (
     <section id="about" className="relative w-full bg-white pb-32 sm:pb-40 md:pb-48 overflow-hidden font-[Plus_Jakarta_Sans,sans-serif]">
       {/* Blue Gradient Announcement & Notice Scroller Strip */}
-      <div className="w-full overflow-hidden bg-gradient-to-r from-[#143966] via-[#0c2340] to-[#07192e] py-1.5 sm:py-1 shadow-md border-y border-white/10 relative z-20">
+      <div className="w-full overflow-hidden bg-gradient-to-r from-[#143966] via-[#0c2340] to-[#07192e] py-1.5 sm:py-0.5 shadow-md border-y border-white/10 relative z-20">
         <div className="relative flex items-center overflow-hidden">
           <div className="animate-notice-marquee flex items-center whitespace-nowrap">
             {[...NOTICES, ...NOTICES].map((item, idx) => (
