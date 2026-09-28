@@ -1,0 +1,520 @@
+---
+// src/pages/dummy.astro — Typography Showcase & Font Selection Lab
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIU Typography Showcase & Font Lab</title>
+
+    <!-- Google Fonts Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Syne:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --font-body: 'Plus Jakarta Sans', sans-serif;
+      }
+      body {
+        font-family: var(--font-body);
+        background-color: #f8fafc;
+        color: #0f172a;
+        margin: 0;
+        padding: 0;
+      }
+      .font-cormorant { font-family: 'Cormorant Garamond', Georgia, serif; }
+      .font-playfair { font-family: 'Playfair Display', Georgia, serif; }
+      .font-cinzel { font-family: 'Cinzel', Georgia, serif; }
+      .font-newsreader { font-family: 'Newsreader', Georgia, serif; }
+      .font-fraunces { font-family: 'Fraunces', Georgia, serif; }
+      .font-outfit { font-family: 'Outfit', sans-serif; }
+      .font-syne { font-family: 'Syne', sans-serif; }
+      .font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+      .font-montserrat { font-family: 'Montserrat', sans-serif; }
+
+      .active-nav-btn {
+        background: #0c2340 !important;
+        color: #ffffff !important;
+        box-shadow: 0 4px 12px rgba(12, 35, 64, 0.25);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen pb-24">
+    <!-- Top Header Bar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 px-4 sm:px-8 py-4 shadow-sm">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-[#0c2340] text-amber-300 flex items-center justify-center font-bold text-xl shadow-md">
+            🎓
+          </div>
+          <div>
+            <h1 class="text-lg font-bold text-[#0c2340] leading-none">BIU Typography Selection Lab</h1>
+            <p class="text-xs text-slate-500 mt-1">Compare heading font candidates live in real university contexts</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 flex-wrap justify-center">
+          <a href="/" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+            ← Back to Main Website
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-12">
+      <!-- Intro Guide Box -->
+      <div class="bg-gradient-to-r from-[#0c2340] via-[#143966] to-[#0c2340] rounded-2xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none text-9xl">🏛️</div>
+        <div class="max-w-3xl relative z-10">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-widest bg-amber-400/20 text-amber-300 border border-amber-400/30 mb-3">
+            Academic Brand Architecture
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2 font-cormorant">
+            Choosing the Heading Typography for Bareilly International University
+          </h2>
+          <p class="text-sm sm:text-base text-slate-200 leading-relaxed font-light">
+            Review each font option below rendered with the exact hero title, about heading, and institutional department styles. Pick the font style that best elevates the university's prestige.
+          </p>
+        </div>
+      </div>
+
+      <!-- FONT OPTION 1: Cormorant Garamond -->
+      <section id="cormorant" class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-slate-100 gap-2">
+          <div>
+            <div class="flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 text-xs font-bold flex items-center justify-center">01</span>
+              <h3 class="text-xl font-bold text-slate-900">Cormorant Garamond</h3>
+              <span class="px-2.5 py-0.5 text-[11px] font-bold rounded-full bg-emerald-100 text-emerald-800">⭐ Senior Dev Recommendation</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Category: Traditional Academic Serif • Heritage: Claude Garamont (16th Century) • Vibe: Oxford / Cambridge / Harvard</p>
+          </div>
+          <a href="https://fonts.google.com/specimen/Cormorant+Garamond" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-600 hover:underline inline-flex items-center gap-1">
+            Google Fonts Specimen ↗
+          </a>
+        </div>
+
+        <!-- Previews -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Dark Hero Simulation -->
+          <div class="bg-[#0c2340] rounded-xl p-6 sm:p-8 text-white relative overflow-hidden shadow-inner">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300/80 block mb-2 font-jakarta">Hero Headline Simulation</span>
+            <h4 class="font-cormorant text-3xl sm:text-4xl font-light leading-tight tracking-tight text-white/95">
+              Translating Knowledge
+            </h4>
+            <h4 class="font-cormorant text-3xl sm:text-4xl font-semibold leading-tight tracking-tight text-amber-300 mt-1">
+              Into Clinical Excellence
+            </h4>
+            <p class="mt-4 text-xs sm:text-sm text-slate-300 font-light leading-relaxed font-jakarta max-w-md">
+              NAAC Accredited A+ Premier Private University offering world-class programs in Medical Sciences, Engineering, Dental, Pharmacy & Law.
+            </p>
+          </div>
+
+          <!-- Light About BIU Simulation -->
+          <div class="bg-slate-50 rounded-xl p-6 sm:p-8 border border-slate-200 text-center flex flex-col justify-center items-center">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-2 font-jakarta">Section Title Simulation</span>
+            <h4 class="font-cormorant text-2xl sm:text-3xl font-bold text-[#1e3a60] uppercase tracking-wide leading-snug">
+              Welcome to Bareilly International University
+            </h4>
+            <p class="mt-3 text-xs text-slate-600 font-jakarta max-w-md leading-relaxed">
+              Imparting knowledge and developing clinical mastery with world-class faculty, infrastructure and hospital ecosystem.
+            </p>
+            <div class="mt-4 flex gap-4 text-center font-cormorant">
+              <div><span class="text-2xl font-bold text-[#0c2340]">12+</span><span class="block text-[11px] font-jakarta text-slate-500">Campuses</span></div>
+              <div><span class="text-2xl font-bold text-[#0c2340]">1000+</span><span class="block text-[11px] font-jakarta text-slate-500">Beds</span></div>
+              <div><span class="text-2xl font-bold text-[#0c2340]">275+</span><span class="block text-[11px] font-jakarta text-slate-500">Programs</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FONT OPTION 2: Playfair Display -->
+      <section id="playfair" class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-slate-100 gap-2">
+          <div>
+            <div class="flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 text-xs font-bold flex items-center justify-center">02</span>
+              <h3 class="text-xl font-bold text-slate-900">Playfair Display</h3>
+              <span class="px-2.5 py-0.5 text-[11px] font-bold rounded-full bg-blue-100 text-blue-800">Modern Ivy League</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Category: Transitional High-Contrast Serif • Vibe: Columbia / NYU / High-Impact Editorial</p>
+          </div>
+          <a href="https://fonts.google.com/specimen/Playfair+Display" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-600 hover:underline inline-flex items-center gap-1">
+            Google Fonts Specimen ↗
+          </a>
+        </div>
+
+        <!-- Previews -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-[#0c2340] rounded-xl p-6 sm:p-8 text-white relative overflow-hidden shadow-inner">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300/80 block mb-2 font-jakarta">Hero Headline Simulation</span>
+            <h4 class="font-playfair text-3xl sm:text-4xl font-normal leading-tight tracking-tight text-white/95">
+              Translating Knowledge
+            </h4>
+            <h4 class="font-playfair text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-amber-300 mt-1">
+              Into Clinical Excellence
+            </h4>
+            <p class="mt-4 text-xs sm:text-sm text-slate-300 font-light leading-relaxed font-jakarta max-w-md">
+              NAAC Accredited A+ Premier Private University offering world-class programs in Medical Sciences, Engineering, Dental, Pharmacy & Law.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6 sm:p-8 border border-slate-200 text-center flex flex-col justify-center items-center">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-2 font-jakarta">Section Title Simulation</span>
+            <h4 class="font-playfair text-2xl sm:text-3xl font-bold text-[#1e3a60] uppercase tracking-wide leading-snug">
+              Welcome to Bareilly International University
+            </h4>
+            <p class="mt-3 text-xs text-slate-600 font-jakarta max-w-md leading-relaxed">
+              Imparting knowledge and developing clinical mastery with world-class faculty, infrastructure and hospital ecosystem.
+            </p>
+            <div class="mt-4 flex gap-4 text-center font-playfair">
+              <div><span class="text-2xl font-bold text-[#0c2340]">12+</span><span class="block text-[11px] font-jakarta text-slate-500">Campuses</span></div>
+              <div><span class="text-2xl font-bold text-[#0c2340]">1000+</span><span class="block text-[11px] font-jakarta text-slate-500">Beds</span></div>
+              <div><span class="text-2xl font-bold text-[#0c2340]">275+</span><span class="block text-[11px] font-jakarta text-slate-500">Programs</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FONT OPTION 3: Cinzel -->
+      <section id="cinzel" class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-slate-100 gap-2">
+          <div>
+            <div class="flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 text-xs font-bold flex items-center justify-center">03</span>
+              <h3 class="text-xl font-bold text-slate-900">Cinzel</h3>
+              <span class="px-2.5 py-0.5 text-[11px] font-bold rounded-full bg-purple-100 text-purple-800">Roman Inscriptional / Monumental</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Category: Classical Roman Stone Carving • Vibe: Majestic Governmental & Imperial Academic</p>
+          </div>
+          <a href="https://fonts.google.com/specimen/Cinzel" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-600 hover:underline inline-flex items-center gap-1">
+            Google Fonts Specimen ↗
+          </a>
+        </div>
+
+        <!-- Previews -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-[#0c2340] rounded-xl p-6 sm:p-8 text-white relative overflow-hidden shadow-inner">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300/80 block mb-2 font-jakarta">Hero Headline Simulation</span>
+            <h4 class="font-cinzel text-2xl sm:text-3xl font-medium leading-tight tracking-wide text-white/95 uppercase">
+              Translating Knowledge
+            </h4>
+            <h4 class="font-cinzel text-2xl sm:text-3xl font-bold leading-tight tracking-wide text-amber-300 mt-1 uppercase">
+              Into Clinical Excellence
+            </h4>
+            <p class="mt-4 text-xs sm:text-sm text-slate-300 font-light leading-relaxed font-jakarta max-w-md">
+              NAAC Accredited A+ Premier Private University offering world-class programs in Medical Sciences, Engineering, Dental, Pharmacy & Law.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6 sm:p-8 border border-slate-200 text-center flex flex-col justify-center items-center">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-2 font-jakarta">Section Title Simulation</span>
+            <h4 class="font-cinzel text-xl sm:text-2xl font-bold text-[#1e3a60] uppercase tracking-wider leading-snug">
+              Welcome to Bareilly International University
+            </h4>
+            <p class="mt-3 text-xs text-slate-600 font-jakarta max-w-md leading-relaxed">
+              Imparting knowledge and developing clinical mastery with world-class faculty, infrastructure and hospital ecosystem.
+            </p>
+            <div class="mt-4 flex gap-4 text-center font-cinzel">
+              <div><span class="text-xl font-bold text-[#0c2340]">12+</span><span class="block text-[11px] font-jakarta text-slate-500">Campuses</span></div>
+              <div><span class="text-xl font-bold text-[#0c2340]">1000+</span><span class="block text-[11px] font-jakarta text-slate-500">Beds</span></div>
+              <div><span class="text-xl font-bold text-[#0c2340]">275+</span><span class="block text-[11px] font-jakarta text-slate-500">Programs</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FONT OPTION 4: Outfit -->
+      <section id="outfit" class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-slate-100 gap-2">
+          <div>
+            <div class="flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 text-xs font-bold flex items-center justify-center">04</span>
+              <h3 class="text-xl font-bold text-slate-900">Outfit</h3>
+              <span class="px-2.5 py-0.5 text-[11px] font-bold rounded-full bg-indigo-100 text-indigo-800">Modern Clinical & Tech Authority</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Category: Geometric Sans-Serif • Vibe: Stanford / MIT / Precision Medical Infrastructure</p>
+          </div>
+          <a href="https://fonts.google.com/specimen/Outfit" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-600 hover:underline inline-flex items-center gap-1">
+            Google Fonts Specimen ↗
+          </a>
+        </div>
+
+        <!-- Previews -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-[#0c2340] rounded-xl p-6 sm:p-8 text-white relative overflow-hidden shadow-inner">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300/80 block mb-2 font-jakarta">Hero Headline Simulation</span>
+            <h4 class="font-outfit text-3xl sm:text-4xl font-light leading-tight tracking-tight text-white/95">
+              Translating Knowledge
+            </h4>
+            <h4 class="font-outfit text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-amber-300 mt-1">
+              Into Clinical Excellence
+            </h4>
+            <p class="mt-4 text-xs sm:text-sm text-slate-300 font-light leading-relaxed font-jakarta max-w-md">
+              NAAC Accredited A+ Premier Private University offering world-class programs in Medical Sciences, Engineering, Dental, Pharmacy & Law.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6 sm:p-8 border border-slate-200 text-center flex flex-col justify-center items-center">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-2 font-jakarta">Section Title Simulation</span>
+            <h4 class="font-outfit text-2xl sm:text-3xl font-extrabold text-[#1e3a60] uppercase tracking-tight leading-snug">
+              Welcome to Bareilly International University
+            </h4>
+            <p class="mt-3 text-xs text-slate-600 font-jakarta max-w-md leading-relaxed">
+              Imparting knowledge and developing clinical mastery with world-class faculty, infrastructure and hospital ecosystem.
+            </p>
+            <div class="mt-4 flex gap-4 text-center font-outfit">
+              <div><span class="text-2xl font-extrabold text-[#0c2340]">12+</span><span class="block text-[11px] font-jakarta text-slate-500">Campuses</span></div>
+              <div><span class="text-2xl font-extrabold text-[#0c2340]">1000+</span><span class="block text-[11px] font-jakarta text-slate-500">Beds</span></div>
+              <div><span class="text-2xl font-extrabold text-[#0c2340]">275+</span><span class="block text-[11px] font-jakarta text-slate-500">Programs</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FONT OPTION 5: Newsreader -->
+      <section id="newsreader" class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-slate-100 gap-2">
+          <div>
+            <div class="flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 text-xs font-bold flex items-center justify-center">05</span>
+              <h3 class="text-xl font-bold text-slate-900">Newsreader</h3>
+              <span class="px-2.5 py-0.5 text-[11px] font-bold rounded-full bg-amber-100 text-amber-800">Academic Publishing & Research</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Category: Editorial & Academic Journal Serif • Vibe: Warm Scholarly Journal / Nobel Foundation</p>
+          </div>
+          <a href="https://fonts.google.com/specimen/Newsreader" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-600 hover:underline inline-flex items-center gap-1">
+            Google Fonts Specimen ↗
+          </a>
+        </div>
+
+        <!-- Previews -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-[#0c2340] rounded-xl p-6 sm:p-8 text-white relative overflow-hidden shadow-inner">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300/80 block mb-2 font-jakarta">Hero Headline Simulation</span>
+            <h4 class="font-newsreader text-3xl sm:text-4xl font-normal leading-tight tracking-tight text-white/95">
+              Translating Knowledge
+            </h4>
+            <h4 class="font-newsreader text-3xl sm:text-4xl font-semibold leading-tight tracking-tight text-amber-300 mt-1">
+              Into Clinical Excellence
+            </h4>
+            <p class="mt-4 text-xs sm:text-sm text-slate-300 font-light leading-relaxed font-jakarta max-w-md">
+              NAAC Accredited A+ Premier Private University offering world-class programs in Medical Sciences, Engineering, Dental, Pharmacy & Law.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6 sm:p-8 border border-slate-200 text-center flex flex-col justify-center items-center">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-2 font-jakarta">Section Title Simulation</span>
+            <h4 class="font-newsreader text-2xl sm:text-3xl font-bold text-[#1e3a60] uppercase tracking-wide leading-snug">
+              Welcome to Bareilly International University
+            </h4>
+            <p class="mt-3 text-xs text-slate-600 font-jakarta max-w-md leading-relaxed">
+              Imparting knowledge and developing clinical mastery with world-class faculty, infrastructure and hospital ecosystem.
+            </p>
+            <div class="mt-4 flex gap-4 text-center font-newsreader">
+              <div><span class="text-2xl font-bold text-[#0c2340]">12+</span><span class="block text-[11px] font-jakarta text-slate-500">Campuses</span></div>
+              <div><span class="text-2xl font-bold text-[#0c2340]">1000+</span><span class="block text-[11px] font-jakarta text-slate-500">Beds</span></div>
+              <div><span class="text-2xl font-bold text-[#0c2340]">275+</span><span class="block text-[11px] font-jakarta text-slate-500">Programs</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FONT OPTION 6: Fraunces -->
+      <section id="fraunces" class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-slate-100 gap-2">
+          <div>
+            <div class="flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 text-xs font-bold flex items-center justify-center">06</span>
+              <h3 class="text-xl font-bold text-slate-900">Fraunces</h3>
+              <span class="px-2.5 py-0.5 text-[11px] font-bold rounded-full bg-rose-100 text-rose-800">Warm Neo-Heritage Serif</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Category: Variable "Wonky" Oldstyle Serif • Vibe: Warm, Humanist, High-End Literary</p>
+          </div>
+          <a href="https://fonts.google.com/specimen/Fraunces" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-600 hover:underline inline-flex items-center gap-1">
+            Google Fonts Specimen ↗
+          </a>
+        </div>
+
+        <!-- Previews -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-[#0c2340] rounded-xl p-6 sm:p-8 text-white relative overflow-hidden shadow-inner">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300/80 block mb-2 font-jakarta">Hero Headline Simulation</span>
+            <h4 class="font-fraunces text-3xl sm:text-4xl font-normal leading-tight tracking-tight text-white/95">
+              Translating Knowledge
+            </h4>
+            <h4 class="font-fraunces text-3xl sm:text-4xl font-semibold leading-tight tracking-tight text-amber-300 mt-1">
+              Into Clinical Excellence
+            </h4>
+            <p class="mt-4 text-xs sm:text-sm text-slate-300 font-light leading-relaxed font-jakarta max-w-md">
+              NAAC Accredited A+ Premier Private University offering world-class programs in Medical Sciences, Engineering, Dental, Pharmacy & Law.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6 sm:p-8 border border-slate-200 text-center flex flex-col justify-center items-center">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-2 font-jakarta">Section Title Simulation</span>
+            <h4 class="font-fraunces text-2xl sm:text-3xl font-bold text-[#1e3a60] uppercase tracking-wide leading-snug">
+              Welcome to Bareilly International University
+            </h4>
+            <p class="mt-3 text-xs text-slate-600 font-jakarta max-w-md leading-relaxed">
+              Imparting knowledge and developing clinical mastery with world-class faculty, infrastructure and hospital ecosystem.
+            </p>
+            <div class="mt-4 flex gap-4 text-center font-fraunces">
+              <div><span class="text-2xl font-bold text-[#0c2340]">12+</span><span class="block text-[11px] font-jakarta text-slate-500">Campuses</span></div>
+              <div><span class="text-2xl font-bold text-[#0c2340]">1000+</span><span class="block text-[11px] font-jakarta text-slate-500">Beds</span></div>
+              <div><span class="text-2xl font-bold text-[#0c2340]">275+</span><span class="block text-[11px] font-jakarta text-slate-500">Programs</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FONT OPTION 7: Syne -->
+      <section id="syne" class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-slate-100 gap-2">
+          <div>
+            <div class="flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 text-xs font-bold flex items-center justify-center">07</span>
+              <h3 class="text-xl font-bold text-slate-900">Syne</h3>
+              <span class="px-2.5 py-0.5 text-[11px] font-bold rounded-full bg-cyan-100 text-cyan-800">Architectural & Design-Forward</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Category: Expressive Contemporary Sans • Vibe: Innovation Hubs, Modern Design/Art & Tech Institutes</p>
+          </div>
+          <a href="https://fonts.google.com/specimen/Syne" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-600 hover:underline inline-flex items-center gap-1">
+            Google Fonts Specimen ↗
+          </a>
+        </div>
+
+        <!-- Previews -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-[#0c2340] rounded-xl p-6 sm:p-8 text-white relative overflow-hidden shadow-inner">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300/80 block mb-2 font-jakarta">Hero Headline Simulation</span>
+            <h4 class="font-syne text-3xl sm:text-4xl font-medium leading-tight tracking-tight text-white/95">
+              Translating Knowledge
+            </h4>
+            <h4 class="font-syne text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-amber-300 mt-1">
+              Into Clinical Excellence
+            </h4>
+            <p class="mt-4 text-xs sm:text-sm text-slate-300 font-light leading-relaxed font-jakarta max-w-md">
+              NAAC Accredited A+ Premier Private University offering world-class programs in Medical Sciences, Engineering, Dental, Pharmacy & Law.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6 sm:p-8 border border-slate-200 text-center flex flex-col justify-center items-center">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-2 font-jakarta">Section Title Simulation</span>
+            <h4 class="font-syne text-2xl sm:text-3xl font-extrabold text-[#1e3a60] uppercase tracking-tight leading-snug">
+              Welcome to Bareilly International University
+            </h4>
+            <p class="mt-3 text-xs text-slate-600 font-jakarta max-w-md leading-relaxed">
+              Imparting knowledge and developing clinical mastery with world-class faculty, infrastructure and hospital ecosystem.
+            </p>
+            <div class="mt-4 flex gap-4 text-center font-syne">
+              <div><span class="text-2xl font-extrabold text-[#0c2340]">12+</span><span class="block text-[11px] font-jakarta text-slate-500">Campuses</span></div>
+              <div><span class="text-2xl font-extrabold text-[#0c2340]">1000+</span><span class="block text-[11px] font-jakarta text-slate-500">Beds</span></div>
+              <div><span class="text-2xl font-extrabold text-[#0c2340]">275+</span><span class="block text-[11px] font-jakarta text-slate-500">Programs</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FONT OPTION 8: Current Montserrat (For Direct Comparison) -->
+      <section id="montserrat" class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-slate-100 gap-2">
+          <div>
+            <div class="flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-full bg-slate-200 text-slate-700 text-xs font-bold flex items-center justify-center">08</span>
+              <h3 class="text-xl font-bold text-slate-900">Montserrat (Current Baseline)</h3>
+              <span class="px-2.5 py-0.5 text-[11px] font-bold rounded-full bg-slate-100 text-slate-700">Currently Used in About Section</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Category: Urban Geometric Sans • Vibe: Standard Web Banner</p>
+          </div>
+          <a href="https://fonts.google.com/specimen/Montserrat" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-600 hover:underline inline-flex items-center gap-1">
+            Google Fonts Specimen ↗
+          </a>
+        </div>
+
+        <!-- Previews -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-[#0c2340] rounded-xl p-6 sm:p-8 text-white relative overflow-hidden shadow-inner">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300/80 block mb-2 font-jakarta">Hero Headline Simulation</span>
+            <h4 class="font-montserrat text-3xl sm:text-4xl font-normal leading-tight tracking-tight text-white/95">
+              Translating Knowledge
+            </h4>
+            <h4 class="font-montserrat text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-amber-300 mt-1">
+              Into Clinical Excellence
+            </h4>
+            <p class="mt-4 text-xs sm:text-sm text-slate-300 font-light leading-relaxed font-jakarta max-w-md">
+              NAAC Accredited A+ Premier Private University offering world-class programs in Medical Sciences, Engineering, Dental, Pharmacy & Law.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6 sm:p-8 border border-slate-200 text-center flex flex-col justify-center items-center">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-2 font-jakarta">Section Title Simulation</span>
+            <h4 class="font-montserrat text-2xl sm:text-3xl font-bold text-[#1e3a60] uppercase tracking-tight leading-snug">
+              Welcome to Bareilly International University
+            </h4>
+            <p class="mt-3 text-xs text-slate-600 font-jakarta max-w-md leading-relaxed">
+              Imparting knowledge and developing clinical mastery with world-class faculty, infrastructure and hospital ecosystem.
+            </p>
+            <div class="mt-4 flex gap-4 text-center font-montserrat">
+              <div><span class="text-2xl font-bold text-[#0c2340]">12+</span><span class="block text-[11px] font-jakarta text-slate-500">Campuses</span></div>
+              <div><span class="text-2xl font-bold text-[#0c2340]">1000+</span><span class="block text-[11px] font-jakarta text-slate-500">Beds</span></div>
+              <div><span class="text-2xl font-bold text-[#0c2340]">275+</span><span class="block text-[11px] font-jakarta text-slate-500">Programs</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FONT OPTION 9: Times New Roman -->
+      <section id="times" class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-slate-100 gap-2">
+          <div>
+            <div class="flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-full bg-slate-800 text-white text-xs font-bold flex items-center justify-center">09</span>
+              <h3 class="text-xl font-bold text-slate-900">Times New Roman</h3>
+              <span class="px-2.5 py-0.5 text-[11px] font-bold rounded-full bg-slate-100 text-slate-800">Classic Formal Academic</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Category: Traditional Serif • Vibe: Formal Academic Degrees & Official University Publications</p>
+          </div>
+        </div>
+
+        <!-- Previews -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-[#0c2340] rounded-xl p-6 sm:p-8 text-white relative overflow-hidden shadow-inner">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300/80 block mb-2 font-jakarta">Hero Headline Simulation</span>
+            <h4 class="font-times text-3xl sm:text-4xl font-normal leading-tight tracking-tight text-white/95">
+              Translating Knowledge
+            </h4>
+            <h4 class="font-times text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-amber-300 mt-1">
+              Into Clinical Excellence
+            </h4>
+            <p class="mt-4 text-xs sm:text-sm text-slate-300 font-light leading-relaxed font-jakarta max-w-md">
+              NAAC Accredited A+ Premier Private University offering world-class programs in Medical Sciences, Engineering, Dental, Pharmacy & Law.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6 sm:p-8 border border-slate-200 text-center flex flex-col justify-center items-center">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-2 font-jakarta">Section Title Simulation</span>
+            <h4 class="font-times text-2xl sm:text-3xl font-bold text-[#1e3a60] uppercase tracking-wide leading-snug">
+              Welcome to Bareilly International University
+            </h4>
+            <p class="mt-3 text-xs text-slate-600 font-jakarta max-w-md leading-relaxed">
+              Imparting knowledge and developing clinical mastery with world-class faculty, infrastructure and hospital ecosystem.
+            </p>
+            <div class="mt-4 flex gap-4 text-center font-times">
+              <div><span class="text-2xl font-bold text-[#0c2340]">12+</span><span class="block text-[11px] font-jakarta text-slate-500">Campuses</span></div>
+              <div><span class="text-2xl font-bold text-[#0c2340]">1000+</span><span class="block text-[11px] font-jakarta text-slate-500">Beds</span></div>
+              <div><span class="text-2xl font-bold text-[#0c2340]">275+</span><span class="block text-[11px] font-jakarta text-slate-500">Programs</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -7,7 +7,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        serif: ['"Cormorant Garamond"', '"Newsreader"', 'Georgia', 'serif'],
+        cormorant: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        newsreader: ['"Newsreader"', 'Georgia', 'serif'],
+        fraunces: ['"Fraunces"', 'Georgia', 'serif'],
+        times: ['"Times New Roman"', 'Times', 'serif'],
         sans: ['"Plus Jakarta Sans"', '"Instrument Sans"', 'system-ui', '-apple-system', 'sans-serif'],
         heading: ['"Plus Jakarta Sans"', '"Instrument Sans"', 'sans-serif'],
       },

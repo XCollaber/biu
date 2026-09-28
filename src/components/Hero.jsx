@@ -116,19 +116,19 @@ export default function Hero() {
           <div className="my-auto max-w-2xl lg:max-w-3xl pt-4 pb-8">
             <motion.h1
               variants={rise}
-              className="font-serif leading-[1.08] tracking-tight text-white drop-shadow-md"
+              className="font-times leading-[1.08] tracking-tight text-white drop-shadow-md"
             >
-              <span className="block text-[2.5rem] font-light text-white/95 sm:text-6xl lg:text-[3.8rem]">
+              <span className="block text-[2.5rem] font-light text-white/95 sm:text-5xl lg:text-[3.1rem]">
                 {heroData.headlineLine1 || 'Translating Knowledge'}
               </span>
-              <span className="block text-[2.8rem] font-medium text-white mt-1 sm:mt-2 sm:text-6xl lg:text-[4.0rem]">
+              <span className="block text-[2.8rem] font-medium text-white mt-1 sm:mt-2 sm:text-6xl lg:text-[3.3rem]">
                 {heroData.headlineLine2 || 'Into Clinical Excellence'}
               </span>
             </motion.h1>
 
             <motion.p
               variants={rise}
-              className="mt-6 max-w-xl font-sans text-base sm:text-lg lg:text-[18px] font-light leading-relaxed text-white/90 drop-shadow"
+              className="mt-6 max-w-xl font-fraunces text-base sm:text-lg lg:text-[17px] font-light leading-relaxed text-white/90 drop-shadow"
             >
               {heroData.subtitle}
             </motion.p>

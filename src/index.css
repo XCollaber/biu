@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', Georgia, serif !important;
+  }
+  .font-newsreader {
+    font-family: 'Newsreader', Georgia, serif !important;
+  }
+  .font-fraunces {
+    font-family: 'Fraunces', Georgia, serif !important;
+  }
+  .font-times {
+    font-family: 'Times New Roman', Times, 'Tinos', serif !important;
+  }
+}
+
 /* ==========================================================================
    BASE DESIGN SYSTEM
    ========================================================================== */
@@ -10,6 +25,10 @@
 :root {
   --font-sans: 'Plus Jakarta Sans', 'Instrument Sans', system-ui, -apple-system, sans-serif;
   --font-heading: 'Plus Jakarta Sans', 'Instrument Sans', sans-serif;
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-newsreader: 'Newsreader', Georgia, serif;
+  --font-fraunces: 'Fraunces', Georgia, serif;
+  --font-times: 'Times New Roman', Times, 'Tinos', serif;
 
   /* Radius */
   --radius-sm: 8px;

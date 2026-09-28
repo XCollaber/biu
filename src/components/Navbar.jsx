@@ -314,15 +314,15 @@ export default function Navbar() {
           {/* University Brand Logo */}
           <a href="/" className="group flex items-center gap-3 shrink-0" aria-label="BIU Home">
             <img
-              src="/biu-logo.webp"
+              src="/biu-logo.jpg.jpeg"
               alt="Bareilly International University"
-              className="h-9 w-auto sm:h-11 object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-9 w-auto sm:h-11 object-contain transition-transform duration-300 group-hover:scale-110"
             />
             <span className="flex flex-col leading-tight">
-              <span className="font-serif text-base font-extrabold tracking-tight text-slate-900 sm:text-[21px]">
+              <span className="font-newsreader text-[18px] sm:text-[19px] font-semibold tracking-[0.2px] text-slate-900">
                 {siteData.name || 'Bareilly International University'}
               </span>
-              <span className="font-sans text-[9px] uppercase tracking-[0.16em] text-[#0c2340] font-bold sm:text-[10px]">
+              <span className="font-fraunces text-[9px] uppercase tracking-[0.16em] text-[#0c2340]/85 font-semibold sm:text-[9.5px]">
                 {siteData.accreditation || 'UGC Approved | NAAC A+ Grade'}
               </span>
             </span>
