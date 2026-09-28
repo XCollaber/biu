@@ -2,6 +2,24 @@ import { motion, useReducedMotion } from 'framer-motion';
 
 const EASE = [0.16, 1, 0.3, 1];
 
+const NOTICES = [
+  { text: "Documents required for UP NEET UG Counseling - 2026", link: "https://biu.edu.in/notice/3.%20Final%20UG%20Documents%20required.pdf" },
+  { text: "Documents required for UP NEET PG Counseling - 2026", link: "https://biu.edu.in/notice/UP%20NEET%20PG%202026.pdf" },
+  { text: "New Course: POST BASIC DIPLOMA IN ONCOLOGY NURSING (PBDON)", link: "https://biu.edu.in/notice/advertisement-oncology-nursing.jpeg" },
+  { text: "Rohilkhand College of Nursing: B.Sc Nursing Entrance Result 2026 Announced", link: "https://biu.edu.in/notice/Merit%20List_B.Sc%20Nursing.pdf" },
+  { text: "Applications are invited for Ph.D. programme for July, 2026", link: "https://biu.edu.in/research/Ph.D-Notification%20July%202026.pdf" },
+  { text: "CUET UG, PG 2026-27 Score Accepted", link: "https://biu.edu.in/#" },
+  { text: "MBBS/MD/MS Admission Contact: 9557259598", link: "https://biu.edu.in/#" },
+  { text: "Faculty of Fine Arts Courses Offered", link: "https://biu.edu.in/notice/scroller/faculty-of-fine-arts.pdf" },
+  { text: "BIU College of Pharmacy Courses Offered", link: "https://biu.edu.in/notice/scroller/biu-college-of-pharmacy.pdf" },
+  { text: "BIU College of Management Courses Offered", link: "https://biu.edu.in/notice/scroller/biu-college-of-management.pdf" },
+  { text: "Faculty of Forensic Sciences Courses Offered", link: "https://biu.edu.in/notice/scroller/faculty-of-forensic-sciences.pdf" },
+  { text: "Faculty of Allied and Healthcare Sciences Courses Offered", link: "https://biu.edu.in/notice/scroller/faculty-of-allied-and-healthcare-sciences.pdf" },
+  { text: "Medical Sciences Courses Offered", link: "https://biu.edu.in/notice/scroller/medical-sciences.pdf" },
+  { text: "Nursing Sciences Courses Offered", link: "https://biu.edu.in/notice/scroller/nursing-sciences.pdf" },
+  { text: "BIU College of Humanities and Journalism Courses Offered", link: "https://biu.edu.in/notice/scroller/biu-college-of-humanities-and-journalism.pdf" }
+];
+
 export default function About() {
   const reduceMotion = useReducedMotion();
 
@@ -15,7 +33,28 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="relative w-full bg-white pt-20 sm:pt-24 md:pt-32 pb-32 sm:pb-40 md:pb-48 overflow-hidden font-[Plus_Jakarta_Sans,sans-serif]">
+    <section id="about" className="relative w-full bg-white pb-32 sm:pb-40 md:pb-48 overflow-hidden font-[Plus_Jakarta_Sans,sans-serif]">
+      {/* Blue Gradient Announcement & Notice Scroller Strip */}
+      <div className="w-full overflow-hidden bg-gradient-to-r from-[#143966] via-[#0c2340] to-[#07192e] py-1.5 sm:py-1 shadow-md border-y border-white/10 relative z-20">
+        <div className="relative flex items-center overflow-hidden">
+          <div className="animate-notice-marquee flex items-center whitespace-nowrap">
+            {[...NOTICES, ...NOTICES].map((item, idx) => (
+              <span key={idx} className="inline-flex items-center text-xs sm:text-sm font-bold tracking-wide text-white px-3 sm:px-4">
+                <span className="mr-2 text-amber-200 text-sm sm:text-base select-none">✦</span>
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors duration-200 hover:text-amber-200 hover:underline"
+                >
+                  {item.text}
+                </a>
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Background Center Banyan Tree Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <img
@@ -25,7 +64,7 @@ export default function About() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1300px] px-5 sm:px-8 flex flex-col items-center text-center">
+      <div className="relative z-10 mx-auto max-w-[1300px] px-5 sm:px-8 pt-16 sm:pt-20 md:pt-24 flex flex-col items-center text-center">
         {/* Main Central Headline */}
         <motion.h2
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}

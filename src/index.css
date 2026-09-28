@@ -113,3 +113,23 @@ html.lenis body {
 .lenis-scrolling iframe {
   pointer-events: none;
 }
+
+/* 6. Notice Strip Infinite Marquee */
+@keyframes notice-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-notice-marquee {
+  display: flex;
+  width: max-content;
+  animation: notice-marquee 50s linear infinite;
+}
+
+.animate-notice-marquee:hover {
+  animation-play-state: paused;
+}

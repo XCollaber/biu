@@ -6,6 +6,8 @@ import siteData from '../data/site.json';
 
 const EASE = [0.16, 1, 0.3, 1];
 
+
+
 export default function Hero() {
   const reduceMotion = useReducedMotion();
   const videoRef = useRef(null);
@@ -76,17 +78,14 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative w-full bg-white pt-24 sm:pt-28 lg:pt-28 pb-6 sm:pb-10 px-3 sm:px-5 md:px-10 lg:px-12 xl:px-18 [perspective:1400px]">
+    <section id="home" className="relative w-full bg-white pt-28 sm:pt-36 lg:pt-[118px] pb-16 sm:pb-20 lg:pb-16 px-3 sm:px-5 md:px-10 lg:px-12 xl:px-18 [perspective:1400px]">
       {/* 3D Container Card Frame with subtle tilt and layered depth */}
       <motion.div
-        style={reduceMotion ? { rotateX: 0, rotateY: -9.5, x: -32, y: 8 } : { rotateX, rotateY, x: -32, y: 8, transformStyle: 'preserve-3d' }}
+        style={reduceMotion ? { rotateX: 0, rotateY: -9.5, x: -46, y: 8 } : { rotateX, rotateY, x: -46, y: 8, transformStyle: 'preserve-3d' }}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="relative mx-auto max-w-[1560px] w-full min-h-[490px] sm:min-h-[540px] lg:min-h-[570px] overflow-hidden rounded-xl sm:rounded-xl bg-[#0c2340] shadow-[0_30px_70px_-15px_rgba(12,35,64,0.4),0_15px_35px_-5px_rgba(0,0,0,0.3),0_0_0_1px_rgba(255,255,255,0.15)_inset] border border-slate-300/80 transition-shadow duration-500 will-change-transform"
+        className="relative mx-auto max-w-[1560px] w-full min-h-[490px] sm:min-h-[540px] lg:min-h-[570px] overflow-hidden rounded-xl sm:rounded-xl shadow-[0_30px_70px_-15px_rgba(12,35,64,0.4),0_15px_35px_-5px_rgba(0,0,0,0.3)] transition-shadow duration-500 will-change-transform"
       >
-        {/* 3D Glass Specular Top Highlight*/}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-white/20 via-white/5 to-transparent z-20" />
-
         {/* Background video inside 3D frame */}
         <video
           ref={videoRef}
@@ -101,10 +100,9 @@ export default function Hero() {
           onPlaying={handleCanPlay}
         />
 
-        {/* Cinematic gradient overlays with signature blue tint */}
-        <div className="absolute inset-0 bg-[#0c2340]/45" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#061426]/92 via-[#0c2340]/70 to-black/35" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/40" />
+        {/* Neutral dark overlays for text legibility without blue tint */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
 
         {/* Hero Card Content Overlay */}
         <motion.div
@@ -169,6 +167,48 @@ export default function Hero() {
           <CaretDown size={24} weight="thin" className="animate-scroll-bob" />
         </motion.a>
       </motion.div>
+
+      {/* Right Side Accreditation Badges (NAAC, UGC, NIRF) - 2D Crystal Sharp Floating Layer */}
+      <div className="pointer-events-none absolute inset-0 mx-auto max-w-[1560px] px-3 sm:px-5 md:px-10 lg:px-12 xl:px-18 z-40 hidden md:flex items-center justify-end">
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5, duration: 0.8, ease: EASE }}
+          className="pointer-events-auto flex flex-col items-center gap-10 mr-4 lg:mr-5 mt-8 sm:mt-16"
+        >
+          <div className="flex flex-col items-center text-center max-w-[120px] group cursor-pointer">
+            <div className="w-24 h-24 mb-3 badge-shadow group-hover:scale-125 transition-transform duration-300">
+              <img
+                src="/naac.png"
+                alt="Accredited by NAAC Council with A++ Grade"
+                className="w-full h-full object-contain filter drop-shadow-md"
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center text-center max-w-[120px] group cursor-pointer">
+            <div className="w-24 h-24 mb-3 badge-shadow group-hover:scale-125 transition-transform duration-300">
+              <img
+                src="/ugc.png"
+                alt="Graded as Category-I University by UGC"
+                className="w-full h-full object-contain filter drop-shadow-md"
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center text-center max-w-[120px] group cursor-pointer">
+            <div className="w-24 h-24 mb-3 badge-shadow group-hover:scale-125 transition-transform duration-300">
+              <img
+                src="/nirf.png"
+                alt="Ranked among Top Universities by NIRF"
+                className="w-full h-full object-contain filter drop-shadow-md"
+              />
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+
     </section>
   );
 }

@@ -282,21 +282,22 @@ export default function Navbar() {
 
       {/* Main Stripe Navigation Bar */}
       <div className="relative w-full overflow-hidden">
-        {/* Heritage Diamond Lattice Watermark Pattern Overlay (Fade-out from bottom to top, covering only bottom half) */}
+        {/* Clean Concentric Double-Line Diamond Watermark Pattern Overlay */}
         <div
-          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.11] overflow-hidden"
+          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.10] overflow-hidden"
           style={{
-            maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0) 70%)',
-            WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0) 70%)',
+            maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.65) 35%, rgba(0,0,0,0.3) 65%, rgba(0,0,0,0) 90%)',
+            WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.65) 35%, rgba(0,0,0,0.3) 65%, rgba(0,0,0,0) 90%)',
           }}
           aria-hidden="true"
         >
           <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
             <defs>
-              <pattern id="biu-heritage-lattice" width="48" height="48" patternUnits="userSpaceOnUse">
-                <path d="M24 0 L48 24 L24 48 L0 24 Z" fill="none" stroke="#0c2340" strokeWidth="1" />
-                <path d="M24 6 L42 24 L24 42 L6 24 Z" fill="none" stroke="#0c2340" strokeWidth="0.6" strokeDasharray="2,2" />
-                <path d="M0 0 L24 24 L48 0 M0 48 L24 24 L48 48" fill="none" stroke="#0c2340" strokeWidth="0.75" />
+              <pattern id="biu-heritage-lattice" width="48" height="48" patternUnits="userSpaceOnUse" patternTransform="translate(0, -22)">
+                {/* Outer Diamond Grid */}
+                <path d="M 24 0 L 48 24 L 24 48 L 0 24 Z" fill="none" stroke="#0c2340" strokeWidth="0.65" />
+                {/* Inner Concentric Diamond */}
+                <path d="M 24 9 L 39 24 L 24 39 L 9 24 Z" fill="none" stroke="#0c2340" strokeWidth="0.60" />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#biu-heritage-lattice)" />
