@@ -28,7 +28,7 @@ export default function Location() {
   };
 
   return (
-    <section id="location" className="relative w-full bg-gradient-to-br from-[#f0f4f8] via-[#e8eef5] to-[#f0f4f8] py-24 md:py-20">
+    <section id="location" className="relative w-full bg-[#fbfbfd] py-24 md:py-12">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-8 px-5 sm:px-8 lg:grid-cols-2 lg:gap-10">
         {/* Left: info card matching reference design layout */}
         <motion.div

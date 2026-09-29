@@ -8,24 +8,34 @@
   "defaultTemplate": "Hello BIU Admissions Team, I would like to inquire about program eligibility, fee structure, and seat availability for the 2026-27 academic session.",
   "templates": [
     {
-      "icon": "Crown",
+      "id": "medical",
       "label": "Medical & Dental",
       "text": "Hello BIU Admissions Team, I am interested in MBBS / BDS degree programs. Please share eligibility criteria, NEET cutoff, and seat counseling details."
     },
     {
-      "icon": "CalendarCheck",
+      "id": "engineering",
       "label": "Engineering & Tech",
       "text": "Hello BIU Admissions Team, I would like information regarding B.Tech Computer Science / AI & ML admissions, lab facilities, and campus placements."
     },
     {
-      "icon": "Bed",
+      "id": "nursing",
       "label": "Nursing & Paramedical",
       "text": "Hello BIU Admissions Team, I am inquiring about B.Sc Nursing and Paramedical courses. Please share fee structure and clinical hospital training details."
     },
     {
-      "icon": "Buildings",
-      "label": "Management & Law",
-      "text": "Hello BIU Admissions Team, I am interested in MBA / BBA / BA LLB programs. Please share syllabus details, industry tie-ups, and placement records."
+      "id": "management",
+      "label": "Management",
+      "text": "Hello BIU Admissions Team, I am interested in MBA / BBA programs. Please share syllabus details, industry tie-ups, and placement records."
+    },
+    {
+      "id": "pharmacy",
+      "label": "Pharmacy",
+      "text": "Hello BIU Admissions Team, I am inquiring about B.Pharm and D.Pharm programs. Please share PCI approval details, laboratory facilities, and fee structure."
+    },
+    {
+      "id": "other",
+      "label": "Other",
+      "text": "Hello BIU Admissions Team, I would like to inquire about course details, fee structures, scholarship options, and campus admission counseling."
     }
   ]
 }
