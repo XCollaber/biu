@@ -79,7 +79,7 @@ export default function Colleges() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
-          className="mt-1 text-center font-sans text-sm sm:text-base font-semibold text-amber-600 sm:text-amber-700 tracking-wide max-w-3xl"
+          className="mt-1 text-center font-sans text-sm sm:text-base font-semibold text-gold sm:text-gold-dark tracking-wide max-w-3xl"
         >
           {collegesData.subtitle || 'Explore our Academic Institutions'}
         </motion.p>
@@ -129,10 +129,10 @@ export default function Colleges() {
                 </div>
 
                 {/* College Text OUTSIDE the Circular Container */}
-                <h3 className="mt-3 font-sans text-xs sm:text-sm font-bold leading-tight text-slate-800 transition-colors group-hover:text-amber-700 text-center px-1">
+                <h3 className="mt-3 font-sans text-xs sm:text-sm font-bold leading-tight text-slate-800 transition-colors group-hover:text-gold-dark text-center px-1">
                   {college.name}
                 </h3>
-                <p className="mt-1 font-sans text-[11px] font-semibold text-amber-600 text-center">
+                <p className="mt-1 font-sans text-[11px] font-semibold text-gold text-center">
                   {college.shortName || college.category}
                 </p>
               </motion.div>

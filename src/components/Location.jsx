@@ -8,7 +8,7 @@ const EASE = [0.16, 1, 0.3, 1];
 const MAP = {
   lat: 28.381389,
   lng: 79.458119,
-  link: 'https://www.google.com/maps/place/Bareilly+international+University+new+building/@28.3813889,79.4581194,17z/data=!3m1!4b1!4m6!3m5!1s0x39a007eaa171012f:0x535e385f86dbef22!8m2!3d28.3813889!4d79.4581194',
+  link: 'https://maps.app.goo.gl/3QBkAFNhHetHEcar9',
 };
 const MAP_EMBED =
   'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3510.254210388375!2d79.45811936197623!3d28.381388942361564!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a007eaa171012f%3A0x535e385f86dbef22!2sBareilly%20international%20University%20new%20building!5e0!3m2!1sen!2sin!4v1789470009685!5m2!1sen!2sin';
@@ -26,8 +26,6 @@ export default function Location() {
     hidden: reduceMotion ? {} : { opacity: 0, y: 26 },
     show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE } },
   };
-
-  const qrSrc = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=10&ecc=H&data=${encodeURIComponent(MAP.link)}`;
 
   return (
     <section id="location" className="relative w-full bg-gradient-to-br from-[#f0f4f8] via-[#e8eef5] to-[#f0f4f8] py-24 md:py-20">
@@ -55,7 +53,7 @@ export default function Location() {
               <h3 className="font-sans text-sm sm:text-[15px] font-bold text-slate-900 mt-0.5">
                 {VENUE.address}
               </h3>
-              <p className="font-fraunces text-sm text-slate-600 font-light italic">
+              <p className="font-fraunces text-[14px] text-slate-600 font-light">
                 {VENUE.note}
               </p>
             </div>
@@ -86,21 +84,14 @@ export default function Location() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Open location in Google Maps"
-                className="group relative h-28 w-28 sm:h-32 sm:w-32 shrink-0 rounded-2xl bg-white p-2.5 ring-1 ring-black/10 shadow-sm transition-transform duration-300 hover:scale-[1.03]"
+                className="group relative h-28 w-28 sm:h-32 sm:w-32 shrink-0 rounded-xl bg-white p-1 ring-1 ring-black/10 shadow-sm transition-transform duration-300 hover:scale-[1.03]"
               >
-                <Img
-                  src={qrSrc}
-                  alt="Scan to open venue location"
+                <img
+                  src="/qr-code.png"
+                  alt="Scan to open Bareilly International University location in Google Maps"
                   loading="lazy"
-                  className="h-full w-full object-contain"
+                  className="h-full w-full object-contain rounded-xl"
                 />
-                <span className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-lg bg-white ring-2 ring-[#0c2340]/20 shadow-xs">
-                  <Img
-                    src="/biu-logo.webp"
-                    alt="BIU Logo"
-                    className="h-9 w-9 object-contain"
-                  />
-                </span>
               </a>
 
               {/* Right Details & Action Button */}
@@ -114,7 +105,7 @@ export default function Location() {
                 {/* <h3 className="font-sans text-base sm:text-lg font-bold text-slate-900 mt-0.5">
                   Instant Navigation
                 </h3> */}
-                <p className="font-fraunces text-xs sm:text-[13px] text-slate-700 font-light italic   leading-relaxed max-w-sm">
+                <p className="ml-1 font-fraunces text-xs sm:text-[13px] text-slate-700 font-light leading-relaxed max-w-sm">
                   Scan this QR code with your mobile camera to open exact GPS directions in Google Maps.
                 </p>
 
