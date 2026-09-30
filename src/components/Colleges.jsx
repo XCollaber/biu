@@ -68,18 +68,18 @@ export default function Colleges() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: EASE }}
-          className="-mt-8 text-center font-sans sm:font-serif text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#0c2340]"
+          className="-mt-8 text-center font-times text-2xl sm:text-2xl md:text-3xl lg:text-[2.35rem] tracking-tight font-medium text-[#0c2340] leading-[1.12]"
         >
           {collegesData.title || 'BIU Colleges & Constituent Institutes'}
         </motion.h2>
 
-        {/* Section Orange Subtitle */}
+        {/* Section Subtitle */}
         <motion.p
           initial={reduceMotion ? false : { y: 15, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
-          className="mt-1 text-center font-sans text-sm sm:text-base font-semibold text-gold sm:text-gold-dark tracking-wide max-w-3xl"
+          className="mt-1 text-center font-sans text-sm sm:text-sm md:text-base font-semibold leading-relaxed text-gold-dark tracking-wide max-w-3xl"
         >
           {collegesData.subtitle || 'Explore our Academic Institutions'}
         </motion.p>

@@ -34,16 +34,36 @@ export default function Leadership() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center">
-          <span className="font-sans text-[12.5px] font-bold uppercase tracking-[0.28em] text-gold-dark">
-            {leadershipData.badge || 'LEADERSHIP'}
-          </span>
-          <h2 className="mt-2.5 font-serif text-3xl font-medium leading-tight text-forest-dark sm:text-4xl md:text-5xl">
-            {leadershipData.title}
-          </h2>
-          <p className="mx-auto mt-3 max-w-2xl font-sans text-sm sm:text-base font-light leading-relaxed text-forest/70">
-            {leadershipData.subtitle}
-          </p>
+        <div className="text-center mb-10 sm:mb-12">
+          {/* Eyebrow Tag with Golden Line */}
+          <div className="flex items-center justify-center gap-2.5 mb-3.5">
+            <span className="w-8 h-[3.5px] bg-gold rounded-full" />
+            <span className="font-sans text-[12px] sm:text-xs font-black uppercase tracking-[0.22em] text-[#0c2340]">
+              {leadershipData.badge || 'LEADERSHIP'}
+            </span>
+          </div>
+
+          {/* Heading */}
+          <motion.h2
+            initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: EASE }}
+            className="font-times text-3xl sm:text-4xl lg:text-[2.65rem] font-medium text-[#0c2340] leading-[1.12]"
+          >
+            {leadershipData.title || 'Our Honourable Leadership'}
+          </motion.h2>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={reduceMotion ? false : { opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: EASE, delay: 0.1 }}
+            className="mx-auto mt-3 max-w-2xl font-sans text-xs sm:text-sm md:text-[14.5px] font-normal leading-relaxed text-slate-600"
+          >
+            {leadershipData.subtitle || "Meet the visionary leadership steering Bareilly International University's academic and administrative excellence."}
+          </motion.p>
         </div>
 
         {/* 4 Cards Grid */}
@@ -52,7 +72,7 @@ export default function Leadership() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.1 }}
-          className="mt-12 sm:mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7"
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7"
         >
           {leadershipData.leaders.map((leader, idx) => (
             <motion.div

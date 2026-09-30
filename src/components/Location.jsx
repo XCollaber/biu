@@ -28,35 +28,52 @@ export default function Location() {
   };
 
   return (
-    <section id="location" className="relative w-full bg-[#fbfbfd] py-24 md:py-12">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-8 px-5 sm:px-8 lg:grid-cols-2 lg:gap-10">
-        {/* Left: info card matching reference design layout */}
-        <motion.div
-          variants={fade}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.05 }}
-          className="flex flex-col justify-between rounded-2xl border border-[#0c2340]/10 bg-white/70 p-6 sm:p-8 md:p-10 shadow-sm"
-        >
-          <div>
-            {/* Header Headline */}
-            <h2 className="font-times text-2xl sm:text-3xl lg:text-[32px] font-medium leading-tight text-forest/60">
-              Find Bareilly International University.
-            </h2>
+    <section id="location" className="relative z-10 w-full bg-transparent pb-20 pt-4 sm:pb-16 sm:pt-6">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8">
+        {/* Section Eyebrow & Headline outside the container */}
+        <div className="mb-8 sm:mb-7 text-left">
+          <div className="flex items-center gap-2.5 mb-3.5">
+            <span className="w-8 h-[3.5px] bg-gold rounded-full" />
+            <span className="font-sans text-[12px] sm:text-xs font-black uppercase tracking-[0.22em] text-[#0c2340]">
+              CAMPUS LOCATION
+            </span>
+          </div>
 
-            {/* Address Block */}
-            <div className="mt-7 flex flex-col gap-1.5">
-              <div className="flex items-center gap-2 font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-gold-dark">
-                <MapPin size={15} weight="fill" className="text-gold-dark" />
-                <span>ADDRESS</span>
+          <motion.h2
+            initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: EASE }}
+            className="font-times text-3xl sm:text-4xl lg:text-[2.50rem] font-medium text-[#0c2340] leading-[1.12]"
+          >
+            Find Bareilly International University.
+          </motion.h2>
+        </div>
+
+        {/* 2-Column Grid Container */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+          {/* Left: info card matching reference design layout */}
+          <motion.div
+            variants={fade}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.05 }}
+            className="flex flex-col justify-between rounded-xl border border-[#0c2340]/10 bg-white/70 p-6 sm:p-8 md:p-6 shadow-sm"
+          >
+            <div>
+              {/* Address Block */}
+              <div className="flex flex-col gap-1.5">
+                <div className="flex items-center gap-2 font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-gold-dark">
+                  <MapPin size={15} weight="fill" className="text-gold-dark" />
+                  <span>ADDRESS</span>
+                </div>
+                <h3 className="font-sans text-sm sm:text-[15px] font-bold text-slate-900 mt-0.5">
+                  {VENUE.address}
+                </h3>
+                <p className="font-fraunces text-[14px] text-slate-600 font-light">
+                  {VENUE.note}
+                </p>
               </div>
-              <h3 className="font-sans text-sm sm:text-[15px] font-bold text-slate-900 mt-0.5">
-                {VENUE.address}
-              </h3>
-              <p className="font-fraunces text-[14px] text-slate-600 font-light">
-                {VENUE.note}
-              </p>
-            </div>
 
             {/* Hours Block */}
             <div className="mt-6 flex flex-col gap-1.5">
@@ -130,7 +147,7 @@ export default function Location() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.05 }}
-          className="relative min-h-[440px] overflow-hidden rounded-2xl ring-1 ring-black/10 shadow-[0_30px_80px_-40px_rgba(20,57,43,0.4)]"
+          className="relative min-h-[440px] overflow-hidden rounded-xl ring-1 ring-black/10 shadow-[0_30px_80px_-40px_rgba(20,57,43,0.4)]"
         >
           <iframe
             title={`Map showing ${locData.venueName || VENUE.name}`}
@@ -142,6 +159,7 @@ export default function Location() {
             allowFullScreen
           />
         </motion.div>
+        </div>
       </div>
     </section>
   );

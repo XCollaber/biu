@@ -38,7 +38,7 @@ function FaqItem({ item, isOpen, onToggle, index }) {
 
   return (
     <div
-      className={`overflow-hidden rounded-2xl border transition-colors duration-200 bg-white ${isOpen
+      className={`overflow-hidden rounded-xl border transition-colors duration-200 bg-white ${isOpen
           ? 'border-gold/50 shadow-xs'
           : 'border-slate-200/80 hover:border-gold/40 shadow-xs'
         }`}
@@ -230,7 +230,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative w-full bg-[#fbfbfd] py-18 sm:py-24 lg:py-44 overflow-hidden font-sans">
+    <section id="contact" className="relative z-[2] w-full bg-[#fbfbfd] py-18 sm:py-24 lg:py-44 font-sans">
       {/* Target anchor for FAQ direct links */}
       <div id="faq" className="absolute -top-20 left-0" />
       <div id="book" className="absolute -top-20 left-0" />
@@ -239,7 +239,7 @@ export default function Contact() {
       <div className="pointer-events-none absolute -right-28 sm:-right-10 top-20 w-[650px] lg:w-[850px] h-[650px] lg:h-[850px] bg-gradient-to-bl from-[#d9ebfb]/55 via-[#eaf4fd]/40 to-transparent rounded-full filter blur-3xl z-0 opacity-60" />
 
       {/* Center Background Banyan Tree Watermark */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden z-0 select-none">
+      <div className="pointer-events-none absolute inset-0 z-0 select-none">
         <img
           src="/tree.png"
           alt=""
@@ -362,7 +362,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.9, ease: EASE, delay: 0.15 }}
-              className="relative w-full rounded-2xl bg-white border border-slate-200/80 shadow-[0_22px_65px_-15px_rgba(12,35,64,0.13)] p-6 sm:p-8 lg:p-9 xl:p-10"
+              className="relative w-full rounded-xl bg-white border border-slate-200/80 shadow-[0_22px_65px_-15px_rgba(12,35,64,0.13)] p-6 sm:p-8 lg:p-9 xl:p-10"
             >
               {sent ? (
                 <motion.div
@@ -408,7 +408,7 @@ export default function Contact() {
                         placeholder="e.g. Rahul Sharma"
                         value={form.name}
                         onChange={handleNameChange}
-                        className={`w-full rounded-xl border bg-white px-4 py-3 sm:px-5 sm:py-3.5 font-sans text-[14px] text-slate-800 placeholder:text-slate-400 outline-none transition-all duration-200 focus:border-gold focus:ring-2 focus:ring-gold/20 ${
+                        className={`w-full rounded-lg border bg-white px-4 py-3 sm:px-5 sm:py-3.5 font-sans text-[14px] text-slate-800 placeholder:text-slate-400 outline-none transition-all duration-200 focus:border-gold focus:ring-2 focus:ring-gold/20 ${
                           errors.name ? 'border-red-500/70 ring-1 ring-red-500/20' : 'border-slate-200/90'
                         }`}
                       />
@@ -430,7 +430,7 @@ export default function Contact() {
                         placeholder="e.g. rahul@example.com"
                         value={form.email}
                         onChange={handleEmailChange}
-                        className={`w-full rounded-xl border bg-white px-4 py-3 sm:px-5 sm:py-3.5 font-sans text-[14px] text-slate-800 placeholder:text-slate-400 outline-none transition-all duration-200 focus:border-gold focus:ring-2 focus:ring-gold/20 ${
+                        className={`w-full rounded-lg border bg-white px-4 py-3 sm:px-5 sm:py-3.5 font-sans text-[14px] text-slate-800 placeholder:text-slate-400 outline-none transition-all duration-200 focus:border-gold focus:ring-2 focus:ring-gold/20 ${
                           errors.email ? 'border-red-500/70 ring-1 ring-red-500/20' : 'border-slate-200/90'
                         }`}
                       />
@@ -455,7 +455,7 @@ export default function Contact() {
                         placeholder="e.g. 9876543210"
                         value={form.phone}
                         onChange={handlePhoneChange}
-                        className={`w-full rounded-xl border bg-white px-4 py-3 sm:px-5 sm:py-3.5 font-sans text-[14px] text-slate-800 placeholder:text-slate-400 outline-none transition-all duration-200 focus:border-gold focus:ring-2 focus:ring-gold/20 ${
+                        className={`w-full rounded-lg border bg-white px-4 py-3 sm:px-5 sm:py-3.5 font-sans text-[14px] text-slate-800 placeholder:text-slate-400 outline-none transition-all duration-200 focus:border-gold focus:ring-2 focus:ring-gold/20 ${
                           errors.phone ? 'border-red-500/70 ring-1 ring-red-500/20' : 'border-slate-200/90'
                         }`}
                       />
@@ -475,7 +475,7 @@ export default function Contact() {
                         placeholder="e.g. MBBS, B.Tech, B.Pharm, MBA"
                         value={form.course}
                         onChange={handleCourseChange}
-                        className={`w-full rounded-xl border bg-white px-4 py-3 sm:px-5 sm:py-3.5 font-sans text-[14px] text-slate-800 placeholder:text-slate-400 outline-none transition-all duration-200 focus:border-gold focus:ring-2 focus:ring-gold/20 ${
+                        className={`w-full rounded-lg border bg-white px-4 py-3 sm:px-5 sm:py-3.5 font-sans text-[14px] text-slate-800 placeholder:text-slate-400 outline-none transition-all duration-200 focus:border-gold focus:ring-2 focus:ring-gold/20 ${
                           errors.course ? 'border-red-500/70 ring-1 ring-red-500/20' : 'border-slate-200/90'
                         }`}
                       />
@@ -524,7 +524,7 @@ export default function Contact() {
                       placeholder="Share details about your query, preferred date, or special requests..."
                       value={form.message}
                       onChange={handleMessageChange}
-                      className="w-full rounded-xl border border-slate-200/90 bg-white px-4 py-3 sm:px-5 sm:py-3.5 font-sans text-[14px] text-slate-800 placeholder:text-slate-400 outline-none transition-all duration-200 focus:border-gold focus:ring-2 focus:ring-gold/20 resize-none"
+                      className="w-full rounded-lg border border-slate-200/90 bg-white px-4 py-3 sm:px-5 sm:py-3.5 font-sans text-[14px] text-slate-800 placeholder:text-slate-400 outline-none transition-all duration-200 focus:border-gold focus:ring-2 focus:ring-gold/20 resize-none"
                     />
                   </div>
 
