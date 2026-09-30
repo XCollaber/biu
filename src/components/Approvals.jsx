@@ -9,7 +9,7 @@ const LOGOS = [
 
 export default function Approvals() {
   return (
-    <section className="relative z-10 w-full bg-transparent py-2 sm:py-4 pb-6 sm:pb-8">
+    <section className="relative z-10 w-full bg-transparent py-2 sm:py-4 pb-6 sm:pb-14">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 md:px-8">
         <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-12 lg:gap-20">
           {LOGOS.map((item, idx) => (

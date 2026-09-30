@@ -167,7 +167,7 @@ export default function NewsEvents() {
                 className="w-full sm:w-[calc(50%-14px)] lg:w-[calc(25%-21px)] shrink-0 snap-start flex"
               >
                 <article
-                  className="group relative flex w-full flex-col justify-between overflow-hidden rounded-lg bg-white border border-slate-200/80 shadow-xs hover:shadow-[0_20px_40px_-12px_rgba(12,35,64,0.16),0_8px_16px_-4px_rgba(12,35,64,0.06),0_0_0_1px_rgba(12,35,64,0.04)] hover:border-slate-300 transition-[box-shadow,border-color] duration-300 ease-out"
+                  className="group relative flex w-full flex-col justify-between overflow-hidden rounded-lg bg-white border border-slate-200/80 shadow-xs hover:shadow-[0_20px_40px_-12px_rgba(12,35,64,0.16),0_8px_16px_-4px_rgba(12,35,64,0.06),0_0_0_1px_rgba(12,35,64,0.04)] hover:border-slate-200 transition-[box-shadow,border-color] duration-300 ease-out"
                 >
                   <div>
                     {/* Top Featured Image */}

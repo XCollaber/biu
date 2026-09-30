@@ -114,8 +114,8 @@ export default function Location() {
               {/* Right Details & Action Button */}
               <div className="flex flex-col items-start gap-1.5">
                 {/* Scan Badge */}
-                <div className="inline-flex items-center gap-1.5 rounded-full border border-cyan-800/20 bg-cyan-900/5 px-2.5 py-1 font-fraunces text-[12px] font-bold text-cyan-600">
-                  <QrCodeIcon size={18} weight="bold" />
+                <div className="inline-flex items-center gap-1.5 rounded-full border border-navy/15 bg-navy/[0.05] px-2.5 py-1 font-fraunces text-[12px] font-bold text-navy/85 shadow-xs">
+                  <QrCodeIcon size={18} weight="bold" className="text-navy/85" />
                   <span>Scan for Directions</span>
                 </div>
 

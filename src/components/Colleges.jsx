@@ -118,14 +118,19 @@ export default function Colleges() {
                 transition={{ duration: 0.5, delay: idx * 0.04 }}
                 className="snap-center shrink-0 flex flex-col items-center w-28 sm:w-32 md:w-36 lg:w-40 group cursor-pointer text-center"
               >
-                {/* Circular Logo Container */}
-                <div className="relative flex h-28 w-28 sm:h-32 sm:w-32 lg:h-36 lg:w-36 items-center justify-center rounded-full bg-white p-2 transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg overflow-hidden shrink-0">
-                  <Img
-                    src={college.logo}
-                    alt={college.name}
-                    loading="lazy"
-                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
+                {/* 3D Sphere Logo Container */}
+                <div className="relative mb-1 flex flex-col items-center">
+                  <div className="relative flex h-28 w-28 sm:h-32 sm:w-32 lg:h-36 lg:w-36 items-center justify-center rounded-full bg-white border border-slate-100/90 p-3 sm:p-4 shadow-[0_14px_30px_-8px_rgba(12,35,64,0.16),0_4px_10px_-2px_rgba(12,35,64,0.06)] transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-2 group-hover:shadow-[0_22px_40px_-10px_rgba(12,35,64,0.22),0_8px_16px_-4px_rgba(12,35,64,0.08)] shrink-0">
+                    <Img
+                      src={college.logo}
+                      alt={college.name}
+                      loading="lazy"
+                      className="relative z-10 h-full w-full object-contain transition-transform duration-300 group-hover:scale-105 select-none"
+                    />
+                  </div>
+
+                  {/* Soft Ground Floor Shadow */}
+                  <div className="pointer-events-none -mt-2 h-3.5 w-[72%] rounded-full bg-[#0c2340]/15 filter blur-sm transition-all duration-300 group-hover:w-[82%] group-hover:opacity-80 group-hover:scale-105" />
                 </div>
 
                 {/* College Text OUTSIDE the Circular Container */}
