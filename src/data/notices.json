@@ -1,7 +1,7 @@
 {
   "important": {
     "badge": "IMPORTANT",
-    "title": "NEWS & NOTICE",
+    "title": "News & Notice",
     "viewAllLink": "/news",
     "items": [
       {
@@ -48,7 +48,7 @@
   },
   "academics": {
     "badge": "ACADEMICS",
-    "title": "UPDATES & EVENTS",
+    "title": "Updates & Events",
     "viewAllLink": "/news",
     "items": [
       {
