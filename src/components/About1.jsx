@@ -48,7 +48,7 @@ export default function About() {
       </div>
 
       {/* Main Section Content */}
-      <div className="relative w-full max-w-[1520px] mx-auto px-5 sm:px-8 lg:px-24 py-14 sm:py-18 lg:py-20 overflow-hidden">
+      <div className="relative w-full max-w-[1520px] mx-auto px-5 sm:px-8 lg:px-24 py-14 sm:py-18 lg:pt-20 lg:pb-16 overflow-hidden">
         {/* Background Banyan Tree Watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden z-20">
           <img
