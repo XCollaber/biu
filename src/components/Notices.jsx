@@ -49,11 +49,11 @@ export default function Notices() {
               {/* View All Button matching Navbar/Highlights button style */}
               <a
                 href={important.viewAllLink || '/news'}
-                className="group inline-flex items-center gap-1.5 rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-4 sm:px-5 py-2 font-sans text-xs font-semibold text-white shadow-xs brightness-125 transition-all duration-200 hover:shadow-lg hover:brightness-125 hover:-translate-y-0.5 active:scale-[0.98] shrink-0"
+                className="group inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-5 sm:px-4 py-2.5 font-sans text-xs sm:text-[13px] font-semibold text-white shadow-xs brightness-125 transition-all duration-200 hover:shadow-lg hover:brightness-125 hover:-translate-y-0.5 active:scale-[0.98] shrink-0"
               >
-                <BellSimple size={15} weight="fill" className="text-blue-100 transition-transform duration-200 group-hover:scale-110" />
+                <BellSimple size={17} weight="fill" className="text-blue-100 transition-transform duration-200 group-hover:scale-110" />
                 <span>View All</span>
-                <CaretRight size={13} weight="bold" className="text-white/90 transition-transform duration-200 group-hover:translate-x-0.5" />
+                <CaretRight size={14} weight="bold" className="text-white/90 transition-transform duration-200 group-hover:translate-x-0.5" />
               </a>
             </motion.div>
 
@@ -131,11 +131,11 @@ export default function Notices() {
               {/* View All Button matching Navbar/Highlights button style */}
               <a
                 href={academics.viewAllLink || '/news'}
-                className="group inline-flex items-center gap-1.5 rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-4 sm:px-5 py-2 font-sans text-xs font-semibold text-white shadow-xs brightness-125 transition-all duration-200 hover:shadow-lg hover:brightness-125 hover:-translate-y-0.5 active:scale-[0.98] shrink-0"
+                className="group inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-5 sm:px-4 py-2.5 font-sans text-xs sm:text-[13px] font-semibold text-white shadow-xs brightness-125 transition-all duration-200 hover:shadow-lg hover:brightness-125 hover:-translate-y-0.5 active:scale-[0.98] shrink-0"
               >
-                <CalendarBlank size={15} weight="fill" className="text-blue-100 transition-transform duration-200 group-hover:scale-110" />
+                <CalendarBlank size={17} weight="fill" className="text-blue-100 transition-transform duration-200 group-hover:scale-110" />
                 <span>View All</span>
-                <CaretRight size={13} weight="bold" className="text-white/90 transition-transform duration-200 group-hover:translate-x-0.5" />
+                <CaretRight size={14} weight="bold" className="text-white/90 transition-transform duration-200 group-hover:translate-x-0.5" />
               </a>
             </motion.div>
 
