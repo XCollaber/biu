@@ -1,145 +1,128 @@
-import { useState, useEffect, useRef } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, Newspaper } from '@phosphor-icons/react';
+import { ArrowRight, NewspaperClipping, CaretRight } from '@phosphor-icons/react';
 import Img from './Img';
 import journalData from '../data/news.json';
 
 const EASE = [0.16, 1, 0.3, 1];
 
-const fallback = (seed) => `https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80`;
+const FALLBACK = (idx) =>
+  `https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80`;
+
+const truncateExcerpt = (text, maxLength = 52) => {
+  if (!text) return '';
+  const clean = text.replace(/\.{2,}$/, '').trim();
+  if (clean.length <= maxLength) return clean;
+  const truncated = clean.slice(0, maxLength);
+  const lastSpace = truncated.lastIndexOf(' ');
+  const wordSafe = lastSpace > 20 ? truncated.slice(0, lastSpace) : truncated;
+  return wordSafe.trim() + '...';
+};
 
 export default function NewsEvents() {
   const reduceMotion = useReducedMotion();
-  const scrollRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isInteracting, setIsInteracting] = useState(false);
 
-  const rise = {
-    hidden: reduceMotion ? {} : { y: 28, opacity: 0 },
-    show: { y: 0, opacity: 1, transition: { duration: 0.8, ease: EASE } },
+  const fadeUp = {
+    hidden: reduceMotion ? {} : { opacity: 0, y: 24 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },
   };
+
   const container = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.12 } },
+    show: { transition: { staggerChildren: 0.1 } },
   };
 
-  const posts = (journalData.posts || []).slice(0, 3);
-
-  useEffect(() => {
-    if (isInteracting || !posts.length) return undefined;
-    const timer = setInterval(() => {
-      if (!scrollRef.current) return;
-      const el = scrollRef.current;
-      if (el.scrollWidth > el.clientWidth) {
-        const next = (activeIndex + 1) % posts.length;
-        const itemWidth = el.scrollWidth / posts.length;
-        el.scrollTo({
-          left: itemWidth * next,
-          behavior: 'smooth',
-        });
-        setActiveIndex(next);
-      }
-    }, 3500);
-
-    return () => clearInterval(timer);
-  }, [activeIndex, isInteracting, posts.length]);
-
-  const handleScroll = () => {
-    if (!scrollRef.current) return;
-    const el = scrollRef.current;
-    if (el.scrollWidth > el.clientWidth) {
-      const idx = Math.round((el.scrollLeft / el.scrollWidth) * posts.length);
-      setActiveIndex(idx);
-    }
-  };
+  const posts = journalData.posts || [];
 
   return (
-    <section id="news" className="relative w-full overflow-hidden bg-gradient-to-br from-[#f0f4f8] via-[#e8eef5] to-[#f0f4f8] py-24 sm:py-32">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
+    <section id="news" className="relative w-full overflow-hidden bg-[#fbfbfd] py-16 sm:py-20 md:py-22 font-sans">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
+        {/* Section Header */}
         <motion.div
-          variants={rise}
+          variants={fadeUp}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+          className="mb-8 sm:mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-5 sm:gap-6"
         >
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 rounded-lg border border-[#0c2340]/15 bg-white/60 px-3.5 py-1 font-sans text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-dark backdrop-blur-md">
-              <Newspaper size={14} weight="bold" />
-              {journalData.badge || 'Campus News & Announcements'}
-            </span>
-            <h2 className="mt-4 font-serif text-3xl font-medium tracking-tight text-forest-dark sm:text-4xl md:text-5xl">
-              {journalData.title || 'BIU Journal & Latest Events'}
+          {/* Title and Eyebrow */}
+          <div className="flex flex-col items-start text-left">
+            {/* Eyebrow Tag */}
+            <div className="flex items-center gap-2.5 mb-3.5">
+              <span className="w-8 h-[3.5px] bg-gold rounded-full" />
+              <span className="font-sans text-[12px] sm:text-xs font-black uppercase tracking-[0.22em] text-[#0c2340]">
+                {journalData.badge || 'CAMPUS UPDATES'}
+              </span>
+            </div>
+
+            <h2 className="font-times text-3xl sm:text-4xl lg:text-[2.45rem] font-medium text-[#0c2340] leading-[1.12]">
+              {journalData.title || 'BIU Highlights'}
             </h2>
-            <p className="mt-3 font-sans text-[15px] font-light leading-relaxed text-forest/70">
-              {journalData.subtitle}
-            </p>
           </div>
 
-          <a
-            href="/news"
-            className="group inline-flex items-center gap-3 self-start rounded-xl border border-[#0c2340] bg-[#0c2340] px-6 py-3 font-sans text-[12px] font-semibold uppercase tracking-[0.16em] text-white transition-all duration-500 ease-premium hover:border-gold hover:bg-gold hover:text-[#0c2340] active:scale-[0.98]"
-          >
-            {journalData.ctaLabel || 'Read All News'}
-            <ArrowRight
-              size={14}
-              weight="bold"
-              className="transition-transform duration-500 ease-premium group-hover:translate-x-1"
-            />
-          </a>
+          {/* View All Button on opposite end matching Navbar button style */}
+          <div className="flex items-center">
+            <a
+              href="/news"
+              className="group inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-6 py-2.5 font-sans text-xs font-semibold text-white shadow-xs brightness-125 transition-all duration-200 hover:shadow-lg hover:brightness-125 hover:-translate-y-0.5 active:scale-[0.98] shrink-0"
+            >
+              <NewspaperClipping size={18} weight="fill" className="text-blue-100 transition-transform duration-200 group-hover:scale-110" />
+              <span>{journalData.viewAllLabel || 'View All News'}</span>
+              <CaretRight size={14} weight="bold" className="text-white/90 transition-transform duration-200 group-hover:translate-x-0.5" />
+            </a>
+          </div>
         </motion.div>
 
+        {/* 4-Column News Cards Grid */}
         <motion.div
-          ref={scrollRef}
-          onScroll={handleScroll}
-          onTouchStart={() => setIsInteracting(true)}
-          onTouchEnd={() => setIsInteracting(false)}
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.1 }}
-          className="mt-12 flex snap-x snap-mandatory overflow-x-auto gap-6 pb-4 no-scrollbar -mx-5 px-5 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-3"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7"
         >
           {posts.map((post, idx) => (
             <motion.article
-              key={post.title}
-              variants={rise}
-              className="group flex flex-col justify-between w-[85vw] max-w-[340px] flex-shrink-0 snap-center rounded-2xl border border-gold/20 bg-white p-5 transition-all duration-500 hover:-translate-y-1 hover:border-gold/60 hover:shadow-xl sm:w-auto sm:flex-shrink shadow-sm"
+              key={post.id || idx}
+              variants={fadeUp}
+              className="group relative flex flex-col justify-between overflow-hidden rounded-lg bg-white border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-slate-400/30 hover:-translate-y-1.5 transition-all duration-300"
             >
               <div>
-                <div className="relative h-48 w-full overflow-hidden rounded-xl bg-forest/20">
+                {/* Top Featured Image */}
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
                   <Img
-                    src={post.image || post.img}
+                    src={post.img || post.image}
                     alt={post.title}
                     loading="lazy"
                     onError={(e) => {
-                      if (e.currentTarget.src !== fallback(idx)) e.currentTarget.src = fallback(idx);
+                      const fb = FALLBACK(idx);
+                      if (e.currentTarget.src !== fb) e.currentTarget.src = fb;
                     }}
-                    className="h-full w-full object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
                   />
-                  <div className="absolute top-3 left-3 rounded-full bg-forest-dark/80 px-3 py-1 backdrop-blur-md text-[10px] font-sans font-semibold uppercase tracking-wider text-gold">
-                    {post.category || 'Announcement'}
-                  </div>
+                  {/* Upload Date Badge on Bottom Right of Image */}
+                  {post.date && (
+                    <span className="absolute bottom-2 right-2 bg-[#0c2340]/45 text-white backdrop-blur-sm font-sans text-[11px] font-medium tracking-wide px-3 py-0.5 rounded-md shadow-md border border-white/20">
+                      {post.date}
+                    </span>
+                  )}
                 </div>
 
-                <div className="mt-4">
-                  <span className="font-sans text-[11px] font-medium text-forest/60">{post.date}</span>
-                  <h3 className="mt-1 font-serif text-lg font-medium text-forest-dark transition-colors duration-300 group-hover:text-gold-dark line-clamp-2">
+                {/* Card Content Body */}
+                <div className="p-5 sm:p-6 text-left">
+                  <h3 className="font-fraunces text-lg sm:text-[18.5px] font-medium leading-[1.28] text-[#0c2340] group-hover:text-gold-dark transition-colors line-clamp-2">
                     {post.title}
                   </h3>
-                  <p className="mt-2 font-sans text-xs font-light leading-relaxed text-forest/75 line-clamp-3">
-                    {post.excerpt || post.snippet}
+                  <p className="mt-2.5 font-sans text-xs sm:text-[13px] font-normal leading-relaxed text-slate-500">
+                    <span>{truncateExcerpt(post.excerpt, 52)}</span>
+                    <a
+                      href="/news"
+                      className="inline-flex items-center gap-1 font-sans text-xs font-bold text-gold-dark group-hover:text-[#0c2340]/90 ml-1.5 transition-colors whitespace-nowrap"
+                    >
+                      <span className="hover:underline">Read More</span>
+                      <ArrowRight size={12} weight="bold" className="transition-transform duration-200 group-hover:translate-x-0.5" />
+                    </a>
                   </p>
                 </div>
-              </div>
-
-              <div className="mt-5 border-t border-forest/10 pt-3">
-                <a
-                  href="/news"
-                  className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-gold-dark group-hover:text-forest-dark transition-colors"
-                >
-                  Read Full Update <ArrowRight size={12} weight="bold" />
-                </a>
               </div>
             </motion.article>
           ))}
