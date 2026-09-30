@@ -9,18 +9,23 @@
   "templates": [
     {
       "id": "medical",
-      "label": "Medical & Dental",
-      "text": "Hello BIU Admissions Team, I am interested in MBBS / BDS degree programs. Please share eligibility criteria, NEET cutoff, and seat counseling details."
+      "label": "Medical Sciences",
+      "text": "Hello BIU Admissions Team, I am interested in MBBS / MD / MS / M.Sc Medical programs. Please share eligibility criteria, NEET cutoff, and seat counseling details."
     },
     {
-      "id": "engineering",
-      "label": "Engineering & Tech",
-      "text": "Hello BIU Admissions Team, I would like information regarding B.Tech Computer Science / AI & ML admissions, lab facilities, and campus placements."
+      "id": "dental",
+      "label": "Dental Sciences",
+      "text": "Hello BIU Admissions Team, I am inquiring about BDS and MDS dental surgery programs. Please share admission eligibility, NEET cutoff, and clinical lab details."
     },
     {
       "id": "nursing",
-      "label": "Nursing & Paramedical",
-      "text": "Hello BIU Admissions Team, I am inquiring about B.Sc Nursing and Paramedical courses. Please share fee structure and clinical hospital training details."
+      "label": "Nursing",
+      "text": "Hello BIU Admissions Team, I am inquiring about B.Sc Nursing and GNM programs. Please share fee structure, eligibility criteria, and hospital training details."
+    },
+    {
+      "id": "pharmacy",
+      "label": "Pharmacy",
+      "text": "Hello BIU Admissions Team, I am inquiring about B.Pharm and D.Pharm programs. Please share PCI approval details, laboratory facilities, and fee structure."
     },
     {
       "id": "management",
@@ -28,9 +33,29 @@
       "text": "Hello BIU Admissions Team, I am interested in MBA / BBA programs. Please share syllabus details, industry tie-ups, and placement records."
     },
     {
-      "id": "pharmacy",
-      "label": "Pharmacy",
-      "text": "Hello BIU Admissions Team, I am inquiring about B.Pharm and D.Pharm programs. Please share PCI approval details, laboratory facilities, and fee structure."
+      "id": "humanities",
+      "label": "Humanities & Journalism",
+      "text": "Hello BIU Admissions Team, I am interested in BA / MA Journalism and Humanities programs. Please share curriculum details and admission guidelines."
+    },
+    {
+      "id": "allied",
+      "label": "Allied & Health Care Sciences",
+      "text": "Hello BIU Admissions Team, I would like information regarding Allied Health Sciences (BPT, BMLT, Paramedical) courses, eligibility, and hospital training."
+    },
+    {
+      "id": "forensic",
+      "label": "Forensic Sciences",
+      "text": "Hello BIU Admissions Team, I am inquiring about B.Sc / M.Sc Forensic Sciences programs. Please share laboratory infrastructure and admission criteria."
+    },
+    {
+      "id": "ayurveda",
+      "label": "Ayurvedic Sciences",
+      "text": "Hello BIU Admissions Team, I am interested in BAMS / Ayurvedic Medical College programs. Please share admission criteria, NEET cutoff, and hospital facilities."
+    },
+    {
+      "id": "finearts",
+      "label": "Faculty of Fine Arts",
+      "text": "Hello BIU Admissions Team, I am inquiring about Faculty of Fine Arts (BFA / MFA) programs. Please share studio facilities, specialization options, and fee structure."
     },
     {
       "id": "other",

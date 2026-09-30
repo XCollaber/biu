@@ -8,10 +8,15 @@ import {
   Minus,
   ArrowRight,
   Stethoscope,
-  Gear,
+  Tooth,
   Heart,
+  Pill,
   ChartBar,
-  Tag,
+  Newspaper,
+  FirstAid,
+  Fingerprint,
+  Plant,
+  Palette,
   SquaresFour,
   Question,
   CaretRight,
@@ -23,11 +28,16 @@ import siteData from '../data/site.json';
 const EASE = [0.16, 1, 0.3, 1];
 
 const INTEREST_OPTIONS = [
-  { id: 'medical', label: 'Medical & Dental', icon: Stethoscope },
-  { id: 'engineering', label: 'Engineering & Tech', icon: Gear },
-  { id: 'nursing', label: 'Nursing & Paramedical', icon: Heart },
+  { id: 'medical', label: 'Medical Sciences', icon: Stethoscope },
+  { id: 'dental', label: 'Dental Sciences', icon: Tooth },
+  { id: 'nursing', label: 'Nursing', icon: Heart },
+  { id: 'pharmacy', label: 'Pharmacy', icon: Pill },
   { id: 'management', label: 'Management', icon: ChartBar },
-  { id: 'pharmacy', label: 'Pharmacy', icon: Tag },
+  { id: 'humanities', label: 'Humanities & Journalism', icon: Newspaper },
+  { id: 'allied', label: 'Allied & Health Care Sciences', icon: FirstAid },
+  { id: 'forensic', label: 'Forensic Sciences', icon: Fingerprint },
+  { id: 'ayurveda', label: 'Ayurvedic Sciences', icon: Plant },
+  { id: 'finearts', label: 'Faculty of Fine Arts', icon: Palette },
   { id: 'other', label: 'Other', icon: SquaresFour },
 ];
 
@@ -188,7 +198,7 @@ export default function Contact() {
     if (!trimmedCourse) {
       newErrors.course = 'Course name is required.';
     } else if (trimmedCourse.length < 2 || !/^[a-zA-Z\s.,/&()-]+$/.test(trimmedCourse)) {
-      newErrors.course = 'Please enter a valid course name (e.g. MBBS, B.Tech, MBA).';
+      newErrors.course = 'Please enter a valid course name (e.g. MBBS, BDS, B.Pharm, MBA).';
     }
 
     setErrors(newErrors);
@@ -472,7 +482,7 @@ export default function Contact() {
                         id="c-course"
                         type="text"
                         required
-                        placeholder="e.g. MBBS, B.Tech, B.Pharm, MBA"
+                        placeholder="e.g. MBBS, BDS, B.Sc Nursing, B.Pharm, MBA"
                         value={form.course}
                         onChange={handleCourseChange}
                         className={`w-full rounded-lg border bg-white px-4 py-3 sm:px-5 sm:py-3.5 font-sans text-[14px] text-slate-800 placeholder:text-slate-400 outline-none transition-all duration-200 focus:border-gold focus:ring-2 focus:ring-gold/20 ${
@@ -486,11 +496,19 @@ export default function Contact() {
                   </div>
 
                   {/* Interested Field Chips (Optional) */}
-                  <div className="flex flex-col gap-2.5">
-                    <label className="font-sans text-[10.5px] font-bold uppercase tracking-wider text-slate-700">
-                      INTERESTED FIELD <span className="ml-1 text-gold-dark">(OPTIONAL)</span>
-                    </label>
-                    <div className="flex flex-wrap gap-2.5 pt-1">
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center justify-between">
+                      <label className="font-sans text-[10.5px] font-bold uppercase tracking-wider text-slate-700">
+                        INTERESTED FIELD <span className="ml-1 text-gold-dark">(OPTIONAL)</span>
+                      </label>
+                      <span className="font-sans text-[11px] text-slate-400 font-normal">
+                        Scroll to explore →
+                      </span>
+                    </div>
+                    <div
+                      className="flex items-center gap-2 overflow-x-auto pb-1.5 pt-1 scroll-smooth"
+                      style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                    >
                       {INTEREST_OPTIONS.map((opt) => {
                         const Icon = opt.icon;
                         const isSelected = selectedField === opt.id;
@@ -499,13 +517,13 @@ export default function Contact() {
                             key={opt.id}
                             type="button"
                             onClick={() => handleFieldSelect(opt.id)}
-                            className={`inline-flex items-center gap-2 rounded-xl border px-2 py-1.5 font-sans text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                            className={`shrink-0 inline-flex items-center gap-2 rounded-xl border px-2.5 py-1.5 font-sans text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                               isSelected
                                 ? 'border-[#0c2340]/40 bg-[#eef4fa] text-[#0c2340] shadow-xs ring-1 ring-[#0c2340]/5 scale-[1.02]'
-                                : 'border-slate-200 bg-white text-slate-500 hover:border-slate-400/60 hover:bg-slate-50'
+                                : 'border-slate-200 bg-white text-slate-600 hover:border-slate-400/60 hover:bg-slate-50'
                             }`}
                           >
-                            <Icon size={19} weight="bold" className={isSelected ? 'text-[#0c2340]' : 'text-slate-500'} />
+                            <Icon size={18} weight="bold" className={isSelected ? 'text-[#0c2340]' : 'text-slate-500'} />
                             <span>{opt.label}</span>
                           </button>
                         );
@@ -524,7 +542,7 @@ export default function Contact() {
                       placeholder="Share details about your query, preferred date, or special requests..."
                       value={form.message}
                       onChange={handleMessageChange}
-                      className="w-full rounded-lg border border-slate-200/90 bg-white px-4 py-3 sm:px-5 sm:py-3.5 font-sans text-[14px] text-slate-800 placeholder:text-slate-400 outline-none transition-all duration-200 focus:border-gold focus:ring-2 focus:ring-gold/20 resize-none"
+                      className="w-full min-h-[125px] sm:min-h-[135px] rounded-lg border border-slate-200/90 bg-white px-4 py-3 sm:px-5 sm:py-3.5 font-sans text-[14px] text-slate-800 placeholder:text-slate-400 outline-none transition-all duration-200 focus:border-gold focus:ring-2 focus:ring-gold/20 resize-none"
                     />
                   </div>
 
