@@ -52,7 +52,10 @@ export default function EducationStreams() {
   };
 
   return (
-    <section id="streams" className="relative w-full bg-[#fbfbfd] py-14 sm:py-18 md:pt-14 md:pb-20 font-sans overflow-hidden border-t border-slate-200/70">
+    <section id="streams" className="relative w-full bg-gradient-to-b from-white via-slate-50/50 to-slate-100/30 py-14 sm:py-18 md:pt-14 md:pb-20 font-sans overflow-hidden border-t border-slate-200/30">
+      {/* Background visual accents */}
+      <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-96 w-full max-w-7xl bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent blur-3xl" />
+
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-16">
 
@@ -90,9 +93,9 @@ export default function EducationStreams() {
                     key={tab.id}
                     type="button"
                     onClick={() => setActiveTab(tab.id)}
-                    className={`px-4 py-2 rounded-lg font-sans text-xs sm:text-[13px] font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer border ${
+                    className={`px-4 py-2 rounded-lg font-sans text-xs sm:text-[13px] font-medium transition-all duration-200 whitespace-nowrap cursor-pointer border ${
                       isActive
-                        ? 'bg-[#0c2340] text-white border-[#0c2340] shadow-sm'
+                        ? 'bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 text-white border-transparent brightness-125'
                         : 'bg-white text-slate-600 border-slate-200/80 hover:bg-slate-100/80 hover:text-[#0c2340]'
                     }`}
                   >
@@ -111,20 +114,14 @@ export default function EducationStreams() {
               className="flex-1 rounded-2xl border border-slate-200/80 bg-white overflow-hidden shadow-xs hover:shadow-[0_20px_40px_-12px_rgba(12,35,64,0.12),0_8px_16px_-4px_rgba(12,35,64,0.06),0_0_0_1px_rgba(12,35,64,0.04)] transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                {/* Colored University Header Ribbon */}
-                <div className="bg-gradient-to-r from-[#0c2340] via-[#102d52] to-[#163860] px-5 py-3.5 flex items-center justify-between text-white">
-                  <span className="font-times text-[15.5px] sm:text-base font-semibold tracking-wide">
+                {/* Colored University Header Ribbon — matching footer blue gradient */}
+                <div className="bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 px-5 py-4 flex items-center justify-between text-white">
+                  <span className="font-sans text-[15.5px] sm:text-base font-medium tracking-wide">
                     {currentTabObj.headerTitle || 'Our Constituent Institutions'}
                   </span>
-                  <span className="font-sans text-[11px] uppercase tracking-wider font-semibold text-blue-200/80">
+                  <span className="font-sans text-[12px] uppercase tracking-wider font-semibold text-blue-100 brightness-150">
                     Direct Link
                   </span>
-                </div>
-
-                {/* Sub-Header Columns */}
-                <div className="bg-slate-50/90 border-b border-slate-200/85 px-5 py-2 flex items-center justify-between font-sans text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span>Institutions / Portals</span>
-                  <span>Link</span>
                 </div>
 
                 {/* Table Rows List */}
@@ -137,10 +134,10 @@ export default function EducationStreams() {
                       rel="noopener noreferrer"
                       className="group flex items-center justify-between gap-4 px-5 py-2.5 sm:py-3 transition-all duration-150 hover:bg-slate-50/90"
                     >
-                      <span className="font-newsreader text-[14.5px] sm:text-[15.5px] font-medium text-[#0c2340] group-hover:text-rose-600 transition-colors duration-150 line-clamp-1">
+                      <span className="font-newsreader text-[14.5px] sm:text-[15.5px] font-medium text-[#0c2340] group-hover:text-gold-dark transition-colors duration-150 line-clamp-1">
                         {item.name}
                       </span>
-                      <span className="shrink-0 inline-flex items-center gap-1 font-sans text-xs sm:text-[12.5px] font-bold text-rose-600 transition-all duration-150 group-hover:translate-x-0.5 group-hover:underline">
+                      <span className="shrink-0 inline-flex items-center gap-1 font-sans text-xs sm:text-[12.5px] font-bold text-cyan-800 group-hover:text-cyan-700 transition-all duration-150 group-hover:translate-x-0.5 group-hover:underline">
                         <span>Visit</span>
                         <ArrowUpRight size={13} weight="bold" />
                       </span>
@@ -150,16 +147,16 @@ export default function EducationStreams() {
               </div>
 
               {/* Bottom Quick View All Link */}
-              <div className="bg-slate-50/80 border-t border-slate-200/85 px-5 py-3 flex items-center justify-between text-slate-500 font-sans text-xs">
+              {/* <div className="bg-slate-50/80 border-t border-slate-200/85 px-5 py-4 flex items-center justify-between text-slate-500 font-sans text-xs">
                 <span>Explore all faculties & campus centres</span>
                 <a
                   href="/faculties"
-                  className="font-semibold text-[#0c2340] hover:text-rose-600 transition-colors inline-flex items-center gap-1"
+                  className="font-semibold text-cyan-900 hover:text-cyan-800 transition-colors inline-flex items-center gap-1"
                 >
                   <span>View Details</span>
                   <ArrowRight size={13} weight="bold" />
                 </a>
-              </div>
+              </div> */}
             </motion.div>
           </div>
 

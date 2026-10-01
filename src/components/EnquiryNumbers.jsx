@@ -15,7 +15,7 @@ export default function EnquiryNumbers() {
   const counselors = enquiryData.counselors || [];
 
   return (
-    <section id="enquiry-numbers" className="relative w-full bg-[#fbfbfd] py-14 sm:py-18 md:pt-14 md:pb-20 font-sans overflow-hidden border-t border-slate-200/70">
+    <section id="enquiry-numbers" className="relative w-full bg-[#fbfbfd] py-14 sm:py-18 md:pt-14 md:pb-20 font-sans overflow-hidden border-t border-slate-200/40">
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
         {/* Section Header */}
         <motion.div

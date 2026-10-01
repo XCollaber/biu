@@ -9,18 +9,18 @@
         "label": "Institutions",
         "headerTitle": "Our Constituent Institutions",
         "items": [
-          { "name": "Rohilkhand Medical College & Hospital", "link": "/faculties", "type": "Medical" },
-          { "name": "Institute of Dental Sciences", "link": "/faculties", "type": "Dental" },
-          { "name": "Rohilkhand College of Nursing", "link": "/faculties", "type": "Nursing" },
-          { "name": "Faculty Of Allied and Health Care Sciences", "link": "/faculties", "type": "Allied Health" },
-          { "name": "Faculty of Fine Arts", "link": "/faculties", "type": "Fine Arts" },
-          { "name": "Faculty Of Forensic Sciences", "link": "/faculties", "type": "Forensic" },
-          { "name": "BIU College of Pharmacy", "link": "/faculties", "type": "Pharmacy" },
-          { "name": "Rohilkhand College of Pharmacy", "link": "/faculties", "type": "Pharmacy" },
-          { "name": "Keshlata College of Pharmacy", "link": "/faculties", "type": "Pharmacy" },
-          { "name": "BIU College of Management", "link": "/faculties", "type": "Management" },
-          { "name": "BIU College of Humanities & Journalism", "link": "/faculties", "type": "Humanities" },
-          { "name": "Rohilkhand Ayurvedic Medical College & Hospital", "link": "/faculties", "type": "Ayurveda" }
+          { "name": "Rohilkhand Medical College & Hospital", "link": "https://rmcbareilly.com/", "type": "Medical" },
+          { "name": "Institute of Dental Sciences", "link": "http://idsbareilly.in/", "type": "Dental" },
+          { "name": "Rohilkhand College of Nursing", "link": "https://page.biu.edu.in/rohilkhand-college-of-nursing/", "type": "Nursing" },
+          { "name": "Faculty Of Allied and Health Care Sciences", "link": "https://page.biu.edu.in/faculty-of-allied-and-health-care-sciences", "type": "Allied Health" },
+          { "name": "Faculty of Fine Arts", "link": "https://ffa.biu.edu.in/", "type": "Fine Arts" },
+          { "name": "Faculty Of Forensic Sciences", "link": "https://page.biu.edu.in/faculty-forensic-sciences/", "type": "Forensic" },
+          { "name": "BIU College of Pharmacy", "link": "https://page.biu.edu.in/biu-college-of-pharmacy/", "type": "Pharmacy" },
+          { "name": "Rohilkhand College of Pharmacy", "link": "https://page.biu.edu.in/rohilkhand-college-of-pharmacy/", "type": "Pharmacy" },
+          { "name": "Keshlata College of Pharmacy", "link": "https://keshlatanursing.com/keshlata-college-of-pharmacy/", "type": "Pharmacy" },
+          { "name": "BIU College of Management", "link": "https://biu.edu.in/management.php", "type": "Management" },
+          { "name": "BIU College of Humanities & Journalism", "link": "https://page.biu.edu.in/biu-college-of-humanities-journalism/", "type": "Humanities" },
+          { "name": "Rohilkhand Ayurvedic Medical College & Hospital", "link": "https://ramch.in/", "type": "Ayurveda" }
         ]
       },
       {
@@ -28,22 +28,27 @@
         "label": "Hospitals and Healthcare",
         "headerTitle": "Affiliated Healthcare Hospitals & Centers",
         "items": [
-          { "name": "Rohilkhand Medical College Hospital (1000+ Bedded)", "link": "/#contact", "type": "Super Specialty" },
-          { "name": "Institute of Dental Sciences & Hospital", "link": "/#contact", "type": "Dental Hospital" },
-          { "name": "Rohilkhand Ayurvedic Hospital & Panchakarma", "link": "/#contact", "type": "Ayurveda Hospital" },
-          { "name": "Keshlata Cancer Hospital & Research Center", "link": "/#contact", "type": "Oncology Care" }
+          { "name": "Rohilkhand Medical College & Hospital", "link": "https://rmcbareilly.com/", "type": "Super Specialty" },
+          { "name": "Institute Of Dental Sciences", "link": "https://www.idsbareilly.in/", "type": "Dental Hospital" },
+          { "name": "Keshlata Hospital Bareilly", "link": "http://www.keshlata.com/", "type": "Hospital" }
         ]
       },
       {
         "id": "links",
         "label": "Important Link",
-        "headerTitle": "Essential University Portals & Information",
+        "headerTitle": "Important Links & Portals",
         "items": [
-          { "name": "Online Admission Registration Portal 2026-27", "link": "https://admissions.biuerp.com/", "type": "Portal" },
-          { "name": "UGC, NAAC & Regulatory Approvals", "link": "/#approvals", "type": "Accreditation" },
-          { "name": "Fee Structure & Scholarships Guidelines", "link": "/#notices", "type": "Fees" },
-          { "name": "Student ERP & Examination Results", "link": "https://test.biu.edu.in/#erp", "type": "ERP" },
-          { "name": "Anti-Ragging & Student Grievance Cell", "link": "/#contact", "type": "Support" }
+          { "name": "National Medical Commission (NMC)", "link": "https://www.nmc.org.in/", "type": "Regulatory" },
+          { "name": "Dental Council of India", "link": "https://dciindia.gov.in/", "type": "Regulatory" },
+          { "name": "Indian Nursing Council", "link": "https://www.indiannursingcouncil.org/", "type": "Regulatory" },
+          { "name": "Pharmacy Council of India", "link": "https://dgpm.nic.in/", "type": "Regulatory" },
+          { "name": "Directorate of Medical Education and Training U.P", "link": "http://www.updgme.in/", "type": "Government" },
+          { "name": "National Eligibility Cum Entrance Test", "link": "https://ntaneet.nic.in/Ntaneet/Welcome.aspx", "type": "Entrance" },
+          { "name": "U.P. State Medical Faculty", "link": "https://www.upsmfac.org/", "type": "Regulatory" },
+          { "name": "University Grants Commission", "link": "https://www.ugc.ac.in/", "type": "Regulatory" },
+          { "name": "DigiLocker - Digital India program", "link": "https://digilocker.gov.in/", "type": "Portal" },
+          { "name": "National Academic Depository (NAD)", "link": "https://nad.gov.in/", "type": "Portal" },
+          { "name": "Free Online Courses By Swayam", "link": "https://swayam.gov.in/", "type": "Courses" }
         ]
       }
     ]
