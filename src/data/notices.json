@@ -9,40 +9,49 @@
         "monthYear": "Apr 2026",
         "type": "NOTICE",
         "title": "MBBS Fee Structure 2026-27",
-        "description": "Detailed fee structure for MBBS programme is now available for download.",
-        "link": "https://biu.edu.in/notice/3.%20Final%20UG%20Documents%20required.pdf"
+        "link": "https://biu.edu.in/notice/RMCH%20MBBS%20FEE%202026-27.pdf"
       },
       {
         "day": "25",
         "monthYear": "Apr 2026",
         "type": "NOTICE",
         "title": "MDS Fee Structure 2026",
-        "description": "Fee details for MDS programme have been released.",
-        "link": "https://biu.edu.in/notice/UP%20NEET%20PG%202026.pdf"
+        "link": "https://biu.edu.in/notice/MDS%20Fee%20Structure%202026.pdf"
       },
       {
         "day": "22",
         "monthYear": "Apr 2026",
         "type": "NOTICE",
         "title": "BDS Fee Structure 2026",
-        "description": "Revised fee structure and important guidelines for BDS programme.",
-        "link": "https://biu.edu.in/notice/advertisement-oncology-nursing.jpeg"
+        "link": "https://biu.edu.in/notice/BDS%20Fee%20Structure%202026.pdf"
       },
       {
         "day": "18",
         "monthYear": "Apr 2026",
         "type": "NOTICE",
         "title": "M.Ch. Surgical Oncology Fee 2025-26",
-        "description": "Fee structure and payment guidelines for M.Ch. Surgical Oncology programme.",
-        "link": "https://biu.edu.in/notice/Merit%20List_B.Sc%20Nursing.pdf"
+        "link": "https://biu.edu.in/notice/M.Ch.%20Surgical%20Oncology%20Fee%202025-26.pdf"
       },
       {
         "day": "12",
         "monthYear": "Apr 2026",
         "type": "NOTICE",
         "title": "Ph.D. Fee Structure Effective From July 2026",
-        "description": "Revised fee structure and important information for Ph.D. programme.",
-        "link": "https://biu.edu.in/research/Ph.D-Notification%20July%202026.pdf"
+        "link": "https://biu.edu.in/notice/National%20Students%20Ph%20D%20Fee%20structure%20wef%20%20July%202026.pdf"
+      },
+      {
+        "day": "08",
+        "monthYear": "Apr 2026",
+        "type": "NOTICE",
+        "title": "RMCH MD MS FEE 2025-26",
+        "link": "https://biu.edu.in/notice/RMCH%20MD%20MS%20FEE%202025-26.pdf"
+      },
+      {
+        "day": "02",
+        "monthYear": "Apr 2026",
+        "type": "NOTICE",
+        "title": "RMCH MBBS FEE 2025-26",
+        "link": "https://biu.edu.in/notice/RMCH%20MBBS%20FEE%202025-26.pdf"
       }
     ]
   },
@@ -56,7 +65,6 @@
         "monthYear": "Jul 2026",
         "type": "EVENT",
         "title": "Admission Notice For Ph.D. Programme July 2026",
-        "description": "Applications are invited for Ph.D. programmes. Check eligibility, important dates and application process.",
         "link": "https://biu.edu.in/research/Ph.D-Notification%20July%202026.pdf"
       },
       {
@@ -64,32 +72,35 @@
         "monthYear": "Jul 2026",
         "type": "NOTICE",
         "title": "INC- Notification for International Admission",
-        "description": "Important notification for international applicants seeking admission to various programmes.",
-        "link": "https://biu.edu.in/#"
+        "link": "https://biu.edu.in/notice/INC-Notification-for-international-Admission.pdf"
       },
       {
         "day": "28",
         "monthYear": "Jun 2026",
         "type": "EVENT",
         "title": "5th Convocation at Bareilly International University",
-        "description": "Details regarding the 5th Convocation Ceremony, venue, schedule and registration.",
-        "link": "https://biu.edu.in/#"
+        "link": "https://page.biu.edu.in/bareilly-international-university-5th-convocation/"
       },
       {
         "day": "18",
         "monthYear": "Jun 2026",
         "type": "NOTICE",
         "title": "Bond Condition MD MS 2025-26",
-        "description": "Guidelines and bond conditions for MD/MS programmes are now available.",
-        "link": "https://biu.edu.in/notice/UP%20NEET%20PG%202026.pdf"
+        "link": "https://biu.edu.in/notice/Bond%20Condition%20MD%20MS%202025-26.pdf"
       },
       {
         "day": "05",
         "monthYear": "Jun 2026",
         "type": "EVENT",
-        "title": "Oral Oncology & Reconstructive Surgery Fellowship",
-        "description": "Fellowship programme details, eligibility criteria and application process.",
-        "link": "https://biu.edu.in/notice/advertisement-oncology-nursing.jpeg"
+        "title": "Oral Oncology & Reconstructive Surgery Fellowship Programme",
+        "link": "https://biu.edu.in/notice/Fellowship-1.pdf"
+      },
+      {
+        "day": "25",
+        "monthYear": "May 2026",
+        "type": "NOTICE",
+        "title": "Download Application Form For Ph.D. Programme",
+        "link": "https://biu.edu.in/research/Latest-Application-form-for-PHD-pogramme.pdf"
       }
     ]
   }

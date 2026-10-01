@@ -9,48 +9,56 @@
       "id": "rmch",
       "name": "Medical (RMCH)",
       "logo": "/colleges/RMCH Logo_page-0001.jpg.jpeg",
+      "link": "https://rmcbareilly.com/",
       "desc": "Premier medical institution with a 1,000+ bed super-specialty hospital."
     },
     {
       "id": "ids",
       "name": "Dental (IDS)",
       "logo": "/colleges/IDS logo_page-0001.jpg.jpeg",
+      "link": "http://idsbareilly.in/",
       "desc": "DCI-recognized dental college featuring phantom head labs & OPDs."
     },
     {
       "id": "ayurvedic",
       "name": "Ayurveda (RAMCH)",
       "logo": "/colleges/ROHILKHAND AYURVEDIC MEDICAL COLLEGE & HOSPITAL logo_page-0001.jpg.jpeg",
+      "link": "https://ramch.in/",
       "desc": "State-of-the-art BAMS & Ayurvedic super-specialty research center."
     },
     {
       "id": "pharmacy",
       "name": "Pharmacy (BIUCOP)",
       "logo": "/colleges/Pharmacy Logo_page-0001.jpg.jpeg",
+      "link": "https://page.biu.edu.in/biu-college-of-pharmacy/",
       "desc": "PCI-approved pharmacy college with advanced analytical research labs."
     },
     {
       "id": "nursing",
       "name": "Nursing (RCN)",
       "logo": "/colleges/Nursing Logo_page-0001.jpg.jpeg",
+      "link": "https://page.biu.edu.in/rohilkhand-college-of-nursing/",
       "desc": "INC-recognized nursing college providing intensive hospital clinical rotations."
     },
     {
       "id": "management",
       "name": "Management (BIUCM)",
       "logo": "/colleges/Management Logo_page-0001.jpg.jpeg",
+      "link": "https://biu.edu.in/management.php",
       "desc": "Dynamic business school offering MBA, BBA, B.Com, and Law degrees."
     },
     {
       "id": "paramedical",
       "name": "Paramedical (FOPS)",
       "logo": "/colleges/Paramedical Logo_page-0001.jpg.jpeg",
+      "link": "https://page.biu.edu.in/faculty-of-allied-and-health-care-sciences",
       "desc": "Hands-on diagnostic, laboratory, and physiotherapy healthcare training."
     },
     {
       "id": "humanities",
       "name": "Humanities & Journalism (BIUCHJ)",
       "logo": "/colleges/HUMANITIES & JOURNALISM Logo_page-0001.jpg.jpeg",
+      "link": "https://page.biu.edu.in/biu-college-of-humanities-journalism/",
       "desc": "Comprehensive journalism, media production, and liberal arts programs."
     }
   ]

@@ -16,7 +16,7 @@ export default function Notices() {
   const academics = noticesData.academics || {};
 
   return (
-    <section id="notices" className="relative w-full bg-[#fbfbfd] py-14 sm:py-18 md:pt-16 md:pb-20 font-sans overflow-hidden">
+    <section id="notices" className="relative w-full bg-[#fbfbfd] py-14 sm:py-18 md:pt-9 md:pb-20 font-sans overflow-hidden">
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20">
 

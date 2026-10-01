@@ -110,8 +110,11 @@ export default function Colleges() {
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {colleges.map((college, idx) => (
-              <motion.div
+              <motion.a
                 key={college.id || idx}
+                href={college.link || '/faculties'}
+                target={college.link?.startsWith('http') ? '_blank' : '_self'}
+                rel="noopener noreferrer"
                 initial={reduceMotion ? false : { opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -140,7 +143,7 @@ export default function Colleges() {
                 <p className="mt-1 font-sans text-[11px] font-semibold text-gold text-center">
                   {college.shortName || college.category}
                 </p>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>

@@ -52,7 +52,7 @@ export default function EducationStreams() {
   };
 
   return (
-    <section id="streams" className="relative w-full bg-gradient-to-b from-white via-slate-50/50 to-slate-100/30 py-14 sm:py-18 md:pt-14 md:pb-20 font-sans overflow-hidden border-t border-slate-200/30">
+    <section id="streams" className="relative w-full bg-gradient-to-b from-white via-slate-50/50 to-slate-100/30 py-14 sm:py-18 md:pt-14 md:pb-20 font-sans overflow-hidden border-t border-slate-200/10">
       {/* Background visual accents */}
       <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-96 w-full max-w-7xl bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent blur-3xl" />
 

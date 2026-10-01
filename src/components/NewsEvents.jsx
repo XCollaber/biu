@@ -166,8 +166,11 @@ export default function NewsEvents() {
                 key={post.id || idx}
                 className="w-full sm:w-[calc(50%-14px)] lg:w-[calc(25%-21px)] shrink-0 snap-start flex"
               >
-                <article
-                  className="group relative flex w-full flex-col justify-between overflow-hidden rounded-lg bg-white border border-slate-200/80 shadow-xs hover:shadow-[0_20px_40px_-12px_rgba(12,35,64,0.16),0_8px_16px_-4px_rgba(12,35,64,0.06),0_0_0_1px_rgba(12,35,64,0.04)] hover:border-slate-200 transition-[box-shadow,border-color] duration-300 ease-out"
+                <a
+                  href={post.link || '/news'}
+                  target={post.link?.startsWith('http') ? '_blank' : '_self'}
+                  rel="noopener noreferrer"
+                  className="group relative flex w-full flex-col justify-between overflow-hidden rounded-lg bg-white border border-slate-200/80 shadow-xs hover:shadow-[0_20px_40px_-12px_rgba(12,35,64,0.16),0_8px_16px_-4px_rgba(12,35,64,0.06),0_0_0_1px_rgba(12,35,64,0.04)] hover:border-slate-200 transition-[box-shadow,border-color] duration-300 ease-out cursor-pointer text-left"
                 >
                   <div>
                     {/* Top Featured Image */}
@@ -197,17 +200,14 @@ export default function NewsEvents() {
                       </h3>
                       <p className="mt-2.5 font-sans text-xs sm:text-[13px] font-normal leading-relaxed text-slate-500">
                         <span>{truncateExcerpt(post.excerpt, 52)}</span>
-                        <a
-                          href="/news"
-                          className="inline-flex items-center gap-1 font-sans text-xs font-bold text-gold-dark group-hover:text-[#0c2340]/90 ml-1.5 transition-colors duration-200 whitespace-nowrap"
-                        >
-                          <span className="hover:underline">Read More</span>
+                        <span className="inline-flex items-center gap-1 font-sans text-xs font-bold text-gold-dark group-hover:text-[#0c2340]/90 ml-1.5 transition-colors duration-200 whitespace-nowrap">
+                          <span className="group-hover:underline">Read More</span>
                           <ArrowRight size={12} weight="bold" className="transition-transform duration-200 group-hover:translate-x-0.5" />
-                        </a>
+                        </span>
                       </p>
                     </div>
                   </div>
-                </article>
+                </a>
               </div>
             ))}
           </div>
