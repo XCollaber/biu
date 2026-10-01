@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { PhoneCall, UserCheck } from '@phosphor-icons/react';
+import { Phone } from '@phosphor-icons/react';
 import enquiryData from '../data/enquiryNumbers.json';
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -8,14 +8,14 @@ export default function EnquiryNumbers() {
   const reduceMotion = useReducedMotion();
 
   const fadeUp = {
-    hidden: reduceMotion ? {} : { opacity: 0, y: 24 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },
+    hidden: reduceMotion ? {} : { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
   };
 
   const counselors = enquiryData.counselors || [];
 
   return (
-    <section id="enquiry-numbers" className="relative w-full bg-[#fbfbfd] py-14 sm:py-18 md:pt-14 md:pb-20 font-sans overflow-hidden border-t border-slate-200/40">
+    <section id="enquiry-numbers" className="relative w-full bg-[#fbfbfd] py-14 sm:py-18 md:pt-10 md:pb-20 font-sans overflow-hidden border-t border-slate-200/30">
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
         {/* Section Header */}
         <motion.div
@@ -41,7 +41,7 @@ export default function EnquiryNumbers() {
           </p>
         </motion.div>
 
-        {/* 4-Column Grid of Counselor Cards */}
+        {/* 4-Column Minimal Professional Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-4.5">
           {counselors.map((counselor, idx) => (
             <motion.div
@@ -50,55 +50,42 @@ export default function EnquiryNumbers() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.1 }}
-              transition={{ delay: (idx % 4) * 0.05 }}
-              className="group relative rounded-2xl border border-slate-200/80 bg-white p-4 sm:p-4.5 shadow-xs hover:shadow-[0_16px_32px_-8px_rgba(12,35,64,0.12)] hover:border-slate-300 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between"
+              transition={{ delay: (idx % 4) * 0.04 }}
+              className="group rounded-lg border border-slate-200/80 bg-white p-4 sm:px-5 sm:py-4 transition-all duration-200 hover:border-slate-300 hover:shadow-xs flex flex-col justify-between"
             >
               <div>
-                {/* Top Badge Row */}
-                <div className="flex items-start justify-between gap-2">
-                  <span className="font-sans text-[10.5px] font-bold uppercase tracking-wider text-cyan-800 bg-slate-50 border border-slate-200/70 px-2 py-0.5 rounded-md line-clamp-1">
-                    {counselor.discipline}
-                  </span>
-                  <div className="shrink-0 w-7 h-7 rounded-lg bg-blue-50/80 border border-blue-200/70 flex items-center justify-center text-cyan-800 transition-colors group-hover:bg-[#0c2340] group-hover:text-white group-hover:border-[#0c2340]">
-                    <PhoneCall size={14} weight="fill" />
-                  </div>
-                </div>
+                {/* Department / Stream Discipline Tag */}
+                <span className="inline-block font-sans text-[11px] font-bold uppercase tracking-wider text-cyan-800">
+                  {counselor.discipline}
+                </span>
 
                 {/* Counselor Name */}
-                <h3 className="font-newsreader text-[15.5px] sm:text-base font-semibold text-[#0c2340] mt-3 group-hover:text-gold-dark transition-colors">
+                <h3 className="font-newsreader text-[16px] sm:text-[16.5px] font-semibold text-[#0c2340] mt-1.5 leading-snug">
                   {counselor.name}
                 </h3>
+              </div>
 
-                {/* Clickable Telephone Numbers */}
-                <div className="mt-2.5 flex flex-wrap items-center gap-x-2 gap-y-1">
+              {/* Phone Contacts */}
+              <div className="mt-2 pt-2 border-t border-slate-100 flex items-center gap-2">
+                <Phone size={14} weight="fill" className="text-cyan-800 shrink-0" />
+                <div className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5">
                   {(counselor.phones || []).map((phone, pIdx) => {
                     const cleanPhone = phone.replace(/\s+/g, '');
                     return (
                       <span key={pIdx} className="inline-flex items-center">
                         <a
                           href={`tel:${cleanPhone}`}
-                          className="font-sans text-xs sm:text-[12.5px] font-bold text-rose-600 hover:text-rose-700 transition-colors hover:underline"
+                          className="font-sans text-xs sm:text-[13px] font-semibold text-slate-700 hover:text-cyan-700 hover:underline transition-colors"
                         >
                           {phone}
                         </a>
                         {pIdx < (counselor.phones || []).length - 1 && (
-                          <span className="text-slate-300 mx-1 font-sans text-xs">•</span>
+                          <span className="text-slate-300 ml-1.5">/</span>
                         )}
                       </span>
                     );
                   })}
                 </div>
-              </div>
-
-              {/* Bottom Subtle Status Bar */}
-              <div className="mt-4 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-sans">
-                <span className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>Available</span>
-                </span>
-                <span className="font-semibold text-slate-500 group-hover:text-[#0c2340] transition-colors">
-                  Direct Line &rarr;
-                </span>
               </div>
             </motion.div>
           ))}
@@ -107,3 +94,4 @@ export default function EnquiryNumbers() {
     </section>
   );
 }
+
