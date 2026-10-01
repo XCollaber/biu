@@ -51,7 +51,7 @@ const QUICK_ACTIONS = [
 
 export default function QuickLinks() {
   return (
-    <section className="relative z-10 w-full bg-white py-10 sm:py-10 font-sans">
+    <section className="relative z-10 w-full bg-white py-10 sm:pb-10 sm:pt-4 font-sans">
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-8 items-start">
           {QUICK_ACTIONS.map((action, idx) => (

@@ -72,28 +72,31 @@ export default function Notices() {
                     href={item.link || '#'}
                     target={item.link?.startsWith('http') ? '_blank' : '_self'}
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-between gap-3.5 sm:gap-6 py-2.5 sm:py-3 px-2.5 sm:px-3 rounded-xl transition-all duration-200 hover:bg-slate-50/90"
+                    className="group flex items-center justify-between gap-3 sm:gap-4 py-2.5 sm:py-3 px-2.5 sm:px-3 rounded-xl transition-all duration-200 hover:bg-slate-50/90"
                   >
-                    {/* Left Date Column (Single Line, Stable) */}
-                    <div className="flex items-center justify-center shrink-0 px-2.5 py-1 rounded-md bg-slate-50/90 border border-slate-200/70 text-center">
-                      <span className="font-times text-sm sm:text-[15px] font-bold text-cyan-800 leading-none mr-1.5">
-                        {item.day}
-                      </span>
-                      <span className="font-sans text-[11px] sm:text-xs font-bold uppercase tracking-wider text-cyan-800 whitespace-nowrap leading-none">
-                        {item.monthYear}
-                      </span>
-                    </div>
-
-                    {/* Middle Content Column */}
-                    <div className="flex-1 min-w-0 flex items-center pr-1 sm:pr-2">
+                    {/* Left Title / Content Column */}
+                    <div className="flex-1 min-w-0 flex items-center pr-2">
                       <h3 className="font-newsreader text-[14.5px] sm:text-[15.5px] font-medium text-[#0c2340] group-hover:text-gold-dark transition-colors duration-200 leading-snug line-clamp-2">
                         {item.title}
                       </h3>
                     </div>
 
-                    {/* Right Download Action Button */}
-                    <div className="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#0c2340] group-hover:bg-[#0c2340]/85 group-hover:text-white group-hover:border-[#0c2340] group-hover:shadow-md transition-all duration-200">
-                      <DownloadSimple size={19} weight="bold" className="transition-transform duration-200 group-hover:translate-y-0.5" />
+                    {/* Right Group: Date Badge + Download Action Button */}
+                    <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+                      {/* Date Badge (Single Line, Stable) */}
+                      <div className="flex items-center justify-center px-2.5 py-1 rounded-md bg-slate-50/90 border border-slate-200/30 text-center">
+                        <span className="font-times text-sm sm:text-[14px] font-bold text-cyan-800 leading-none mr-1.5">
+                          {item.day}
+                        </span>
+                        <span className="font-sans text-[11px] sm:text-[11px] font-bold uppercase tracking-wider text-cyan-800 whitespace-nowrap leading-none">
+                          {item.monthYear}
+                        </span>
+                      </div>
+
+                      {/* Download Action Button */}
+                      <div className="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#0c2340] group-hover:bg-[#0c2340]/85 group-hover:text-white group-hover:border-[#0c2340] group-hover:shadow-md transition-all duration-200">
+                        <DownloadSimple size={19} weight="bold" className="transition-transform duration-200 group-hover:translate-y-0.5" />
+                      </div>
                     </div>
                   </a>
                 ))}
@@ -155,28 +158,31 @@ export default function Notices() {
                     href={item.link || '#'}
                     target={item.link?.startsWith('http') ? '_blank' : '_self'}
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-between gap-3.5 sm:gap-6 py-2.5 sm:py-3 px-2.5 sm:px-3 rounded-xl transition-all duration-200 hover:bg-slate-50/90"
+                    className="group flex items-center justify-between gap-3 sm:gap-4 py-2.5 sm:py-3 px-2.5 sm:px-3 rounded-xl transition-all duration-200 hover:bg-slate-50/90"
                   >
-                    {/* Left Date Column (Single Line, Stable) */}
-                    <div className="flex items-center justify-center shrink-0 px-2.5 py-1 rounded-md bg-slate-50/90 border border-slate-200/70 text-center">
-                      <span className="font-times text-sm sm:text-[15px] font-bold text-cyan-800 leading-none mr-1.5">
-                        {item.day}
-                      </span>
-                      <span className="font-sans text-[11px] sm:text-xs font-bold uppercase tracking-wider text-cyan-800 whitespace-nowrap leading-none">
-                        {item.monthYear}
-                      </span>
-                    </div>
-
-                    {/* Middle Content Column */}
-                    <div className="flex-1 min-w-0 flex items-center pr-1 sm:pr-2">
+                    {/* Left Title / Content Column */}
+                    <div className="flex-1 min-w-0 flex items-center pr-2">
                       <h3 className="font-newsreader text-[14.5px] sm:text-[15.5px] font-medium text-[#0c2340] group-hover:text-gold-dark transition-colors duration-200 leading-snug line-clamp-2">
                         {item.title}
                       </h3>
                     </div>
 
-                    {/* Right Download Action Button */}
-                    <div className="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#0c2340] group-hover:bg-[#0c2340]/85 group-hover:text-white group-hover:border-[#0c2340] group-hover:shadow-md transition-all duration-200">
-                      <DownloadSimple size={19} weight="bold" className="transition-transform duration-200 group-hover:translate-y-0.5" />
+                    {/* Right Group: Date Badge + Download Action Button */}
+                    <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+                      {/* Date Badge (Single Line, Stable) */}
+                      <div className="flex items-center justify-center px-2.5 py-1 rounded-md bg-slate-50/90 border border-slate-200/30 text-center">
+                        <span className="font-times text-sm sm:text-[14px] font-bold text-cyan-800 leading-none mr-1.5">
+                          {item.day}
+                        </span>
+                        <span className="font-sans text-[11px] sm:text-[11px] font-bold uppercase tracking-wider text-cyan-800 whitespace-nowrap leading-none">
+                          {item.monthYear}
+                        </span>
+                      </div>
+
+                      {/* Download Action Button */}
+                      <div className="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#0c2340] group-hover:bg-[#0c2340]/85 group-hover:text-white group-hover:border-[#0c2340] group-hover:shadow-md transition-all duration-200">
+                        <DownloadSimple size={19} weight="bold" className="transition-transform duration-200 group-hover:translate-y-0.5" />
+                      </div>
                     </div>
                   </a>
                 ))}

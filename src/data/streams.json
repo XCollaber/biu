@@ -1,0 +1,138 @@
+{
+  "institutionsSection": {
+    "badge": "ACADEMIC DIRECTORY",
+    "title": "All Courses Idea",
+    "subtitle": "Our Constituent Institutions",
+    "tabs": [
+      {
+        "id": "institutions",
+        "label": "Institutions",
+        "headerTitle": "Our Constituent Institutions",
+        "items": [
+          { "name": "Rohilkhand Medical College & Hospital", "link": "/faculties", "type": "Medical" },
+          { "name": "Institute of Dental Sciences", "link": "/faculties", "type": "Dental" },
+          { "name": "Rohilkhand College of Nursing", "link": "/faculties", "type": "Nursing" },
+          { "name": "Faculty Of Allied and Health Care Sciences", "link": "/faculties", "type": "Allied Health" },
+          { "name": "Faculty of Fine Arts", "link": "/faculties", "type": "Fine Arts" },
+          { "name": "Faculty Of Forensic Sciences", "link": "/faculties", "type": "Forensic" },
+          { "name": "BIU College of Pharmacy", "link": "/faculties", "type": "Pharmacy" },
+          { "name": "Rohilkhand College of Pharmacy", "link": "/faculties", "type": "Pharmacy" },
+          { "name": "Keshlata College of Pharmacy", "link": "/faculties", "type": "Pharmacy" },
+          { "name": "BIU College of Management", "link": "/faculties", "type": "Management" },
+          { "name": "BIU College of Humanities & Journalism", "link": "/faculties", "type": "Humanities" },
+          { "name": "Rohilkhand Ayurvedic Medical College & Hospital", "link": "/faculties", "type": "Ayurveda" }
+        ]
+      },
+      {
+        "id": "healthcare",
+        "label": "Hospitals and Healthcare",
+        "headerTitle": "Affiliated Healthcare Hospitals & Centers",
+        "items": [
+          { "name": "Rohilkhand Medical College Hospital (1000+ Bedded)", "link": "/#contact", "type": "Super Specialty" },
+          { "name": "Institute of Dental Sciences & Hospital", "link": "/#contact", "type": "Dental Hospital" },
+          { "name": "Rohilkhand Ayurvedic Hospital & Panchakarma", "link": "/#contact", "type": "Ayurveda Hospital" },
+          { "name": "Keshlata Cancer Hospital & Research Center", "link": "/#contact", "type": "Oncology Care" }
+        ]
+      },
+      {
+        "id": "links",
+        "label": "Important Link",
+        "headerTitle": "Essential University Portals & Information",
+        "items": [
+          { "name": "Online Admission Registration Portal 2026-27", "link": "https://admissions.biuerp.com/", "type": "Portal" },
+          { "name": "UGC, NAAC & Regulatory Approvals", "link": "/#approvals", "type": "Accreditation" },
+          { "name": "Fee Structure & Scholarships Guidelines", "link": "/#notices", "type": "Fees" },
+          { "name": "Student ERP & Examination Results", "link": "https://test.biu.edu.in/#erp", "type": "ERP" },
+          { "name": "Anti-Ragging & Student Grievance Cell", "link": "/#contact", "type": "Support" }
+        ]
+      }
+    ]
+  },
+  "streamsSection": {
+    "badge": "STUDY DISCIPLINES",
+    "title": "Education Stream",
+    "description": "Students seeking a degree can choose from our Programmes like MD/MS, MBBS, MDS, BDS, M.Sc Medical, B.Sc Nursing, B. Pharma etc.",
+    "streams": [
+      {
+        "id": "medical",
+        "name": "Medical Sciences",
+        "icon": "Stethoscope",
+        "link": "https://biu.edu.in/medical",
+        "degrees": ["MBBS", "MD / MS", "M.Ch Surgical Oncology", "M.Sc Medical"],
+        "desc": "NMC recognized MBBS and super-specialty medical training with extensive clinical rotations in 1000+ bedded hospital."
+      },
+      {
+        "id": "dental",
+        "name": "Dental Sciences",
+        "icon": "Tooth",
+        "link": "https://biu.edu.in/dental",
+        "degrees": ["BDS", "MDS", "Oral Implantology", "Maxillofacial Surgery"],
+        "desc": "DCI recognized premier dental institute with state-of-the-art diagnostic clinics, phantom head labs, and surgical suites."
+      },
+      {
+        "id": "nursing",
+        "name": "Nursing",
+        "icon": "FirstAid",
+        "link": "https://biu.edu.in/nursing",
+        "degrees": ["B.Sc Nursing", "Post Basic B.Sc", "GNM", "M.Sc Nursing"],
+        "desc": "INC approved clinical nursing education preparing compassionate healthcare professionals with hands-on hospital training."
+      },
+      {
+        "id": "pharmacy",
+        "name": "Pharmacy",
+        "icon": "Pill",
+        "link": "https://biu.edu.in/pharmacy",
+        "degrees": ["D.Pharm", "B.Pharm", "M.Pharm", "Pharm.D"],
+        "desc": "PCI recognized advanced pharmaceutical research, industrial formulation labs, and drug regulatory curriculum."
+      },
+      {
+        "id": "management",
+        "name": "Management",
+        "icon": "Buildings",
+        "link": "https://biu.edu.in/management",
+        "degrees": ["BBA", "MBA (Hospital & Healthcare)", "MBA (Marketing & Finance)"],
+        "desc": "Industry-driven management curriculum emphasizing healthcare leadership, corporate analytics, and global enterprise skills."
+      },
+      {
+        "id": "humanities",
+        "name": "Humanities & Journalism",
+        "icon": "BookOpenText",
+        "link": "https://biu.edu.in/humanities",
+        "degrees": ["BA Journalism & Mass Comm", "MA Mass Comm", "Media Studies"],
+        "desc": "Modern multimedia recording studios, print journalism, news production, and digital communication workshops."
+      },
+      {
+        "id": "allied",
+        "name": "Allied and Health care Sciences",
+        "icon": "Heartbeat",
+        "link": "https://biu.edu.in/allied",
+        "degrees": ["BMLT", "BRIT", "BPT (Physiotherapy)", "B.Optometry", "OTT"],
+        "desc": "Comprehensive allied healthcare training covering pathology diagnostics, radiologic imaging, and physical rehabilitation."
+      },
+      {
+        "id": "forensic",
+        "name": "Forensic Sciences",
+        "icon": "Flask",
+        "link": "https://biu.edu.in/forensic",
+        "degrees": ["B.Sc Forensic Science", "M.Sc Forensic Science", "Cyber Forensics"],
+        "desc": "Specialized criminalistics, forensic toxicology, ballistic analysis, and computerized cyber crime investigation."
+      },
+      {
+        "id": "ayurvedic",
+        "name": "Ayurvedic Sciences",
+        "icon": "Plant",
+        "link": "https://biu.edu.in/ayurvedic",
+        "degrees": ["BAMS", "Panchakarma", "Dravyaguna", "Ayurvedic Pharmacy"],
+        "desc": "NCISM recognized classical Indian medicine with modern botanical gardens, pharmacy manufacturing, and inpatient care."
+      },
+      {
+        "id": "finearts",
+        "name": "Faculty of Fine Arts",
+        "icon": "PaintBrush",
+        "link": "https://biu.edu.in/finearts",
+        "degrees": ["BFA (Applied Art)", "BFA (Painting)", "MFA"],
+        "desc": "Creative studio environments for visual artists, graphic designers, digital illustrators, and fine art exhibitors."
+      }
+    ]
+  }
+}

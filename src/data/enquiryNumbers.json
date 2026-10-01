@@ -1,0 +1,67 @@
+{
+  "badge": "ADMISSION HELPLINE",
+  "title": "Admission Enquiry Numbers",
+  "subtitle": "Connect directly with our designated department counselors and admission officers for guidance on eligibility, seats & fee structures.",
+  "counselors": [
+    {
+      "name": "Mr. Sourav Gangwar",
+      "discipline": "MBBS, MD, MS",
+      "phones": ["9557259598", "8534882585"]
+    },
+    {
+      "name": "Mr. Nitin Kumar",
+      "discipline": "M.Sc Medical",
+      "phones": ["9258116084"]
+    },
+    {
+      "name": "Dr. Sunil Kumar Singh",
+      "discipline": "Humanities & Journalism Courses",
+      "phones": ["8218622744"]
+    },
+    {
+      "name": "Dr. Prashant Gupta",
+      "discipline": "Allied and Health care Courses",
+      "phones": ["+91 8445508214"]
+    },
+    {
+      "name": "Mr. Pawan Sharma",
+      "discipline": "BDS, MDS",
+      "phones": ["7500420630"]
+    },
+    {
+      "name": "Dr. Priyanka A Masih",
+      "discipline": "Nursing Courses",
+      "phones": ["+91 9520876133"]
+    },
+    {
+      "name": "Mr. Yogendra Singh",
+      "discipline": "Pharmacy Courses (BIU College)",
+      "phones": ["9760578366"]
+    },
+    {
+      "name": "Dr. Ashish Sharma",
+      "discipline": "Admission Cell, BIU",
+      "phones": ["9105500202", "9105500404", "0581-2526153"]
+    },
+    {
+      "name": "Dr. Vishal Agarwal",
+      "discipline": "B.A.M.S (Ayurveda)",
+      "phones": ["9412822332"]
+    },
+    {
+      "name": "Mr. Pawan Sharma",
+      "discipline": "Dental Hygienist & Mechanics",
+      "phones": ["7500420630"]
+    },
+    {
+      "name": "Mr. Atul Babu",
+      "discipline": "Management & Commerce",
+      "phones": ["7409998289"]
+    },
+    {
+      "name": "Mr. Anuj Tiwari",
+      "discipline": "Ph.D. Admission",
+      "phones": ["+91 9520876189"]
+    }
+  ]
+}
