@@ -57,7 +57,7 @@ export default function EducationStreams() {
       <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-96 w-full max-w-7xl bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent blur-3xl" />
 
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-20">
 
           {/* =========================================================
               LEFT COLUMN: ALL COURSES IDEA / CONSTITUENT INSTITUTIONS

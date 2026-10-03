@@ -1,198 +1,59 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent, useReducedMotion } from 'framer-motion';
-import { List, X, GraduationCap, EnvelopeSimple, Phone, CaretDown, CaretRight, Briefcase, User } from '@phosphor-icons/react';
+import {
+  List,
+  X,
+  GraduationCap,
+  EnvelopeSimple,
+  Phone,
+  CaretDown,
+  CaretRight,
+  Briefcase,
+  User,
+  Buildings,
+  UsersThree,
+  ShieldCheck,
+  Trophy,
+  Compass,
+  Scales,
+  CheckCircle,
+  Flask,
+  BookOpen,
+  Sparkle,
+  FileText,
+} from '@phosphor-icons/react';
 import siteData from '../data/site.json';
+import NAV_ITEMS from '../data/navigation.json';
 
-const NAV_ITEMS = [
-  {
-    id: 'programmes',
-    label: 'Programmes',
-    href: '/faculties',
-    columns: [
-      {
-        title: 'Medical & Dental',
-        items: [
-          { title: 'MBBS & MD/MS', href: '/faculties', desc: 'Premier NMC approved medical degree programs' },
-          { title: 'BDS & MDS', href: '/faculties', desc: 'DCI recognized dental surgery & specialization' },
-          { title: 'Super Specialty Medicine', href: '/faculties', desc: 'DM, M.Ch & Clinical Fellowships' },
-        ],
-      },
-      {
-        title: 'Healthcare & Sciences',
-        items: [
-          { title: 'Pharmacy', href: '/faculties', desc: 'B.Pharm, D.Pharm & Drug Research' },
-          { title: 'Nursing Sciences', href: '/faculties', desc: 'B.Sc Nursing, GNM & Clinical Training' },
-          { title: 'Paramedical & Allied', href: '/faculties', desc: 'BMLT, BRIT & Physiotherapy' },
-        ],
-      },
-      {
-        title: 'Technology & Business',
-        items: [
-          { title: 'Engineering & AI', href: '/faculties', desc: 'B.Tech, M.Tech & Artificial Intelligence' },
-          { title: 'Computer Applications', href: '/faculties', desc: 'BCA, MCA & Cyber Security' },
-          { title: 'Management & Law', href: '/faculties', desc: 'BBA, MBA, BA LLB & Corporate Law' },
-        ],
-      },
-    ],
-    featured: {
-      tag: 'Admissions 2026',
-      title: 'Academic Catalogue 2026',
-      desc: 'Explore 50+ undergraduate & postgraduate degree programmes across 9 constituent colleges.',
-      image: '/biu-campus1.webp',
-      linkText: 'Download Brochure',
-      linkHref: '/#contact',
-    },
-    bottomLink: { text: 'See all 50+ degree programmes & faculties', href: '/faculties' },
-  },
-  {
-    id: 'admissions',
-    label: 'Admissions',
-    href: '/#contact',
-    columns: [
-      {
-        title: 'Applications',
-        items: [
-          { title: 'Online Application Form', href: '/#contact', desc: 'Direct online registration portal' },
-          { title: 'Admission Guidelines 2026', href: '/#contact', desc: 'Step-by-step application guidance & seat status' },
-          { title: 'Fee Structure & Scholarships', href: '/#contact', desc: 'Merit-based scholarships & tuition details' },
-        ],
-      },
-      {
-        title: 'Entrance & Counseling',
-        items: [
-          { title: 'Entrance Examinations', href: '/#contact', desc: 'NEET, JEE & BIU Entrance guidelines' },
-          { title: 'Eligibility Criteria', href: '/#contact', desc: 'Stream requirements & minimum cutoffs' },
-          { title: 'Document Verification', href: '/#contact', desc: 'Checklist for physical counseling' },
-        ],
-      },
-      {
-        title: 'Helpline & Aid',
-        items: [
-          { title: 'Academic Counselors', href: 'tel:+915812526244', desc: 'Talk to our admissions desk directly' },
-          { title: 'Education Loans', href: '/#contact', desc: 'Bank tie-ups & zero-interest assistance' },
-          { title: 'Campus Visit Booking', href: '/#contact', desc: 'Schedule a guided 1-on-1 campus tour' },
-        ],
-      },
-    ],
-    featured: {
-      tag: 'Helpline Desk',
-      title: 'Direct Counsel Helpline',
-      desc: 'Have questions about eligibility or fees? Talk directly with senior university counselors.',
-      image: '/chancellor.webp',
-      linkText: 'Talk to Counselor',
-      linkHref: 'tel:+915812526244',
-    },
-    bottomLink: { text: 'Check eligibility & application deadlines for 2026-27', href: '/#contact' },
-  },
-  {
-    id: 'erp',
-    label: 'Student ERP',
-    href: 'https://test.biu.edu.in/#erp',
-    columns: [
-      {
-        title: 'Digital Portals',
-        items: [
-          { title: 'Student Portal Login', href: 'https://test.biu.edu.in/#erp', desc: 'Access attendance, grades & fee receipts' },
-          { title: 'Faculty Desk', href: 'https://test.biu.edu.in/#erp', desc: 'Internal portal for academic management' },
-          { title: 'Parent Portal', href: 'https://test.biu.edu.in/#erp', desc: 'Monitor student progress & attendance' },
-        ],
-      },
-      {
-        title: 'Academics & Exams',
-        items: [
-          { title: 'Examination Cell', href: 'https://test.biu.edu.in/#erp', desc: 'Schedules, admit cards & semester results' },
-          { title: 'Academic Calendar 2026', href: 'https://test.biu.edu.in/#erp', desc: 'Key term dates, holidays & events' },
-          { title: 'Digital E-Library', href: 'https://test.biu.edu.in/#erp', desc: 'Access IEEE, PubMed & digital archives' },
-        ],
-      },
-      {
-        title: 'Campus Services',
-        items: [
-          { title: 'Hostel Management', href: 'https://test.biu.edu.in/#erp', desc: 'Room allocation & mess menu' },
-          { title: 'Transport Network', href: 'https://test.biu.edu.in/#erp', desc: 'Bus routes & timetable tracking' },
-        ],
-      },
-    ],
-    featured: {
-      tag: 'Digital Campus',
-      title: 'BIU Mobile App',
-      desc: 'Track lectures, download assignment materials & get instant exam alerts on your phone.',
-      image: '/biu-campus2.webp',
-      linkText: 'Launch Student Portal',
-      linkHref: 'https://test.biu.edu.in/#erp',
-    },
-    bottomLink: { text: 'Log in to BIU Digital Student & ERP Portal', href: 'https://test.biu.edu.in/#erp' },
-  },
-  {
-    id: 'campus',
-    label: 'Campus Life',
-    href: '/gallery',
-    columns: [
-      {
-        title: 'Infrastructure',
-        items: [
-          { title: 'Virtual 360° Campus Tour', href: '/gallery', desc: 'Explore our 100+ acre modern campus' },
-          { title: 'Super-Specialty Hospital', href: '/gallery', desc: '750+ bed hospital & emergency unit' },
-          { title: 'Research Laboratories', href: '/gallery', desc: 'Advanced diagnostic & AI research labs' },
-        ],
-      },
-      {
-        title: 'Living & Wellness',
-        items: [
-          { title: 'Hostels & Accommodation', href: '/gallery', desc: 'AC/Non-AC student residences & amenities' },
-          { title: 'Food Courts & Dining', href: '/gallery', desc: 'Hygienic multi-cuisine mess & cafes' },
-          { title: 'Sports & Gymnasium', href: '/gallery', desc: 'Complexes, grounds & fitness centers' },
-        ],
-      },
-    ],
-    featured: {
-      tag: 'Campus Gallery',
-      title: 'Life at BIU Campus',
-      desc: 'Take a visual walk through state-of-the-art facilities, campus events, and green lawns.',
-      image: '/gallery/biu-campus4.webp',
-      linkText: 'View Full Gallery',
-      linkHref: '/gallery',
-    },
-    bottomLink: { text: 'Explore campus facilities, hostels & sports grounds', href: '/gallery' },
-  },
-  {
-    id: 'about',
-    label: 'About BIU',
-    href: '/#location',
-    columns: [
-      {
-        title: 'University Overview',
-        items: [
-          { title: 'Vision & Mission', href: '/#location', desc: 'Premier NAAC A+ accredited university' },
-          { title: 'Leadership & Deans', href: '/#location', desc: 'Meet our visionaries & academic heads' },
-          { title: 'Accreditation & Approvals', href: '/#location', desc: 'UGC, NMC, DCI & INC recognitions' },
-        ],
-      },
-      {
-        title: 'Location & Contact',
-        items: [
-          { title: 'Bareilly Main Campus', href: '/#location', desc: 'Pilibhit Bypass Road, Bareilly, UP' },
-          { title: 'Hospital & Emergency', href: '/#location', desc: '24x7 medical assistance & trauma center' },
-        ],
-      },
-    ],
-    featured: {
-      tag: 'Leadership',
-      title: "Chancellor's Message",
-      desc: 'Empowering minds through world-class education, research, and healthcare excellence.',
-      image: '/chancellor.webp',
-      linkText: 'Read Message',
-      linkHref: '/#location',
-    },
-    bottomLink: { text: 'Learn more about Bareilly International University', href: '/#location' },
-  },
-];
+const ICON_MAP = {
+  Buildings,
+  UsersThree,
+  ShieldCheck,
+  Trophy,
+  Compass,
+  Scales,
+  CheckCircle,
+  Flask,
+  Briefcase,
+  User,
+  GraduationCap,
+  BookOpen,
+  Sparkle,
+  FileText,
+};
+
+const renderIcon = (iconName, size = 16, className = '') => {
+  const IconComp = ICON_MAP[iconName] || Buildings;
+  return <IconComp size={size} weight="bold" className={className} />;
+};
+
 
 export default function Navbar() {
   const reduceMotion = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
+  const [activeSidebarIndex, setActiveSidebarIndex] = useState(0);
   const [activeTab, setActiveTab] = useState('programmes');
   const [mobileAccordion, setMobileAccordion] = useState(null);
   const { scrollY } = useScroll();
@@ -206,6 +67,7 @@ export default function Navbar() {
   const handleMouseEnter = (itemId) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setActiveItem(itemId);
+    setActiveSidebarIndex(0);
   };
 
   const handleMouseLeave = () => {
@@ -262,7 +124,7 @@ export default function Navbar() {
               <span>+91 (581) 2526244</span>
             </a>
             <a
-              href="https://test.biu.edu.in/#erp"
+              href="https://student.biuerp.com/studentpanel/student/stulogin"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-block font-medium text-white transition-colors hover:text-blue-200/95"
@@ -270,7 +132,9 @@ export default function Navbar() {
               Student Portal
             </a>
             <a
-              href="/#contact"
+              href="https://biu.edu.in/career.php"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2.5 py-0.5 text-[11px] font-semibold text-white border border-white/20 transition-all hover:bg-white/20"
             >
               <Briefcase size={14} weight="fill" className="text-blue-300 shrink-0" />
@@ -400,7 +264,7 @@ export default function Navbar() {
                   if (timeoutRef.current) clearTimeout(timeoutRef.current);
                 }}
                 onMouseLeave={handleMouseLeave}
-                className="relative pointer-events-auto overflow-hidden rounded-xl bg-white border border-slate-200/80 shadow-[0_30px_90px_-20px_rgba(12,35,64,0.18)] font-sans"
+                className="relative pointer-events-auto overflow-hidden rounded-2xl bg-white p-3.5 sm:p-4 border border-slate-200/80 shadow-[0_25px_70px_-15px_rgba(12,35,64,0.16)] font-sans"
               >
                 {/* Invisible Hover Bridge to prevent gap mouseleave flicker */}
                 <div
@@ -410,92 +274,175 @@ export default function Navbar() {
                   }}
                 />
 
-                <div className="grid grid-cols-12 divide-x divide-slate-100 font-sans">
-                  {/* Left Multi-Column Layout */}
-                  <div className="col-span-8 lg:col-span-9 p-7 sm:p-8">
-                    <div
-                      className={`grid gap-8 ${activeNavData.columns.length === 3 ? 'grid-cols-3' : 'grid-cols-2'
-                        }`}
-                    >
-                      {activeNavData.columns.map((col) => (
-                        <div key={col.title} className="flex flex-col gap-4">
-                          <h4 className="font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
-                            {col.title}
-                          </h4>
-                          <div className="flex flex-col gap-3.5">
-                            {col.items.map((item) => (
-                              <a
-                                key={item.title}
-                                href={item.href}
-                                onClick={() => setActiveItem(null)}
-                                className="group flex flex-col items-start rounded-lg transition-colors"
-                              >
-                                <span className="flex items-center gap-1 font-sans text-[13.5px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-cyan-800">
-                                  <span>{item.title}</span>
-                                  <CaretRight
-                                    size={12}
-                                    weight="bold"
-                                    className="opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 text-cyan-800"
-                                  />
-                                </span>
-                                <span className="font-sans text-xs text-slate-500 font-normal leading-relaxed mt-0.5 group-hover:text-slate-700">
-                                  {item.desc}
-                                </span>
-                              </a>
-                            ))}
-                          </div>
+                <div className="flex gap-3 font-sans items-stretch">
+                  {/* Left Sidebar Panel - Exact Match with Image 2 */}
+                  <div className="w-[235px] lg:w-[255px] shrink-0 rounded-xl border border-slate-200/90 bg-gradient-to-b from-gray-100/60 via-gray-100/20 to-white p-2 flex flex-col justify-between shadow-2xs">
+                    <div className="flex flex-col gap-1">
+                      {(activeNavData.sidebar || []).map((sItem, idx) => {
+                        const isActive = activeSidebarIndex === idx;
+                        return (
+                          <a
+                            key={sItem.title}
+                            href={sItem.href}
+                            target={sItem.href?.startsWith('http') ? '_blank' : '_self'}
+                            rel={sItem.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                            onMouseEnter={() => setActiveSidebarIndex(idx)}
+                            onClick={() => setActiveItem(null)}
+                            className={`group flex items-center justify-between rounded-lg px-3 py-2 text-[12.5px] border transition-colors duration-150 ${
+                              isActive
+                                ? 'bg-[#eef4ff]/60 text-cyan-900 font-bold border-blue-300/25 shadow-2xs'
+                                : 'border-transparent text-slate-700 hover:bg-white hover:text-[#0c2340] hover:shadow-2xs hover:border-slate-200/60 font-medium'
+                            }`}
+                          >
+                            <span className="flex items-center gap-2.5 truncate">
+                              {renderIcon(sItem.icon, 20, isActive ? 'text-cyan-900/90 font-bold' : 'text-slate-500 group-hover:text-[#0c2340]')}
+                              <span className="truncate">{sItem.title}</span>
+                            </span>
+                            <CaretRight
+                              size={12}
+                              weight="bold"
+                              className={isActive ? 'text-cyan-900/90 font-bold' : 'text-slate-400 group-hover:text-[#0c2340] group-hover:translate-x-0.5 transition-transform'}
+                            />
+                          </a>
+                        );
+                      })}
+                    </div>
+
+                    {/* Bottom Watermark Monument Graphic Card */}
+                    <div className="relative -ml-2 -mr-2 -mb-2 mt-6 min-h-[185px] overflow-hidden rounded-b-xl bg-white pt-8 pb-4 px-4 shadow-2xs flex flex-col justify-end">
+                      <img
+                        src="/biu-building.png"
+                        alt="Bareilly International University"
+                        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-bottom scale-115 origin-bottom opacity-30"
+                      />
+                      <div className="relative z-10">
+                        <div className="font-newsreader text-[12.5px] font-bold uppercase tracking-[0.14em] text-slate-800 leading-tight">
+                          <div>Bareilly</div>
+                          <div>International</div>
+                          <div>University</div>
                         </div>
-                      ))}
+                        <div className="mt-2 h-0.5 w-7 rounded-full bg-gold" />
+                      </div>
                     </div>
                   </div>
 
-                  {/* Right Featured Column (Stripe Style Light Tint Panel) */}
-                  <div className="col-span-4 lg:col-span-3 bg-[#f8f9fc] p-6 sm:p-7 flex flex-col justify-between">
-                    <div>
-                      <h4 className="font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400 mb-4">
-                        {activeNavData.featured.tag}
-                      </h4>
+                  {/* Middle Multi-Column Grid - Dynamically Driven by Active Left Sidebar Category */}
+                  {(() => {
+                    const activeSidebarItem = activeNavData.sidebar?.[activeSidebarIndex] || activeNavData.sidebar?.[0];
+                    const currentColumns = activeSidebarItem?.columns || activeNavData.columns || [];
 
-                      <a
-                        href={activeNavData.featured.linkHref}
-                        onClick={() => setActiveItem(null)}
-                        className="group block rounded-xl bg-white p-4 border border-slate-200/70 shadow-xs transition-all duration-200 hover:shadow-md hover:border-slate-300"
-                      >
+                    return (
+                      <div className="flex-1 p-6 sm:p-7 overflow-y-auto max-h-[540px]">
+                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+                          {currentColumns.map((col) => (
+                            <div key={col.title} className="flex flex-col gap-3">
+                              <div className="flex items-center gap-2 pb-2 border-b border-slate-100">
+                                {col.icon && renderIcon(col.icon, 16, 'text-blue-700 shrink-0')}
+                                <h4 className="font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-[#0c2340]">
+                                  {col.title}
+                                </h4>
+                              </div>
+                              <div className="flex flex-col gap-3.5">
+                                {col.items.map((item) => (
+                                  <div key={item.title} className="group flex flex-col items-start rounded-lg">
+                                    {item.href ? (
+                                      <a
+                                        href={item.href}
+                                        target={item.href.startsWith('http') ? '_blank' : '_self'}
+                                        rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                        onClick={() => setActiveItem(null)}
+                                        className="flex items-center gap-1 font-sans text-[13px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-cyan-800"
+                                      >
+                                        <span>{item.title}</span>
+                                        <CaretRight
+                                          size={11}
+                                          weight="bold"
+                                          className="opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 text-cyan-800 shrink-0"
+                                        />
+                                      </a>
+                                    ) : (
+                                      <span className="font-sans text-[13px] font-semibold tracking-tight text-slate-900">
+                                        {item.title}
+                                      </span>
+                                    )}
+                                    {item.desc && (
+                                      <span className="font-sans text-[11.5px] text-slate-500 font-normal leading-relaxed mt-0.5">
+                                        {item.desc}
+                                      </span>
+                                    )}
+                                    {item.sublinks && item.sublinks.length > 0 && (
+                                      <div className="mt-1.5 flex flex-wrap gap-1.5 pt-0.5">
+                                        {item.sublinks.map((sub) => (
+                                          <a
+                                            key={sub.title}
+                                            href={sub.href}
+                                            target={sub.href.startsWith('http') ? '_blank' : '_self'}
+                                            rel={sub.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                            onClick={() => setActiveItem(null)}
+                                            className="inline-flex items-center gap-0.5 rounded-md bg-slate-100/90 px-2 py-0.5 text-[10.5px] font-medium text-slate-700 transition-all hover:bg-[#0c2340] hover:text-white"
+                                          >
+                                            <span>{sub.title}</span>
+                                            <CaretRight size={9} weight="bold" className="opacity-60" />
+                                          </a>
+                                        ))}
+                                      </div>
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })()}
+
+                  {/* Right Featured Column - Exact Match with Image 2 */}
+                  <div className="w-[245px] lg:w-[265px] shrink-0 bg-[#f8f9fc] p-5 sm:p-6 flex flex-col justify-between border-l border-slate-100">
+                    <div>
+                      <div className="rounded-xl bg-white p-4 border border-slate-200/70 shadow-2xs">
                         {activeNavData.featured.image && (
                           <img
                             src={activeNavData.featured.image}
                             alt={activeNavData.featured.title}
-                            className="h-28 w-full rounded-lg object-cover mb-3.5"
+                            className="h-32 w-full rounded-lg object-cover mb-3"
                           />
                         )}
-                        <h5 className="font-sans text-xs font-semibold text-slate-900 group-hover:text-cyan-800 transition-colors">
+                        <h5 className="font-sans text-xs font-bold text-slate-900">
                           {activeNavData.featured.title}
                         </h5>
                         <p className="font-sans text-[11.5px] text-slate-500 mt-1 leading-relaxed">
                           {activeNavData.featured.desc}
                         </p>
-                        <div className="mt-3.5 inline-flex items-center gap-1 font-sans text-xs font-semibold text-[#0c2340] group-hover:text-cyan-800 transition-colors">
-                          <span>{activeNavData.featured.linkText}</span>
-                          <CaretRight size={12} weight="bold" className="transition-transform group-hover:translate-x-0.5" />
-                        </div>
-                      </a>
+                        <div className="h-0.5 w-8 bg-amber-500 my-3 rounded-full" />
+                        <a
+                          href={activeNavData.featured.linkHref}
+                          target={activeNavData.featured.linkHref?.startsWith('http') ? '_blank' : '_self'}
+                          rel={activeNavData.featured.linkHref?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          onClick={() => setActiveItem(null)}
+                          className="inline-flex items-center justify-center gap-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-800 shadow-2xs hover:bg-slate-50 hover:text-blue-900 hover:border-slate-400 transition-all"
+                        >
+                          <span>{activeNavData.featured.linkText || 'Read Message'}</span>
+                          <CaretRight size={12} weight="bold" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Bottom Footer Strip inside Mega Menu */}
-                {activeNavData.bottomLink && (
-                  <div className="bg-slate-50/90 border-t border-slate-100 px-7 py-3 flex items-center justify-between">
-                    <a
-                      href={activeNavData.bottomLink.href}
-                      onClick={() => setActiveItem(null)}
-                      className="group inline-flex items-center gap-1.5 font-sans text-xs font-semibold text-[#0c2340] hover:text-cyan-800 transition-colors"
-                    >
-                      <span>{activeNavData.bottomLink.text}</span>
-                      <CaretRight size={13} weight="bold" className="transition-transform group-hover:translate-x-0.5" />
-                    </a>
-                  </div>
-                )}
+                {/* Bottom Footer Strip inside Mega Menu - Fixed to Admissions Registration */}
+                <div className="bg-slate-50/90 rounded-lg border-t -mb-3 mt-2 border-slate-100 px-5 py-2 flex items-center justify-between">
+                  <a
+                    href="https://enquiry.biuerp.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setActiveItem(null)}
+                    className="group inline-flex items-center gap-1.5 font-sans text-[13px] font-semibold text-[#0c2340] hover:text-cyan-800 transition-colors"
+                  >
+                    <span>Register for 2026–27 session admissions & counseling</span>
+                    <CaretRight size={14} weight="bold" className="transition-transform group-hover:translate-x-0.5 text-[#0c2340] group-hover:text-cyan-800" />
+                  </a>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -552,14 +499,39 @@ export default function Navbar() {
                               {col.title}
                             </span>
                             {col.items.map((sub) => (
-                              <a
-                                key={sub.title}
-                                href={sub.href}
-                                onClick={() => setMenuOpen(false)}
-                                className="font-sans text-xs text-slate-600 hover:text-[#0c2340]"
-                              >
-                                {sub.title}
-                              </a>
+                              <div key={sub.title} className="flex flex-col gap-1">
+                                {sub.href ? (
+                                  <a
+                                    href={sub.href}
+                                    target={sub.href.startsWith('http') ? '_blank' : '_self'}
+                                    rel={sub.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                    onClick={() => setMenuOpen(false)}
+                                    className="font-sans text-xs font-semibold text-slate-700 hover:text-[#0c2340]"
+                                  >
+                                    {sub.title}
+                                  </a>
+                                ) : (
+                                  <span className="font-sans text-xs font-semibold text-slate-800">
+                                    {sub.title}
+                                  </span>
+                                )}
+                                {sub.sublinks && sub.sublinks.length > 0 && (
+                                  <div className="flex flex-wrap gap-1 pl-2 border-l border-slate-200">
+                                    {sub.sublinks.map((child) => (
+                                      <a
+                                        key={child.title}
+                                        href={child.href}
+                                        target={child.href.startsWith('http') ? '_blank' : '_self'}
+                                        rel={child.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                        onClick={() => setMenuOpen(false)}
+                                        className="rounded bg-slate-100 px-1.5 py-0.5 text-[10.5px] font-medium text-slate-600 hover:bg-[#0c2340] hover:text-white"
+                                      >
+                                        {child.title}
+                                      </a>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
                             ))}
                           </div>
                         ))}
@@ -571,7 +543,7 @@ export default function Navbar() {
 
               <div className="flex flex-col gap-2.5 pt-3">
                 <a
-                  href="https://test.biu.edu.in/#erp"
+                  href="https://student.biuerp.com/studentpanel/student/stulogin"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white py-2.5 font-sans text-xs font-bold text-slate-800 shadow-xs"
