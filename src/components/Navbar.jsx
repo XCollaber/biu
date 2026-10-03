@@ -401,7 +401,7 @@ export default function Navbar() {
                   })()}
 
                   {/* Right Featured Column - Exact Match with Image 2 */}
-                  <div className="w-[245px] lg:w-[265px] shrink-0 rounded-xl border border-slate-200/90 bg-gradient-to-b from-gray-100/60 via-gray-100/20 to-white p-3 flex flex-col justify-between shadow-2xs h-full">
+                  <div className="w-[245px] lg:w-[265px] shrink-0 rounded-xl border border-slate-200/80 bg-gradient-to-b from-gray-100/60 via-gray-100/20 to-white p-3 flex flex-col justify-between shadow-2xs h-full opacity-80 hover:opacity-100 transition-opacity duration-300">
                     <div>
                       {activeNavData.featured.image && (
                         <img

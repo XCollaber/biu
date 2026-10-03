@@ -1,0 +1,68 @@
+{
+  "badge": "WHY CHOOSE US",
+  "titleMain": "A University Committed to a Healthier,",
+  "titleHighlight": "Brighter Future",
+  "description": "Bareilly International University (BIU) is dedicated to excellence in medical education, research, healthcare and societal impact, creating future-ready professionals who make a meaningful difference in the world.",
+  "initiatives": [
+    {
+      "tag": "FEATURED INITIATIVE",
+      "title": "Chikitsa Gurukulam 2025",
+      "description": "A special academic event bringing together experts, faculty and students to discuss advancements in medical education and research.",
+      "image": "/news/news1.jpg.jpeg",
+      "link": "#"
+    },
+    {
+      "tag": "CAMPUS MILESTONE",
+      "title": "Record Placement Drive 2026",
+      "description": "Achieving top-tier global placements across medicine, nursing, dental sciences and healthcare engineering.",
+      "image": "/news/news2.jpg.jpeg",
+      "link": "#"
+    },
+    {
+      "tag": "RESEARCH & INNOVATION",
+      "title": "Progressive Medical Research",
+      "description": "Inaugurating state-of-the-art AI-driven healthcare diagnostic laboratories and robotic surgical centers.",
+      "image": "/news/news3.jpg.jpeg",
+      "link": "#"
+    },
+    {
+      "tag": "GLOBAL ALLIANCES",
+      "title": "International Academic Alliances",
+      "description": "Global partnerships and student exchange programs with prestigious medical and research universities.",
+      "image": "/news/news4.jpg.jpeg",
+      "link": "#"
+    }
+  ],
+  "features": [
+    {
+      "id": "journals",
+      "icon": "BookOpen",
+      "title": "Our Journals",
+      "description": "Publishes the highest quality research and delivers knowledge to a global audience.",
+      "link": "/research"
+    },
+    {
+      "id": "institutions",
+      "icon": "Buildings",
+      "title": "Constituent Institutions",
+      "description": "Our constituent colleges, including Rohilkhand Medical College & Hospital, set benchmarks in education and healthcare.",
+      "link": "#colleges"
+    },
+    {
+      "id": "faculties",
+      "icon": "UsersThree",
+      "title": "Our Faculties",
+      "description": "Learn from experienced academicians and industry experts dedicated to student success.",
+      "link": "/constituent-faculty"
+    },
+    {
+      "id": "hospital",
+      "icon": "FirstAidKit",
+      "title": "Our Hospital",
+      "description": "A multi-specialty hospital providing advanced healthcare services while enriching clinical learning for medical students.",
+      "link": "/hospital"
+    }
+  ],
+  "ctaText": "EXPLORE MORE",
+  "ctaLink": "#programs"
+}
