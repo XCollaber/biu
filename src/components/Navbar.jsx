@@ -254,7 +254,7 @@ export default function Navbar() {
       <AnimatePresence>
         {activeNavData && (
           <div className="absolute inset-x-0 top-full z-50 pointer-events-none">
-            <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -264,7 +264,9 @@ export default function Navbar() {
                   if (timeoutRef.current) clearTimeout(timeoutRef.current);
                 }}
                 onMouseLeave={handleMouseLeave}
-                className="relative pointer-events-auto overflow-hidden rounded-2xl bg-white p-3.5 sm:p-4 border border-slate-200/80 shadow-[0_25px_70px_-15px_rgba(12,35,64,0.16)] font-sans"
+                onWheel={(e) => e.stopPropagation()}
+                data-lenis-prevent="true"
+                className="relative pointer-events-auto overflow-hidden rounded-2xl bg-white p-3.5 sm:p-4 border border-slate-200/80 shadow-[0_25px_70px_-15px_rgba(12,35,64,0.16)] font-sans overscroll-contain"
               >
                 {/* Invisible Hover Bridge to prevent gap mouseleave flicker */}
                 <div
@@ -274,10 +276,10 @@ export default function Navbar() {
                   }}
                 />
 
-                <div className="flex gap-3 font-sans items-stretch">
+                <div className="flex gap-3 font-sans items-stretch h-[440px]">
                   {/* Left Sidebar Panel - Exact Match with Image 2 */}
-                  <div className="w-[235px] lg:w-[255px] shrink-0 rounded-xl border border-slate-200/90 bg-gradient-to-b from-gray-100/60 via-gray-100/20 to-white p-2 flex flex-col justify-between shadow-2xs">
-                    <div className="flex flex-col gap-1">
+                  <div className="w-[235px] lg:w-[255px] shrink-0 rounded-xl border border-slate-200/90 bg-gradient-to-b from-gray-100/60 via-gray-100/20 to-white p-2 flex flex-col justify-between shadow-2xs h-full overflow-hidden">
+                    <div data-lenis-prevent="true" className="flex flex-col gap-1 overflow-y-auto pr-0.5 overscroll-contain">
                       {(activeNavData.sidebar || []).map((sItem, idx) => {
                         const isActive = activeSidebarIndex === idx;
                         return (
@@ -309,19 +311,19 @@ export default function Navbar() {
                     </div>
 
                     {/* Bottom Watermark Monument Graphic Card */}
-                    <div className="relative -ml-2 -mr-2 -mb-2 mt-6 min-h-[185px] overflow-hidden rounded-b-xl bg-white pt-8 pb-4 px-4 shadow-2xs flex flex-col justify-end">
+                    <div className="relative -ml-2 -mr-2 -mb-2 mt-auto min-h-[140px] overflow-hidden rounded-b-xl bg-white pt-6 pb-3 px-4 shadow-2xs flex flex-col justify-end shrink-0">
                       <img
                         src="/biu-building.png"
                         alt="Bareilly International University"
                         className="pointer-events-none absolute inset-0 h-full w-full object-cover object-bottom scale-115 origin-bottom opacity-30"
                       />
                       <div className="relative z-10">
-                        <div className="font-newsreader text-[12.5px] font-bold uppercase tracking-[0.14em] text-slate-800 leading-tight">
+                        <div className="font-newsreader text-[12.5px] font-bold uppercase tracking-[0.10em] text-slate-800 leading-tight">
                           <div>Bareilly</div>
                           <div>International</div>
                           <div>University</div>
                         </div>
-                        <div className="mt-2 h-0.5 w-7 rounded-full bg-gold" />
+                        <div className="mt-1.5 h-0.5 w-7 rounded-full bg-gold" />
                       </div>
                     </div>
                   </div>
@@ -332,26 +334,26 @@ export default function Navbar() {
                     const currentColumns = activeSidebarItem?.columns || activeNavData.columns || [];
 
                     return (
-                      <div className="flex-1 p-6 sm:p-7 overflow-y-auto max-h-[540px]">
-                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+                      <div data-lenis-prevent="true" className="flex-1 p-5 lg:p-6 overflow-y-auto h-full overscroll-contain">
+                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 lg:gap-8">
                           {currentColumns.map((col) => (
                             <div key={col.title} className="flex flex-col gap-3">
-                              <div className="flex items-center gap-2 pb-2 border-b border-slate-100">
-                                {col.icon && renderIcon(col.icon, 16, 'text-blue-700 shrink-0')}
-                                <h4 className="font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-[#0c2340]">
+                              <div className="flex items-center gap-1.5 pb-1.5 border-b border-slate-100">
+                                {col.icon && renderIcon(col.icon, 13, 'text-slate-400 shrink-0')}
+                                <h4 className="font-sans text-[10.5px] font-semibold uppercase tracking-[0.12em] text-slate-400">
                                   {col.title}
                                 </h4>
                               </div>
-                              <div className="flex flex-col gap-3.5">
+                              <div className="flex flex-col gap-2.5">
                                 {col.items.map((item) => (
-                                  <div key={item.title} className="group flex flex-col items-start rounded-lg">
+                                  <div key={item.title} className="group flex flex-col items-start w-full">
                                     {item.href ? (
                                       <a
                                         href={item.href}
                                         target={item.href.startsWith('http') ? '_blank' : '_self'}
                                         rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                                         onClick={() => setActiveItem(null)}
-                                        className="flex items-center gap-1 font-sans text-[13px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-cyan-800"
+                                        className="flex items-center justify-between w-full py-1 font-sans text-[13px] font-semibold tracking-tight text-slate-800 transition-colors group-hover:text-cyan-800"
                                       >
                                         <span>{item.title}</span>
                                         <CaretRight
@@ -361,17 +363,12 @@ export default function Navbar() {
                                         />
                                       </a>
                                     ) : (
-                                      <span className="font-sans text-[13px] font-semibold tracking-tight text-slate-900">
+                                      <span className="py-1 font-sans text-[12.5px] font-bold uppercase tracking-wider text-[#0c2340]/90">
                                         {item.title}
                                       </span>
                                     )}
-                                    {item.desc && (
-                                      <span className="font-sans text-[11.5px] text-slate-500 font-normal leading-relaxed mt-0.5">
-                                        {item.desc}
-                                      </span>
-                                    )}
                                     {item.sublinks && item.sublinks.length > 0 && (
-                                      <div className="mt-1.5 flex flex-wrap gap-1.5 pt-0.5">
+                                      <div className="mt-1 flex flex-col gap-1 pl-3 border-l-2 border-slate-200/80 w-full mb-1">
                                         {item.sublinks.map((sub) => (
                                           <a
                                             key={sub.title}
@@ -379,10 +376,14 @@ export default function Navbar() {
                                             target={sub.href.startsWith('http') ? '_blank' : '_self'}
                                             rel={sub.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                                             onClick={() => setActiveItem(null)}
-                                            className="inline-flex items-center gap-0.5 rounded-md bg-slate-100/90 px-2 py-0.5 text-[10.5px] font-medium text-slate-700 transition-all hover:bg-[#0c2340] hover:text-white"
+                                            className="group/sub flex items-center justify-between py-1 px-2 text-[12px] font-medium text-slate-600 rounded-md transition-all hover:bg-slate-100/80 hover:text-[#0c2340]"
                                           >
                                             <span>{sub.title}</span>
-                                            <CaretRight size={9} weight="bold" className="opacity-60" />
+                                            <CaretRight
+                                              size={10}
+                                              weight="bold"
+                                              className="opacity-0 -translate-x-1 transition-all duration-150 group-hover/sub:opacity-100 group-hover/sub:translate-x-0 text-cyan-800 shrink-0"
+                                            />
                                           </a>
                                         ))}
                                       </div>
@@ -398,35 +399,36 @@ export default function Navbar() {
                   })()}
 
                   {/* Right Featured Column - Exact Match with Image 2 */}
-                  <div className="w-[245px] lg:w-[265px] shrink-0 bg-[#f8f9fc] p-5 sm:p-6 flex flex-col justify-between border-l border-slate-100">
+                  <div className="w-[245px] lg:w-[265px] shrink-0 rounded-xl border border-slate-200/90 bg-gradient-to-b from-gray-100/60 via-gray-100/20 to-white p-3 flex flex-col justify-between shadow-2xs h-full">
                     <div>
-                      <div className="rounded-xl bg-white p-4 border border-slate-200/70 shadow-2xs">
-                        {activeNavData.featured.image && (
-                          <img
-                            src={activeNavData.featured.image}
-                            alt={activeNavData.featured.title}
-                            className="h-32 w-full rounded-lg object-cover mb-3"
-                          />
-                        )}
-                        <h5 className="font-sans text-xs font-bold text-slate-900">
+                      {activeNavData.featured.image && (
+                        <img
+                          src={activeNavData.featured.image}
+                          alt={activeNavData.featured.title}
+                          className="h-56 w-full rounded-xl object-cover object-[center_20%] shadow-2xs border border-slate-200/60 bg-slate-100 shrink-0"
+                        />
+                      )}
+                      <div className="mt-3 px-0.5">
+                        <h5 className="font-sans text-[14px] font-bold text-slate-900 tracking-tight leading-snug">
                           {activeNavData.featured.title}
                         </h5>
-                        <p className="font-sans text-[11.5px] text-slate-500 mt-1 leading-relaxed">
+                        <p className="font-sans text-[11.5px] text-slate-600 mt-1 leading-relaxed line-clamp-3">
                           {activeNavData.featured.desc}
                         </p>
-                        <div className="h-0.5 w-8 bg-amber-500 my-3 rounded-full" />
-                        <a
-                          href={activeNavData.featured.linkHref}
-                          target={activeNavData.featured.linkHref?.startsWith('http') ? '_blank' : '_self'}
-                          rel={activeNavData.featured.linkHref?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                          onClick={() => setActiveItem(null)}
-                          className="inline-flex items-center justify-center gap-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-800 shadow-2xs hover:bg-slate-50 hover:text-blue-900 hover:border-slate-400 transition-all"
-                        >
-                          <span>{activeNavData.featured.linkText || 'Read Message'}</span>
-                          <CaretRight size={12} weight="bold" />
-                        </a>
+                        <div className="h-0.5 w-8 bg-gold my-2.5 rounded-full" />
                       </div>
                     </div>
+
+                    <a
+                      href={activeNavData.featured.linkHref}
+                      target={activeNavData.featured.linkHref?.startsWith('http') ? '_blank' : '_self'}
+                      rel={activeNavData.featured.linkHref?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      onClick={() => setActiveItem(null)}
+                      className="group inline-flex items-center justify-center gap-2 w-full rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-3.5 py-2.5 font-sans text-xs font-semibold text-white shadow-xs brightness-125 transition-all duration-200 hover:shadow-lg hover:brightness-125 active:scale-[0.98] shrink-0 mt-auto"
+                    >
+                      <span>{activeNavData.featured.linkText || 'Read Message'}</span>
+                      <CaretRight size={12} weight="bold" className="text-white/90 transition-transform duration-200 group-hover:translate-x-0.5" />
+                    </a>
                   </div>
                 </div>
 
@@ -472,6 +474,7 @@ export default function Navbar() {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden lg:hidden bg-white border-t border-slate-100 shadow-xl"
+            data-lenis-prevent="true"
           >
             <div className="flex flex-col gap-2 px-5 py-6">
               {NAV_ITEMS.map((item) => {
@@ -492,45 +495,53 @@ export default function Navbar() {
                     </button>
 
                     {isOpen && (
-                      <div className="flex flex-col gap-3 pl-3 pt-2 pb-3">
-                        {item.columns.map((col) => (
-                          <div key={col.title} className="flex flex-col gap-2">
-                            <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                              {col.title}
+                      <div className="flex flex-col gap-3.5 pl-3 pt-2 pb-3">
+                        {(item.sidebar || []).map((sCategory) => (
+                          <div key={sCategory.title} className="flex flex-col gap-2">
+                            <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-[#0c2340] border-b border-slate-100 pb-1 flex items-center gap-1.5">
+                              {renderIcon(sCategory.icon, 14, 'text-blue-700')}
+                              <span>{sCategory.title}</span>
                             </span>
-                            {col.items.map((sub) => (
-                              <div key={sub.title} className="flex flex-col gap-1">
-                                {sub.href ? (
-                                  <a
-                                    href={sub.href}
-                                    target={sub.href.startsWith('http') ? '_blank' : '_self'}
-                                    rel={sub.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                    onClick={() => setMenuOpen(false)}
-                                    className="font-sans text-xs font-semibold text-slate-700 hover:text-[#0c2340]"
-                                  >
-                                    {sub.title}
-                                  </a>
-                                ) : (
-                                  <span className="font-sans text-xs font-semibold text-slate-800">
-                                    {sub.title}
-                                  </span>
-                                )}
-                                {sub.sublinks && sub.sublinks.length > 0 && (
-                                  <div className="flex flex-wrap gap-1 pl-2 border-l border-slate-200">
-                                    {sub.sublinks.map((child) => (
+                            {(sCategory.columns || []).map((col) => (
+                              <div key={col.title} className="flex flex-col gap-1.5 pl-2">
+                                <span className="font-sans text-[10px] font-semibold text-slate-500 uppercase tracking-wide">
+                                  {col.title}
+                                </span>
+                                {col.items.map((sub) => (
+                                  <div key={sub.title} className="flex flex-col gap-1">
+                                    {sub.href ? (
                                       <a
-                                        key={child.title}
-                                        href={child.href}
-                                        target={child.href.startsWith('http') ? '_blank' : '_self'}
-                                        rel={child.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                        href={sub.href}
+                                        target={sub.href.startsWith('http') ? '_blank' : '_self'}
+                                        rel={sub.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                                         onClick={() => setMenuOpen(false)}
-                                        className="rounded bg-slate-100 px-1.5 py-0.5 text-[10.5px] font-medium text-slate-600 hover:bg-[#0c2340] hover:text-white"
+                                        className="font-sans text-xs font-semibold text-slate-700 hover:text-[#0c2340]"
                                       >
-                                        {child.title}
+                                        {sub.title}
                                       </a>
-                                    ))}
+                                    ) : (
+                                      <span className="font-sans text-xs font-semibold text-slate-800">
+                                        {sub.title}
+                                      </span>
+                                    )}
+                                    {sub.sublinks && sub.sublinks.length > 0 && (
+                                      <div className="flex flex-col gap-1 pl-2.5 border-l-2 border-slate-200 mt-1">
+                                        {sub.sublinks.map((child) => (
+                                          <a
+                                            key={child.title}
+                                            href={child.href}
+                                            target={child.href.startsWith('http') ? '_blank' : '_self'}
+                                            rel={child.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                            onClick={() => setMenuOpen(false)}
+                                            className="text-[11.5px] font-medium text-slate-600 hover:text-[#0c2340] py-0.5"
+                                          >
+                                            {child.title}
+                                          </a>
+                                        ))}
+                                      </div>
+                                    )}
                                   </div>
-                                )}
+                                ))}
                               </div>
                             ))}
                           </div>
