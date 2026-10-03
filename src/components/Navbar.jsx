@@ -254,7 +254,7 @@ export default function Navbar() {
       <AnimatePresence>
         {activeNavData && (
           <div className="absolute inset-x-0 top-full z-50 pointer-events-none">
-            <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-[1220px] px-4 sm:px-6 lg:px-8">
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -353,22 +353,22 @@ export default function Navbar() {
                                         target={item.href.startsWith('http') ? '_blank' : '_self'}
                                         rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                                         onClick={() => setActiveItem(null)}
-                                        className="flex items-center justify-between w-full py-1 font-sans text-[13px] font-semibold tracking-tight text-slate-800 transition-colors group-hover:text-cyan-800"
+                                        className="flex items-center justify-between w-full py-1 font-sans text-[13px] font-semibold tracking-tight text-slate-800 transition-colors group-hover:text-cyan-900"
                                       >
                                         <span>{item.title}</span>
                                         <CaretRight
                                           size={11}
                                           weight="bold"
-                                          className="opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 text-cyan-800 shrink-0"
+                                          className="opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 text-cyan-900 shrink-0"
                                         />
                                       </a>
                                     ) : (
-                                      <span className="py-1 font-sans text-[12.5px] font-bold uppercase tracking-wider text-[#0c2340]/90">
+                                      <span className="pt-2 pb-0.5 font-sans text-[11px] font-semibold uppercase tracking-wider text-slate-400">
                                         {item.title}
                                       </span>
                                     )}
                                     {item.sublinks && item.sublinks.length > 0 && (
-                                      <div className="mt-1 flex flex-col gap-1 pl-3 border-l-2 border-slate-200/80 w-full mb-1">
+                                      <div className="mt-1 flex flex-col gap-1 pl-3 border-l-2 border-slate-200/80 w-[165px] mb-1">
                                         {item.sublinks.map((sub) => (
                                           <a
                                             key={sub.title}
@@ -376,13 +376,15 @@ export default function Navbar() {
                                             target={sub.href.startsWith('http') ? '_blank' : '_self'}
                                             rel={sub.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                                             onClick={() => setActiveItem(null)}
-                                            className="group/sub flex items-center justify-between py-1 px-2 text-[12px] font-medium text-slate-600 rounded-md transition-all hover:bg-slate-100/80 hover:text-[#0c2340]"
+                                            className="group/sub flex items-center justify-between w-full py-1 px-1.5 text-[12px] font-medium text-slate-700 rounded transition-all hover:bg-[#eef4ff]/70 hover:text-cyan-900"
                                           >
-                                            <span>{sub.title}</span>
+                                            <span className="transition-colors group-hover/sub:text-cyan-900">
+                                              {sub.title}
+                                            </span>
                                             <CaretRight
                                               size={10}
                                               weight="bold"
-                                              className="opacity-0 -translate-x-1 transition-all duration-150 group-hover/sub:opacity-100 group-hover/sub:translate-x-0 text-cyan-800 shrink-0"
+                                              className="text-slate-400 group-hover/sub:text-cyan-900 transition-all duration-150 group-hover/sub:translate-x-0.5 shrink-0 ml-2"
                                             />
                                           </a>
                                         ))}
@@ -515,12 +517,12 @@ export default function Navbar() {
                                         target={sub.href.startsWith('http') ? '_blank' : '_self'}
                                         rel={sub.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                                         onClick={() => setMenuOpen(false)}
-                                        className="font-sans text-xs font-semibold text-slate-700 hover:text-[#0c2340]"
+                                        className="font-sans text-xs font-semibold text-slate-700 hover:text-cyan-900"
                                       >
                                         {sub.title}
                                       </a>
                                     ) : (
-                                      <span className="font-sans text-xs font-semibold text-slate-800">
+                                      <span className="font-sans text-[11px] font-semibold uppercase tracking-wider text-slate-400 pt-1">
                                         {sub.title}
                                       </span>
                                     )}
@@ -533,9 +535,10 @@ export default function Navbar() {
                                             target={child.href.startsWith('http') ? '_blank' : '_self'}
                                             rel={child.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                                             onClick={() => setMenuOpen(false)}
-                                            className="text-[11.5px] font-medium text-slate-600 hover:text-[#0c2340] py-0.5"
+                                            className="group/mobsub flex items-center justify-between text-[11.5px] font-medium text-slate-700 hover:text-cyan-900 py-0.5 w-full"
                                           >
-                                            {child.title}
+                                            <span>{child.title}</span>
+                                            <CaretRight size={10} weight="bold" className="text-slate-400 group-hover/mobsub:text-cyan-900 shrink-0" />
                                           </a>
                                         ))}
                                       </div>
