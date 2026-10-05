@@ -16,9 +16,7 @@ import Img from '../Img';
 
 export default function NewsDetailPage({
   article,
-  onBack,
-  allPosts = [],
-  onSelectArticle
+  allPosts = []
 }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [commentForm, setCommentForm] = useState({
@@ -62,6 +60,13 @@ export default function NewsDetailPage({
     }, 4000);
   };
 
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (typeof window !== 'undefined') {
+      window.location.href = `/news?search=${encodeURIComponent(searchQuery.trim())}`;
+    }
+  };
+
   if (!article) return null;
 
   return (
@@ -86,14 +91,13 @@ export default function NewsDetailPage({
         <div className="relative z-10 mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
           {/* Back button */}
           <div className="mb-4 sm:mb-6">
-            <button
-              type="button"
-              onClick={onBack}
+            <a
+              href="/news"
               className="group inline-flex items-center gap-2 rounded-md border border-slate-300/80 bg-white px-3.5 py-1.5 font-sans text-xs font-semibold text-slate-700 shadow-2xs transition-all duration-200 hover:border-transparent hover:bg-gradient-to-r hover:from-[#0c2340]/90 hover:via-[#102d52]/90 hover:to-[#163860]/70 hover:text-white hover:brightness-125 hover:shadow-md active:scale-[0.98] cursor-pointer"
             >
               <ArrowLeft size={14} weight="bold" className="transition-transform group-hover:-translate-x-0.5" />
               <span>Back to All Events</span>
-            </button>
+            </a>
           </div>
 
           <div>
@@ -171,8 +175,8 @@ export default function NewsDetailPage({
                 {/* Previous / Next Article Navigation Bar */}
                 <div className="mt-12 pt-6 border-t border-b border-slate-200/90 grid grid-cols-1 sm:grid-cols-2 gap-6 pb-6">
                   {prevPost ? (
-                    <div
-                      onClick={() => onSelectArticle && onSelectArticle(prevPost)}
+                    <a
+                      href={`/news/${encodeURIComponent(prevPost.id)}`}
                       className="group flex flex-col text-left cursor-pointer p-2 rounded-lg hover:bg-slate-50 transition-colors"
                     >
                       <span className="font-sans text-[11px] font-extrabold uppercase tracking-widest text-red-600 flex items-center gap-1.5 mb-1">
@@ -182,14 +186,14 @@ export default function NewsDetailPage({
                       <h4 className="font-sans text-xs sm:text-[13px] font-medium text-slate-800 group-hover:text-cyan-900 transition-colors line-clamp-2 leading-snug">
                         {prevPost.title}
                       </h4>
-                    </div>
+                    </a>
                   ) : (
                     <div />
                   )}
 
                   {nextPost && (
-                    <div
-                      onClick={() => onSelectArticle && onSelectArticle(nextPost)}
+                    <a
+                      href={`/news/${encodeURIComponent(nextPost.id)}`}
                       className="group flex flex-col text-left sm:text-right cursor-pointer p-2 rounded-lg hover:bg-slate-50 transition-colors"
                     >
                       <span className="font-sans text-[11px] font-extrabold uppercase tracking-widest text-red-600 flex items-center sm:justify-end gap-1.5 mb-1">
@@ -199,7 +203,7 @@ export default function NewsDetailPage({
                       <h4 className="font-sans text-xs sm:text-[13px] font-medium text-slate-800 group-hover:text-cyan-900 transition-colors line-clamp-2 leading-snug">
                         {nextPost.title}
                       </h4>
-                    </div>
+                    </a>
                   )}
                 </div>
 
@@ -343,7 +347,7 @@ export default function NewsDetailPage({
             <aside className="w-full lg:w-[310px] xl:w-[330px] shrink-0 space-y-8 lg:sticky lg:top-28">
               {/* Search Widget */}
               <div>
-                <div className="relative flex items-center">
+                <form onSubmit={handleSearchSubmit} className="relative flex items-center">
                   <input
                     type="text"
                     value={searchQuery}
@@ -352,13 +356,12 @@ export default function NewsDetailPage({
                     className="w-full rounded-lg border border-slate-300/80 bg-white/70 backdrop-blur-xs pl-3.5 pr-22 py-2.5 font-sans text-xs text-slate-800 placeholder:text-slate-400 outline-none focus:outline-none focus-visible:outline-none focus:border-slate-400 focus:bg-white focus:ring-1 focus:ring-slate-300/60 transition-all shadow-2xs"
                   />
                   <button
-                    type="button"
-                    onClick={onBack}
+                    type="submit"
                     className="absolute right-1 top-1 bottom-1 rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-3.5 font-sans text-[11px] font-bold uppercase tracking-wider text-white brightness-125 transition-all duration-200 hover:brightness-140 hover:shadow-sm active:scale-[0.98] cursor-pointer"
                   >
                     Search
                   </button>
-                </div>
+                </form>
               </div>
 
               {/* Recent Posts - Tree Structure Navigation */}
@@ -374,12 +377,12 @@ export default function NewsDetailPage({
                 <div className="relative pl-5 before:absolute before:left-[7px] before:top-2 before:bottom-4 before:w-[1.5px] before:bg-slate-200">
                   <div className="space-y-6">
                     {recentPosts.map((rPost, rIdx) => {
-                      const isSelected = (article.id && article.id === rPost.id) || article.title === rPost.title;
+                      const isSelected = article && ((article.id && article.id === rPost.id) || article.title === rPost.title);
                       return (
-                        <div
+                        <a
                           key={rPost.id || rIdx}
-                          onClick={() => onSelectArticle && onSelectArticle(rPost)}
-                          className={`group relative cursor-pointer text-left pl-2.5 py-0.5 transition-colors ${
+                          href={`/news/${encodeURIComponent(rPost.id)}`}
+                          className={`group relative cursor-pointer text-left pl-2.5 py-0.5 block transition-colors ${
                             isSelected ? 'opacity-100' : 'opacity-85 hover:opacity-100'
                           }`}
                         >
@@ -413,7 +416,7 @@ export default function NewsDetailPage({
                               </span>
                             )}
                           </div>
-                        </div>
+                        </a>
                       );
                     })}
                   </div>

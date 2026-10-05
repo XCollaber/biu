@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import NewsDetailPage from '../../components/pages/NewsDetailPage.jsx';
+import journalData from '../../data/news.json';
+
+export async function getStaticPaths() {
+  const posts = journalData.posts || [];
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { article: post, allPosts: posts },
+  }));
+}
+
+const { article, allPosts } = Astro.props;
+---
+
+<Layout
+  title={`${article.title} - Bareilly International University`}
+  description={article.excerpt || article.content?.slice(0, 160)}
+>
+  <NewsDetailPage client:load article={article} allPosts={allPosts} />
+</Layout>

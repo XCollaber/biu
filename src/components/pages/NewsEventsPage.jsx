@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import {
   ArrowLeft,
   ArrowRight,
@@ -10,7 +10,6 @@ import journalData from '../../data/news.json';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import Img from '../Img';
-import NewsDetailPage from './NewsDetailPage';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -27,13 +26,23 @@ const truncateExcerpt = (text, maxLength = 62) => {
   return wordSafe.trim() + '...';
 };
 
-export default function NewsEventsPage({ onBack }) {
+export default function NewsEventsPage({ onBack = null }) {
   const allPosts = journalData.posts || [];
   const gridTopRef = useRef(null);
 
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [activeArticle, setActiveArticle] = useState(null);
+
+  // Read initial search query from URL (?search=...)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const searchParam = params.get('search');
+      if (searchParam) {
+        setSearchQuery(searchParam);
+      }
+    }
+  }, []);
 
   // Filter posts based on search query
   const filteredPosts = useMemo(() => {
@@ -74,18 +83,6 @@ export default function NewsEventsPage({ onBack }) {
     setSearchQuery(e.target.value);
     setCurrentPage(1);
   };
-
-  // If an article is active, render the dedicated separate Detail Page component
-  if (activeArticle) {
-    return (
-      <NewsDetailPage
-        article={activeArticle}
-        allPosts={allPosts}
-        onBack={() => setActiveArticle(null)}
-        onSelectArticle={(post) => setActiveArticle(post)}
-      />
-    );
-  }
 
   return (
     <div className="min-h-screen bg-[#fbfbfd] text-slate-900 font-sans selection:bg-gold selection:text-[#0c2340]">
@@ -170,8 +167,8 @@ export default function NewsEventsPage({ onBack }) {
                       key={post.id || idx}
                       className="flex flex-col"
                     >
-                      <div
-                        onClick={() => setActiveArticle(post)}
+                      <a
+                        href={`/news/${encodeURIComponent(post.id)}`}
                         className="group relative flex w-full flex-1 flex-col justify-between overflow-hidden rounded-lg bg-white border border-slate-200/80 shadow-xs hover:shadow-[0_20px_40px_-12px_rgba(12,35,64,0.16),0_8px_16px_-4px_rgba(12,35,64,0.06),0_0_0_1px_rgba(12,35,64,0.04)] hover:border-slate-200 transition-[box-shadow,border-color] duration-300 ease-out cursor-pointer text-left"
                       >
                         <div>
@@ -214,7 +211,7 @@ export default function NewsEventsPage({ onBack }) {
                             </p>
                           </div>
                         </div>
-                      </div>
+                      </a>
                     </div>
                   ))}
                 </div>
@@ -287,7 +284,13 @@ export default function NewsEventsPage({ onBack }) {
             <aside className="w-full lg:w-[310px] xl:w-[330px] shrink-0 space-y-8 lg:sticky lg:top-28">
               {/* Search Widget */}
               <div>
-                <div className="relative flex items-center">
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    handlePageChange(1);
+                  }}
+                  className="relative flex items-center"
+                >
                   <input
                     type="text"
                     value={searchQuery}
@@ -296,13 +299,12 @@ export default function NewsEventsPage({ onBack }) {
                     className="w-full rounded-lg border border-slate-300/80 bg-white/70 backdrop-blur-xs pl-3.5 pr-22 py-2.5 font-sans text-xs text-slate-800 placeholder:text-slate-400 outline-none focus:outline-none focus-visible:outline-none focus:border-slate-400 focus:bg-white focus:ring-1 focus:ring-slate-300/60 transition-all shadow-2xs"
                   />
                   <button
-                    type="button"
-                    onClick={() => handlePageChange(1)}
+                    type="submit"
                     className="absolute right-1 top-1 bottom-1 rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-3.5 font-sans text-[11px] font-bold uppercase tracking-wider text-white brightness-125 transition-all duration-200 hover:brightness-140 hover:shadow-sm active:scale-[0.98] cursor-pointer"
                   >
                     Search
                   </button>
-                </div>
+                </form>
               </div>
 
               {/* Recent Posts - Tree Structure Navigation */}
@@ -318,10 +320,10 @@ export default function NewsEventsPage({ onBack }) {
                 <div className="relative pl-5 before:absolute before:left-[7px] before:top-2 before:bottom-4 before:w-[1.5px] before:bg-slate-200">
                   <div className="space-y-6">
                     {recentPosts.map((rPost, rIdx) => (
-                      <div
+                      <a
                         key={rPost.id || rIdx}
-                        onClick={() => setActiveArticle(rPost)}
-                        className="group relative cursor-pointer text-left pl-2.5 py-0.5"
+                        href={`/news/${encodeURIComponent(rPost.id)}`}
+                        className="group relative cursor-pointer text-left pl-2.5 py-0.5 block"
                       >
                         {/* Tree Branch Node & Connector */}
                         <div className="absolute -left-5 top-1.5 flex items-center">
@@ -339,7 +341,7 @@ export default function NewsEventsPage({ onBack }) {
                             </span>
                           )}
                         </div>
-                      </div>
+                      </a>
                     ))}
                   </div>
                 </div>
