@@ -4,6 +4,67 @@
   "viewAllLabel": "VIEW ALL",
   "posts": [
     {
+      "id": "dr-varuns-advanced-endo-spine-course-2026",
+      "date": "Jul 18 2026",
+      "category": "Surgical Workshop",
+      "author": "BIU Editorial Desk",
+      "title": "Dr. Varun's Advanced Endo-Spine Course 2026 – A Landmark in Minimally Invasive Spine Surgery",
+      "excerpt": "Bareilly International University (BIU) proudly hosted Dr. Varun's Advanced Endo-Spine Course 2026, bringing together leading spine surgeons across the globe...",
+      "img": "/gallery/biu-campus11.webp",
+      "eventDetails": {
+        "event": "Dr. Varun's Advanced Endo-Spine Course 2026",
+        "dates": "16th–17th July 2026",
+        "venue": "Rohilkhand Medical College & Hospital, Bareilly, Uttar Pradesh, India",
+        "highlights": [
+          "Live Surgeries",
+          "Hands-on Cadaver Workshop",
+          "International Faculty",
+          "Certificate of Participation"
+        ],
+        "contact": "drvarunagarwal@gmail.com | +91-9091800900",
+        "website": "www.drvarunagarwal.com"
+      },
+      "quote": {
+        "text": "Thanks a lot, Dr. Varun, for a very nice, well-arranged advanced conference. We learned a lot during this conference and met expert pioneers in advanced endoscopic spine surgery. We will go back to our city again, thank you, Dr. Varun, for your generous hospitality. Thanks Bareilly, thanks India.",
+        "author": "Dr. Almutasimbellah",
+        "designation": "International Participant & Spine Surgeon, Iraq"
+      },
+      "sections": [
+        {
+          "heading": "Event Overview",
+          "content": "Bareilly International University (BIU) proudly hosted Dr. Varun's Advanced Endo-Spine Course 2026, a pioneering event that brought together leading spine surgeons from across the globe to share, learn, and advance the frontiers of minimally invasive spine surgery. Held at Rohilkhand Medical College & Hospital, Bareilly, Uttar Pradesh, on 16th–17th July 2026, the course marked a milestone in India's medical education and surgical innovation."
+        },
+        {
+          "heading": "A Global Platform for Surgical Excellence",
+          "content": "The two day event featured live surgeries, hands-on cadaver training, and interactive sessions led by internationally acclaimed experts. Among the distinguished faculty was Dr. Hamid Abbasi, a renowned spine surgeon from the U.S., who conducted live demonstrations of advanced techniques such as OLLIF (Oblique Lateral Lumbar Interbody Fusion) and Trans Kambin Fusion — performed for the first time in India.\n\nThe course was meticulously organized under the leadership of Dr. Varun Agarwal, Endoscopic Spine Surgeon and Organising Secretary, whose vision was to create a collaborative platform where surgeons could exchange knowledge and refine their skills in endoscopic spine procedures."
+        },
+        {
+          "heading": "Academic Exchange and Recognition",
+          "content": "The inaugural ceremony witnessed eminent medical professionals and dignitaries felicitating Dr. Abbasi for his contribution to advanced instrumentation. The live surgery sessions offered real-time insights into minimally invasive approaches, emphasizing patient safety, faster recovery, and improved outcomes.\n\nThe cadaver workshop provided hands-on experience, allowing delegates to practice surgical techniques under expert supervision — a hallmark of BIU's commitment to experiential learning in medical education."
+        },
+        {
+          "heading": "International Collaboration and Feedback",
+          "content": "The event drew delegates from multiple countries, including Iraq, where participants shared heartfelt feedback on the quality of clinical instruction and surgical demonstrations."
+        },
+        {
+          "heading": "Launch Event and Celebration",
+          "content": "The course concluded with a grand launch ceremony, where Dr. Abbasi and Dr. Varun Agarwal unveiled a symbolic gift box representing innovation and partnership in spine surgery. The event blended academic rigor with celebration, highlighting the spirit of teamwork and progress that defines BIU's medical community."
+        },
+        {
+          "heading": "Inspiring the Next Generation of Surgeons",
+          "content": "Dr. Varun's Advanced Endo-Spine Course 2026 exemplifies BIU's mission to empower healthcare professionals through advanced training and global exposure. With expert faculty, live demonstrations, and certification of participation, the program continues to inspire surgeons to adopt minimally invasive techniques and elevate patient care standards."
+        }
+      ],
+      "gallery": [
+        "/gallery/biu-campus4.webp",
+        "/gallery/biu-campus5.webp",
+        "/gallery/biu-campus6.webp",
+        "/gallery/biu-campus7.webp",
+        "/gallery/biu-campus8.webp",
+        "/gallery/biu-campus9.webp"
+      ]
+    },
+    {
       "id": "world-heart-day-nursing",
       "date": "Sep 29 2026",
       "category": "Healthcare Awareness",

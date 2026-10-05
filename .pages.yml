@@ -879,3 +879,102 @@ content:
       - name: ctaSubtitle
         label: Page Bottom CTA Subtitle
         type: text
+
+  - name: news
+    label: News & Events Management
+    type: file
+    path: src/data/news.json
+    fields:
+      - name: badge
+        label: Section Badge
+        type: string
+      - name: title
+        label: Section Title
+        type: string
+      - name: viewAllLabel
+        label: View All Button Label
+        type: string
+      - name: posts
+        label: Articles & Events List
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: Article Slug / Unique ID (e.g. world-heart-day-2026)
+            type: string
+          - name: title
+            label: Article Headline / Title
+            type: string
+          - name: date
+            label: Publication Date (e.g. Sep 29 2026)
+            type: string
+          - name: category
+            label: Category / Faculty
+            type: string
+          - name: author
+            label: Author / Department (e.g. BIU Editorial Desk)
+            type: string
+          - name: excerpt
+            label: Short Excerpt / Summary
+            type: text
+          - name: img
+            label: Featured Image
+            type: image
+          - name: content
+            label: Main Story Paragraphs (Simple Text)
+            type: text
+          - name: eventDetails
+            label: Event Quick Info Box (Optional)
+            type: object
+            fields:
+              - name: event
+                label: Event Name
+                type: string
+              - name: dates
+                label: Event Dates (e.g. 16th-17th July 2026)
+                type: string
+              - name: venue
+                label: Event Venue
+                type: string
+              - name: highlights
+                label: Event Highlights (Bullet points)
+                type: string
+                list: true
+              - name: contact
+                label: Contact Information (Phone / Email)
+                type: string
+              - name: website
+                label: Event Website URL
+                type: string
+          - name: quote
+            label: Highlighted Pull Quote / Testimonial (Optional)
+            type: object
+            fields:
+              - name: text
+                label: Quote Text
+                type: text
+              - name: author
+                label: Quoted Person Name
+                type: string
+              - name: designation
+                label: Designation / Affiliation
+                type: string
+          - name: sections
+            label: Structured Story Sections with Headings (Optional)
+            type: object
+            list: true
+            fields:
+              - name: heading
+                label: Section Subheading (H2 / H3)
+                type: string
+              - name: content
+                label: Section Content Paragraphs
+                type: text
+              - name: image
+                label: Section Illustration Image (Optional)
+                type: image
+          - name: gallery
+            label: Event Photo Gallery (Multi-Image Grid at bottom)
+            type: image
+            list: true
+

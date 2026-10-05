@@ -12,7 +12,12 @@ import {
   WhatsappLogo,
   LinkSimple,
   Check,
-  PaperPlaneTilt
+  PaperPlaneTilt,
+  Quotes,
+  X,
+  CaretLeft,
+  CaretRight,
+  MagnifyingGlassPlus
 } from '@phosphor-icons/react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
@@ -25,6 +30,7 @@ export default function NewsDetailPage({
 }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [copied, setCopied] = useState(false);
+  const [lightboxIdx, setLightboxIdx] = useState(null);
   const [commentForm, setCommentForm] = useState({
     name: '',
     email: '',
@@ -38,6 +44,15 @@ export default function NewsDetailPage({
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [article]);
+
+  // Handle escape key to close gallery lightbox
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setLightboxIdx(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   // Compute Previous and Next posts for navigation
   const { prevPost, nextPost } = useMemo(() => {
@@ -175,23 +190,148 @@ export default function NewsDetailPage({
                   </div>
                 </div>
 
+                {/* Event Quick Info Box (If provided by CMS) */}
+                {article.eventDetails && (
+                  <div className="mb-8 rounded-xl border border-slate-200/90 bg-slate-50/60 p-5 sm:p-6 text-left shadow-2xs">
+                    <h3 className="font-times text-xl sm:text-2xl font-semibold text-[#0c2340] mb-3.5 pb-2 border-b border-slate-200/70">
+                      Event Details
+                    </h3>
+                    <div className="space-y-2.5 font-sans text-xs sm:text-[13px] text-slate-700 leading-relaxed">
+                      {article.eventDetails.event && (
+                        <p><strong className="font-semibold text-[#0c2340]">Event:</strong> {article.eventDetails.event}</p>
+                      )}
+                      {article.eventDetails.dates && (
+                        <p><strong className="font-semibold text-[#0c2340]">Dates:</strong> {article.eventDetails.dates}</p>
+                      )}
+                      {article.eventDetails.venue && (
+                        <p><strong className="font-semibold text-[#0c2340]">Venue:</strong> {article.eventDetails.venue}</p>
+                      )}
+                      {article.eventDetails.highlights && (
+                        <p>
+                          <strong className="font-semibold text-[#0c2340]">Highlights:</strong>{' '}
+                          {Array.isArray(article.eventDetails.highlights)
+                            ? article.eventDetails.highlights.join(' | ')
+                            : article.eventDetails.highlights}
+                        </p>
+                      )}
+                      {article.eventDetails.contact && (
+                        <p><strong className="font-semibold text-[#0c2340]">Contact:</strong> {article.eventDetails.contact}</p>
+                      )}
+                      {article.eventDetails.website && (
+                        <p>
+                          <strong className="font-semibold text-[#0c2340]">Website:</strong>{' '}
+                          <a
+                            href={article.eventDetails.website.startsWith('http') ? article.eventDetails.website : `https://${article.eventDetails.website}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-cyan-900 hover:underline font-medium"
+                          >
+                            {article.eventDetails.website}
+                          </a>
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                )}
+
                 {/* Article Main Story Content */}
-                <div className="font-sans text-[15px] sm:text-[16px] leading-[1.75] text-slate-700 space-y-4.5 font-normal">
-                  <p>
-                    We are delighted to share that{' '}
-                    <strong className="font-semibold text-slate-900">
-                      {article.title.split(':')[0] || 'the honoured recipient'}
-                    </strong>{' '}
-                    has achieved remarkable recognition for exemplary dedication, compassionate leadership, and pioneering service towards the healthcare community and academic society.
-                  </p>
+                <div className="font-sans text-[15px] sm:text-[16px] leading-[1.8] text-slate-700 space-y-6 font-normal">
+                  {/* If structured sections are provided by CMS */}
+                  {Array.isArray(article.sections) && article.sections.length > 0 ? (
+                    article.sections.map((sec, sIdx) => (
+                      <div key={sIdx} className="space-y-3">
+                        {sec.heading && (
+                          <h3 className="font-times text-xl sm:text-2xl font-semibold text-[#0c2340] pt-3 tracking-tight">
+                            {sec.heading}
+                          </h3>
+                        )}
+                        {sec.content && (
+                          <div className="text-slate-700 space-y-3">
+                            {sec.content.split('\n\n').map((paragraph, pIdx) => (
+                              <p key={pIdx} className="whitespace-pre-line">{paragraph}</p>
+                            ))}
+                          </div>
+                        )}
+                        {sec.image && (
+                          <div className="my-4 overflow-hidden rounded-xl border border-slate-200/80">
+                            <Img src={sec.image} alt={sec.heading || 'Article illustration'} className="w-full h-auto object-cover" />
+                          </div>
+                        )}
+                      </div>
+                    ))
+                  ) : article.contentHtml ? (
+                    /* If Rich HTML is provided by CMS WYSIWYG */
+                    <div
+                      className="prose prose-slate max-w-none prose-headings:font-times prose-headings:text-[#0c2340] prose-h2:text-2xl prose-h3:text-xl prose-a:text-cyan-900 prose-blockquote:border-gold"
+                      dangerouslySetInnerHTML={{ __html: article.contentHtml }}
+                    />
+                  ) : (
+                    /* Default Standard Post Fallback */
+                    <>
+                      <p>
+                        We are delighted to share that{' '}
+                        <strong className="font-semibold text-slate-900">
+                          {article.title.split(':')[0] || 'the honoured recipient'}
+                        </strong>{' '}
+                        has achieved remarkable recognition for exemplary dedication, compassionate leadership, and pioneering service towards the healthcare community and academic society.
+                      </p>
+                      <p className="whitespace-pre-line">
+                        {article.content || article.excerpt}
+                      </p>
+                      <p>
+                        The university leadership, faculty members, resident doctors, and student bodies extend their heartfelt congratulations and applaud this prestigious honour that reflects the core ethos of Bareilly International University in fostering clinical excellence, progressive medical research, and compassionate community care.
+                      </p>
+                    </>
+                  )}
 
-                  <p>
-                    {article.content || article.excerpt}
-                  </p>
+                  {/* Pull Quote / Testimonial (If provided by CMS) */}
+                  {article.quote && (
+                    <div className="my-8 rounded-xl border border-slate-200/90 bg-slate-50/70 p-6 sm:p-7 relative text-left shadow-2xs">
+                      <Quotes size={32} weight="fill" className="text-gold/40 mb-2" />
+                      <blockquote className="font-times text-base sm:text-lg italic text-slate-800 leading-relaxed">
+                        "{article.quote.text || article.quote}"
+                      </blockquote>
+                      {(article.quote.author || article.quote.designation) && (
+                        <div className="mt-3 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-sans">
+                          <span className="font-bold text-[#0c2340]">{article.quote.author}</span>
+                          <span className="text-slate-500">{article.quote.designation}</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
 
-                  <p>
-                    The university leadership, faculty members, resident doctors, and student bodies extend their heartfelt congratulations and applaud this prestigious honour that reflects the core ethos of Bareilly International University in fostering clinical excellence, progressive medical research, and compassionate community care.
-                  </p>
+                  {/* Multi-Image Photo Gallery Grid (If provided by CMS) */}
+                  {Array.isArray(article.gallery) && article.gallery.length > 0 && (
+                    <div className="mt-10 pt-8 border-t border-slate-200/80">
+                      <div className="flex items-center gap-2 mb-4">
+                        <span className="w-1.5 h-4 bg-gold rounded-full" />
+                        <h3 className="font-times text-xl sm:text-2xl font-semibold text-[#0c2340]">
+                          Event Photo Gallery
+                        </h3>
+                      </div>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+                        {article.gallery.map((gImg, gIdx) => (
+                          <div
+                            key={gIdx}
+                            onClick={() => setLightboxIdx(gIdx)}
+                            className="group relative aspect-4/3 overflow-hidden rounded-xl border border-slate-200/80 bg-slate-100 shadow-2xs cursor-pointer transition-all duration-300 hover:shadow-md hover:border-[#0c2340]/40"
+                          >
+                            <Img
+                              src={gImg}
+                              alt={`${article.title} gallery photo ${gIdx + 1}`}
+                              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0c2340]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-end p-2.5">
+                              <span className="inline-flex items-center gap-1 text-[11px] font-sans font-medium text-white">
+                                <MagnifyingGlassPlus size={14} weight="bold" />
+                                View Photo
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Modern Previous / Next Article Navigation */}
@@ -569,6 +709,49 @@ export default function NewsDetailPage({
           </div>
         </div>
       </section>
+
+      {/* Lightbox Modal for Gallery Images */}
+      {lightboxIdx !== null && Array.isArray(article?.gallery) && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
+          onClick={() => setLightboxIdx(null)}
+        >
+          <div className="relative max-w-4xl max-h-[90vh] w-full" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setLightboxIdx(null)}
+              className="absolute -top-12 right-0 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all cursor-pointer"
+              aria-label="Close"
+            >
+              <X size={22} weight="bold" />
+            </button>
+
+            <img
+              src={article.gallery[lightboxIdx]}
+              alt="Enlarged photo"
+              className="max-h-[80vh] w-auto mx-auto rounded-lg shadow-2xl object-contain"
+            />
+
+            {article.gallery.length > 1 && (
+              <>
+                <button
+                  onClick={() => setLightboxIdx((prev) => (prev > 0 ? prev - 1 : article.gallery.length - 1))}
+                  className="absolute left-2 sm:-left-14 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 sm:bg-white/10 text-white hover:bg-white/20 transition-all cursor-pointer"
+                  aria-label="Previous image"
+                >
+                  <CaretLeft size={24} weight="bold" />
+                </button>
+                <button
+                  onClick={() => setLightboxIdx((prev) => (prev < article.gallery.length - 1 ? prev + 1 : 0))}
+                  className="absolute right-2 sm:-right-14 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 sm:bg-white/10 text-white hover:bg-white/20 transition-all cursor-pointer"
+                  aria-label="Next image"
+                >
+                  <CaretRight size={24} weight="bold" />
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>

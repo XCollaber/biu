@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import NewsPreviewPage from '../../components/pages/NewsPreviewPage.jsx';
+---
+
+<Layout
+  title="CMS Live Draft Preview - Bareilly International University"
+  description="Live in-memory preview of unpublished news draft articles."
+>
+  <NewsPreviewPage client:load />
+</Layout>
