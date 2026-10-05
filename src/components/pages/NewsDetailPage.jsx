@@ -8,17 +8,23 @@ import {
   FacebookLogo,
   TwitterLogo,
   LinkedinLogo,
-  PinterestLogo
+  PinterestLogo,
+  WhatsappLogo,
+  LinkSimple,
+  Check,
+  PaperPlaneTilt
 } from '@phosphor-icons/react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import Img from '../Img';
+import initialRecentComments from '../../data/recentComments.json';
 
 export default function NewsDetailPage({
   article,
   allPosts = []
 }) {
   const [searchQuery, setSearchQuery] = useState('');
+  const [copied, setCopied] = useState(false);
   const [commentForm, setCommentForm] = useState({
     name: '',
     email: '',
@@ -50,10 +56,26 @@ export default function NewsDetailPage({
     return allPosts.slice(0, 5);
   }, [allPosts]);
 
+  const [recentComments, setRecentComments] = useState(initialRecentComments || []);
+
   const handleCommentSubmit = (e) => {
     e.preventDefault();
     if (!commentForm.name || !commentForm.email || !commentForm.comment) return;
     setCommentSubmitted(true);
+
+    if (article) {
+      setRecentComments((prev) => [
+        {
+          author: commentForm.name + (commentForm.website ? ` (${commentForm.website})` : ''),
+          articleTitle: article.title,
+          articleLink: `/news/${encodeURIComponent(article.id)}`,
+          comment: commentForm.comment,
+          date: 'Just now'
+        },
+        ...prev.slice(0, 3)
+      ]);
+    }
+
     setTimeout(() => {
       setCommentSubmitted(false);
       setCommentForm({ name: '', email: '', website: '', comment: '', saveInfo: false });
@@ -132,24 +154,24 @@ export default function NewsDetailPage({
                 </div>
 
                 {/* Metadata Row Below Image (Date, Category, Author) */}
-                <div className="flex flex-wrap items-center gap-y-2 gap-x-5 py-3 border-b border-slate-200/90 text-slate-500 font-sans text-xs sm:text-[12.5px] font-semibold uppercase tracking-wider mb-6">
+                <div className="flex flex-wrap items-center gap-y-2.5 gap-x-6 py-3.5 border-b border-slate-200/80 font-sans text-xs sm:text-[12.5px] font-medium text-slate-600 mb-6">
                   {article.date && (
-                    <div className="flex items-center gap-1.5 text-red-600">
-                      <Calendar size={16} weight="fill" />
+                    <div className="flex items-center gap-2">
+                      <Calendar size={15} weight="bold" className="text-gold-dark" />
                       <span className="text-slate-700">{article.date}</span>
                     </div>
                   )}
                   {article.category && (
-                    <div className="flex items-center gap-1.5 text-red-600">
-                      <FolderSimple size={16} weight="fill" />
+                    <div className="flex items-center gap-2">
+                      <FolderSimple size={15} weight="bold" className="text-gold-dark" />
                       <span className="text-slate-700">
-                        {article.category}, ROHILKHAND MEDICAL COLLEGE & HOSPITAL
+                        {article.category}
                       </span>
                     </div>
                   )}
-                  <div className="flex items-center gap-1.5 text-red-600">
-                    <User size={16} weight="fill" />
-                    <span className="text-slate-700">BY BIU</span>
+                  <div className="flex items-center gap-2">
+                    <User size={15} weight="bold" className="text-gold-dark" />
+                    <span className="text-slate-700">BIU Editorial Desk</span>
                   </div>
                 </div>
 
@@ -172,87 +194,143 @@ export default function NewsDetailPage({
                   </p>
                 </div>
 
-                {/* Previous / Next Article Navigation Bar */}
-                <div className="mt-12 pt-6 border-t border-b border-slate-200/90 grid grid-cols-1 sm:grid-cols-2 gap-6 pb-6">
-                  {prevPost ? (
-                    <a
-                      href={`/news/${encodeURIComponent(prevPost.id)}`}
-                      className="group flex flex-col text-left cursor-pointer p-2 rounded-lg hover:bg-slate-50 transition-colors"
-                    >
-                      <span className="font-sans text-[11px] font-extrabold uppercase tracking-widest text-red-600 flex items-center gap-1.5 mb-1">
-                        <ArrowLeft size={13} weight="bold" className="transition-transform group-hover:-translate-x-1" />
-                        <span>PREVIOUS</span>
-                      </span>
-                      <h4 className="font-sans text-xs sm:text-[13px] font-medium text-slate-800 group-hover:text-cyan-900 transition-colors line-clamp-2 leading-snug">
-                        {prevPost.title}
-                      </h4>
-                    </a>
-                  ) : (
-                    <div />
-                  )}
+                {/* Modern Previous / Next Article Navigation */}
+                <div className="mt-12 pt-8 border-t border-slate-200/80">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                    {prevPost ? (
+                      <a
+                        href={`/news/${encodeURIComponent(prevPost.id)}`}
+                        className="group flex flex-col justify-between py-1 text-left transition-all duration-200"
+                      >
+                        <div className="flex items-center gap-1.5 text-[11px] font-black uppercase tracking-widest text-gold-dark mb-1.5">
+                          <ArrowLeft size={13} weight="bold" className="transition-transform group-hover:-translate-x-1" />
+                          <span>Previous Story</span>
+                        </div>
+                        <h4 className="font-fraunces text-[15px] sm:text-[15px] font-semibold text-[#0c2340] group-hover:text-cyan-900 group-hover:underline decoration-[#0c2340]/40 transition-colors line-clamp-2 leading-snug">
+                          {prevPost.title}
+                        </h4>
+                        {prevPost.date && (
+                          <span className="text-[11px] text-slate-400 font-medium mt-1.5">
+                            {prevPost.date}
+                          </span>
+                        )}
+                      </a>
+                    ) : (
+                      <div className="hidden sm:block" />
+                    )}
 
-                  {nextPost && (
-                    <a
-                      href={`/news/${encodeURIComponent(nextPost.id)}`}
-                      className="group flex flex-col text-left sm:text-right cursor-pointer p-2 rounded-lg hover:bg-slate-50 transition-colors"
-                    >
-                      <span className="font-sans text-[11px] font-extrabold uppercase tracking-widest text-red-600 flex items-center sm:justify-end gap-1.5 mb-1">
-                        <span>NEXT</span>
-                        <ArrowRight size={13} weight="bold" className="transition-transform group-hover:translate-x-1" />
-                      </span>
-                      <h4 className="font-sans text-xs sm:text-[13px] font-medium text-slate-800 group-hover:text-cyan-900 transition-colors line-clamp-2 leading-snug">
-                        {nextPost.title}
-                      </h4>
-                    </a>
-                  )}
+                    {nextPost ? (
+                      <a
+                        href={`/news/${encodeURIComponent(nextPost.id)}`}
+                        className="group flex flex-col justify-between py-1 text-left sm:text-right transition-all duration-200"
+                      >
+                        <div className="flex items-center sm:justify-end gap-1.5 text-[11px] font-black uppercase tracking-widest text-gold-dark mb-1.5">
+                          <span>Next Story</span>
+                          <ArrowRight size={13} weight="bold" className="transition-transform group-hover:translate-x-1" />
+                        </div>
+                        <h4 className="font-fraunces text-[15px] sm:text-[15px] font-semibold text-[#0c2340] group-hover:text-cyan-900 group-hover:underline decoration-[#0c2340]/40 transition-colors line-clamp-2 leading-snug">
+                          {nextPost.title}
+                        </h4>
+                        {nextPost.date && (
+                          <span className="text-[11px] text-slate-400 font-medium mt-1.5">
+                            {nextPost.date}
+                          </span>
+                        )}
+                      </a>
+                    ) : null}
+                  </div>
                 </div>
 
-                {/* Social Share Bar */}
-                <div className="flex items-center gap-3 py-4 text-slate-500 text-sm">
-                  <span className="font-sans text-xs font-bold uppercase tracking-wider text-slate-400 mr-2">
-                    Share This:
-                  </span>
-                  <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-[#1877f2] hover:text-white transition-all cursor-pointer"
-                    aria-label="Share on Facebook"
-                  >
-                    <FacebookLogo size={16} weight="fill" />
-                  </a>
-                  <a
-                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-[#1da1f2] hover:text-white transition-all cursor-pointer"
-                    aria-label="Share on Twitter"
-                  >
-                    <TwitterLogo size={16} weight="fill" />
-                  </a>
-                  <a
-                    href={`https://www.linkedin.com/shareArticle?mini=true&title=${encodeURIComponent(article.title)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-[#0a66c2] hover:text-white transition-all cursor-pointer"
-                    aria-label="Share on LinkedIn"
-                  >
-                    <LinkedinLogo size={16} weight="fill" />
-                  </a>
-                  <a
-                    href={`https://pinterest.com/pin/create/button/?description=${encodeURIComponent(article.title)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-[#bd081c] hover:text-white transition-all cursor-pointer"
-                    aria-label="Share on Pinterest"
-                  >
-                    <PinterestLogo size={16} weight="fill" />
-                  </a>
+                {/* Refined Social Share & Interaction Bar (Merged seamlessly into background) */}
+                <div className="mt-10 pt-8 border-t border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="flex items-center gap-2">
+                    {/* <span className="w-1.5 h-4 bg-gold rounded-full" /> */}
+                    <span className="font-sans text-xs font-bold uppercase tracking-wider text-[#0c2340]">
+                      Share this article
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    {/* WhatsApp */}
+                    <a
+                      href={`https://api.whatsapp.com/send?text=${encodeURIComponent(article.title + ' ' + (typeof window !== 'undefined' ? window.location.href : ''))}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200/90 bg-white text-slate-600 shadow-2xs hover:border-[#0c2340] hover:bg-[#0c2340] hover:text-white transition-all duration-200 cursor-pointer"
+                      aria-label="Share on WhatsApp"
+                      title="Share on WhatsApp"
+                    >
+                      <WhatsappLogo size={18} weight="fill" />
+                    </a>
+
+                    {/* LinkedIn */}
+                    <a
+                      href={`https://www.linkedin.com/shareArticle?mini=true&title=${encodeURIComponent(article.title)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200/90 bg-white text-slate-600 shadow-2xs hover:border-[#0c2340] hover:bg-[#0c2340] hover:text-white transition-all duration-200 cursor-pointer"
+                      aria-label="Share on LinkedIn"
+                      title="Share on LinkedIn"
+                    >
+                      <LinkedinLogo size={18} weight="fill" />
+                    </a>
+
+                    {/* Twitter / X */}
+                    <a
+                      href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200/90 bg-white text-slate-600 shadow-2xs hover:border-[#0c2340] hover:bg-[#0c2340] hover:text-white transition-all duration-200 cursor-pointer"
+                      aria-label="Share on X"
+                      title="Share on X"
+                    >
+                      <TwitterLogo size={18} weight="fill" />
+                    </a>
+
+                    {/* Facebook */}
+                    <a
+                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200/90 bg-white text-slate-600 shadow-2xs hover:border-[#0c2340] hover:bg-[#0c2340] hover:text-white transition-all duration-200 cursor-pointer"
+                      aria-label="Share on Facebook"
+                      title="Share on Facebook"
+                    >
+                      <FacebookLogo size={18} weight="fill" />
+                    </a>
+
+                    {/* Copy Link Button */}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (typeof navigator !== 'undefined' && navigator.clipboard) {
+                          navigator.clipboard.writeText(window.location.href);
+                          setCopied(true);
+                          setTimeout(() => setCopied(false), 2500);
+                        }
+                      }}
+                      className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-slate-200/90 bg-white px-3 text-xs font-semibold font-sans text-slate-600 shadow-2xs hover:border-[#0c2340] hover:bg-[#0c2340] hover:text-white transition-all duration-200 cursor-pointer"
+                      aria-label="Copy link"
+                      title={copied ? "Link Copied!" : "Copy Link"}
+                    >
+                      {copied ? (
+                        <>
+                          <Check size={16} weight="bold" className="text-emerald-500" />
+                          <span>Copied!</span>
+                        </>
+                      ) : (
+                        <>
+                          <LinkSimple size={16} weight="bold" />
+                          <span>Copy Link</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </div>
 
-                {/* Leave a Reply Section */}
-                <div className="mt-10 pt-8 border-t border-slate-200/90 text-left">
-                  <h3 className="font-times text-2xl font-semibold text-[#0c2340]">
+                {/* Leave a Comment or Reply Section */}
+                <div className="mt-5 pt-10 border-t border-slate-200/80 text-left">
+                  <h3 className="font-times text-2xl sm:text-3xl font-medium text-[#0c2340]">
                     Leave a Reply
                   </h3>
                   <p className="mt-1 text-xs text-slate-500 font-sans">
@@ -260,83 +338,96 @@ export default function NewsDetailPage({
                   </p>
 
                   {commentSubmitted ? (
-                    <div className="mt-6 rounded-lg bg-emerald-50 border border-emerald-200 p-4 text-emerald-800 text-xs sm:text-sm font-medium">
-                      ✓ Thank you! Your comment has been submitted for moderation.
+                    <div className="mt-6 rounded-xl bg-emerald-50 border border-emerald-200 p-5 text-emerald-800 text-xs sm:text-sm font-medium flex items-center gap-3">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                        <Check size={18} weight="bold" />
+                      </div>
+                      <div>
+                        <p className="font-bold">Thank you for sharing!</p>
+                        <p className="text-xs text-emerald-700 mt-0.5">Your response has been submitted to the editorial desk.</p>
+                      </div>
                     </div>
                   ) : (
-                    <form onSubmit={handleCommentSubmit} className="mt-6 space-y-4">
+                    <form onSubmit={handleCommentSubmit} className="mt-6 space-y-4.5 bg-white p-6 sm:p-7 rounded-2xl border border-slate-200/80 shadow-2xs">
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div>
-                          <label className="block text-xs font-semibold text-slate-700 mb-1">
-                            Name <span className="text-red-500">*</span>
+                          <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                            Your Name <span className="text-red-500">*</span>
                           </label>
                           <input
                             type="text"
                             required
+                            placeholder="e.g. Dr. A. Sharma"
                             value={commentForm.name}
                             onChange={(e) => setCommentForm({ ...commentForm, name: e.target.value })}
-                            className="w-full rounded-md border border-slate-200 bg-slate-100/70 px-3.5 py-2 text-xs font-sans text-slate-800 focus:bg-white focus:border-slate-400 focus:outline-none focus:ring-1 focus:ring-slate-300 transition-all"
+                            className="w-full rounded-lg border border-slate-300/80 bg-white px-3.5 py-2.5 text-xs font-sans text-slate-800 placeholder:text-slate-400 outline-none focus:border-[#0c2340] focus:ring-1 focus:ring-[#0c2340]/20 transition-all"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-slate-700 mb-1">
-                            Email <span className="text-red-500">*</span>
+                          <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                            Email Address <span className="text-red-500">*</span>
                           </label>
                           <input
                             type="email"
                             required
+                            placeholder="name@example.com"
                             value={commentForm.email}
                             onChange={(e) => setCommentForm({ ...commentForm, email: e.target.value })}
-                            className="w-full rounded-md border border-slate-200 bg-slate-100/70 px-3.5 py-2 text-xs font-sans text-slate-800 focus:bg-white focus:border-slate-400 focus:outline-none focus:ring-1 focus:ring-slate-300 transition-all"
+                            className="w-full rounded-lg border border-slate-300/80 bg-white px-3.5 py-2.5 text-xs font-sans text-slate-800 placeholder:text-slate-400 outline-none focus:border-[#0c2340] focus:ring-1 focus:ring-[#0c2340]/20 transition-all"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-slate-700 mb-1">
-                            Website
+                          <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                            Designation / Affiliation
                           </label>
                           <input
                             type="text"
+                            placeholder="e.g. Alumnus, Faculty, Student"
                             value={commentForm.website}
                             onChange={(e) => setCommentForm({ ...commentForm, website: e.target.value })}
-                            className="w-full rounded-md border border-slate-200 bg-slate-100/70 px-3.5 py-2 text-xs font-sans text-slate-800 focus:bg-white focus:border-slate-400 focus:outline-none focus:ring-1 focus:ring-slate-300 transition-all"
+                            className="w-full rounded-lg border border-slate-300/80 bg-white px-3.5 py-2.5 text-xs font-sans text-slate-800 placeholder:text-slate-400 outline-none focus:border-[#0c2340] focus:ring-1 focus:ring-[#0c2340]/20 transition-all"
                           />
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-2 pt-1">
-                        <input
-                          type="checkbox"
-                          id="saveInfoCheckbox"
-                          checked={commentForm.saveInfo}
-                          onChange={(e) => setCommentForm({ ...commentForm, saveInfo: e.target.checked })}
-                          className="h-3.5 w-3.5 rounded border-slate-300 text-[#0c2340] focus:ring-0 cursor-pointer"
-                        />
-                        <label htmlFor="saveInfoCheckbox" className="text-[11.5px] text-slate-600 cursor-pointer select-none">
-                          Save my name, email, and website in this browser for the next time I comment.
-                        </label>
-                      </div>
-
                       <div>
-                        <label className="block text-xs font-semibold text-slate-700 mb-1">
-                          Comment <span className="text-red-500">*</span>
+                        <label className="block text-xs font-semibold text-slate-700 mt-6 mb-1.5">
+                          Your Message / Comment <span className="text-red-500">*</span>
                         </label>
                         <textarea
                           required
-                          rows={5}
+                          rows={4}
+                          placeholder="Write your constructive message or congratulatory note..."
                           value={commentForm.comment}
                           onChange={(e) => setCommentForm({ ...commentForm, comment: e.target.value })}
-                          className="w-full rounded-md border border-slate-200 bg-slate-100/70 p-3 text-xs font-sans text-slate-800 focus:bg-white focus:border-slate-400 focus:outline-none focus:ring-1 focus:ring-slate-300 transition-all"
+                          className="w-full rounded-lg border border-slate-300/80 bg-white p-3.5 text-xs font-sans text-slate-800 placeholder:text-slate-400 outline-none focus:border-[#0c2340] focus:ring-1 focus:ring-[#0c2340]/20 transition-all"
                         />
                       </div>
 
-                      <button
-                        type="submit"
-                        className="rounded-md bg-[#00a3c4] hover:bg-[#008ba8] px-6 py-2.5 font-sans text-xs font-bold uppercase tracking-wider text-white shadow-xs transition-all active:scale-[0.98] cursor-pointer"
-                      >
-                        POST COMMENT
-                      </button>
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
+                        <div className="flex items-center gap-2">
+                          <input
+                            type="checkbox"
+                            id="saveInfoCheckbox"
+                            checked={commentForm.saveInfo}
+                            onChange={(e) => setCommentForm({ ...commentForm, saveInfo: e.target.checked })}
+                            className="h-4 w-4 rounded border-slate-300 text-[#0c2340] focus:ring-0 cursor-pointer"
+                          />
+                          <label htmlFor="saveInfoCheckbox" className="text-xs text-slate-600 cursor-pointer select-none">
+                            Save my name and email for future updates.
+                          </label>
+                        </div>
+
+                        <button
+                          type="submit"
+                          className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-6 py-2.5 font-sans text-xs font-bold uppercase tracking-wider text-white brightness-125 shadow-xs transition-all duration-200 hover:brightness-140 hover:shadow-md active:scale-[0.98] cursor-pointer"
+                        >
+                          <PaperPlaneTilt size={15} weight="bold" />
+                          <span>Submit Message</span>
+                        </button>
+                      </div>
                     </form>
                   )}
                 </div>
@@ -419,6 +510,58 @@ export default function NewsDetailPage({
                         </a>
                       );
                     })}
+                  </div>
+                </div>
+              </div>
+
+              {/* Recent Comments - Tree Structure Navigation */}
+              <div>
+                <div className="flex items-center justify-between pb-2.5 mb-5 border-b border-slate-200/80">
+                  <h3 className="font-times text-lg font-semibold text-[#0c2340] tracking-tight">
+                    Recent Comments
+                  </h3>
+                  <span className="w-6 h-[2px] bg-gold rounded-full" />
+                </div>
+
+                {/* Tree Structure Timeline */}
+                <div className="relative pl-5 before:absolute before:left-[7px] before:top-2 before:bottom-4 before:w-[1.5px] before:bg-slate-200">
+                  <div className="space-y-5">
+                    {recentComments.map((rc, cIdx) => (
+                      <div
+                        key={cIdx}
+                        className="group relative text-left pl-2.5 py-0.5 block transition-colors opacity-90 hover:opacity-100"
+                      >
+                        {/* Tree Branch Node & Connector */}
+                        <div className="absolute -left-5 top-1.5 flex items-center">
+                          <span className="w-2.5 h-2.5 rounded-full border-2 border-slate-300 bg-white transition-all duration-200 shadow-2xs group-hover:border-cyan-900 group-hover:bg-cyan-900 group-hover:scale-125" />
+                          <span className="w-3.5 h-[1.5px] bg-slate-200 group-hover:bg-cyan-900/50 transition-colors" />
+                        </div>
+
+                        <div className="flex flex-col">
+                          <div className="font-sans text-[12px] font-semibold text-slate-800 flex flex-wrap items-center gap-1">
+                            <span className="text-[#0c2340]">{rc.author}</span>
+                            <span className="text-slate-400 font-normal text-[11px]">on</span>
+                          </div>
+
+                          <a
+                            href={rc.articleLink}
+                            className="font-sans text-[12px] font-medium text-cyan-900 hover:underline line-clamp-1 mt-0.5"
+                          >
+                            {rc.articleTitle}
+                          </a>
+
+                          <p className="font-sans text-[11.5px] text-slate-600 line-clamp-2 mt-1 leading-[1.4] italic">
+                            "{rc.comment}"
+                          </p>
+
+                          {rc.date && (
+                            <span className="text-[10.5px] text-slate-400 font-normal mt-1">
+                              {rc.date}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
