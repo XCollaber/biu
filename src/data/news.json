@@ -4,12 +4,49 @@
   "viewAllLabel": "VIEW ALL",
   "posts": [
     {
+      "id": "world-heart-day-nursing",
+      "date": "Sep 29 2026",
+      "category": "Healthcare Awareness",
+      "title": "Rohilkhand College of Nursing Marks World Heart Day 2026 with Awareness Programme...",
+      "excerpt": "Organised with the theme 'Don't Miss a Beat', faculty and nursing students led community screenings and CPR workshops...",
+      "img": "/news/news1.jpg.jpeg",
+      "content": "Rohilkhand College of Nursing organised a comprehensive public health awareness programme on the occasion of World Heart Day 2026 under the theme 'Don't Miss a Beat'. The event featured key lectures by senior cardiologists from Rohilkhand Hospital, live demonstrations of basic life support (BLS) and CPR techniques for public bystanders, and free cardiovascular health check-ups for campus staff and local communities."
+    },
+    {
+      "id": "dr-medhavi-agarwal-amar-ujala-samman",
+      "date": "Sep 24 2026",
+      "category": "Faculty Recognition",
+      "title": "Dr. Medhavi Agarwal Honoured with Prestigious Amar Ujala Samarpan Samman...",
+      "excerpt": "Recognised for exemplary humanitarian contributions in clinical diagnostics and women health advocacy across the Rohilkhand region...",
+      "img": "/news/news2.jpg.jpeg",
+      "content": "Dr. Medhavi Agarwal of Bareilly International University was conferred the prestigious Amar Ujala Samarpan Samman in recognition of her tireless devotion to community healthcare, early oncology screening camps, and impactful leadership in clinical academic training. The award ceremony was attended by eminent dignitaries and healthcare leaders."
+    },
+    {
+      "id": "super-specialty-surgery-cancer",
+      "date": "Sep 18 2026",
+      "category": "Surgical Breakthrough",
+      "title": "Super Specialty Surgery: Elderly Cancer Patient Gets New Lease on Life...",
+      "excerpt": "A multidisciplinary team of surgeons and oncologists at Rohilkhand Medical College performed a high-risk 8-hour complex procedure...",
+      "img": "/news/news3.jpg.jpeg",
+      "content": "In a remarkable clinical milestone, the Department of Surgical Oncology and Anaesthesiology at Rohilkhand Medical College and Hospital successfully performed a complex 8-hour microvascular onco-reconstructive surgery on a 72-year-old cancer patient. The patient has recovered smoothly and was discharged with stable vitals, demonstrating the hospital's advanced tertiary care capabilities."
+    },
+    {
+      "id": "msc-nursing-farewell-2026",
+      "date": "Sep 10 2026",
+      "category": "Academic Event",
+      "title": "Rohilkhand College of Nursing Celebrates M.Sc Nursing Farewell & Accolades...",
+      "excerpt": "Graduating postgraduates celebrated for clinical excellence, research publications, and national hospital placements...",
+      "img": "/news/news4.jpg.jpeg",
+      "content": "The outgoing batch of M.Sc Nursing students was felicitated during a vibrant valedictory ceremony at Rohilkhand College of Nursing. Senior faculty commended the scholars for their outstanding clinical rotations during epidemic management and recognized top paper presenters with university merit certificates."
+    },
+    {
       "id": "arise-symposium-biu-faculty",
       "date": "Apr 2 2026",
       "category": "Research Symposium",
       "title": "ARISE Symposium for BIU Faculty & Clinical Scholars...",
       "excerpt": "Dr. Onkar N. Tiwari, Department of Biotechnology and Clinical Research presented key findings on precision diagnostic algorithms...",
-      "img": "/news/news1.jpg.jpeg"
+      "img": "/news/ChatGPT Image Sep 30, 2026, 10_32_38 AM.png",
+      "content": "The annual ARISE Research Symposium brought together faculty members, doctoral fellows, and resident physicians to deliberate on translational medical research, intellectual property filing, and high-throughput data analysis in modern clinical pathology."
     },
     {
       "id": "biu-placement-drive-2026",
@@ -17,7 +54,8 @@
       "category": "Placement Milestone",
       "title": "BIU Campus Placement Drive 2026 Achieves Record Package...",
       "excerpt": "Bareilly International University placement cell achieves record recruitment offers across medical, pharmacy, nursing, and management streams...",
-      "img": "/news/news2.jpg.jpeg"
+      "img": "/news/ChatGPT Image Sep 30, 2026, 10_37_18 AM.png",
+      "content": "The Central Training & Placement Cell concluded the 2026 Annual Recruitment Drive with stellar placements in multinational pharmaceuticals, tertiary hospital chains, healthcare analytics firms, and corporate consultancies, marking a 32% year-over-year increase in top-tier placement offers."
     },
     {
       "id": "glimpse-into-progressive-research",
@@ -25,7 +63,8 @@
       "category": "Clinical Research",
       "title": "A Glimpse into Progressive Medical Research: AI & Care...",
       "excerpt": "With the aim of promoting cutting-edge research across various healthcare fields, Rohilkhand Medical College inaugurates AI lab...",
-      "img": "/news/news3.jpg.jpeg"
+      "img": "/news/news1.jpg.jpeg",
+      "content": "Rohilkhand Medical College has established a dedicated Artificial Intelligence in Healthcare incubation laboratory to accelerate deep learning-assisted radiological imaging, pathology slide analysis, and tele-triage systems for rural health centers."
     },
     {
       "id": "biu-global-academic-alliances",
@@ -33,7 +72,8 @@
       "category": "Global Partnerships",
       "title": "BIU Expands Strategic Global Academic Alliances & MoUs...",
       "excerpt": "In a significant stride towards strengthening global healthcare and research collaboration, BIU signs MoU with leading international bodies...",
-      "img": "/news/news4.jpg.jpeg"
+      "img": "/news/news2.jpg.jpeg",
+      "content": "BIU formalized international academic partnerships with premier medical and pharmaceutical institutions across the UK and Asia to facilitate student-faculty exchange programmes, joint grant writing, and collaborative dual-degree initiatives."
     },
     {
       "id": "biu-national-med-conclave-2026",
@@ -41,7 +81,8 @@
       "category": "Medical Conference",
       "title": "Annual National Medical Conclave Hosted at BIU Auditorium...",
       "excerpt": "Over 500 leading doctors and surgeons from across India gathered for keynote surgical workshops and clinical diagnostics sessions...",
-      "img": "/news/ChatGPT Image Sep 30, 2026, 10_32_38 AM.png"
+      "img": "/news/news3.jpg.jpeg",
+      "content": "Over 500 medical professionals attended the three-day National Medical Conclave hosted by BIU. Key topics included robotic laparoscopic surgery, antimicrobial resistance protocols, and organ transplantation advancements."
     },
     {
       "id": "biu-sports-meet-trophy",
@@ -49,7 +90,8 @@
       "category": "Campus Life",
       "title": "Inter-Collegiate Annual Sports Meet Concludes with Grand Gala...",
       "excerpt": "Students from medical, pharmacy, nursing, and dental faculties competed in athletics, football, basketball, and badminton tournaments...",
-      "img": "/news/ChatGPT Image Sep 30, 2026, 10_37_18 AM.png"
+      "img": "/news/news4.jpg.jpeg",
+      "content": "The university stadium witnessed electrifying competition across 18 athletic disciplines during the week-long Inter-Collegiate Annual Sports Meet. Rohilkhand Medical College lifted the overall championship trophy amid spirited student celebrations."
     },
     {
       "id": "biu-ayurveda-herbal-garden",
@@ -57,7 +99,8 @@
       "category": "Ayurveda Research",
       "title": "Advanced Botanical Medicinal Garden Inaugurated on Campus...",
       "excerpt": "The Department of Dravyaguna inaugurates a state-of-the-art research garden cultivating over 300 rare Himalayan healing herbs...",
-      "img": "/gallery/biu-campus10.webp"
+      "img": "/gallery/biu-campus10.webp",
+      "content": "Spanning over 5 lush acres, the new medicinal botanical garden houses rare therapeutic flora for pharmacognosy research, standardisation of Ayurvedic formulations, and experiential learning for BAMS scholars."
     },
     {
       "id": "biu-community-health-camps",
@@ -65,7 +108,8 @@
       "category": "Community Outreach",
       "title": "Free Rural Healthcare & Dental Camps Benefiting Thousands...",
       "excerpt": "Rohilkhand Medical College doctors conducted comprehensive free health checkups and medicine distributions across 12 rural blocks...",
-      "img": "/gallery/biu-campus11.webp"
+      "img": "/gallery/biu-campus11.webp",
+      "content": "As part of its institutional social responsibility, BIU's mobile medical units and dental clinics provided free diagnostic tests, dental checkups, and free medicines to more than 4,500 underprivileged villagers across Western Uttar Pradesh."
     }
   ]
 }
