@@ -89,11 +89,11 @@ export default function PublicDisclosureExplorer() {
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
         {/* Toolbar: Search, Custom Section Dropdown & Print (embedded directly on background) */}
         <div className="mb-6">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-end gap-2.5 sm:gap-2.5">
             {/* Search Input - Replicated from News Page */}
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="relative flex items-center w-full max-w-[435px]"
+              className="relative flex items-center w-full sm:w-[380px] md:w-[420px] max-w-[435px]"
             >
               <input
                 type="text"
@@ -120,8 +120,8 @@ export default function PublicDisclosureExplorer() {
               </button>
             </form>
 
-            {/* Right Hand Side: Custom Dropdown & Print Button */}
-            <div className="flex flex-wrap items-center gap-2.5 self-end md:self-auto">
+            {/* Custom Dropdown & Print Button Group */}
+            <div className="flex items-center gap-2.5">
               {/* Custom Category Dropdown */}
               <div className="relative w-40 sm:w-44" ref={dropdownRef}>
                 <button
