@@ -75,8 +75,8 @@ export default function PublicDisclosureExplorer() {
   }, [filteredCategories]);
 
   return (
-    <section className="w-full py-8 sm:py-12 font-sans bg-[#f8fafc]">
-      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-12">
+    <section className="w-full py-8 sm:py-12 font-sans bg-[#fbfbfd]">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
         {/* Quick Statutory Downloads Strip */}
         <div className="mb-6 p-4 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3 pb-2.5 border-b border-slate-100">
