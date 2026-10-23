@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import {
   MagnifyingGlass,
   FilePdf,
@@ -10,14 +10,28 @@ import {
   PhoneCall,
   EnvelopeSimple,
   Check,
-  Copy
+  Copy,
+  Funnel,
+  CaretDown
 } from '@phosphor-icons/react';
 import disclosureData from '../../data/disclosure.json';
 
 export default function PublicDisclosureExplorer() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [copiedId, setCopiedId] = useState(null);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const categories = disclosureData.categories || [];
   const quickDownloads = disclosureData.pageHeader?.quickDownloads || [];
@@ -77,6 +91,145 @@ export default function PublicDisclosureExplorer() {
   return (
     <section className="w-full py-8 sm:py-12 font-sans bg-[#fbfbfd]">
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
+        {/* Toolbar: Search, Custom Section Dropdown, Items Count & Print */}
+        <div className="bg-white rounded-xl p-3 sm:p-3.5 border border-slate-200/90 shadow-xs mb-6">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+            {/* Search Input - Replicated from News Page */}
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="relative flex items-center flex-1 max-w-xl"
+            >
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search disclosures (e.g., Act, RTI, Finance, Fees, Ombudsperson)..."
+                className="w-full rounded-lg border border-slate-300/80 bg-white/70 backdrop-blur-xs pl-3.5 pr-24 py-2 font-sans text-xs text-slate-800 placeholder:text-slate-400 outline-none focus:outline-none focus-visible:outline-none focus:border-slate-400 focus:bg-white focus:ring-1 focus:ring-slate-300/60 transition-all shadow-2xs"
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-20 top-1/2 -translate-y-1/2 text-slate-500 hover:text-rose-600 p-2 cursor-pointer"
+                  title="Clear search"
+                >
+                  <X size={16} />
+                </button>
+              )}
+              <button
+                type="submit"
+                className="absolute right-1 top-1 bottom-1 rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-3.5 font-sans text-[11px] font-bold uppercase tracking-wider text-white brightness-125 transition-all duration-200 hover:brightness-140 hover:shadow-sm active:scale-[0.98] cursor-pointer"
+              >
+                Search
+              </button>
+            </form>
+
+            {/* Right Hand Side: Custom Dropdown, Count, Print */}
+            <div className="flex flex-wrap items-center gap-2.5 self-end md:self-auto">
+              {/* Custom Category Dropdown */}
+              <div className="relative w-48 sm:w-52" ref={dropdownRef}>
+                <button
+                  type="button"
+                  onClick={() => setIsDropdownOpen((prev) => !prev)}
+                  className="w-full inline-flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-slate-200 hover:border-slate-300 bg-slate-50/70 hover:bg-slate-100/70 text-xs font-semibold text-[#0c2340] shadow-2xs transition-all duration-150 cursor-pointer"
+                  aria-expanded={isDropdownOpen}
+                  aria-haspopup="listbox"
+                >
+                  <div className="flex items-center gap-1.5 truncate">
+                    <Funnel size={15} className="text-slate-600/70 shrink-0" weight="bold" />
+                    <span className="truncate">
+                      {selectedCategory === 'all'
+                        ? 'All Sections (10)'
+                        : `${categories.find((c) => c.id === selectedCategory)?.number}. ${
+                            categories.find((c) => c.id === selectedCategory)?.shortTitle
+                          }`}
+                    </span>
+                  </div>
+                  <CaretDown
+                    size={12}
+                    weight="bold"
+                    className={`text-slate-500 transition-transform duration-200 shrink-0 ${
+                      isDropdownOpen ? 'rotate-180 text-[#0c2340]' : ''
+                    }`}
+                  />
+                </button>
+
+                {/* Dropdown Menu Panel - Exact same width as button */}
+                {isDropdownOpen && (
+                  <div
+                    role="listbox"
+                    className="absolute left-0 right-0 top-full mt-1 w-full max-h-80 overflow-y-auto rounded-xl bg-white border border-slate-200 shadow-lg z-30 font-sans"
+                  >
+                    <button
+                      type="button"
+                      role="option"
+                      aria-selected={selectedCategory === 'all'}
+                      onClick={() => {
+                        setSelectedCategory('all');
+                        setIsDropdownOpen(false);
+                      }}
+                      className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between transition-colors cursor-pointer ${
+                        selectedCategory === 'all'
+                          ? 'bg-blue-50/80 text-[#0c2340] font-bold'
+                          : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900 font-medium'
+                      }`}
+                    >
+                      <span className="truncate pr-1">All Sections (10)</span>
+                      {selectedCategory === 'all' && (
+                        <Check size={14} weight="bold" className="text-[#0c2340] shrink-0" />
+                      )}
+                    </button>
+
+                    {categories.map((cat) => {
+                      const isSelected = selectedCategory === cat.id;
+                      return (
+                        <button
+                          key={cat.id}
+                          type="button"
+                          role="option"
+                          aria-selected={isSelected}
+                          onClick={() => {
+                            setSelectedCategory(cat.id);
+                            setIsDropdownOpen(false);
+                          }}
+                          className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between transition-colors cursor-pointer ${
+                            isSelected
+                              ? 'bg-blue-50/80 text-[#0c2340] font-bold'
+                              : 'text-slate-700 hover:bg-slate-50 hover:text-cyan-900 font-medium'
+                          }`}
+                        >
+                          <span className="truncate pr-1">
+                            {cat.number}. {cat.shortTitle}
+                          </span>
+                          {isSelected && (
+                            <Check size={14} weight="bold" className="text-[#0c2340] shrink-0" />
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+
+              {/* Results Count */}
+              <span className="text-xs font-medium text-slate-600 bg-slate-100 px-2.5 py-2 rounded-lg border border-slate-200 tabular-nums">
+                {totalResultsCount} items
+              </span>
+
+              {/* Print Action */}
+              <button
+                type="button"
+                onClick={() => window.print()}
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-slate-200 hover:border-slate-300 text-slate-700 bg-white hover:bg-slate-50 text-xs font-semibold shadow-2xs transition-colors cursor-pointer"
+                title="Print Public Disclosure Table"
+              >
+                <Printer size={15} weight="bold" />
+                <span>Print Table</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
         {/* Quick Statutory Downloads Strip - Directly on page background */}
         <div className="mb-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
@@ -114,80 +267,6 @@ export default function PublicDisclosureExplorer() {
           </div>
         </div>
 
-        {/* Toolbar: Search, Category Filter Pills & Actions */}
-        <div className="bg-white rounded-xl p-4 border border-slate-200/90 shadow-xs mb-6">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3.5 border-b border-slate-100">
-            {/* Search Input */}
-            <div className="relative flex-1 max-w-xl">
-              <MagnifyingGlass
-                size={17}
-                className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
-              />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search table (e.g., Act, RTI, Finance, Academics, Fees, Ombudsperson)..."
-                className="w-full pl-9 pr-9 py-2 text-xs sm:text-sm text-slate-900 bg-slate-50/80 hover:bg-slate-50 focus:bg-white rounded-lg border border-slate-200 focus:border-[#0c2340] focus:ring-1 focus:ring-[#0c2340] transition-all outline-hidden"
-              />
-              {searchQuery && (
-                <button
-                  type="button"
-                  onClick={() => setSearchQuery('')}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1 cursor-pointer"
-                >
-                  <X size={14} />
-                </button>
-              )}
-            </div>
-
-            {/* Results Count & Print */}
-            <div className="flex items-center gap-2.5 self-end lg:self-auto">
-              <span className="text-xs font-medium text-slate-600 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200">
-                {totalResultsCount} items
-              </span>
-              <button
-                type="button"
-                onClick={() => window.print()}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 text-slate-700 bg-white hover:bg-slate-50 text-xs font-semibold shadow-2xs transition-colors cursor-pointer"
-                title="Print Public Disclosure Table"
-              >
-                <Printer size={15} weight="bold" />
-                <span>Print Table</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Category Filter Pills */}
-          <div className="pt-3 flex items-center gap-1.5 overflow-x-auto no-scrollbar scroll-smooth">
-            <button
-              type="button"
-              onClick={() => setSelectedCategory('all')}
-              className={`px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-150 cursor-pointer ${
-                selectedCategory === 'all'
-                  ? 'bg-[#0c2340] text-white shadow-2xs'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
-              }`}
-            >
-              All Sections (10)
-            </button>
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                type="button"
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`px-3 py-1 rounded-full text-xs whitespace-nowrap transition-all duration-150 cursor-pointer ${
-                  selectedCategory === cat.id
-                    ? 'bg-[#0c2340] text-white font-bold shadow-2xs'
-                    : 'bg-slate-100 text-slate-600 font-medium hover:bg-slate-200 hover:text-slate-900'
-                }`}
-              >
-                {cat.number}. {cat.shortTitle}
-              </button>
-            ))}
-          </div>
-        </div>
-
         {/* Empty State */}
         {filteredCategories.length === 0 ? (
           <div className="rounded-xl border border-slate-200 bg-white p-12 text-center my-6 shadow-2xs">
@@ -206,7 +285,7 @@ export default function PublicDisclosureExplorer() {
                 setSearchQuery('');
                 setSelectedCategory('all');
               }}
-              className="px-3.5 py-1.5 bg-[#0c2340] text-white rounded-lg text-xs font-bold hover:bg-[#1b3570] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 font-sans text-xs font-semibold uppercase tracking-wider text-white brightness-125 transition-all duration-200 hover:brightness-140 hover:shadow-sm active:scale-[0.98] cursor-pointer"
             >
               Reset Filters
             </button>
