@@ -28,9 +28,14 @@
         "url": "https://www.biu.edu.in/notice/RTI.pdf"
       },
       {
-        "title": "Fees Structure 2026",
+        "title": "Examination Ordinances",
         "type": "PDF",
-        "url": "https://www.biu.edu.in/notice/Fees-Structure-2025-26%20new.pdf"
+        "url": "https://biu.edu.in/ugc/Ordinances%20Pertaining%20to%20Examination.pdf"
+      },
+      {
+        "title": "Annual Report (UGC)",
+        "type": "PDF",
+        "url": "https://biu.edu.in/ugc/Annual%20Report.pdf"
       }
     ]
   },
@@ -338,9 +343,9 @@
         {
           "subtitle": "Fee Structure for Various Programs",
           "details": "Approved tuition fees, laboratory charges, hostel costs, security deposits, and examination fees for all academic courses.",
-          "link": "https://www.biu.edu.in/notice/Fees-Structure-2025-26%20new.pdf",
+          "link": "https://page.biu.edu.in/wp-content/uploads/2025/01/Brochure-BIU_compressed.pdf",
           "type": "pdf",
-          "label": "Approved Fee Structure 2025-26 (PDF)"
+          "label": "Approved Fee Structure (in Prospectus PDF)"
         },
         {
           "subtitle": "Fee Refund Policy",

@@ -29,7 +29,7 @@ export default function PublicDisclosurePage({ onBack }) {
 
         <div className="relative z-10 mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
           {/* Breadcrumb / Back button */}
-          <div className="mb-4 sm:mb-5 flex items-center gap-3">
+          <div className="mb-4 sm:mb-7 flex items-center gap-3">
             <a
               href="/"
               onClick={(e) => {
@@ -46,9 +46,9 @@ export default function PublicDisclosurePage({ onBack }) {
           </div>
 
           <div>
-            <div className="flex items-center gap-2.5 mb-1.5">
+            <div className="flex items-center gap-2.5 mb-2.5">
               <span className="w-8 h-[3.5px] bg-gold rounded-full" />
-              <span className="font-sans text-[12px] sm:text-xs font-black uppercase tracking-[0.22em] text-[#0c2340]">
+              <span className="font-sans text-[12px] sm:text-xs font-black uppercase tracking-[0.09em] text-[#0c2340]">
                 {header.badge || 'MANDATORY STATUTORY DISCLOSURE'}
               </span>
             </div>

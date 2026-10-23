@@ -77,36 +77,38 @@ export default function PublicDisclosureExplorer() {
   return (
     <section className="w-full py-8 sm:py-12 font-sans bg-[#fbfbfd]">
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
-        {/* Quick Statutory Downloads Strip */}
-        <div className="mb-6 p-4 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3 pb-2.5 border-b border-slate-100">
+        {/* Quick Statutory Downloads Strip - Directly on page background */}
+        <div className="mb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-3.5 bg-gold rounded-full" />
-              <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-[#0c2340]">
+              <span className="w-1.5 h-4 bg-gold rounded-full" />
+              <h2 className="text-xs font-bold uppercase tracking-[0.11em] text-[#0c2340]">
                 Quick Statutory Downloads
               </h2>
             </div>
-            <span className="text-[11px] text-slate-500 font-medium">
-              Mandatory Public Disclosures (Official PDFs)
+            <span className="text-[12px] text-slate-500 font-medium">
+              Official PDFs
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4">
             {quickDownloads.map((doc, idx) => (
               <a
                 key={idx}
                 href={doc.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between p-2.5 rounded-lg bg-slate-50/70 hover:bg-blue-50/40 border border-slate-200/80 hover:border-blue-300 transition-all duration-150"
+                className="group flex items-center justify-between gap-2 px-3 py-2.5 rounded-lg bg-white border border-slate-200/80 hover:border-cyan-700/40 hover:shadow-xs transition-all duration-150 min-w-0"
               >
-                <div className="flex items-center gap-2 min-w-0">
-                  <FilePdf size={18} weight="fill" className="text-red-600 shrink-0" />
-                  <span className="text-xs font-semibold text-[#0c2340] group-hover:text-blue-700 truncate">
+                <div className="flex items-center gap-3 min-w-0 flex-1">
+                  <div className="w-9 h-9 rounded-md bg-red-50 text-red-600 flex items-center justify-center shrink-0 border border-red-100 group-hover:scale-105 transition-transform">
+                    <FilePdf size={26} weight="fill" />
+                  </div>
+                  <span className="text-[12.5px] font-semibold text-[#0c2340] group-hover:text-cyan-800 truncate leading-tight">
                     {doc.title}
                   </span>
                 </div>
-                <DownloadSimple size={14} className="text-slate-400 group-hover:text-blue-700 shrink-0 ml-1.5" />
+                <DownloadSimple size={17} weight="bold" className="text-slate-400 group-hover:text-cyan-800 transition-colors shrink-0 ml-1" />
               </a>
             ))}
           </div>
