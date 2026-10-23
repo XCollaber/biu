@@ -156,12 +156,12 @@
   {
     "id": "academics",
     "label": "Academics",
-    "href": "https://biu.edu.in/programmes-offered.php",
+    "href": "/programmes",
     "sidebar": [
       {
         "title": "Programmes",
         "icon": "GraduationCap",
-        "href": "https://biu.edu.in/programmes-offered.php",
+        "href": "/programmes",
         "columns": [
           {
             "title": "Degree Programmes",
@@ -169,23 +169,23 @@
             "items": [
               {
                 "title": "Undergraduate Degrees",
-                "href": "https://biu.edu.in/programmes-offered.php",
+                "href": "/programmes",
                 "desc": "MBBS, BDS, BAMS, B.Sc Nursing, B.Pharm, BBA, BFA, BMLT",
                 "sublinks": [
-                  { "title": "Medical (MBBS)", "href": "https://biu.edu.in/medical.php" },
-                  { "title": "Dental (BDS)", "href": "https://biu.edu.in/dental.php" },
-                  { "title": "Nursing (B.Sc)", "href": "https://biu.edu.in/nursing.php" },
-                  { "title": "Pharmacy (B.Pharm)", "href": "https://biu.edu.in/pharmacy.php" }
+                  { "title": "Medical (MBBS)", "href": "/programmes?course=mbbs" },
+                  { "title": "Dental (BDS)", "href": "/programmes?course=bds" },
+                  { "title": "Nursing (B.Sc)", "href": "/programmes?course=bsc-nursing" },
+                  { "title": "Pharmacy (B.Pharm)", "href": "/programmes?course=b-pharm" }
                 ]
               },
               {
                 "title": "Postgraduate Degrees",
-                "href": "https://biu.edu.in/programmes-offered.php",
+                "href": "/programmes",
                 "desc": "MD, MS, MDS, M.Sc Nursing, M.Pharm, MBA, MFA",
                 "sublinks": [
-                  { "title": "Medical MD/MS", "href": "https://biu.edu.in/medical.php" },
-                  { "title": "Dental MDS", "href": "https://biu.edu.in/dental.php" },
-                  { "title": "MBA", "href": "https://biu.edu.in/management.php" }
+                  { "title": "Medical MD/MS", "href": "/programmes?course=md" },
+                  { "title": "Dental MDS", "href": "/programmes?course=mds" },
+                  { "title": "MBA", "href": "/programmes?course=mba-healthcare" }
                 ]
               }
             ]
@@ -481,21 +481,21 @@
   {
     "id": "research",
     "label": "Research & Innovation",
-    "href": "https://biu.edu.in/aboutrdc.php",
+    "href": "/research",
     "sidebar": [
       {
         "title": "Research",
         "icon": "Buildings",
-        "href": "https://biu.edu.in/aboutrdc.php",
+        "href": "/research",
         "columns": [
           {
             "title": "Research Framework",
             "icon": "Buildings",
             "items": [
-              { "title": "Research Development Centre", "href": "https://biu.edu.in/aboutrdc.php", "desc": "RDC hub promoting multi-disciplinary innovations" },
-              { "title": "Research Policy", "href": "https://biu.edu.in/research-policy.php", "desc": "Seed grants, institutional promotion & awards" },
-              { "title": "Code of Ethics", "href": "https://biu.edu.in/codeofethics.php", "desc": "Research integrity & bio-ethical standards" },
-              { "title": "DSIR / SIRO Recognition", "href": "https://biu.edu.in/research/dsir-siro.pdf", "desc": "Scientific & Industrial Research Organization certificate" }
+              { "title": "Research Development Centre", "href": "/research?tab=about-rdc", "desc": "RDC hub promoting multi-disciplinary innovations" },
+              { "title": "Research Policy", "href": "/research?tab=research-promotion-policy", "desc": "Seed grants, institutional promotion & awards" },
+              { "title": "Code of Ethics", "href": "/research?tab=code-of-ethics", "desc": "Research integrity & bio-ethical standards" },
+              { "title": "DSIR / SIRO Recognition", "href": "/research?tab=dsir-siro", "desc": "Scientific & Industrial Research Organization certificate" }
             ]
           }
         ]
@@ -503,16 +503,16 @@
       {
         "title": "Funding & Innovation",
         "icon": "Sparkle",
-        "href": "https://biu.edu.in/icmr-research-proposals",
+        "href": "/funding-and-innovations",
         "columns": [
           {
             "title": "Grants & Patents",
             "icon": "Sparkle",
             "items": [
-              { "title": "Research Grants", "href": "https://biu.edu.in/icmr-research-proposals", "desc": "National & international research funding proposals" },
-              { "title": "ICMR Funded Projects", "href": "https://biu.edu.in/icmr-funded-research-projects.php", "desc": "National medical research projects & clinical trials" },
-              { "title": "Patents", "href": "https://biu.edu.in/patents.php", "desc": "Intellectual property & published patent filings" },
-              { "title": "Incubation Centre (BMIIL)", "href": "http://bmiil.com/", "desc": "Startup incubation & healthcare innovation hub" }
+              { "title": "Research Grants", "href": "/funding-and-innovations?tab=research-grants", "desc": "National & international research funding proposals" },
+              { "title": "ICMR Funded Projects", "href": "/funding-and-innovations?tab=icmr-funded-projects", "desc": "National medical research projects & clinical trials" },
+              { "title": "Patents", "href": "/funding-and-innovations?tab=patents", "desc": "Intellectual property & published patent filings" },
+              { "title": "Incubation Centre (BMIIL)", "href": "/funding-and-innovations?tab=incubation-centre", "desc": "Startup incubation & healthcare innovation hub" }
             ]
           }
         ]

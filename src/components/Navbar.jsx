@@ -186,7 +186,7 @@ export default function Navbar() {
               <span className="font-newsreader text-[18px] sm:text-[19px] font-semibold text-slate-900">
                 {siteData.name || 'Bareilly International University'}
               </span>
-              <span className="font-fraunces text-[9px] uppercase tracking-[0.16em] text-[#0c2340]/85 font-semibold sm:text-[9.5px]">
+              <span className="font-fraunces text-[9px] uppercase tracking-[0.10em] text-[#0c2340]/85 font-semibold sm:text-[9.5px]">
                 {siteData.accreditation || 'UGC Approved | NAAC A+ Grade'}
               </span>
             </span>

@@ -6,6 +6,13 @@ import react from '@astrojs/react';
 export default defineConfig({
   // site: 'https://biu.edu.in',
   site: 'https://biu-edu.vercel.app',
+  server: { 
+    host: true,
+    allowedHosts: [
+      'implementation-pointed-basename-preventing.trycloudflare.com',
+      '.trycloudflare.com',
+    ],
+  },
   integrations: [react()],
   vite: {
     optimizeDeps: {

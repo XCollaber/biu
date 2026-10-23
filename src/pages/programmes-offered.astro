@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProgrammesPage from '../components/pages/ProgrammesPage.jsx';
+---
+
+<Layout
+  title="Programmes Offered | Bareilly International University (BIU) - Medical, Dental, Nursing, Pharmacy & Management"
+  description="Explore undergraduate, postgraduate, and doctoral degree programmes offered by Bareilly International University including MBBS, MD, MS, BDS, MDS, B.Sc Nursing, B.Pharm, and MBA. Comprehensive eligibility, duration, fees & admission guidance."
+>
+  <ProgrammesPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

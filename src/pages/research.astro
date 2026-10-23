@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResearchPage from '../components/pages/ResearchPage.jsx';
+---
+
+<Layout
+  title="Research & Development Centre (RDC) | Bareilly International University (BIU)"
+  description="Discover research initiatives, research promotion policies, code of ethics, DSIR/SIRO recognition, peer-reviewed journals, and clinical trials at Bareilly International University."
+>
+  <ResearchPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

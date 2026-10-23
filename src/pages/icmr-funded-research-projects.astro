@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FundingInnovationsPage from '../components/pages/FundingInnovationsPage.jsx';
+---
+
+<Layout
+  title="ICMR Funded Research Projects | Bareilly International University (BIU)"
+  description="Explore ICMR funded research projects, Short Term Studentship (STS) lists, and completion certificates at Bareilly International University."
+>
+  <FundingInnovationsPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

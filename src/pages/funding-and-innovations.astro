@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FundingInnovationsPage from '../components/pages/FundingInnovationsPage.jsx';
+---
+
+<Layout
+  title="Funding & Innovations | Bareilly International University (BIU)"
+  description="Explore research grants, ICMR funded projects, patents, and incubation at Bareilly Medtech & Innovation Incubation Lab (BMIIL), Bareilly International University."
+>
+  <FundingInnovationsPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

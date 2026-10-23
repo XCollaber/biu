@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResearchPage from '../components/pages/ResearchPage.jsx';
+---
+
+<Layout
+  title="Research Promotion Policy | Bareilly International University (BIU)"
+  description="Official Research Promotion Policy, Professional Development Policy, IPR & Consultancy Policy, and Innovation & Entrepreneurship Policy of Bareilly International University."
+>
+  <ResearchPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

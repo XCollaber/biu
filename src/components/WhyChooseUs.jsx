@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { 
   BookOpen, 
+  Bank,
   Buildings, 
   UsersThree, 
   FirstAidKit, 
@@ -13,7 +14,8 @@ const EASE = [0.16, 1, 0.3, 1];
 
 const ICON_MAP = {
   BookOpen,
-  Buildings,
+  Bank,
+  Buildings: Bank,
   UsersThree,
   FirstAidKit,
 };
@@ -42,81 +44,49 @@ export default function WhyChooseUs() {
       id="why-choose-us" 
       className="relative w-full bg-gradient-to-b from-[#fafbfc] via-white to-[#fafbfc] overflow-hidden py-12 sm:py-14 lg:py-15 font-sans border-b border-slate-100"
     >
-      {/* Top-Right Campus Watermark */}
-      <div className="pointer-events-none absolute top-0 right-0 w-[380px] sm:w-[500px] lg:w-[980px] h-[300px] sm:h-[360px] overflow-hidden select-none z-0">
-        <img
-          src="/biu-building.png"
-          alt=""
-          aria-hidden="true"
-          className="absolute -top-6 -right-8 w-full h-full object-contain object-right-top opacity-[0.18] filter contrast-125 brightness-95"
-        />
 
-        {/* Delicate bird silhouettes */}
-        <svg 
-          className="absolute top-10 right-56 w-10 h-6 text-blue-400/35 opacity-70" 
-          viewBox="0 0 50 30" 
-          fill="currentColor"
-        >
-          <path d="M10,15 Q15,5 25,12 Q35,5 40,15 Q30,10 25,15 Z" />
-          <path d="M30,22 Q34,14 42,19 Q50,14 54,22 Q46,18 42,22 Q38,18 30,22 Z" transform="scale(0.6) translate(10, -5)" />
-        </svg>
-      </div>
 
-      <div className="relative z-10 mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
-        {/* Section Header */}
-        <div className="max-w-3xl text-left mb-8 sm:mb-9">
+      <div className="relative z-10 mx-auto max-w-[1430px] px-5 sm:px-8 lg:px-12">
+        {/* Mobile Header (< lg): Introduces section cleanly on mobile before cards */}
+        <div className="block lg:hidden mb-6 text-left">
           {/* Eyebrow Tag */}
-          <div className="flex items-center gap-2.5 mb-2.5">
-            <span className="w-8 h-[3px] bg-[#F5C518] rounded-full" />
-            <span className="font-sans text-[11px] sm:text-xs font-black uppercase tracking-[0.22em] text-[#0c2340]">
-              {whyChooseUsData.badge || 'WHY CHOOSE US'}
+          <div className="flex items-center gap-2.5 mb-3.5">
+            <span className="w-8 h-[3.5px] bg-gold rounded-full" />
+            <span className="font-sans text-[12px] font-black uppercase tracking-[0.20em] text-[#0c2340]">
+              {whyChooseUsData.badge || 'WHY CHOOSE BIU'}
             </span>
           </div>
 
-          {/* Main Serif Heading */}
-          <motion.h2
-            initial={reduceMotion ? false : { opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, ease: EASE }}
-            className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] font-bold text-[#0c2340] leading-[1.16] tracking-tight mb-3"
-          >
+          {/* Main Heading */}
+          <h2 className="font-times text-2xl sm:text-3xl font-medium tracking-[0.01em] text-[#0c2340] leading-[1.14] mb-3">
             {whyChooseUsData.titleMain}{' '}
-            <span className="text-[#1b3570]">
-              {whyChooseUsData.titleHighlight}
-            </span>
-          </motion.h2>
+            <span className="text-[#1b3570]">{whyChooseUsData.titleHighlight}</span>
+          </h2>
 
           {/* Subtitle / Paragraph */}
-          <motion.p
-            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
-            className="font-sans text-xs sm:text-sm text-slate-600 font-normal leading-relaxed max-w-2xl"
-          >
+          <p className="font-sans text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
             {whyChooseUsData.description}
-          </motion.p>
+          </p>
         </div>
 
-        {/* Content Layout: Left Featured Initiative (5 cols) + Right 2x2 Feature Grid (7 cols) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
-          {/* Left Column: Featured Initiative Card + Carousel Dots */}
+        {/* Main 2-Column Grid: Left Column starts at heading level, capturing full vertical space */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+          {/* Left Column: Featured Initiative Card (5 cols) - Aligned with main heading */}
           <div 
-            className="lg:col-span-5 xl:col-span-5 flex flex-col justify-between"
+            className="lg:col-span-5 xl:col-span-5 flex flex-col lg:pt-[35px]"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            {/* Card Container */}
-            <div className="relative w-full h-[340px] sm:h-[370px] lg:h-[390px] rounded-2xl overflow-hidden shadow-sm border border-slate-200/80 bg-[#07162c] group">
-              {/* Background Slide Image with Fade Animation */}
-              <AnimatePresence mode="wait">
+            {/* Unified Card Container: 3/4 Aspect Ratio on Laptop */}
+            <div className="relative w-full aspect-[4/3] sm:aspect-[3/4] lg:aspect-[10/9] rounded-2xl overflow-hidden shadow-[0_4px_22px_-2px_rgba(12,35,64,0.12),0_2px_6px_rgba(12,35,64,0.06)] bg-slate-100 group">
+              {/* Full Card Background Image Carousel with Fast Smooth Crossfade */}
+              <AnimatePresence>
                 <motion.div
                   key={activeSlide}
-                  initial={{ opacity: 0, scale: 1.03 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5, ease: EASE }}
+                  transition={{ duration: 0.35, ease: 'easeOut' }}
                   className="absolute inset-0 w-full h-full"
                 >
                   <img
@@ -127,25 +97,25 @@ export default function WhyChooseUs() {
                 </motion.div>
               </AnimatePresence>
 
-              {/* Frosted Dark Glass Bottom Overlay Panel */}
-              <div className="absolute inset-x-0 bottom-0 bg-[#1c1206]/85 backdrop-blur-md border-t border-white/10 p-4 sm:p-5 z-10">
+              {/* Glassmorphism Gradient Blue Overlay Panel at Bottom (Compact) */}
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#041122]/95 via-[#081e3a]/80 via-[#0c2340]/40 to-transparent backdrop-blur-sm px-4.5 py-3.5 sm:px-5 sm:py-4 pt-6 sm:pt-4 z-10">
                 <div className="flex items-center justify-between gap-3">
-                  <div className="max-w-[78%] sm:max-w-xs">
+                  <div className="max-w-[80%] sm:max-w-xs">
                     {/* Tag + Gold Accent Line */}
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <span className="font-sans text-[10.5px] sm:text-[11px] font-black uppercase tracking-[0.18em] text-white/95">
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <span className="font-sans text-[10px] sm:text-[10.5px] font-black uppercase tracking-[0.16em] text-amber-200">
                         {currentInitiative.tag}
                       </span>
-                      <span className="w-8 h-[2.5px] bg-[#F5C518] rounded-full" />
+                      <span className="w-7 h-[2px] bg-amber-200 rounded-full" />
                     </div>
 
                     {/* Initiative Title */}
-                    <h3 className="font-serif text-lg sm:text-xl lg:text-[1.3rem] font-bold text-white leading-tight mb-1">
+                    <h3 className="font-times text-base sm:text-lg lg:text-[1.3rem] font-normal text-white leading-snug mb-1 drop-shadow-xs">
                       {currentInitiative.title}
                     </h3>
 
                     {/* Initiative Description */}
-                    <p className="font-sans text-xs sm:text-[12.5px] text-slate-200/90 font-normal leading-relaxed line-clamp-2">
+                    <p className="font-sans text-[11px] sm:text-[12px] text-slate-200/90 font-normal leading-relaxed line-clamp-1 sm:line-clamp-2">
                       {currentInitiative.description}
                     </p>
                   </div>
@@ -159,33 +129,56 @@ export default function WhyChooseUs() {
                       setActiveSlide((prev) => (prev + 1) % initiatives.length);
                     }}
                     aria-label={`Next initiative (currently: ${currentInitiative.title})`}
-                    className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white text-[#0c2340] flex items-center justify-center shadow-md shrink-0 transition-all duration-300 hover:scale-110 hover:bg-[#F5C518] active:scale-95 group-hover:shadow-lg cursor-pointer"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white text-[#0c2340] hover:text-[#0c2340] flex items-center justify-center shadow-md shrink-0 transition-all duration-300 hover:scale-110 hover:bg-gold-light active:scale-95 group-hover:shadow-lg cursor-pointer"
                   >
-                    <ArrowRight size={18} weight="bold" className="text-[#0c2340]" />
+                    <ArrowRight size={17} weight="bold" className="transition-colors duration-200" />
                   </button>
                 </div>
               </div>
             </div>
 
-            {/* Carousel Pagination Dots */}
-            <div className="flex items-center justify-center gap-2 mt-3.5">
-              {initiatives.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveSlide(idx)}
-                  aria-label={`Go to slide ${idx + 1}`}
-                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                    activeSlide === idx
-                      ? 'w-6 bg-[#0c2340]'
-                      : 'w-2 bg-blue-100 hover:bg-blue-200'
-                  }`}
-                />
-              ))}
-            </div>
           </div>
 
-          {/* Right Column: 2x2 Features Grid (7 cols, equal height parallel alignment) */}
-          <div className="lg:col-span-7 xl:col-span-7 grid grid-cols-1 sm:grid-cols-2 grid-rows-2 gap-4 h-full lg:h-[390px]">
+          {/* Right Column: Section Header at Top + 2x2 Feature Grid Below (7 cols) */}
+          <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-between h-full">
+            {/* Desktop Section Header (visible on lg:) */}
+            <div className="hidden lg:block text-left mb-6 lg:mb-7">
+              {/* Eyebrow Tag */}
+              <div className="flex items-center gap-2.5 mb-3.5">
+                <span className="w-8 h-[3.5px] bg-gold rounded-full" />
+                <span className="font-sans text-[12px] sm:text-[12px] font-black uppercase tracking-[0.20em] text-[#0c2340]">
+                  {whyChooseUsData.badge || 'WHY CHOOSE BIU'}
+                </span>
+              </div>
+
+              {/* Main Heading */}
+              <motion.h2
+                initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8, ease: EASE }}
+                className="font-times text-2xl sm:text-3xl md:text-4xl lg:text-[2.45rem] tracking-[0.01em] font-medium drop-shadow-xs text-[#0c2340] leading-[1.14] mb-3.5"
+              >
+                {whyChooseUsData.titleMain}{' '}
+                <span className="text-[#1b3570]">
+                  {whyChooseUsData.titleHighlight}
+                </span>
+              </motion.h2>
+
+              {/* Subtitle / Paragraph */}
+              <motion.p
+                initial={reduceMotion ? false : { opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8, ease: EASE, delay: 0.1 }}
+                className="font-sans text-xs sm:text-sm md:text-[14px] text-slate-600 font-normal leading-relaxed max-w-2xl"
+              >
+                {whyChooseUsData.description}
+              </motion.p>
+            </div>
+
+            {/* 2x2 Features Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-4.5 lg:gap-5 flex-1">
             {features.map((feature) => {
               const IconComponent = ICON_MAP[feature.icon] || BookOpen;
               return (
@@ -195,35 +188,39 @@ export default function WhyChooseUs() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15 }}
                   transition={{ duration: 0.5, ease: EASE }}
-                  className="bg-white rounded-2xl p-4.5 sm:p-5 border border-slate-200/80 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)] hover:shadow-md hover:border-slate-300 hover:-translate-y-0.5 transition-all duration-300 flex items-start gap-3.5 group h-full justify-between"
+                  className="bg-white rounded-2xl p-5 sm:p-5.5 lg:py-4 lg:px-3.5 border border-slate-200/80 shadow-[0_4px_22px_-2px_rgba(12,35,64,0.09),0_2px_6px_rgba(12,35,64,0.04),inset_0_1px_1px_rgba(255,255,255,0.9)] hover:shadow-[0_12px_30px_-4px_rgba(12,35,64,0.14),0_4px_10px_rgba(12,35,64,0.06)] hover:border-slate-300 hover:-translate-y-0.5 transition-all duration-300 flex items-start gap-4 sm:gap-3.5 group h-full justify-between"
                 >
-                  {/* Rounded Soft Gold Icon Container */}
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FEF9E7] flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105 group-hover:bg-[#fef08a]/60 mt-0.5">
-                    <IconComponent size={21} weight="fill" className="text-[#0c2340]" />
+                  {/* Circular Golden Border Icon Container (Matching About section) */}
+                  <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-white border-2 border-gold shadow-xs flex items-center justify-center shrink-0 text-[#0c2340] transition-transform duration-300 group-hover:scale-110 group-hover:shadow-md mt-0.5">
+                    <IconComponent
+                      size={27}
+                      weight="regular"
+                      className="[&_path]:stroke-current [&_path]:stroke-[0.8px] [&_path]:[stroke-linejoin:round]"
+                    />
                   </div>
 
                   {/* Feature Content */}
                   <div className="flex flex-col justify-between flex-1 min-w-0 h-full">
                     <div>
-                      {/* Feature Title */}
-                      <h3 className="font-serif text-[16px] sm:text-[17.5px] font-bold text-[#0c2340] mb-1 leading-snug">
+                      {/* Feature Title - Matching About section */}
+                      <h3 className="font-sans text-sm sm:text-[15px] font-bold text-[#0c2340] leading-snug mb-1">
                         {feature.title}
                       </h3>
 
-                      {/* Feature Description */}
-                      <p className="font-sans text-xs sm:text-[13px] text-slate-600 font-normal leading-relaxed mb-2.5 line-clamp-3">
+                      {/* Feature Description - Matching About section */}
+                      <p className="font-sans text-xs sm:text-[12.5px] text-slate-500 font-normal leading-relaxed mb-2 line-clamp-3">
                         {feature.description}
                       </p>
                     </div>
 
-                    {/* Read More Link */}
+                    {/* Explore Link */}
                     <a
                       href={feature.link}
-                      className="inline-flex items-center gap-1.5 font-sans text-xs sm:text-[12.5px] font-bold text-[#0c2340] hover:text-[#1b3570] transition-colors group/link mt-auto"
+                      className="inline-flex items-center gap-1.5 font-sans text-xs sm:text-[14px] font-bold text-[#0c2340]/80 hover:text-cyan-800 transition-colors group/link mt-auto"
                     >
-                      <span>Read More</span>
+                      <span>Explore</span>
                       <ArrowRight
-                        size={12}
+                        size={14}
                         weight="bold"
                         className="transition-transform duration-200 group-hover/link:translate-x-1"
                       />
@@ -234,26 +231,8 @@ export default function WhyChooseUs() {
             })}
           </div>
         </div>
-
-        {/* Bottom Center: Explore More CTA Button */}
-        <div className="mt-8 sm:mt-10 flex justify-center">
-          <motion.a
-            href={whyChooseUsData.ctaLink || '#programs'}
-            initial={reduceMotion ? false : { opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, ease: EASE }}
-            className="inline-flex items-center gap-2 px-7 py-2.5 rounded-full border border-[#8c6d3b]/50 text-[#694e22] bg-white hover:bg-[#694e22] hover:text-white transition-all duration-300 text-xs font-bold uppercase tracking-wider shadow-xs hover:shadow-md cursor-pointer group"
-          >
-            <span>{whyChooseUsData.ctaText || 'EXPLORE MORE'}</span>
-            <ArrowRight 
-              size={13} 
-              weight="bold" 
-              className="transition-transform duration-200 group-hover:translate-x-1" 
-            />
-          </motion.a>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
   );
 }

@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FundingInnovationsPage from '../components/pages/FundingInnovationsPage.jsx';
+---
+
+<Layout
+  title="Final Submitted ICMR Research Proposals | Bareilly International University (BIU)"
+  description="Explore final submitted ICMR research proposals and national competitive grants at Bareilly International University."
+>
+  <FundingInnovationsPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

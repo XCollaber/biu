@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FundingInnovationsPage from '../components/pages/FundingInnovationsPage.jsx';
+---
+
+<Layout
+  title="Patents & Design Registrations | Bareilly International University (BIU)"
+  description="Explore the published and awarded patents register of Bareilly International University researchers across Pharmacy, Dental, Nursing, and Healthcare."
+>
+  <FundingInnovationsPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

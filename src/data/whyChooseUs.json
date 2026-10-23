@@ -1,5 +1,5 @@
 {
-  "badge": "WHY CHOOSE US",
+  "badge": "WHY CHOOSE BIU",
   "titleMain": "A University Committed to a Healthier,",
   "titleHighlight": "Brighter Future",
   "description": "Bareilly International University (BIU) is dedicated to excellence in medical education, research, healthcare and societal impact, creating future-ready professionals who make a meaningful difference in the world.",
@@ -43,7 +43,7 @@
     },
     {
       "id": "institutions",
-      "icon": "Buildings",
+      "icon": "Bank",
       "title": "Constituent Institutions",
       "description": "Our constituent colleges, including Rohilkhand Medical College & Hospital, set benchmarks in education and healthcare.",
       "link": "#colleges"

@@ -1,0 +1,524 @@
+{
+  "pageHeader": {
+    "badge": "Grants & Intellectual Property",
+    "title": "Funding & Innovations",
+    "subtitle": "at BIU",
+    "description": "Catalyzing healthcare breakthroughs, national ICMR funded research projects, innovative medical device patents, and startup incubation at Bareilly Medtech & Innovation Incubation Lab."
+  },
+  "sections": [
+    {
+      "id": "research-grants",
+      "slug": "research-grants",
+      "name": "Research Grants",
+      "shortName": "Research Grants",
+      "icon": "HandCoins",
+      "badge": "ICMR Research Proposals",
+      "heading": "Final Submitted ICMR Research Proposals",
+      "description": "Official register of multidisciplinary research proposals submitted to the Indian Council of Medical Research (ICMR) by faculty members of Dental Sciences, Nursing, and Pharmacy.",
+      "pdfUrl": "https://biu.edu.in/research/Final%20Submitted%20ICMR%20Research%20Proposals.pdf",
+      "officialUrl": "https://biu.edu.in/icmr-research-proposals"
+    },
+    {
+      "id": "icmr-funded-projects",
+      "slug": "icmr-funded-projects",
+      "name": "ICMR Funded Projects",
+      "shortName": "ICMR Funded Projects",
+      "icon": "Flask",
+      "badge": "Short Term Studentship (STS)",
+      "heading": "ICMR Funded Research Projects",
+      "description": "Undergraduate and postgraduate medical research projects awarded under the prestigious Short Term Studentship (STS) scheme by the Indian Council of Medical Research (ICMR).",
+      "officialUrl": "https://biu.edu.in/icmr-funded-research-projects.php",
+      "subTabs": [
+        {
+          "id": "sts-list-2019-2025",
+          "tabLabel": "STS List 2019-2025",
+          "title": "STS List 2019-2025",
+          "badge": "Rohilkhand Medical College & Hospital, Bareilly",
+          "pdfUrl": "https://biu.edu.in/research/STS%20List%202019-2025.pdf"
+        },
+        {
+          "id": "sts-list-2019",
+          "tabLabel": "STS List 2019",
+          "title": "STS List 2019",
+          "badge": "Rohilkhand Medical College & Hospital, Bareilly",
+          "pdfUrl": "https://biu.edu.in/research/STS%20List%202019.pdf"
+        },
+        {
+          "id": "sts-completion-certificate",
+          "tabLabel": "STS Completion Certificate",
+          "title": "STS Completion Certificates",
+          "badge": "Indian Council of Medical Research (ICMR)",
+          "pdfUrl": "https://biu.edu.in/research/STS%20Completion%20Certificates.pdf"
+        }
+      ]
+    },
+    {
+      "id": "patents",
+      "slug": "patents",
+      "name": "Patents",
+      "shortName": "Patents",
+      "icon": "Certificate",
+      "badge": "Intellectual Property Register",
+      "heading": "List of Patents and the year they were published / awarded",
+      "description": "Comprehensive portfolio of patents and registered design innovations filed, published, and granted to BIU researchers across Pharmacy, Dental, Nursing, Humanities, and Allied Health Sciences.",
+      "downloadUrl": "https://biu.edu.in/research/patents/patents.xlsx",
+      "officialUrl": "https://biu.edu.in/patents.php",
+      "totalCount": 47,
+      "patents": [
+        {
+          "slNo": 1,
+          "patentNo": "2021103912",
+          "pdfUrl": "https://biu.edu.in/research/patents/2021103912.pdf",
+          "name": "Dr. Pushpendra Kannojia et. al.",
+          "department": "Pharmacy",
+          "title": "A POLYHERBAL FORMULATION TO PREVENT PROGRESSION OF ULCERATIVE COLITIS",
+          "year": "2021"
+        },
+        {
+          "slNo": 2,
+          "patentNo": "202221066691 A",
+          "pdfUrl": "https://biu.edu.in/research/patents/202221066691 A.pdf",
+          "name": "Dr. Ashutosh Agarwal et. al.",
+          "department": "Dental",
+          "title": "BIOLOGICAL EFFECTS OF DENTAL IMPLANT TREATMENT",
+          "year": "2022"
+        },
+        {
+          "slNo": 3,
+          "patentNo": "202231071601 A",
+          "pdfUrl": "https://biu.edu.in/research/patents/202231071601 A.pdf",
+          "name": "Dr. Manvi Chandra Agarwal et. al.",
+          "department": "Dental",
+          "title": "Implementation Of Low-Level Laser Therapy in Dentistry",
+          "year": "2022"
+        },
+        {
+          "slNo": 4,
+          "patentNo": "398673-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/398673-001.pdf",
+          "name": "Dr. Pushpendra Kannojia et. al.",
+          "department": "Pharmacy",
+          "title": "DIFFUSION CELL APPARATUS FOR EVALUATION OF DRUG RELEASE",
+          "year": "2023"
+        },
+        {
+          "slNo": 5,
+          "patentNo": "389213-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/389213-001.pdf",
+          "name": "Dr. Pushpendra Kannojia et. al.",
+          "department": "Pharmacy",
+          "title": "IOT BASED HIGH - PERFORMANCE LIQUID CHROMATOGRAPHY APPARATUS",
+          "year": "2023"
+        },
+        {
+          "slNo": 6,
+          "patentNo": "398360-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/398360-001.pdf",
+          "name": "Dr. Pushpendra Kannojia et. al.",
+          "department": "Pharmacy",
+          "title": "ADVANCED MICROREACTOR FOR NANOPARTICLES SYNTHESIS",
+          "year": "2023"
+        },
+        {
+          "slNo": 7,
+          "patentNo": "396934-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/396934-001.pdf",
+          "name": "Mr. Velladurai Narayanan et. al.",
+          "department": "Nursing",
+          "title": "Device to Monitor drug therapy",
+          "year": "2023"
+        },
+        {
+          "slNo": 8,
+          "patentNo": "202311029264 A",
+          "pdfUrl": "https://biu.edu.in/research/patents/202311029264 A.pdf",
+          "name": "Dr. Sanjeev Kumar et. al.",
+          "department": "Pharmacy",
+          "title": "Synthesis, Characterization, Anticancer Activity of Pyriding",
+          "year": "2023"
+        },
+        {
+          "slNo": 9,
+          "patentNo": "202311006681 A",
+          "pdfUrl": "https://biu.edu.in/research/patents/202311006681 A.pdf",
+          "name": "Mr. Pankaj Kumar Shankhdhar et. al.",
+          "department": "Pharmacy",
+          "title": "PROCESS FOR SYNTHESIS 1,2,4-TRIAZOLE DERIVATIVES WITH ANTICANCER ACTIVITY",
+          "year": "2023"
+        },
+        {
+          "slNo": 10,
+          "patentNo": "422766-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/422766-001.pdf",
+          "name": "Dr. Priyanka A. Masih et. al.",
+          "department": "Nursing",
+          "title": "ELECTRONIC STETHOSCOPE FOR TELEHEALTH",
+          "year": "2024"
+        },
+        {
+          "slNo": 11,
+          "patentNo": "439403-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/439403-001.pdf",
+          "name": "Dr. Manoj Kumar Hans et. al.",
+          "department": "Dental",
+          "title": "DENTAL DEVICE FOR CAVITY DEPTH ANALYSIS",
+          "year": "2024"
+        },
+        {
+          "slNo": 12,
+          "patentNo": "420395-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/420395-001.pdf",
+          "name": "Dr. Pushpendra Kannojia et. al.",
+          "department": "Pharmacy",
+          "title": "AI BASED DEVICE FOR MEASURING NERVE DAMAGE TO DIABETIC NEUROPATHY",
+          "year": "2024"
+        },
+        {
+          "slNo": 13,
+          "patentNo": "417939-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/417939-001.pdf",
+          "name": "Pankaj Kumar Shankhdhar et. al.",
+          "department": "Pharmacy",
+          "title": "ARTIFICIAL INTELLIGENCE BASED DIABETIC RETINOPATHY SCREENING MEDICAL DEVICE",
+          "year": "2024"
+        },
+        {
+          "slNo": 14,
+          "patentNo": "426062-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/426062-001.pdf",
+          "name": "Pratibha Charan et. al.",
+          "department": "Nursing",
+          "title": "PORTABLE BRAIN-SCANNER HEADSET DEVICE",
+          "year": "2024"
+        },
+        {
+          "slNo": 15,
+          "patentNo": "406893-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/406893-001.pdf",
+          "name": "Pankaj Kumar Shankhdhar et. al.",
+          "department": "Pharmacy",
+          "title": "AI BASED APPARATUS USED FOR NONINVASIVE MONITORING OF HEMOGLOBIN IN BLOOD",
+          "year": "2024"
+        },
+        {
+          "slNo": 16,
+          "patentNo": "418808-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/418808-001.pdf",
+          "name": "Amrit Pal Kaur et. al.",
+          "department": "Nursing",
+          "title": "HYPERTENSION MANAGING ASSISTANCE DEVICE",
+          "year": "2024"
+        },
+        {
+          "slNo": 17,
+          "patentNo": "406894-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/406894-001.pdf",
+          "name": "Pushpendra Kannojia et. al.",
+          "department": "Pharmacy",
+          "title": "NANOMATERIAL CHARACTERIZATION AND ANALYSIS DEVICE",
+          "year": "2024"
+        },
+        {
+          "slNo": 18,
+          "patentNo": "6373926",
+          "pdfUrl": "https://biu.edu.in/research/patents/6373926.pdf",
+          "name": "Dr. Pankaj Mishra et. al.",
+          "department": "Pharmacy",
+          "title": "FTIR SPECTROPHOTOMETER FOR ANALYSIS OF BIOACTIVE COMPONENTS OF MEDICINAL",
+          "year": "2024"
+        },
+        {
+          "slNo": 19,
+          "patentNo": "433560-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/433560-001.pdf",
+          "name": "Dr. Preeti Bhattacharya et. al.",
+          "department": "Dental",
+          "title": "PORTABLE BONE DENSITY ANALYSER",
+          "year": "2024"
+        },
+        {
+          "slNo": 20,
+          "patentNo": "202341086430 A",
+          "pdfUrl": "https://biu.edu.in/research/patents/202341086430 A.pdf",
+          "name": "Mr. Velladurai Narayanan et. al.",
+          "department": "Nursing",
+          "title": "Detecting Cyber-attacks in the internet of medical things using Fuzzy Logic and Lstm networks",
+          "year": "2024"
+        },
+        {
+          "slNo": 21,
+          "patentNo": "202421002717 A",
+          "pdfUrl": "https://biu.edu.in/research/patents/202421002717 A.pdf",
+          "name": "Mr. Velladurai Narayanan et. al.",
+          "department": "Nursing",
+          "title": "Smart healthcare analytics: Fuzzy logic approach to identify pandemic-prone diseases in preliminary stages",
+          "year": "2024"
+        },
+        {
+          "slNo": 22,
+          "patentNo": "406601-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/406601-001.pdf",
+          "name": "Mr. Velladurai Narayanan et. al.",
+          "department": "Nursing",
+          "title": "Portable device for measuring sugar level through saliva",
+          "year": "2024"
+        },
+        {
+          "slNo": 23,
+          "patentNo": "202411008743 A",
+          "pdfUrl": "https://biu.edu.in/research/patents/202411008743 A.pdf",
+          "name": "Dr. Manoj Hans et. al.",
+          "department": "Dental",
+          "title": "Biocomp Atible Nanomaterials for Pulp Regeberation",
+          "year": "2024"
+        },
+        {
+          "slNo": 24,
+          "patentNo": "417126-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/417126-001.pdf",
+          "name": "Mr. Velladurai Narayanan et. al.",
+          "department": "Nursing",
+          "title": "Device For Monitoring The Efficacy Of Herbal Treatment For Cancer In Animals",
+          "year": "2024"
+        },
+        {
+          "slNo": 25,
+          "patentNo": "418335-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/418335-001.pdf",
+          "name": "Akanksha Ellen Emmanuel et. al.",
+          "department": "Nursing",
+          "title": "Data Transmission Device",
+          "year": "2024"
+        },
+        {
+          "slNo": 26,
+          "patentNo": "202411060618 A",
+          "pdfUrl": "https://biu.edu.in/research/patents/202411060618 A.pdf",
+          "name": "Dr. Manoj Hans et. al.",
+          "department": "Dental",
+          "title": "Bioactive Nanoparticles For Controlled Drug Release In Endodontic Therapy",
+          "year": "2024"
+        },
+        {
+          "slNo": 27,
+          "patentNo": "450278-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/450278-001.pdf",
+          "name": "Dr. Priyanka A. Masih et. al.",
+          "department": "Nursing",
+          "title": "DEVICE FOR DETECTION OF HEPATITIS THROUGH BLOOD",
+          "year": "2025"
+        },
+        {
+          "slNo": 28,
+          "patentNo": "202541051432 A",
+          "pdfUrl": "https://biu.edu.in/research/patents/202541051432 A.pdf",
+          "name": "Mr. Velladurai Narayanan et. al.",
+          "department": "Nursing",
+          "title": "A Continuous Glucose Monitoring System Integrated with AI Algorithms for Real Time Insulin Dose Suggestions in Diabetic Care Managed by Nurses",
+          "year": "2025"
+        },
+        {
+          "slNo": 29,
+          "patentNo": "461473-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/461473-001.pdf",
+          "name": "Mr. Pankaj Kumar Shankhdhar et. al.",
+          "department": "Pharmacy",
+          "title": "AI-BASED APPARATUS MOLECULAR DOCKING AND DRUG DISCOVERY",
+          "year": "2025"
+        },
+        {
+          "slNo": 30,
+          "patentNo": "LD-20250174743",
+          "pdfUrl": "https://biu.edu.in/research/patents/LD-20250174743.pdf",
+          "name": "Dr. Manoj Kumar Hans et. al.",
+          "department": "DENTAL",
+          "title": "FLEXIBLE TUBE BASED EXTRACTOR SYSTEM",
+          "year": "2025"
+        },
+        {
+          "slNo": 31,
+          "patentNo": "469995-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/469995-001.pdf",
+          "name": "Dr. Manoj Kumar Hans et. al.",
+          "department": "DENTAL",
+          "title": "STANDARDIZED PRESSURE - CALIBRATED COMMUNITY PERIODONTAL INDEX OF TREATMENT NEEDS (CPITN) PROBE",
+          "year": "2025"
+        },
+        {
+          "slNo": 32,
+          "patentNo": "6455634",
+          "pdfUrl": "https://biu.edu.in/research/patents/6455634.pdf",
+          "name": "Dr. Abnish Singh et. al.",
+          "department": "Humanities",
+          "title": "AI Power Computer Device for Lterature Analysis",
+          "year": "2025"
+        },
+        {
+          "slNo": 33,
+          "patentNo": "6469399",
+          "pdfUrl": "https://biu.edu.in/research/patents/6469399.pdf",
+          "name": "Dr. Akanksha Singh et. al.",
+          "department": "Dental",
+          "title": "AI Power Computer Device for Lterature Analysis",
+          "year": "2025"
+        },
+        {
+          "slNo": 34,
+          "patentNo": "1236364",
+          "pdfUrl": "https://biu.edu.in/research/patents/1236364.pdf",
+          "name": "Dr. Akanksha Singh et. al.",
+          "department": "Dental",
+          "title": "AI-DRIVEN 4D ORAL LESION PROGRESSION ATLAS",
+          "year": "2025"
+        },
+        {
+          "slNo": 35,
+          "patentNo": "452714-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/452714-001.pdf",
+          "name": "Dr. Suyash Pratap Singh et. al.",
+          "department": "Dental",
+          "title": "Endodontically calibrated finger plugger for MTA placement.",
+          "year": "2025"
+        },
+        {
+          "slNo": 36,
+          "patentNo": "451867-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/451867-001.pdf",
+          "name": "Dr. Suyash Pratap Singh et. al.",
+          "department": "Dental",
+          "title": "DENTAL CAVITY PREPARATION DEVICE",
+          "year": "2025"
+        },
+        {
+          "slNo": 37,
+          "patentNo": "471764-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/471764-001.pdf",
+          "name": "Dr. Suyash Pratap Singh et. al.",
+          "department": "Dental",
+          "title": "RECHARGEABLE CORDLESS DENTAL CURING LIGHT WITH ROTATING HEAD",
+          "year": "2025"
+        },
+        {
+          "slNo": 38,
+          "patentNo": "447605-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/447605-001.pdf",
+          "name": "Dr. Pushpendra Kannojia et. al.",
+          "department": "Pharmacy",
+          "title": "Devices for Biodegradable Matrix for Encapsulation and Release of Phytomedicines",
+          "year": "2025"
+        },
+        {
+          "slNo": 39,
+          "patentNo": "6508769",
+          "pdfUrl": "https://biu.edu.in/research/patents/6508769.pdf",
+          "name": "Dr. Manoj Kr. Hans et. al.",
+          "department": "Dental",
+          "title": "Customised Matrix Band for Subgingival Margin Elevation",
+          "year": "2026"
+        },
+        {
+          "slNo": 40,
+          "patentNo": "471739-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/471739-001.pdf",
+          "name": "Dr. Akanksha Singh et. al.",
+          "department": "Dental",
+          "title": "Clot Retrieval Device",
+          "year": "2025"
+        },
+        {
+          "slNo": 41,
+          "patentNo": "473319-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/473319-001.pdf",
+          "name": "Mr. Pankaj Kumar Shankhdhar et al.",
+          "department": "Pharmacy",
+          "title": "AI Based Moisture Content Analyzer For Detection Of Moisture Content In Active Pharmaceutical Ingredients",
+          "year": "2025"
+        },
+        {
+          "slNo": 42,
+          "patentNo": "202511083773 A",
+          "pdfUrl": "https://biu.edu.in/research/patents/202511083773 A.pdf",
+          "name": "Ms. Megha Yadav et al",
+          "department": "Pharmacy",
+          "title": "Molecular Docking Of Natural Compounds For Treating Long Covid Induced Brain Fog",
+          "year": "2025"
+        },
+        {
+          "slNo": 43,
+          "patentNo": "6498537",
+          "pdfUrl": "https://biu.edu.in/research/patents/6498537.pdf",
+          "name": "Ms. Megha Yadav & Mr. Abhishek Sharma et al",
+          "department": "Pharmacy",
+          "title": "Laboratory Analysis Device",
+          "year": "2026"
+        },
+        {
+          "slNo": 44,
+          "patentNo": "202611020515 A",
+          "pdfUrl": "https://biu.edu.in/research/patents/202611020515 A.pdf",
+          "name": "Dr. Pankaj Kumar, Mrs. Suman, &Ms. Megha Yadav et al",
+          "department": "Pharmacy",
+          "title": "A Novel Standardized Herbal Formulation With Comprehensive Pharmacological And Chemical Evaluation For Therapeutic Applications",
+          "year": "2026"
+        },
+        {
+          "slNo": 45,
+          "patentNo": "503996-001",
+          "pdfUrl": "https://biu.edu.in/research/503996-001.pdf",
+          "name": "Dr. Madhusudan Astekar et al",
+          "department": "Dental",
+          "title": "\"SMART DIGITAL CLASSROOM MANAGEMENT DEVICE\"",
+          "year": "2026"
+        },
+        {
+          "slNo": 46,
+          "patentNo": "503992-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/503992-001.pdf",
+          "name": "Dr. Madhusudan Astekar et al",
+          "department": "Dental",
+          "title": "ADVANCED ARTIFICIAL INTELLIGENCE MANAGEMENT DEVICE",
+          "year": "2026"
+        },
+        {
+          "slNo": 47,
+          "patentNo": "503993-001",
+          "pdfUrl": "https://biu.edu.in/research/patents/503993-001.pdf",
+          "name": "Dr. Madhusudan Astekar et al",
+          "department": "Dental",
+          "title": "AI-BASED SMART MANAGEMENT DEVICE",
+          "year": "2026"
+        }
+      ]
+    },
+    {
+      "id": "incubation-centre",
+      "slug": "incubation-centre",
+      "name": "Incubation Centre",
+      "shortName": "Incubation Centre",
+      "icon": "RocketLaunch",
+      "badge": "Medtech & Healthcare Startups",
+      "heading": "Bareilly Medtech & Innovation Incubation Lab (BMIIL)",
+      "websiteUrl": "http://bmiil.com/",
+      "portalDisplay": "bmiil.com",
+      "description": "BMIIL is Bareilly International University's dedicated incubation centre fostering deep-tech healthcare innovation, medical devices, bio-pharma ventures, and student-led entrepreneurship with full hospital validation support.",
+      "stats": [
+        {
+          "value": "1000+",
+          "label": "Bed Clinical Testbed"
+        },
+        {
+          "value": "45+",
+          "label": "Patents & Designs"
+        },
+        {
+          "value": "6+",
+          "label": "Healthcare Specialities"
+        },
+        {
+          "value": "100%",
+          "label": "Incubation Support"
+        }
+      ]
+    }
+  ]
+}

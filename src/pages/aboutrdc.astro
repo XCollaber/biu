@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResearchPage from '../components/pages/ResearchPage.jsx';
+---
+
+<Layout
+  title="About Research Development Centre | Bareilly International University (BIU)"
+  description="Learn about the Research Development Centre (RDC) at Bareilly International University, subscribed digital databases (DELNET, DOAJ), and published research journals."
+>
+  <ResearchPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

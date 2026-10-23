@@ -1,0 +1,127 @@
+{
+  "pageHeader": {
+    "badge": "RESEARCH & INNOVATION",
+    "title": "Research & Development Cell",
+    "highlight": "at BIU",
+    "description": "Fostering interdepartmental and inter-institutional collaborative research programmes across Medical & Health Sciences, Dental, Pharmacy, Nursing, Allied Healthcare, and Technology.",
+    "helpline": "+91 70555 10700",
+    "email": "rdc@biu.edu.in"
+  },
+  "sections": [
+    {
+      "id": "about-rdc",
+      "slug": "about-research-development-centre",
+      "name": "About Research Development Centre",
+      "shortName": "About RDC",
+      "icon": "Buildings",
+      "type": "content",
+      "videoUrl": "https://biu.edu.in/research/BIU%20Research%20&%20Development%20Cell.mp4",
+      "videoTitle": "Welcome to BIU Research & Development Cell",
+      "paragraphs": [
+        "Bareilly International University (BIU) is committed to the pursuit of excellence in research and aims to achieve national and international recognition through interdepartmental and inter institutional collaborative research programmes across the spectrum of Medical & Health Science, Laboratory and Technology, Management, Nursing, Pharmacy as well as Dental Sciences. Research and developmental activities create and disseminate new knowledge in various domains, promotes innovation which will motivate better learning and teaching among faculties, students and research scholars of the University.",
+        "To lend a helping hand to the scholar burning the midnight oil, the University subscribes the following database providing access to thousands of journals in different disciplines for full text research articles and sector specific reports."
+      ],
+      "databases": [
+        {
+          "name": "DELNET",
+          "subtitle": "Developing Library Network",
+          "url": "https://delnet.in/",
+          "image": "https://biu.edu.in/static/photos/img/delnet.jpg",
+          "desc": "Network of over 7,500 institutions providing union catalog of books, periodicals, and inter-library loan facility."
+        },
+        {
+          "name": "DOAJ",
+          "subtitle": "Directory of Open Access Journals",
+          "url": "https://doaj.org/",
+          "image": "https://biu.edu.in/static/photos/img/doaj.png",
+          "desc": "Community-curated online directory that indexes and provides access to high quality, open access, peer-reviewed journals."
+        }
+      ],
+      "journalsSection": {
+        "title": "Journals",
+        "subtitle": "The University publishes the following journals on periodic basis:",
+        "journals": [
+          {
+            "name": "Journal of Dental Sciences & Oral Rehabilitation",
+            "shortName": "JDSOR",
+            "affiliation": "An Official Publication of Institute of Dental Sciences, Bareilly, Uttar Pradesh, India",
+            "url": "http://www.jdsor.com/",
+            "image": "https://biu.edu.in/static/photos/Pages/dental-journal-front.jpg",
+            "issn": "ISSN: 2231-1491 | e-ISSN: 2348-6171",
+            "frequency": "Quarterly Peer-Reviewed"
+          },
+          {
+            "name": "International Journal of Advanced & Integrated Medical Sciences",
+            "shortName": "IJAIMS",
+            "affiliation": "An Official Publication of the Society for Advanced and Integrated Medical Sciences",
+            "url": "https://www.ijaims.in/",
+            "image": "https://biu.edu.in/static/photos/Pages/medical-journal.jpg",
+            "issn": "ISSN: 2456-2726",
+            "frequency": "Indexed Clinical Research Journal"
+          }
+        ]
+      }
+    },
+    {
+      "id": "research-promotion-policy",
+      "slug": "research-promotion-policy",
+      "name": "Research Promotion Policy",
+      "shortName": "Research Policy",
+      "icon": "Scroll",
+      "type": "multi-pdf",
+      "description": "Comprehensive institutional policy governing research incentives, seed grant allowances, intellectual property rights, and commercialization at BIU.",
+      "policies": [
+        {
+          "id": "promotion",
+          "tabLabel": "Research Promotion Policy",
+          "title": "Research Promotion Policy",
+          "desc": "Guidelines on seed money grants, publication incentives, conference travel support, and academic research awards.",
+          "pdfUrl": "https://biu.edu.in/research/Research%20Promotion%20Policy.pdf"
+        },
+        {
+          "id": "professional-dev",
+          "tabLabel": "Research and Professional Development Policy",
+          "title": "Research and Professional Development Policy",
+          "desc": "Faculty and scholar career advancement framework through high-impact clinical and interdisciplinary studies.",
+          "pdfUrl": "https://biu.edu.in/research/Reaserch%20and%20Professional%20%20Development%20Policy.pdf"
+        },
+        {
+          "id": "ipr",
+          "tabLabel": "IPR and Consultancy Policy",
+          "title": "IPR and Consultancy Policy",
+          "desc": "Regulations regarding patent filings, copyright, technology transfer, and institutional consultancy services.",
+          "pdfUrl": "https://biu.edu.in/research/IPR%20and%20Consultancy%20Policy.pdf"
+        },
+        {
+          "id": "innovation",
+          "tabLabel": "Innovation & Entrepreneurship Policy",
+          "title": "Innovation & Entrepreneurship Policy",
+          "desc": "NISP aligned startup incubation, student venture creation, and intellectual property commercialization guidelines.",
+          "pdfUrl": "https://biu.edu.in/research/Innovation%20&%20Entrepreneurship%20Policy.pdf"
+        }
+      ]
+    },
+    {
+      "id": "code-of-ethics",
+      "slug": "code-of-ethics",
+      "name": "Code of Ethics",
+      "shortName": "Code of Ethics",
+      "icon": "ShieldCheck",
+      "type": "single-pdf",
+      "description": "Code of Ethics and institutional guidelines for responsible conduct of biomedical and scientific research, plagiarism prevention, and human/animal ethical committee clearances.",
+      "pdfUrl": "https://biu.edu.in/research/CodeofEthics.pdf",
+      "pdfTitle": "Code of Ethics in Research"
+    },
+    {
+      "id": "dsir-siro",
+      "slug": "dsir-siro-recognition",
+      "name": "DSIR/SIRO Recognition",
+      "shortName": "DSIR / SIRO",
+      "icon": "Certificate",
+      "type": "single-pdf",
+      "description": "Official Recognition Certificate granted by Department of Scientific and Industrial Research (DSIR), Ministry of Science & Technology, Government of India, recognizing Bareilly International University as a Scientific and Industrial Research Organisation (SIRO).",
+      "pdfUrl": "https://biu.edu.in/research/dsir-siro.pdf",
+      "pdfTitle": "DSIR / SIRO Renewal Certificate"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResearchPage from '../components/pages/ResearchPage.jsx';
+---
+
+<Layout
+  title="Code of Ethics in Research | Bareilly International University (BIU)"
+  description="Code of Ethics, plagiarism standards, and bioethical regulations for faculty, students, and research scholars at Bareilly International University."
+>
+  <ResearchPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

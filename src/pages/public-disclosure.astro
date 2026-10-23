@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PublicDisclosurePage from '../components/pages/PublicDisclosurePage.jsx';
+---
+
+<Layout
+  title="Public Self-Disclosure | Bareilly International University (BIU) - UGC & NAAC Compliance"
+  description="Official Mandatory Public Self-Disclosure Portal of Bareilly International University (BIU) in accordance with UGC Information Disclosure Regulations 2023, NAAC accreditation criteria, Acts, Statutes, Administration, and Academic Programmes."
+>
+  <PublicDisclosurePage client:load onBack={() => window.location.href = '/'} />
+</Layout>
