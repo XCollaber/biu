@@ -335,22 +335,32 @@ export default function PublicDisclosureExplorer({ onBack }) {
             /* THE CLEAN OFFICIAL STATUTORY TABLE                             */
             /* Exactly matching: Sr. No. | Title | Subtitle | Links on Website */
             /* ============================================================== */
-            <div className="rounded-xl bg-white border border-slate-300 shadow-xs overflow-hidden">
+            <div className="rounded-xl bg-white border border-slate-200/80 shadow-xs overflow-hidden">
               <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse border border-slate-300 text-xs sm:text-[13px]">
-                  {/* 4 Standard Statutory Columns */}
-                  <thead>
-                    <tr className="bg-[#0c2340] text-white font-bold border-b border-slate-300">
-                      <th className="py-3 px-3 sm:px-4 w-16 sm:w-20 text-center uppercase tracking-wider text-xs border-r border-slate-600/60">
+                <table className="w-full text-left border-collapse text-xs sm:text-[13px]">
+                  {/* 4 Standard Statutory Columns - Styled with EducationStreams blue gradient ribbon */}
+                  <thead
+                    style={{
+                      background: 'linear-gradient(to right, rgba(7, 22, 44, 0.9) 0%, rgba(12, 35, 64, 0.75) 50%, rgba(7, 22, 44, 0.5) 100%)'
+                    }}
+                    className="bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 text-white"
+                  >
+                    <tr 
+                      style={{
+                        background: 'linear-gradient(to right, rgba(7, 22, 44, 0.9) 0%, rgba(12, 35, 64, 0.75) 50%, rgba(7, 22, 44, 0.5) 100%)'
+                      }}
+                      className="bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 text-white border-b border-slate-200/80"
+                    >
+                      <th className="py-3 px-3 sm:px-4 w-16 sm:w-20 text-center uppercase tracking-wider text-xs sm:text-[11.5px] font-semibold text-blue-100 brightness-150 border-r border-white/20">
                         Sr. No.
                       </th>
-                      <th className="py-3 px-4 sm:px-5 w-48 sm:w-60 uppercase tracking-wider text-xs border-r border-slate-600/60">
+                      <th className="py-3 px-3 sm:px-4 w-32 sm:w-40 uppercase tracking-wider text-xs font-semibold text-white border-r border-white/20">
                         Title
                       </th>
-                      <th className="py-3 px-4 sm:px-5 uppercase tracking-wider text-xs border-r border-slate-600/60 min-w-[300px]">
+                      <th className="py-3 px-4 sm:px-5 uppercase tracking-wider text-xs font-semibold text-white border-r border-white/20 min-w-[360px] sm:min-w-[440px]">
                         Subtitle
                       </th>
-                      <th className="py-3 px-4 sm:px-5 w-72 sm:w-80 uppercase tracking-wider text-xs">
+                      <th className="py-3 px-4 sm:px-5 w-72 sm:w-80 uppercase tracking-wider text-xs font-semibold text-blue-100 brightness-150">
                         Links on Website
                       </th>
                     </tr>
@@ -385,7 +395,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                             {isFirst && (
                               <td
                                 rowSpan={rowCount}
-                                className="py-3 px-4 sm:px-5 font-bold text-[#0c2340] align-top bg-white border-r border-slate-300 text-xs sm:text-sm leading-snug pt-4"
+                                className="py-3 px-3 sm:px-4 font-bold text-[#0c2340] align-top bg-white border-r border-slate-300 text-xs sm:text-sm leading-snug pt-4"
                               >
                                 <span>{cat.shortTitle || cat.title}</span>
                               </td>
@@ -393,14 +403,9 @@ export default function PublicDisclosureExplorer({ onBack }) {
 
                             {/* 3. Subtitle */}
                             <td className="py-3 px-4 sm:px-5 align-top border-r border-slate-200">
-                              <span className="font-semibold text-slate-800 leading-snug block">
+                              <span className="font-semibold font-sans text-[13px] text-slate-800 leading-snug block">
                                 {item.subtitle}
                               </span>
-                              {item.details && (
-                                <span className="text-[11px] text-slate-500 leading-normal block mt-0.5 font-normal">
-                                  {item.details}
-                                </span>
-                              )}
                             </td>
 
                             {/* 4. Links on Website */}
