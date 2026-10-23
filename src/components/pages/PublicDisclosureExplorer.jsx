@@ -12,11 +12,12 @@ import {
   Check,
   Copy,
   Funnel,
-  CaretDown
+  CaretDown,
+  ArrowLeft
 } from '@phosphor-icons/react';
 import disclosureData from '../../data/disclosure.json';
 
-export default function PublicDisclosureExplorer() {
+export default function PublicDisclosureExplorer({ onBack }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -84,142 +85,194 @@ export default function PublicDisclosureExplorer() {
     return result;
   }, [categories, selectedCategory, searchQuery]);
 
+  const header = disclosureData.pageHeader || {};
+
   return (
-    <section className="w-full py-8 sm:py-12 font-sans bg-[#fbfbfd]">
-      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
-        {/* Toolbar: Search, Custom Section Dropdown & Print (embedded directly on background) */}
-        <div className="mb-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-end gap-2.5 sm:gap-2.5">
-            {/* Search Input - Replicated from News Page */}
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="relative flex items-center w-full sm:w-[380px] md:w-[420px] max-w-[435px]"
+    <>
+      {/* TOP HERO HEADER - Replicating the News Page Signature Header with Integrated Controls */}
+      <section className="relative bg-white border-b border-slate-200/80 pt-28 pb-8 sm:pt-32 sm:pb-10 font-sans z-20">
+        {/* Subtle Background Pattern - Double-Line Diamond Lattice */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.035]" aria-hidden="true">
+          <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <defs>
+              <pattern id="disclosure-heritage-lattice" width="48" height="48" patternUnits="userSpaceOnUse">
+                <path d="M 24 0 L 48 24 L 24 48 L 0 24 Z" fill="none" stroke="#0c2340" strokeWidth="0.65" />
+                <path d="M 24 9 L 39 24 L 24 39 L 9 24 Z" fill="none" stroke="#0c2340" strokeWidth="0.60" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#disclosure-heritage-lattice)" />
+          </svg>
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
+          {/* Breadcrumb / Back button */}
+          <div className="mb-4 sm:mb-6 flex items-center gap-3">
+            <a
+              href="/"
+              onClick={(e) => {
+                if (onBack) {
+                  e.preventDefault();
+                  onBack();
+                }
+              }}
+              className="group inline-flex items-center gap-2 rounded-md border border-slate-300/80 bg-white px-3.5 py-1.5 font-sans text-xs font-semibold text-slate-700 shadow-2xs transition-all duration-200 hover:border-transparent hover:bg-gradient-to-r hover:from-[#0c2340]/90 hover:via-[#102d52]/90 hover:to-[#163860]/70 hover:text-white hover:brightness-125 hover:shadow-md active:scale-[0.98]"
             >
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search disclosures (e.g., Act, RTI, Finance, Fees, etc)..."
-                className="w-full rounded-lg border border-slate-300/80 bg-white pl-3.5 pr-20 py-2 font-sans text-xs text-slate-800 placeholder:text-slate-400 outline-none focus:outline-none focus-visible:outline-none focus:border-slate-400 focus:bg-white focus:ring-1 focus:ring-slate-300/60 transition-all shadow-2xs"
-              />
-              {searchQuery && (
-                <button
-                  type="button"
-                  onClick={() => setSearchQuery('')}
-                  className="absolute right-20 top-1/2 -translate-y-1/2 text-slate-500 hover:text-rose-600 p-2 cursor-pointer"
-                  title="Clear search"
-                >
-                  <X size={16} />
-                </button>
-              )}
-              <button
-                type="submit"
-                className="absolute right-1 top-1 bottom-1 rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-3.5 font-sans text-[11px] font-bold uppercase tracking-wider text-white brightness-125 transition-all duration-200 hover:brightness-140 hover:shadow-sm active:scale-[0.98] cursor-pointer"
-              >
-                Search
-              </button>
-            </form>
+              <ArrowLeft size={14} weight="bold" className="transition-transform group-hover:-translate-x-0.5" />
+              <span>Back to Home</span>
+            </a>
+          </div>
 
-            {/* Custom Dropdown & Print Button Group */}
-            <div className="flex items-center gap-2.5">
-              {/* Custom Category Dropdown */}
-              <div className="relative w-40 sm:w-44" ref={dropdownRef}>
-                <button
-                  type="button"
-                  onClick={() => setIsDropdownOpen((prev) => !prev)}
-                  className="w-full inline-flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-xs font-semibold text-[#0c2340] shadow-2xs transition-all duration-150 cursor-pointer"
-                  aria-expanded={isDropdownOpen}
-                  aria-haspopup="listbox"
-                >
-                  <div className="flex items-center gap-1.5 truncate">
-                    <Funnel size={15} className="text-slate-600/70 shrink-0" weight="bold" />
-                    <span className="truncate">
-                      {selectedCategory === 'all'
-                        ? 'All Sections (10)'
-                        : `${categories.find((c) => c.id === selectedCategory)?.number}. ${
-                            categories.find((c) => c.id === selectedCategory)?.shortTitle
-                          }`}
-                    </span>
-                  </div>
-                  <CaretDown
-                    size={12}
-                    weight="bold"
-                    className={`text-slate-500 transition-transform duration-200 shrink-0 ${
-                      isDropdownOpen ? 'rotate-180 text-[#0c2340]' : ''
-                    }`}
-                  />
-                </button>
-
-                {/* Dropdown Menu Panel - Exact same width as button */}
-                {isDropdownOpen && (
-                  <div
-                    role="listbox"
-                    className="absolute left-0 right-0 top-full mt-1 w-full max-h-80 overflow-y-auto rounded-xl bg-white border border-slate-200 shadow-lg z-30 font-sans"
-                  >
-                    <button
-                      type="button"
-                      role="option"
-                      aria-selected={selectedCategory === 'all'}
-                      onClick={() => {
-                        setSelectedCategory('all');
-                        setIsDropdownOpen(false);
-                      }}
-                      className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between transition-colors cursor-pointer ${
-                        selectedCategory === 'all'
-                          ? 'bg-blue-50/80 text-[#0c2340] font-bold'
-                          : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900 font-medium'
-                      }`}
-                    >
-                      <span className="truncate pr-1">All Sections (10)</span>
-                      {selectedCategory === 'all' && (
-                        <Check size={14} weight="bold" className="text-[#0c2340] shrink-0" />
-                      )}
-                    </button>
-
-                    {categories.map((cat) => {
-                      const isSelected = selectedCategory === cat.id;
-                      return (
-                        <button
-                          key={cat.id}
-                          type="button"
-                          role="option"
-                          aria-selected={isSelected}
-                          onClick={() => {
-                            setSelectedCategory(cat.id);
-                            setIsDropdownOpen(false);
-                          }}
-                          className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between transition-colors cursor-pointer ${
-                            isSelected
-                              ? 'bg-blue-50/80 text-[#0c2340] font-bold'
-                              : 'text-slate-700 hover:bg-slate-50 hover:text-cyan-900 font-medium'
-                          }`}
-                        >
-                          <span className="truncate pr-1">
-                            {cat.number}. {cat.shortTitle}
-                          </span>
-                          {isSelected && (
-                            <Check size={14} weight="bold" className="text-[#0c2340] shrink-0" />
-                          )}
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 sm:gap-6">
+            <div>
+              <div className="flex items-center gap-2.5 mb-2.5">
+                <span className="w-8 h-[3.5px] bg-gold rounded-full" />
+                <span className="font-sans text-[12px] sm:text-xs font-black uppercase tracking-[0.09em] text-[#0c2340]">
+                  {header.badge || 'MANDATORY STATUTORY DISCLOSURE'}
+                </span>
               </div>
+              <h1 className="font-times text-2xl sm:text-3xl lg:text-[2.6rem] font-medium text-[#0c2340] leading-[1.15]">
+                Self Public Disclosure
+              </h1>
+            </div>
 
-              {/* Print Action - Placed directly on the right of the dropdown button */}
-              <button
-                type="button"
-                onClick={() => window.print()}
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-slate-200 hover:border-slate-300 text-slate-700 bg-white hover:bg-slate-50 text-xs font-semibold shadow-2xs transition-colors cursor-pointer"
-                title="Print Public Disclosure Table"
+            {/* Filter toolbar placed directly in the top section */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-end gap-2.5 sm:gap-2.5">
+              {/* Search Input - Replicated from News Page */}
+              <form
+                onSubmit={(e) => e.preventDefault()}
+                className="relative flex items-center w-full sm:w-[380px] md:w-[410px] max-w-[435px]"
               >
-                <Printer size={15} weight="bold" />
-                <span>Print Table</span>
-              </button>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search disclosures (e.g., Act, RTI, Finance, Fees, etc)..."
+                  className="w-full rounded-lg border border-slate-300/80 bg-white pl-3.5 pr-20 py-2 font-sans text-xs text-slate-800 placeholder:text-slate-400 outline-none focus:outline-none focus-visible:outline-none focus:border-slate-400 focus:bg-white focus:ring-1 focus:ring-slate-300/60 transition-all shadow-2xs"
+                />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-20 top-1/2 -translate-y-1/2 text-slate-500 hover:text-rose-600 p-2 cursor-pointer"
+                    title="Clear search"
+                  >
+                    <X size={16} />
+                  </button>
+                )}
+                <button
+                  type="submit"
+                  className="absolute right-1 top-1 bottom-1 rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-3.5 font-sans text-[11px] font-bold uppercase tracking-wider text-white brightness-125 transition-all duration-200 hover:brightness-140 hover:shadow-sm active:scale-[0.98] cursor-pointer"
+                >
+                  Search
+                </button>
+              </form>
+
+              {/* Custom Dropdown & Print Button Group */}
+              <div className="flex items-center gap-2.5">
+                {/* Custom Category Dropdown */}
+                <div className="relative w-40 sm:w-40" ref={dropdownRef}>
+                  <button
+                    type="button"
+                    onClick={() => setIsDropdownOpen((prev) => !prev)}
+                    className="w-full inline-flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-xs font-semibold text-[#0c2340] shadow-2xs transition-all duration-150 cursor-pointer"
+                    aria-expanded={isDropdownOpen}
+                    aria-haspopup="listbox"
+                  >
+                    <div className="flex items-center gap-1.5 truncate">
+                      <Funnel size={15} className="text-slate-600/70 shrink-0" weight="bold" />
+                      <span className="truncate">
+                        {selectedCategory === 'all'
+                          ? 'All Sections'
+                          : `${categories.find((c) => c.id === selectedCategory)?.number}. ${
+                              categories.find((c) => c.id === selectedCategory)?.shortTitle
+                            }`}
+                      </span>
+                    </div>
+                    <CaretDown
+                      size={12}
+                      weight="bold"
+                      className={`text-slate-500 transition-transform duration-200 shrink-0 ${
+                        isDropdownOpen ? 'rotate-180 text-[#0c2340]' : ''
+                      }`}
+                    />
+                  </button>
+
+                  {/* Dropdown Menu Panel - Exact same width as button */}
+                  {isDropdownOpen && (
+                    <div
+                      role="listbox"
+                      className="absolute left-0 right-0 top-full mt-1 w-full max-h-80 overflow-y-auto rounded-xl bg-white border border-slate-200 shadow-xl z-50 font-sans"
+                    >
+                      <button
+                        type="button"
+                        role="option"
+                        aria-selected={selectedCategory === 'all'}
+                        onClick={() => {
+                          setSelectedCategory('all');
+                          setIsDropdownOpen(false);
+                        }}
+                        className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between transition-colors cursor-pointer ${
+                          selectedCategory === 'all'
+                            ? 'bg-blue-50/80 text-[#0c2340] font-bold'
+                            : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900 font-medium'
+                        }`}
+                      >
+                        <span className="truncate pr-1">All Sections (10)</span>
+                        {selectedCategory === 'all' && (
+                          <Check size={14} weight="bold" className="text-[#0c2340] shrink-0" />
+                        )}
+                      </button>
+
+                      {categories.map((cat) => {
+                        const isSelected = selectedCategory === cat.id;
+                        return (
+                          <button
+                            key={cat.id}
+                            type="button"
+                            role="option"
+                            aria-selected={isSelected}
+                            onClick={() => {
+                              setSelectedCategory(cat.id);
+                              setIsDropdownOpen(false);
+                            }}
+                            className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between transition-colors cursor-pointer ${
+                              isSelected
+                                ? 'bg-blue-50/80 text-[#0c2340] font-bold'
+                                : 'text-slate-700 hover:bg-slate-50 hover:text-cyan-900 font-medium'
+                            }`}
+                          >
+                            <span className="truncate pr-1">
+                              {cat.number}. {cat.shortTitle}
+                            </span>
+                            {isSelected && (
+                              <Check size={14} weight="bold" className="text-[#0c2340] shrink-0" />
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+
+                {/* Print Action - Placed directly on the right of the dropdown button */}
+                <button
+                  type="button"
+                  onClick={() => window.print()}
+                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-slate-200 hover:border-slate-300 text-slate-700 bg-white hover:bg-slate-50 text-xs font-semibold shadow-2xs transition-colors cursor-pointer"
+                  title="Print Public Disclosure Table"
+                >
+                  <Printer size={15} weight="bold" />
+                  <span>Print Table</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Main Explorer Content Section */}
+      <section className="w-full py-8 sm:py-10 font-sans bg-[#fbfbfd]">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
 
         {/* Quick Statutory Downloads Strip - Directly on page background */}
         <div className="mb-6">
@@ -471,5 +524,6 @@ export default function PublicDisclosureExplorer() {
         </div>
       </div>
     </section>
+    </>
   );
 }
