@@ -90,7 +90,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
   return (
     <>
       {/* TOP HERO HEADER - Replicating the News Page Signature Header with Integrated Controls */}
-      <section className="relative bg-white border-b border-slate-200/80 pt-28 pb-8 sm:pt-32 sm:pb-10 font-sans z-20">
+      <section className="relative bg-white border-b border-slate-200/80 pt-28 pb-10 sm:pt-32 sm:pb-14 font-sans z-20">
         {/* Subtle Background Pattern - Double-Line Diamond Lattice */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.035]" aria-hidden="true">
           <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
@@ -137,7 +137,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
 
             {/* Filter toolbar placed directly in the top section */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-end gap-2.5 sm:gap-2.5">
-              {/* Search Input - Replicated from News Page */}
+              {/* Search Input - Replicated from News Page with comfortable height */}
               <form
                 onSubmit={(e) => e.preventDefault()}
                 className="relative flex items-center w-full sm:w-[380px] md:w-[410px] max-w-[435px]"
@@ -146,8 +146,8 @@ export default function PublicDisclosureExplorer({ onBack }) {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search disclosures (e.g., Act, RTI, Finance, Fees, etc)..."
-                  className="w-full rounded-lg border border-slate-300/80 bg-white pl-3.5 pr-20 py-2 font-sans text-xs text-slate-800 placeholder:text-slate-400 outline-none focus:outline-none focus-visible:outline-none focus:border-slate-400 focus:bg-white focus:ring-1 focus:ring-slate-300/60 transition-all shadow-2xs"
+                  placeholder="Search disclosures (e.g., Act, RTI, Fees)..."
+                  className="w-full h-11 sm:h-10 rounded-lg border border-slate-300/80 bg-white pl-3.5 pr-24 py-3 font-sans text-xs sm:text-[13px] text-slate-800 placeholder:text-slate-400 outline-none focus:outline-none focus-visible:outline-none focus:border-slate-400 focus:bg-white focus:ring-1 focus:ring-slate-300/60 transition-all shadow-2xs"
                 />
                 {searchQuery && (
                   <button
@@ -161,7 +161,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                 )}
                 <button
                   type="submit"
-                  className="absolute right-1 top-1 bottom-1 rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-3.5 font-sans text-[11px] font-bold uppercase tracking-wider text-white brightness-125 transition-all duration-200 hover:brightness-140 hover:shadow-sm active:scale-[0.98] cursor-pointer"
+                  className="absolute right-1.5 top-1.5 bottom-1.5 rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-3 font-sans text-[11px] sm:text-xs font-bold uppercase tracking-wider text-white brightness-125 transition-all duration-200 hover:brightness-140 hover:shadow-sm active:scale-[0.98] cursor-pointer flex items-center justify-center"
                 >
                   Search
                 </button>
@@ -174,7 +174,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                   <button
                     type="button"
                     onClick={() => setIsDropdownOpen((prev) => !prev)}
-                    className="w-full inline-flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-xs font-semibold text-[#0c2340] shadow-2xs transition-all duration-150 cursor-pointer"
+                    className="w-full h-11 sm:h-10 inline-flex items-center justify-between gap-2 px-3.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-xs sm:text-[13px] font-semibold text-[#0c2340] shadow-2xs transition-all duration-150 cursor-pointer"
                     aria-expanded={isDropdownOpen}
                     aria-haspopup="listbox"
                   >
@@ -211,13 +211,13 @@ export default function PublicDisclosureExplorer({ onBack }) {
                           setSelectedCategory('all');
                           setIsDropdownOpen(false);
                         }}
-                        className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between transition-colors cursor-pointer ${
+                        className={`w-full text-left px-3 py-2 text-xs sm:text-[12.5px] flex items-center justify-between transition-colors cursor-pointer ${
                           selectedCategory === 'all'
                             ? 'bg-blue-50/80 text-[#0c2340] font-bold'
                             : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900 font-medium'
                         }`}
                       >
-                        <span className="truncate pr-1">All Sections (10)</span>
+                        <span className="truncate pr-1">All Sections</span>
                         {selectedCategory === 'all' && (
                           <Check size={14} weight="bold" className="text-[#0c2340] shrink-0" />
                         )}
@@ -235,7 +235,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                               setSelectedCategory(cat.id);
                               setIsDropdownOpen(false);
                             }}
-                            className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between transition-colors cursor-pointer ${
+                            className={`w-full text-left px-3 py-2 text-xs sm:text-[12px] flex items-center justify-between transition-colors cursor-pointer ${
                               isSelected
                                 ? 'bg-blue-50/80 text-[#0c2340] font-bold'
                                 : 'text-slate-700 hover:bg-slate-50 hover:text-cyan-900 font-medium'
@@ -258,7 +258,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                 <button
                   type="button"
                   onClick={() => window.print()}
-                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-slate-200 hover:border-slate-300 text-slate-700 bg-white hover:bg-slate-50 text-xs font-semibold shadow-2xs transition-colors cursor-pointer"
+                  className="h-11 sm:h-10 inline-flex items-center gap-1.5 px-3 rounded-lg border border-slate-200 hover:border-slate-300 text-slate-700 bg-white hover:bg-slate-50 text-xs sm:text-[13px] font-semibold shadow-2xs transition-colors cursor-pointer"
                   title="Print Public Disclosure Table"
                 >
                   <Printer size={15} weight="bold" />
