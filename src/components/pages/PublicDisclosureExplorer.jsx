@@ -84,27 +84,23 @@ export default function PublicDisclosureExplorer() {
     return result;
   }, [categories, selectedCategory, searchQuery]);
 
-  const totalResultsCount = useMemo(() => {
-    return filteredCategories.reduce((acc, cat) => acc + cat.items.length, 0);
-  }, [filteredCategories]);
-
   return (
     <section className="w-full py-8 sm:py-12 font-sans bg-[#fbfbfd]">
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
-        {/* Toolbar: Search, Custom Section Dropdown, Items Count & Print */}
-        <div className="bg-white rounded-xl p-3 sm:p-3.5 border border-slate-200/90 shadow-xs mb-6">
+        {/* Toolbar: Search, Custom Section Dropdown & Print (embedded directly on background) */}
+        <div className="mb-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
             {/* Search Input - Replicated from News Page */}
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="relative flex items-center flex-1 max-w-xl"
+              className="relative flex items-center w-full max-w-[435px]"
             >
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search disclosures (e.g., Act, RTI, Finance, Fees, Ombudsperson)..."
-                className="w-full rounded-lg border border-slate-300/80 bg-white/70 backdrop-blur-xs pl-3.5 pr-24 py-2 font-sans text-xs text-slate-800 placeholder:text-slate-400 outline-none focus:outline-none focus-visible:outline-none focus:border-slate-400 focus:bg-white focus:ring-1 focus:ring-slate-300/60 transition-all shadow-2xs"
+                placeholder="Search disclosures (e.g., Act, RTI, Finance, Fees, etc)..."
+                className="w-full rounded-lg border border-slate-300/80 bg-white pl-3.5 pr-20 py-2 font-sans text-xs text-slate-800 placeholder:text-slate-400 outline-none focus:outline-none focus-visible:outline-none focus:border-slate-400 focus:bg-white focus:ring-1 focus:ring-slate-300/60 transition-all shadow-2xs"
               />
               {searchQuery && (
                 <button
@@ -124,14 +120,14 @@ export default function PublicDisclosureExplorer() {
               </button>
             </form>
 
-            {/* Right Hand Side: Custom Dropdown, Count, Print */}
+            {/* Right Hand Side: Custom Dropdown & Print Button */}
             <div className="flex flex-wrap items-center gap-2.5 self-end md:self-auto">
               {/* Custom Category Dropdown */}
-              <div className="relative w-48 sm:w-52" ref={dropdownRef}>
+              <div className="relative w-40 sm:w-44" ref={dropdownRef}>
                 <button
                   type="button"
                   onClick={() => setIsDropdownOpen((prev) => !prev)}
-                  className="w-full inline-flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-slate-200 hover:border-slate-300 bg-slate-50/70 hover:bg-slate-100/70 text-xs font-semibold text-[#0c2340] shadow-2xs transition-all duration-150 cursor-pointer"
+                  className="w-full inline-flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-xs font-semibold text-[#0c2340] shadow-2xs transition-all duration-150 cursor-pointer"
                   aria-expanded={isDropdownOpen}
                   aria-haspopup="listbox"
                 >
@@ -211,12 +207,7 @@ export default function PublicDisclosureExplorer() {
                 )}
               </div>
 
-              {/* Results Count */}
-              <span className="text-xs font-medium text-slate-600 bg-slate-100 px-2.5 py-2 rounded-lg border border-slate-200 tabular-nums">
-                {totalResultsCount} items
-              </span>
-
-              {/* Print Action */}
+              {/* Print Action - Placed directly on the right of the dropdown button */}
               <button
                 type="button"
                 onClick={() => window.print()}
