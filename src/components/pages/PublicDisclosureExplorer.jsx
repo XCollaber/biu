@@ -387,7 +387,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                             {isFirst && (
                               <td
                                 rowSpan={rowCount}
-                                className={`py-3 px-3 sm:px-4 text-center font-bold text-slate-700 align-top ${col1Bg} hover:bg-blue-50/90 transition-colors border-r border-r-slate-200 border-b-2 border-b-slate-400 tabular-nums text-xs sm:text-sm pt-4`}
+                                className={`py-3 px-3 sm:px-4 text-center font-bold text-slate-700 align-top ${col1Bg} transition-colors border-r border-r-slate-200 border-b-2 border-b-slate-400 tabular-nums text-xs sm:text-sm pt-4`}
                               >
                                 {cat.number}
                               </td>
@@ -397,7 +397,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                             {isFirst && (
                               <td
                                 rowSpan={rowCount}
-                                className={`py-3 px-3 sm:px-4 font-bold text-[#0c2340] align-top ${col2Bg} hover:bg-blue-50/90 transition-colors border-r border-r-slate-200 border-b-2 border-b-slate-400 text-xs sm:text-sm leading-snug pt-4`}
+                                className={`py-3 px-3 sm:px-4 font-bold text-[#0c2340] align-top ${col2Bg} transition-colors border-r border-r-slate-200 border-b-2 border-b-slate-400 text-xs sm:text-sm leading-snug pt-4`}
                               >
                                 <span>{cat.shortTitle || cat.title}</span>
                               </td>
@@ -501,31 +501,6 @@ export default function PublicDisclosureExplorer({ onBack }) {
               </div>
             </div>
           )}
-
-          {/* Footer Regulatory Compliance Notice */}
-          <div className="mt-8 rounded-xl bg-[#0c2340] text-white p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border border-white/10 shadow-xs">
-            <div className="flex items-start gap-3">
-              <div className="w-9 h-9 rounded-lg bg-gold/20 border border-gold/40 text-amber-300 flex items-center justify-center shrink-0">
-                <ShieldCheck size={20} weight="fill" />
-              </div>
-              <div>
-                <h3 className="font-times text-base font-normal text-white">
-                  Statutory University Compliance & Information Disclosure
-                </h3>
-                <p className="font-sans text-xs text-slate-300/90 leading-relaxed mt-0.5 max-w-2xl">
-                  Bareilly International University is recognized under Section 2(f) of the UGC Act, 1956, and accredited with NAAC A+ Grade. All disclosure records are systematically updated and audited in alignment with Higher Education Institution (HEI) regulations.
-                </p>
-              </div>
-            </div>
-            <div className="shrink-0 flex items-center gap-3">
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-gold text-[#0c2340] text-xs font-bold hover:bg-gold-light transition-all shadow-2xs"
-              >
-                <span>Contact Compliance Cell</span>
-              </a>
-            </div>
-          </div>
         </div>
       </section>
     </>
