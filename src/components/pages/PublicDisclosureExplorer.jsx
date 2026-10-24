@@ -351,16 +351,16 @@ export default function PublicDisclosureExplorer({ onBack }) {
                       }}
                       className="bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 text-white border-b border-slate-200/80"
                     >
-                      <th className="py-3 px-3 sm:px-4 w-16 sm:w-20 text-center uppercase tracking-wider text-xs sm:text-[11.5px] font-semibold text-blue-100 brightness-150 border-r border-white/20">
+                      <th className="py-3 px-3 sm:px-4 w-16 sm:w-20 text-center uppercase tracking-wider text-xs sm:text-[11.5px] font-semibold text-white border-r border-r-slate-200">
                         Sr. No.
                       </th>
-                      <th className="py-3 px-3 sm:px-4 w-32 sm:w-40 uppercase tracking-wider text-xs font-semibold text-white border-r border-white/20">
+                      <th className="py-3 px-3 sm:px-4 w-32 sm:w-40 uppercase tracking-wider text-xs font-semibold text-white border-r border-r-slate-200">
                         Title
                       </th>
-                      <th className="py-3 px-4 sm:px-5 uppercase tracking-wider text-xs font-semibold text-white border-r border-white/20 min-w-[360px] sm:min-w-[440px]">
+                      <th className="py-3 px-4 sm:px-5 uppercase tracking-wider text-xs font-semibold text-white border-r border-r-slate-200 min-w-[360px] sm:min-w-[440px]">
                         Subtitle
                       </th>
-                      <th className="py-3 px-4 sm:px-5 w-72 sm:w-80 uppercase tracking-wider text-xs font-semibold text-blue-100 brightness-150">
+                      <th className="py-3 px-4 sm:px-5 w-72 sm:w-80 uppercase tracking-wider text-xs font-semibold text-white">
                         Links on Website
                       </th>
                     </tr>
