@@ -210,8 +210,8 @@ export default function PublicDisclosureExplorer({ onBack }) {
                           setIsDropdownOpen(false);
                         }}
                         className={`w-full text-left px-3 py-2 text-xs sm:text-[12.5px] flex items-center justify-between transition-colors cursor-pointer ${selectedCategory === 'all'
-                            ? 'bg-blue-50/80 text-[#0c2340] font-bold'
-                            : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900 font-medium'
+                          ? 'bg-blue-50/80 text-[#0c2340] font-bold'
+                          : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900 font-medium'
                           }`}
                       >
                         <span className="truncate pr-1">All Sections</span>
@@ -233,8 +233,8 @@ export default function PublicDisclosureExplorer({ onBack }) {
                               setIsDropdownOpen(false);
                             }}
                             className={`w-full text-left px-3 py-2 text-xs sm:text-[12px] flex items-center justify-between transition-colors cursor-pointer ${isSelected
-                                ? 'bg-blue-50/80 text-[#0c2340] font-bold'
-                                : 'text-slate-700 hover:bg-slate-50 hover:text-cyan-900 font-medium'
+                              ? 'bg-blue-50/80 text-[#0c2340] font-bold'
+                              : 'text-slate-700 hover:bg-slate-50 hover:text-cyan-900 font-medium'
                               }`}
                           >
                             <span className="truncate pr-1">
@@ -345,7 +345,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                     }}
                     className="bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 text-white"
                   >
-                    <tr 
+                    <tr
                       style={{
                         background: 'linear-gradient(to right, rgba(7, 22, 44, 0.9) 0%, rgba(12, 35, 64, 0.75) 50%, rgba(7, 22, 44, 0.5) 100%)'
                       }}
@@ -366,7 +366,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                     </tr>
                   </thead>
 
-                  <tbody className="divide-y divide-slate-200">
+                  <tbody>
                     {filteredCategories.map((cat) => {
                       const rowCount = cat.items.length;
                       if (rowCount === 0) return null;
@@ -378,14 +378,15 @@ export default function PublicDisclosureExplorer({ onBack }) {
                         return (
                           <tr
                             key={`${cat.id}-${idx}`}
-                            className={`hover:bg-blue-50/20 transition-colors ${isLast ? 'border-b-2 border-slate-300' : 'border-b border-slate-200'
+                            className={`transition-colors ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/80'
+                              } hover:bg-blue-50/30 ${isLast ? 'border-b-2 border-slate-400' : 'border-b border-slate-200'
                               }`}
                           >
                             {/* 1. Sr. No. (Rowspanned across all items in section) */}
                             {isFirst && (
                               <td
                                 rowSpan={rowCount}
-                                className="py-3 px-3 sm:px-4 text-center font-bold text-slate-700 align-top bg-white border-r border-slate-300 tabular-nums text-xs sm:text-sm pt-4"
+                                className="py-3 px-3 sm:px-4 text-center font-bold text-slate-700 align-top bg-white border-r border-slate-300 border-b-2 border-slate-400 tabular-nums text-xs sm:text-sm pt-4"
                               >
                                 {cat.number}
                               </td>
@@ -395,21 +396,23 @@ export default function PublicDisclosureExplorer({ onBack }) {
                             {isFirst && (
                               <td
                                 rowSpan={rowCount}
-                                className="py-3 px-3 sm:px-4 font-bold text-[#0c2340] align-top bg-white border-r border-slate-300 text-xs sm:text-sm leading-snug pt-4"
+                                className="py-3 px-3 sm:px-4 font-bold text-[#0c2340] align-top bg-white border-r border-slate-300 border-b-2 border-slate-400 text-xs sm:text-sm leading-snug pt-4"
                               >
                                 <span>{cat.shortTitle || cat.title}</span>
                               </td>
                             )}
 
                             {/* 3. Subtitle */}
-                            <td className="py-3 px-4 sm:px-5 align-top border-r border-slate-200">
+                            <td className={`py-3 px-4 sm:px-5 align-top border-r border-slate-200 ${isLast ? 'border-b-2 border-slate-400' : 'border-b border-slate-200'
+                              }`}>
                               <span className="font-semibold font-sans text-[13px] text-slate-800 leading-snug block">
                                 {item.subtitle}
                               </span>
                             </td>
 
                             {/* 4. Links on Website */}
-                            <td className="py-3 px-4 sm:px-5 align-top">
+                            <td className={`py-3 px-4 sm:px-5 align-top ${isLast ? 'border-b-2 border-slate-400' : 'border-b border-slate-200'
+                              }`}>
                               {/* Contact Person Details */}
                               {item.contact ? (
                                 <div className="space-y-1 text-xs text-slate-800 font-sans">
