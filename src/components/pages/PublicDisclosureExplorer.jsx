@@ -379,14 +379,13 @@ export default function PublicDisclosureExplorer({ onBack }) {
                           <tr
                             key={`${cat.id}-${idx}`}
                             className={`transition-colors ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/80'
-                              } hover:bg-blue-50/30 ${isLast ? 'border-b-2 border-slate-400' : 'border-b border-slate-200'
-                              }`}
+                              } hover:bg-blue-50/30`}
                           >
                             {/* 1. Sr. No. (Rowspanned across all items in section) */}
                             {isFirst && (
                               <td
                                 rowSpan={rowCount}
-                                className="py-3 px-3 sm:px-4 text-center font-bold text-slate-700 align-top bg-white border-r border-slate-300 border-b-2 border-slate-400 tabular-nums text-xs sm:text-sm pt-4"
+                                className="py-3 px-3 sm:px-4 text-center font-bold text-slate-700 align-top bg-white border-r border-r-slate-200 border-b-2 border-b-slate-400 tabular-nums text-xs sm:text-sm pt-4"
                               >
                                 {cat.number}
                               </td>
@@ -396,14 +395,14 @@ export default function PublicDisclosureExplorer({ onBack }) {
                             {isFirst && (
                               <td
                                 rowSpan={rowCount}
-                                className="py-3 px-3 sm:px-4 font-bold text-[#0c2340] align-top bg-white border-r border-slate-300 border-b-2 border-slate-400 text-xs sm:text-sm leading-snug pt-4"
+                                className="py-3 px-3 sm:px-4 font-bold text-[#0c2340] align-top bg-white border-r border-r-slate-200 border-b-2 border-b-slate-400 text-xs sm:text-sm leading-snug pt-4"
                               >
                                 <span>{cat.shortTitle || cat.title}</span>
                               </td>
                             )}
 
                             {/* 3. Subtitle */}
-                            <td className={`py-3 px-4 sm:px-5 align-top border-r border-slate-200 ${isLast ? 'border-b-2 border-slate-400' : 'border-b border-slate-200'
+                            <td className={`py-3 px-4 sm:px-5 align-top border-r border-r-slate-200 ${isLast ? 'border-b-2 border-b-slate-400' : 'border-b border-b-slate-200'
                               }`}>
                               <span className="font-semibold font-sans text-[13px] text-slate-800 leading-snug block">
                                 {item.subtitle}
@@ -411,7 +410,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                             </td>
 
                             {/* 4. Links on Website */}
-                            <td className={`py-3 px-4 sm:px-5 align-top ${isLast ? 'border-b-2 border-slate-400' : 'border-b border-slate-200'
+                            <td className={`py-3 px-4 sm:px-5 align-top ${isLast ? 'border-b-2 border-b-slate-400' : 'border-b border-b-slate-200'
                               }`}>
                               {/* Contact Person Details */}
                               {item.contact ? (
