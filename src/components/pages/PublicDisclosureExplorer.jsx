@@ -367,9 +367,11 @@ export default function PublicDisclosureExplorer({ onBack }) {
                   </thead>
 
                   <tbody>
-                    {filteredCategories.map((cat) => {
+                    {filteredCategories.map((cat, catIdx) => {
                       const rowCount = cat.items.length;
                       if (rowCount === 0) return null;
+                      const col1Bg = catIdx % 2 === 0 ? 'bg-slate-50/90' : 'bg-white';
+                      const col2Bg = catIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50/90';
 
                       return cat.items.map((item, idx) => {
                         const isFirst = idx === 0;
@@ -378,14 +380,14 @@ export default function PublicDisclosureExplorer({ onBack }) {
                         return (
                           <tr
                             key={`${cat.id}-${idx}`}
-                            className={`transition-colors ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/80'
-                              } hover:bg-blue-50/30`}
+                            className={`transition-colors ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/90'
+                              } hover:bg-blue-50/90`}
                           >
                             {/* 1. Sr. No. (Rowspanned across all items in section) */}
                             {isFirst && (
                               <td
                                 rowSpan={rowCount}
-                                className="py-3 px-3 sm:px-4 text-center font-bold text-slate-700 align-top bg-white border-r border-r-slate-200 border-b-2 border-b-slate-400 tabular-nums text-xs sm:text-sm pt-4"
+                                className={`py-3 px-3 sm:px-4 text-center font-bold text-slate-700 align-top ${col1Bg} hover:bg-blue-50/90 transition-colors border-r border-r-slate-200 border-b-2 border-b-slate-400 tabular-nums text-xs sm:text-sm pt-4`}
                               >
                                 {cat.number}
                               </td>
@@ -395,7 +397,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                             {isFirst && (
                               <td
                                 rowSpan={rowCount}
-                                className="py-3 px-3 sm:px-4 font-bold text-[#0c2340] align-top bg-white border-r border-r-slate-200 border-b-2 border-b-slate-400 text-xs sm:text-sm leading-snug pt-4"
+                                className={`py-3 px-3 sm:px-4 font-bold text-[#0c2340] align-top ${col2Bg} hover:bg-blue-50/90 transition-colors border-r border-r-slate-200 border-b-2 border-b-slate-400 text-xs sm:text-sm leading-snug pt-4`}
                               >
                                 <span>{cat.shortTitle || cat.title}</span>
                               </td>
