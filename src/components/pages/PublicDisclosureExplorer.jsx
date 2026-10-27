@@ -124,9 +124,9 @@ export default function PublicDisclosureExplorer({ onBack }) {
             </a>
           </div>
 
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 sm:gap-6">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-3.5 sm:gap-6">
             <div>
-              <div className="flex items-center gap-2.5 mb-2.5">
+              <div className="hidden sm:flex items-center gap-2.5 mb-2.5">
                 <span className="w-8 h-[3.5px] bg-gold rounded-full" />
                 <span className="font-sans text-[12px] sm:text-xs font-black uppercase tracking-[0.09em] text-[#0c2340]">
                   {header.badge || 'MANDATORY STATUTORY DISCLOSURE'}
@@ -149,7 +149,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search disclosures..."
-                  className="w-full h-10 rounded-lg border border-slate-300/80 bg-white pl-3 sm:pl-3.5 pr-9 sm:pr-24 font-sans text-xs sm:text-[13px] text-slate-800 placeholder:text-slate-400 outline-none focus:outline-none focus-visible:outline-none focus:border-slate-400 focus:bg-white focus:ring-1 focus:ring-slate-300/60 transition-all shadow-2xs"
+                  className="w-full h-[35px] sm:h-10 rounded-lg border border-slate-300/80 bg-white pl-3 sm:pl-3.5 pr-8 sm:pr-24 font-sans text-xs sm:text-[13px] text-slate-800 placeholder:text-slate-400 outline-none focus:outline-none focus-visible:outline-none focus:border-slate-400 focus:bg-white focus:ring-1 focus:ring-slate-300/60 transition-all shadow-2xs"
                 />
                 {searchQuery && (
                   <button
@@ -179,7 +179,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                   <button
                     type="button"
                     onClick={() => setIsDropdownOpen((prev) => !prev)}
-                    className="h-10 inline-flex items-center justify-between gap-1 sm:gap-2 px-2 sm:px-3.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-xs sm:text-[13px] font-semibold text-[#0c2340] shadow-2xs transition-all duration-150 cursor-pointer sm:w-full"
+                    className="h-[35px] sm:h-10 inline-flex items-center justify-between gap-1 sm:gap-2 px-2 sm:px-3.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-xs sm:text-[13px] font-semibold text-[#0c2340] shadow-2xs transition-all duration-150 cursor-pointer sm:w-full"
                     aria-expanded={isDropdownOpen}
                     aria-haspopup="listbox"
                     title={selectedCategory === 'all' ? 'All Sections' : categories.find((c) => c.id === selectedCategory)?.shortTitle}
@@ -205,11 +205,11 @@ export default function PublicDisclosureExplorer({ onBack }) {
                     />
                   </button>
 
-                  {/* Dropdown Menu Panel - Right-aligned with readable width on mobile, full width on laptop */}
+                  {/* Dropdown Menu Panel - Compact snug width on mobile, full width on laptop */}
                   {isDropdownOpen && (
                     <div
                       role="listbox"
-                      className="absolute right-0 sm:left-0 sm:right-0 top-full mt-1 w-[260px] sm:w-full max-w-[calc(100vw-24px)] max-h-80 overflow-y-auto rounded-xl bg-white border border-slate-200 shadow-xl z-50 font-sans"
+                      className="absolute right-0 sm:left-0 sm:right-0 top-full mt-1 w-[150px] sm:w-full max-w-[calc(100vw-24px)] max-h-80 overflow-y-auto rounded-xl bg-white border border-slate-200 shadow-xl z-50 font-sans"
                     >
                       <button
                         type="button"
@@ -219,7 +219,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                           setSelectedCategory('all');
                           setIsDropdownOpen(false);
                         }}
-                        className={`w-full text-left px-3 py-2 text-xs sm:text-[12.5px] flex items-center justify-between transition-colors cursor-pointer ${selectedCategory === 'all'
+                        className={`w-full text-left px-3 py-2 sm:py-2 text-xs sm:text-[12.5px] flex items-center justify-between transition-colors cursor-pointer ${selectedCategory === 'all'
                           ? 'bg-blue-50/80 text-[#0c2340] font-bold'
                           : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900 font-medium'
                           }`}
@@ -242,7 +242,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                               setSelectedCategory(cat.id);
                               setIsDropdownOpen(false);
                             }}
-                            className={`w-full text-left px-3 py-2 text-xs sm:text-[12px] flex items-center justify-between transition-colors cursor-pointer ${isSelected
+                            className={`w-full text-left px-3 py-1.5 sm:py-2 text-xs sm:text-[12px] flex items-center justify-between transition-colors cursor-pointer ${isSelected
                               ? 'bg-blue-50/80 text-[#0c2340] font-bold'
                               : 'text-slate-700 hover:bg-slate-50 hover:text-cyan-900 font-medium'
                               }`}
@@ -264,7 +264,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                 <button
                   type="button"
                   onClick={() => window.print()}
-                  className="h-10 inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 rounded-lg border border-slate-200 hover:border-slate-300 text-slate-700 bg-white hover:bg-slate-50 text-xs sm:text-[13px] font-semibold shadow-2xs transition-colors cursor-pointer shrink-0"
+                  className="h-[35px] sm:h-10 inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 rounded-lg border border-slate-200 hover:border-slate-300 text-slate-700 bg-white hover:bg-slate-50 text-xs sm:text-[13px] font-semibold shadow-2xs transition-colors cursor-pointer shrink-0"
                   title="Print Public Disclosure Table"
                   aria-label="Print Table"
                 >
@@ -283,36 +283,37 @@ export default function PublicDisclosureExplorer({ onBack }) {
 
           {/* Quick Statutory Downloads Strip - Directly on page background */}
           <div className="mb-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+            <div className="flex items-center justify-between gap-2 mb-2.5 sm:mb-3">
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-4 bg-gold rounded-full" />
                 <h2 className="text-xs font-bold uppercase tracking-[0.11em] text-[#0c2340]">
                   Quick Statutory Downloads
                 </h2>
               </div>
-              <span className="text-[12px] text-slate-500 font-medium">
+              <span className="text-[11px] sm:text-[12px] text-slate-500 font-medium">
                 Official PDFs
               </span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4">
+            <div className="flex sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4 overflow-x-auto sm:overflow-visible pb-2 sm:pb-0 scrollbar-none snap-x snap-mandatory sm:snap-none -mx-5 px-5 sm:mx-0 sm:px-0">
               {quickDownloads.map((doc, idx) => (
                 <a
                   key={idx}
                   href={doc.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between gap-2 px-3 py-2.5 rounded-lg bg-white border border-slate-200/80 hover:border-cyan-700/40 hover:shadow-xs transition-all duration-150 min-w-0"
+                  className="group flex items-center justify-between gap-2 px-2.5 py-2 sm:px-3 sm:py-2.5 rounded-lg bg-white border border-slate-200/80 hover:border-cyan-700/40 hover:shadow-xs transition-all duration-150 w-[215px] sm:w-auto shrink-0 snap-start sm:shrink sm:snap-align-none"
                 >
-                  <div className="flex items-center gap-3 min-w-0 flex-1">
-                    <div className="w-9 h-9 rounded-md bg-red-50 text-red-600 flex items-center justify-center shrink-0 border border-red-100 group-hover:scale-105 transition-transform">
-                      <FilePdf size={26} weight="fill" />
+                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-md bg-red-50 text-red-600 flex items-center justify-center shrink-0 border border-red-100 group-hover:scale-105 transition-transform">
+                      <FilePdf size={22} weight="fill" className="sm:hidden" />
+                      <FilePdf size={26} weight="fill" className="hidden sm:block" />
                     </div>
-                    <span className="text-[12.5px] font-semibold text-[#0c2340] group-hover:text-cyan-800 truncate leading-tight">
+                    <span className="text-[12px] sm:text-[12.5px] font-semibold text-[#0c2340] group-hover:text-cyan-800 truncate leading-tight">
                       {doc.title}
                     </span>
                   </div>
-                  <DownloadSimple size={17} weight="bold" className="text-slate-400 group-hover:text-cyan-800 transition-colors shrink-0 ml-1" />
+                  <DownloadSimple size={15} weight="bold" className="text-slate-400 group-hover:text-cyan-800 transition-colors shrink-0 ml-1" />
                 </a>
               ))}
             </div>
