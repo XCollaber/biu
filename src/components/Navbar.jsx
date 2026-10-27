@@ -107,27 +107,27 @@ export default function Navbar() {
         onMouseEnter={handleMouseLeave}
         className="overflow-hidden bg-gradient-to-r from-[#143966] via-[#0c2340] to-[#07192e] text-white/90 font-sans text-[11px] sm:text-[12px] border-b border-white/10"
       >
-        <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-3 px-4 sm:px-6 lg:px-8 py-1.5">
-          <div className="flex items-center gap-2 text-white font-medium text-[11px] sm:text-[12px] tracking-wide">
-            <span className="font-semibold text-white">BIU</span>
-            <span className="text-white/60">•</span>
-            <span className="text-white/80">Bareilly International University Main Campus</span>
+        <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-2 sm:gap-3 px-3 sm:px-6 lg:px-8 py-1.5">
+          <div className="flex items-center gap-2 text-white font-medium text-[11px] sm:text-[12px] tracking-wide shrink-0">
+            <span className="font-semibold text-white ml-1 sm:ml-0">BIU</span>
+            <span className="hidden sm:inline text-white/60">•</span>
+            <span className="hidden sm:inline text-white/80">Bareilly International University Main Campus</span>
           </div>
 
-          <div className="flex items-center gap-4 sm:gap-6 text-white/90 text-[11px] sm:text-[12.5px]">
-            <a href="mailto:admissions@biu.edu.in" className="flex items-center gap-1.5 transition-colors hover:text-blue-200/95">
+          <div className="flex items-center gap-3.5 sm:gap-6 text-white/90 text-[10.5px] sm:text-[12.5px] whitespace-nowrap">
+            <a href="mailto:admissions@biu.edu.in" className="hidden sm:flex items-center gap-1.5 transition-colors hover:text-blue-200/95">
               <EnvelopeSimple size={15} weight="fill" className="text-blue-300 shrink-0" />
               <span>admissions@biu.edu.in</span>
             </a>
-            <a href="tel:+915812526244" className="hidden sm:flex items-center gap-1.5 transition-colors hover:text-blue-200/95">
-              <Phone size={14} weight="fill" className="text-blue-300 shrink-0" />
+            <a href="tel:+915812526244" className="flex items-center gap-1 sm:gap-1.5 transition-colors hover:text-blue-200/95">
+              <Phone size={13} weight="fill" className="text-blue-300 shrink-0" />
               <span>+91 (581) 2526244</span>
             </a>
             <a
               href="https://student.biuerp.com/studentpanel/student/stulogin"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-block font-medium text-white transition-colors hover:text-blue-200/95"
+              className="inline-block font-medium text-white transition-colors hover:text-blue-200/95"
             >
               Student Portal
             </a>
@@ -135,9 +135,9 @@ export default function Navbar() {
               href="https://biu.edu.in/career.php"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2.5 py-0.5 text-[11px] font-semibold text-white border border-white/20 transition-all hover:bg-white/20"
+              className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2 sm:px-2.5 py-0.5 text-[10.5px] sm:text-[11px] font-semibold text-white border border-white/20 transition-all hover:bg-white/20"
             >
-              <Briefcase size={14} weight="fill" className="text-blue-300 shrink-0" />
+              <Briefcase size={13} weight="fill" className="text-blue-300 shrink-0" />
               <span>Careers</span>
             </a>
           </div>
