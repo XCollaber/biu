@@ -138,70 +138,78 @@ export default function PublicDisclosureExplorer({ onBack }) {
             </div>
 
             {/* Filter toolbar placed directly in the top section */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-end gap-2.5 sm:gap-2.5">
-              {/* Search Input - Replicated from News Page with comfortable height */}
+            <div className="flex items-center justify-end gap-1.5 sm:gap-2.5 w-full lg:w-auto">
+              {/* Search Input - Flexible on mobile, fixed comfortable width on laptop */}
               <form
                 onSubmit={(e) => e.preventDefault()}
-                className="relative flex items-center w-full sm:w-[380px] md:w-[410px] max-w-[435px]"
+                className="relative flex items-center flex-1 sm:flex-initial w-full sm:w-[380px] md:w-[410px] max-w-[435px] min-w-0"
               >
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search disclosures (e.g., Act, RTI, Fees)..."
-                  className="w-full h-11 sm:h-10 rounded-lg border border-slate-300/80 bg-white pl-3.5 pr-24 py-3 font-sans text-xs sm:text-[13px] text-slate-800 placeholder:text-slate-400 outline-none focus:outline-none focus-visible:outline-none focus:border-slate-400 focus:bg-white focus:ring-1 focus:ring-slate-300/60 transition-all shadow-2xs"
+                  placeholder="Search disclosures..."
+                  className="w-full h-10 rounded-lg border border-slate-300/80 bg-white pl-3 sm:pl-3.5 pr-9 sm:pr-24 font-sans text-xs sm:text-[13px] text-slate-800 placeholder:text-slate-400 outline-none focus:outline-none focus-visible:outline-none focus:border-slate-400 focus:bg-white focus:ring-1 focus:ring-slate-300/60 transition-all shadow-2xs"
                 />
                 {searchQuery && (
                   <button
                     type="button"
                     onClick={() => setSearchQuery('')}
-                    className="absolute right-20 top-1/2 -translate-y-1/2 text-slate-500 hover:text-rose-600 p-2 cursor-pointer"
+                    className="absolute right-8 sm:right-20 top-1/2 -translate-y-1/2 text-slate-500 hover:text-rose-600 p-1.5 sm:p-2 cursor-pointer"
                     title="Clear search"
                   >
-                    <X size={16} />
+                    <X size={14} className="sm:hidden" />
+                    <X size={16} className="hidden sm:block" />
                   </button>
                 )}
                 <button
                   type="submit"
-                  className="absolute right-1.5 top-1.5 bottom-1.5 rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-3 font-sans text-[11px] sm:text-xs font-bold uppercase tracking-wider text-white brightness-125 transition-all duration-200 hover:brightness-140 hover:shadow-sm active:scale-[0.98] cursor-pointer flex items-center justify-center"
+                  aria-label="Search"
+                  className="absolute right-1 top-1 bottom-1 sm:right-1.5 sm:top-1.5 sm:bottom-1.5 rounded-md bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 w-7 sm:w-auto px-1.5 sm:px-3 font-sans text-[11px] sm:text-xs font-bold uppercase tracking-wider text-white brightness-125 transition-all duration-200 hover:brightness-140 hover:shadow-sm active:scale-[0.98] cursor-pointer flex items-center justify-center shrink-0"
                 >
-                  Search
+                  <MagnifyingGlass size={13} weight="bold" className="sm:hidden" />
+                  <span className="hidden sm:inline">Search</span>
                 </button>
               </form>
 
-              {/* Custom Dropdown & Print Button Group */}
-              <div className="flex items-center gap-2.5">
+              {/* Custom Dropdown & Print Button Group - Inline with Search on mobile */}
+              <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
                 {/* Custom Category Dropdown */}
-                <div className="relative w-40 sm:w-40" ref={dropdownRef}>
+                <div className="relative shrink-0 sm:w-40" ref={dropdownRef}>
                   <button
                     type="button"
                     onClick={() => setIsDropdownOpen((prev) => !prev)}
-                    className="w-full h-11 sm:h-10 inline-flex items-center justify-between gap-2 px-3.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-xs sm:text-[13px] font-semibold text-[#0c2340] shadow-2xs transition-all duration-150 cursor-pointer"
+                    className="h-10 inline-flex items-center justify-between gap-1 sm:gap-2 px-2 sm:px-3.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-xs sm:text-[13px] font-semibold text-[#0c2340] shadow-2xs transition-all duration-150 cursor-pointer sm:w-full"
                     aria-expanded={isDropdownOpen}
                     aria-haspopup="listbox"
+                    title={selectedCategory === 'all' ? 'All Sections' : categories.find((c) => c.id === selectedCategory)?.shortTitle}
                   >
-                    <div className="flex items-center gap-1.5 truncate">
-                      <Funnel size={15} className="text-slate-600/70 shrink-0" weight="bold" />
-                      <span className="truncate">
+                    <div className="flex items-center gap-1 sm:gap-1.5 truncate">
+                      <Funnel size={14} className="text-slate-600/70 shrink-0" weight="bold" />
+                      <span className="sm:hidden text-xs font-semibold truncate max-w-[55px]">
+                        {selectedCategory === 'all'
+                          ? 'Sections'
+                          : `Sec ${categories.find((c) => c.id === selectedCategory)?.number || ''}`}
+                      </span>
+                      <span className="hidden sm:inline truncate">
                         {selectedCategory === 'all'
                           ? 'All Sections'
-                          : `${categories.find((c) => c.id === selectedCategory)?.number}. ${categories.find((c) => c.id === selectedCategory)?.shortTitle
-                          }`}
+                          : `${categories.find((c) => c.id === selectedCategory)?.number}. ${categories.find((c) => c.id === selectedCategory)?.shortTitle}`}
                       </span>
                     </div>
                     <CaretDown
-                      size={12}
+                      size={11}
                       weight="bold"
                       className={`text-slate-500 transition-transform duration-200 shrink-0 ${isDropdownOpen ? 'rotate-180 text-[#0c2340]' : ''
                         }`}
                     />
                   </button>
 
-                  {/* Dropdown Menu Panel - Exact same width as button */}
+                  {/* Dropdown Menu Panel - Right-aligned with readable width on mobile, full width on laptop */}
                   {isDropdownOpen && (
                     <div
                       role="listbox"
-                      className="absolute left-0 right-0 top-full mt-1 w-full max-h-80 overflow-y-auto rounded-xl bg-white border border-slate-200 shadow-xl z-50 font-sans"
+                      className="absolute right-0 sm:left-0 sm:right-0 top-full mt-1 w-[260px] sm:w-full max-w-[calc(100vw-24px)] max-h-80 overflow-y-auto rounded-xl bg-white border border-slate-200 shadow-xl z-50 font-sans"
                     >
                       <button
                         type="button"
@@ -252,15 +260,16 @@ export default function PublicDisclosureExplorer({ onBack }) {
                   )}
                 </div>
 
-                {/* Print Action - Placed directly on the right of the dropdown button */}
+                {/* Print Action - Icon-only on mobile, full button on laptop */}
                 <button
                   type="button"
                   onClick={() => window.print()}
-                  className="h-11 sm:h-10 inline-flex items-center gap-1.5 px-3 rounded-lg border border-slate-200 hover:border-slate-300 text-slate-700 bg-white hover:bg-slate-50 text-xs sm:text-[13px] font-semibold shadow-2xs transition-colors cursor-pointer"
+                  className="h-10 inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 rounded-lg border border-slate-200 hover:border-slate-300 text-slate-700 bg-white hover:bg-slate-50 text-xs sm:text-[13px] font-semibold shadow-2xs transition-colors cursor-pointer shrink-0"
                   title="Print Public Disclosure Table"
+                  aria-label="Print Table"
                 >
-                  <Printer size={15} weight="bold" />
-                  <span>Print Table</span>
+                  <Printer size={15} weight="bold" className="shrink-0" />
+                  <span className="hidden sm:inline">Print Table</span>
                 </button>
               </div>
             </div>
