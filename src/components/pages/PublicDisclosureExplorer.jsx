@@ -60,6 +60,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
             const inSubtitle = item.subtitle?.toLowerCase().includes(q);
             const inDetails = item.details?.toLowerCase().includes(q);
             const inLink = item.link?.toLowerCase().includes(q);
+            const inUrl = item.url?.toLowerCase().includes(q);
             const inContactName = item.contact?.name?.toLowerCase().includes(q);
             const inContactEmail = item.contact?.email?.toLowerCase().includes(q);
             const inContactPhone = item.contact?.phone?.toLowerCase().includes(q);
@@ -69,6 +70,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
               inSubtitle ||
               inDetails ||
               inLink ||
+              inUrl ||
               inContactName ||
               inContactEmail ||
               inContactPhone ||
@@ -376,6 +378,9 @@ export default function PublicDisclosureExplorer({ onBack }) {
                       return cat.items.map((item, idx) => {
                         const isFirst = idx === 0;
                         const isLast = idx === rowCount - 1;
+                        const targetUrl = item.url || item.link;
+                        const isPdf = item.type === 'pdf' || (targetUrl && targetUrl.toLowerCase().endsWith('.pdf')) || (item.link && item.link.toLowerCase().endsWith('.pdf'));
+                        const isExternal = targetUrl && (targetUrl.startsWith('http') || isPdf);
 
                         return (
                           <tr
@@ -418,8 +423,9 @@ export default function PublicDisclosureExplorer({ onBack }) {
                               {item.contact ? (
                                 <div className="space-y-1 text-xs text-slate-800 font-sans">
                                   {item.contact.name && (
-                                    <div className="font-bold text-[#0c2340]">
-                                      Name: {item.contact.name}
+                                    <div className="flex items-baseline gap-1.5">
+                                      <span className="text-slate-500 shrink-0 font-semibold">Name:</span>
+                                      <span className="font-bold text-[#0c2340]">{item.contact.name}</span>
                                     </div>
                                   )}
                                   {item.contact.email && (
@@ -427,7 +433,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                                       <span className="text-slate-500">Email:</span>
                                       <a
                                         href={`mailto:${item.contact.email}`}
-                                        className="text-blue-600 hover:text-blue-800 hover:underline break-all font-medium"
+                                        className="text-cyan-600 hover:text-cyan-800 hover:underline break-all font-medium truncate"
                                       >
                                         {item.contact.email}
                                       </a>
@@ -450,7 +456,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                                       <span className="text-slate-500">Mobile:</span>
                                       <a
                                         href={`tel:${item.contact.phone}`}
-                                        className="text-blue-600 hover:text-blue-800 hover:underline font-medium"
+                                        className="text-cyan-600 hover:text-cyan-800 hover:underline font-medium"
                                       >
                                         {item.contact.phone}
                                       </a>
@@ -470,17 +476,17 @@ export default function PublicDisclosureExplorer({ onBack }) {
                                   )}
                                 </div>
                               ) : item.link ? (
-                                /* Clickable Link (URL or PDF) matching screenshot style */
+                                /* Clickable Link (URL or PDF) triggering actual destination while displaying short name */
                                 <a
-                                  href={item.link}
-                                  target={item.link.startsWith('http') || item.type === 'pdf' ? '_blank' : undefined}
-                                  rel={item.link.startsWith('http') || item.type === 'pdf' ? 'noopener noreferrer' : undefined}
-                                  className="text-blue-600 hover:text-blue-800 hover:underline inline-flex items-start gap-1.5 break-all text-xs font-medium leading-snug group"
+                                  href={targetUrl}
+                                  target={isExternal ? '_blank' : undefined}
+                                  rel={isExternal ? 'noopener noreferrer' : undefined}
+                                  className="text-cyan-600 hover:text-cyan-800 hover:underline inline-flex items-start gap-1.5 break-all text-[12px] sm:text-[13px] font-semibold leading-snug group"
                                 >
-                                  {item.type === 'pdf' || item.link.toLowerCase().endsWith('.pdf') ? (
-                                    <FilePdf size={14} weight="fill" className="text-red-600 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                                  {isPdf ? (
+                                    <FilePdf size={24} weight="fill" className="text-red-600 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                                   ) : (
-                                    <ArrowSquareOut size={13} className="text-blue-500 shrink-0 mt-0.5" />
+                                    <ArrowSquareOut size={15} weight="bold" className="text-cyan-800 shrink-0 mt-0.5" />
                                   )}
                                   <span>{item.link}</span>
                                 </a>
