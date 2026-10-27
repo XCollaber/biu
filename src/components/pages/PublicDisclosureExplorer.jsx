@@ -290,12 +290,15 @@ export default function PublicDisclosureExplorer({ onBack }) {
                   Quick Statutory Downloads
                 </h2>
               </div>
-              <span className="text-[11px] sm:text-[12px] text-slate-500 font-medium">
+              <span className="hidden sm:inline text-[12px] text-slate-500 font-medium">
                 Official PDFs
               </span>
             </div>
 
-            <div className="flex sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4 overflow-x-auto sm:overflow-visible pb-2 sm:pb-0 scrollbar-none snap-x snap-mandatory sm:snap-none -mx-5 px-5 sm:mx-0 sm:px-0">
+            <div
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              className="flex sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4 overflow-x-auto sm:overflow-visible pb-2 sm:pb-0 no-scrollbar snap-x snap-mandatory sm:snap-none -mx-5 px-5 sm:mx-0 sm:px-0"
+            >
               {quickDownloads.map((doc, idx) => (
                 <a
                   key={idx}
@@ -347,7 +350,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
             /* THE CLEAN OFFICIAL STATUTORY TABLE                             */
             /* Exactly matching: Sr. No. | Title | Subtitle | Links on Website */
             /* ============================================================== */
-            <div className="rounded-xl bg-white border border-slate-200/80 shadow-xs overflow-hidden">
+            <div className="-mx-3.5 sm:mx-0 rounded-lg sm:rounded-xl bg-white border border-slate-200/80 shadow-xs overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse text-xs sm:text-[13px]">
                   {/* 4 Standard Statutory Columns - Styled with EducationStreams blue gradient ribbon */}
@@ -363,16 +366,16 @@ export default function PublicDisclosureExplorer({ onBack }) {
                       }}
                       className="bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 text-white border-b border-slate-200/80"
                     >
-                      <th className="py-3 px-3 sm:px-4 w-16 sm:w-20 text-center uppercase tracking-wider text-xs sm:text-[11.5px] font-semibold text-white border-r border-r-slate-200">
+                      <th className="py-3 px-2 sm:px-4 w-12 sm:w-20 text-center uppercase tracking-wider text-xs sm:text-[11.5px] font-semibold text-white border-r border-r-slate-200">
                         Sr. No.
                       </th>
-                      <th className="py-3 px-3 sm:px-4 w-32 sm:w-40 uppercase tracking-wider text-xs font-semibold text-white border-r border-r-slate-200">
+                      <th className="py-3 px-2.5 sm:px-4 w-24 sm:w-40 uppercase tracking-wider text-xs font-semibold text-white border-r border-r-slate-200">
                         Title
                       </th>
-                      <th className="py-3 px-4 sm:px-5 uppercase tracking-wider text-xs font-semibold text-white border-r border-r-slate-200 min-w-[360px] sm:min-w-[440px]">
+                      <th className="py-3 px-3 sm:px-5 uppercase tracking-wider text-xs font-semibold text-white border-r border-r-slate-200 min-w-[220px] sm:min-w-[440px]">
                         Subtitle
                       </th>
-                      <th className="py-3 px-4 sm:px-5 w-72 sm:w-80 uppercase tracking-wider text-xs font-semibold text-white">
+                      <th className="py-3 px-5 sm:px-5 w-64 sm:w-80 uppercase tracking-wider text-xs font-semibold text-white">
                         Links on Website
                       </th>
                     </tr>
@@ -402,7 +405,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                             {isFirst && (
                               <td
                                 rowSpan={rowCount}
-                                className={`py-3 px-3 sm:px-4 text-center font-bold text-slate-700 align-top ${col1Bg} transition-colors border-r border-r-slate-200 border-b-2 border-b-slate-400 tabular-nums text-xs sm:text-sm pt-4`}
+                                className={`py-3 px-2 sm:px-4 text-center font-bold text-slate-700 align-top ${col1Bg} transition-colors border-r border-r-slate-200 border-b-2 border-b-slate-400 tabular-nums text-xs sm:text-sm pt-4`}
                               >
                                 {cat.number}
                               </td>
@@ -412,14 +415,14 @@ export default function PublicDisclosureExplorer({ onBack }) {
                             {isFirst && (
                               <td
                                 rowSpan={rowCount}
-                                className={`py-3 px-3 sm:px-4 font-bold text-[#0c2340] align-top ${col2Bg} transition-colors border-r border-r-slate-200 border-b-2 border-b-slate-400 text-xs sm:text-sm leading-snug pt-4`}
+                                className={`py-3 px-2.5 sm:px-4 font-bold text-[#0c2340] align-top ${col2Bg} transition-colors border-r border-r-slate-200 border-b-2 border-b-slate-400 text-xs sm:text-sm leading-snug pt-4`}
                               >
                                 <span>{cat.shortTitle || cat.title}</span>
                               </td>
                             )}
 
                             {/* 3. Subtitle */}
-                            <td className={`py-3 px-4 sm:px-5 align-top border-r border-r-slate-200 ${isLast ? 'border-b-2 border-b-slate-400' : 'border-b border-b-slate-200'
+                            <td className={`py-3 px-3 sm:px-5 align-top border-r border-r-slate-200 ${isLast ? 'border-b-2 border-b-slate-400' : 'border-b border-b-slate-200'
                               }`}>
                               <span className="font-semibold font-sans text-[13px] text-slate-800 leading-snug block">
                                 {item.subtitle}
@@ -427,7 +430,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                             </td>
 
                             {/* 4. Links on Website */}
-                            <td className={`py-3 px-4 sm:px-5 align-top ${isLast ? 'border-b-2 border-b-slate-400' : 'border-b border-b-slate-200'
+                            <td className={`py-3 px-5 sm:px-5 align-top ${isLast ? 'border-b-2 border-b-slate-400' : 'border-b border-b-slate-200'
                               }`}>
                               {/* Contact Person Details */}
                               {item.contact ? (
