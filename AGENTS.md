@@ -42,3 +42,7 @@ Before writing ANY Astro code (pages, layouts, config, collections, actions, mid
 1. Read `.agents/skills/astro-framework/SKILL.md`, then only the `references/` file for the current topic.
 2. Query the `astro-docs` MCP (`search_astro_docs`) to verify APIs and config. Don't rely on memory.
 3. For hydration directives or splitting React components into islands, also read `.agents/skills/astro-islands-hydration`.
+
+## 📁 External Directory Access
+- **Path**: `D:\biu-original`
+- **Strict Access Constraint**: The agent MUST ONLY read or access files from `D:\biu-original` when the user explicitly instructs it to do so in a prompt (or references it via `@`). The agent must NEVER proactively, autonomously, or preemptively scan, search, or read files from this directory.

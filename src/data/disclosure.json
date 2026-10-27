@@ -6,10 +6,22 @@
     "description": "In compliance with the University Grants Commission (UGC) Guidelines for Information Disclosure by Higher Education Institutions, Bareilly International University proactively publishes institutional information, statutory acts, administrative bodies, academic programmes, and student welfare policies.",
     "lastUpdated": "Academic Session 2026-27",
     "quickStats": [
-      { "label": "Statutory Sections", "value": "10" },
-      { "label": "Audited Disclosures", "value": "50+" },
-      { "label": "Accreditation", "value": "NAAC A+ Grade" },
-      { "label": "Regulatory Body", "value": "UGC Recognized" }
+      {
+        "label": "Statutory Sections",
+        "value": "10"
+      },
+      {
+        "label": "Audited Disclosures",
+        "value": "50+"
+      },
+      {
+        "label": "Accreditation",
+        "value": "NAAC A+ Grade"
+      },
+      {
+        "label": "Regulatory Body",
+        "value": "UGC Recognized"
+      }
     ],
     "quickDownloads": [
       {
@@ -51,14 +63,14 @@
         {
           "subtitle": "About Us - Overview",
           "details": "Institutional history, vision, mission, and core values of Bareilly International University.",
-          "link": "https://www.biu.edu.in/history",
+          "link": "/history",
           "type": "internal",
           "label": "View History & Overview"
         },
         {
           "subtitle": "Act and Statutes or MoA",
           "details": "State University establishment enactment, legislative statutes, and Memorandum of Association.",
-          "link": "https://biu.edu.in/ugc/Act.pdf",
+          "link": "/ugc-Act.pdf",
           "type": "pdf",
           "label": "Download Act & Statutes (PDF)"
         },
@@ -78,7 +90,7 @@
         {
           "subtitle": "Accreditation/ Ranking Status (NAAC, NBA, NIRF)",
           "details": "Official NAAC A+ accreditation certification, NBA approvals, and National Institutional Ranking Framework standings.",
-          "link": "https://biu.edu.in/ugc/Accreditation Rank Status.pdf",
+          "link": "/Accreditation-Rank-Status.pdf",
           "status": "NAAC A+ (Certificate / Under Process)",
           "type": "pdf",
           "label": "Accreditation Status Document"
@@ -86,14 +98,14 @@
         {
           "subtitle": "Recognition / Approval (2(f), 12B, etc. as applicable)",
           "details": "Official recognition under Section 2(f) of the UGC Act 1956 and national apex healthcare councils.",
-          "link": "https://www.biu.edu.in/recognitions",
+          "link": "/recognitions",
           "type": "internal",
           "label": "Statutory Recognitions"
         },
         {
           "subtitle": "Annual Reports",
           "details": "Comprehensive yearly documentation of academic accomplishments, research breakthroughs, and institutional operations.",
-          "link": "https://biu.edu.in/ugc/Annual Report.pdf",
+          "link": "/Annual-Report.pdf",
           "type": "pdf",
           "label": "Download Annual Report (PDF)"
         },
@@ -106,7 +118,7 @@
         {
           "subtitle": "Sponsoring Body Details, if any",
           "details": "Rohilkhand Educational Charitable Trust — governance, trust deed, and registered non-profit charter.",
-          "link": "https://biu.edu.in/ugc/Sponsoring Body Detail.pdf",
+          "link": "/Sponsoring-Body-Detail.pdf",
           "type": "pdf",
           "label": "Sponsoring Body Details (PDF)"
         }
@@ -123,35 +135,35 @@
         {
           "subtitle": "Chancellor",
           "details": "Dr. Keshav Kumar Agarwal — vision, leadership message, and chancellor office profile.",
-          "link": "https://www.biu.edu.in/chancellor",
+          "link": "/chancellor",
           "type": "internal",
           "label": "Chancellor Profile"
         },
         {
           "subtitle": "Pro Chancellor",
           "details": "Dr. Ashok Agarwal — governance oversight and institutional leadership.",
-          "link": "https://www.biu.edu.in/prochancellor",
+          "link": "/prochancellor",
           "type": "internal",
           "label": "Pro Chancellor Profile"
         },
         {
           "subtitle": "Vice-Chancellor",
           "details": "Chief Executive & Academic Officer of Bareilly International University.",
-          "link": "https://www.biu.edu.in/vicechancellor",
+          "link": "/vicechancellor",
           "type": "internal",
           "label": "Vice-Chancellor Profile"
         },
         {
           "subtitle": "Pro Vice-Chancellor",
           "details": "Senior leadership, academic governance, and institutional operations coordination.",
-          "link": "https://www.biu.edu.in/provicechancellor",
+          "link": "/provicechancellor",
           "type": "internal",
           "label": "Pro Vice-Chancellor Profile"
         },
         {
           "subtitle": "Registrar",
           "details": "Official custodian of records, university seal, statutory affiliations, and administrative administration.",
-          "link": "https://www.biu.edu.in/registrar",
+          "link": "/registrar",
           "type": "internal",
           "label": "Registrar Profile"
         },
@@ -199,42 +211,42 @@
         {
           "subtitle": "Board of Governors",
           "details": "Apex statutory body responsible for the general superintendence, direction, and management of university affairs.",
-          "link": "https://biu.edu.in/ugc/GOVERNING BOARD.pdf",
+          "link": "/Governing-Board.pdf",
           "type": "pdf",
           "label": "Governing Board Composition (PDF)"
         },
         {
           "subtitle": "Executive Council",
           "details": "Principal executive body executing the policies and administering the affairs of the university.",
-          "link": "https://biu.edu.in/ugc/THE EXECUTIVE COUNCIL.pdf",
+          "link": "/Executive-Council.pdf",
           "type": "pdf",
           "label": "Executive Council Composition (PDF)"
         },
         {
           "subtitle": "Academic Council",
           "details": "Apex academic body governing curricula, educational standards, examination regulations, and pedagogical policies.",
-          "link": "https://biu.edu.in/ugc/THE ACADEMIC COUNCIL.pdf",
+          "link": "/Academic-Council.pdf",
           "type": "pdf",
           "label": "Academic Council Composition (PDF)"
         },
         {
           "subtitle": "Board of Studies (BOS)",
           "details": "Departmental academic boards formulating and revising course syllabi, curriculum, and reading references.",
-          "link": "https://biu.edu.in/ugc/Administration BOTHE BOARD OF STUDIES.pdf",
+          "link": "/Board-of-Studies.pdf",
           "type": "pdf",
           "label": "Board of Studies Document (PDF)"
         },
         {
           "subtitle": "Finance Committee – Composition and Members with Particulars",
           "details": "Statutory committee overseeing fiscal health, annual budgetary allocations, infrastructure capital, and audited statements.",
-          "link": "https://biu.edu.in/ugc/FINANCE COMMITTEE.pdf",
+          "link": "/Finance-Committee.pdf",
           "type": "pdf",
           "label": "Finance Committee Composition (PDF)"
         },
         {
           "subtitle": "Internal Complaint Committee (ICC)",
           "details": "Statutory body constituted under the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013.",
-          "link": "https://biu.edu.in/committees-cells",
+          "link": "/committees-cells",
           "type": "internal",
           "label": "ICC Committee & Contacts"
         },
@@ -271,7 +283,7 @@
         {
           "subtitle": "Statutes / Ordinances Pertaining to Academics / Examinations",
           "details": "Official ordinances regulating conduct of examinations, evaluation criteria, grace marks, revaluation, and degree awards.",
-          "link": "https://biu.edu.in/ugc/Ordinances Pertaining to Examination.pdf",
+          "link": "/Examination-Ordinances.pdf",
           "type": "pdf",
           "label": "Examination Ordinances (PDF)"
         },
@@ -298,21 +310,21 @@
         {
           "subtitle": "Internal Quality Assurance Cell (IQAC)",
           "details": "Quality monitoring, NAAC benchmarks, feedback analysis, student outcomes assessment, and institutional best practices.",
-          "link": "https://www.biu.edu.in/iqac-overview",
+          "link": "/iqac-overview",
           "type": "internal",
           "label": "Visit IQAC Portal"
         },
         {
           "subtitle": "Library",
           "details": "Air-conditioned multi-storey library facility holding over 50,000 volumes, international e-journals, DELNET, and Medline databases.",
-          "link": "https://page.biu.edu.in/central-library/",
+          "link": "/central-library",
           "type": "external",
           "label": "Access Central Library"
         },
         {
           "subtitle": "Academic Collaborations",
           "details": "National and global academic partnerships for student exchange, clinical training, and collaborative research initiatives.",
-          "link": "https://biu.edu.in/ugc/Academic collaborations.pdf",
+          "link": "/Academic-Collaborations.pdf",
           "type": "pdf",
           "label": "Academic Collaborations (PDF)"
         }
@@ -329,21 +341,21 @@
         {
           "subtitle": "Prospectus (including fee structure for various programs)",
           "details": "Comprehensive informational brochure featuring course syllabi, campus infrastructure, fee structures, and campus life.",
-          "link": "https://page.biu.edu.in/wp-content/uploads/2025/01/Brochure-BIU_compressed.pdf",
+          "link": "/Prospectus.pdf",
           "type": "pdf",
           "label": "Download University Brochure (PDF)"
         },
         {
           "subtitle": "Admission Process and Guidelines",
           "details": "Online registration portal, counseling procedures, NEET UG/PG eligibility, CUET acceptance, and admission helpdesks.",
-          "link": "https://enquiry.biuerp.com/",
+          "link": "/admission-enquiry",
           "type": "external",
           "label": "Online Admission & Enquiry Portal"
         },
         {
           "subtitle": "Fee structure for various programs",
           "details": "Approved tuition fees, laboratory charges, hostel costs, security deposits, and examination fees for all academic courses.",
-          "link": "https://page.biu.edu.in/wp-content/uploads/2025/01/Brochure-BIU_compressed.pdf",
+          "link": "/Brochure-BIU.pdf",
           "type": "pdf",
           "label": "Approved Fee Structure (in Prospectus PDF)"
         },
@@ -404,7 +416,7 @@
         {
           "subtitle": "NCC / NSS – Details",
           "details": "National Service Scheme (NSS) units conducting free medical health camps, blood donation drives, and rural health awareness.",
-          "link": "https://biu.edu.in/ugc/NSS.pdf",
+          "link": "/NSS.pdf",
           "type": "pdf",
           "label": "Download NSS Activities (PDF)"
         },
@@ -425,7 +437,7 @@
         {
           "subtitle": "Details Of Student Grievance Redressal Committee (SGRC) And Ombudsperson",
           "details": "Online portal and statutory forum providing prompt redressal of student academic, administrative, and hostel grievances.",
-          "link": "https://page.biu.edu.in/grievance-redressal-form/",
+          "link": "/grievance-redressal-form",
           "type": "external",
           "label": "Submit Grievance Online"
         },
@@ -439,28 +451,28 @@
         {
           "subtitle": "Internal Complaint Committee (ICC)",
           "details": "Zero-tolerance statutory cell safeguarding women rights, gender equality, and workplace dignity.",
-          "link": "https://biu.edu.in/committees-cells",
+          "link": "/committees-cells",
           "type": "internal",
           "label": "ICC Roster & Contact"
         },
         {
           "subtitle": "Anti-Ragging Cell & Helpline",
           "details": "Strict zero-tolerance anti-ragging squads, CCTV monitored zones, national anti-ragging helpline compliance, and affidavit guidelines.",
-          "link": "https://biu.edu.in/notice/antiragging-information.pdf",
+          "link": "/antiragging-information.pdf",
           "type": "pdf",
           "label": "Anti-Ragging Notification (PDF)"
         },
         {
           "subtitle": "Equal Opportunity Cell (EOC)",
           "details": "Institutional mechanism ensuring non-discrimination and academic support for marginalized socio-economic communities.",
-          "link": "https://biu.edu.in/committees-cells",
+          "link": "/committees-cells",
           "type": "internal",
           "label": "Equal Opportunity Cell"
         },
         {
           "subtitle": "Socio-Economically Disadvantaged Groups Cell (SEDG)",
           "details": "Specialized mentorship and scholarship guidance for SC/ST/OBC and economically weaker section students.",
-          "link": "https://biu.edu.in/committees-cells",
+          "link": "/committees-cells",
           "type": "internal",
           "label": "SEDG Cell Information"
         },
@@ -483,7 +495,7 @@
         {
           "subtitle": "Alumni Association with Details",
           "details": "Global network of medical doctors, dental specialists, nursing supervisors, pharmacists, and research scholars.",
-          "link": "https://biu.edu.in/alumni",
+          "link": "/alumni",
           "type": "internal",
           "label": "Alumni Association Portal"
         }
@@ -500,7 +512,7 @@
         {
           "subtitle": "RTI: Details of Central Public Information Officer (CPIO) and Appellate Authority (wherever applicable)",
           "details": "Mandatory particulars of Central Public Information Officer (CPIO), First Appellate Authority (FAA), and RTI application procedure.",
-          "link": "https://www.biu.edu.in/notice/RTI.pdf",
+          "link": "/RTI.pdf",
           "type": "pdf",
           "label": "Download RTI Document (PDF)"
         },
@@ -527,14 +539,14 @@
         {
           "subtitle": "News, Recent Events & Achievements",
           "details": "Coverage of national conclaves, white coat ceremonies, sports meets, and national medical recognitions.",
-          "link": "https://page.biu.edu.in/latest-events/",
+          "link": "/latest-events",
           "type": "external",
           "label": "Latest Events & News Portal"
         },
         {
           "subtitle": "Job Openings",
           "details": "Employment notifications, faculty recruitment for professors/assistant professors, senior residents, and administrative positions.",
-          "link": "https://www.biu.edu.in/career",
+          "link": "/career",
           "type": "internal",
           "label": "View Career Opportunities"
         },
