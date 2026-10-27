@@ -507,10 +507,10 @@ export default function PublicDisclosureExplorer({ onBack }) {
                                   </a>
                                 )
                               ) : item.type === 'na' || item.status === 'NA' ? (
-                                <span className="text-slate-500 text-xs font-medium">NA</span>
+                                <span className="text-slate-400/80 text-[11px] font-medium">NA</span>
                               ) : (
-                                <span className="text-amber-700/70 text-xs italic">
-                                  {item.status || 'In Preparation / Under Process'}
+                                <span className="text-slate-400/80 text-[11px] leading-tight block">
+                                  Under Process
                                 </span>
                               )}
                             </td>
