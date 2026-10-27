@@ -117,9 +117,9 @@ export default function PublicDisclosureExplorer({ onBack }) {
                   onBack();
                 }
               }}
-              className="group inline-flex items-center gap-2 rounded-md border border-slate-300/80 bg-white px-3.5 py-1.5 font-sans text-xs font-semibold text-slate-700 shadow-2xs transition-all duration-200 hover:border-transparent hover:bg-gradient-to-r hover:from-[#0c2340]/90 hover:via-[#102d52]/90 hover:to-[#163860]/70 hover:text-white hover:brightness-125 hover:shadow-md active:scale-[0.98]"
+              className="group inline-flex items-center gap-1.5 sm:gap-2 rounded-md border border-slate-200/70 sm:border-slate-300/80 bg-white px-1.5 py-0.5 sm:px-3.5 sm:py-1.5 font-sans text-[11px] sm:text-xs font-medium sm:font-semibold text-slate-500 sm:text-slate-700 shadow-2xs transition-all duration-200 hover:border-transparent hover:bg-gradient-to-r hover:from-[#0c2340]/90 hover:via-[#102d52]/90 hover:to-[#163860]/70 hover:text-white hover:brightness-125 hover:shadow-md active:scale-[0.98]"
             >
-              <ArrowLeft size={14} weight="bold" className="transition-transform group-hover:-translate-x-0.5" />
+              <ArrowLeft size={13} weight="bold" className="w-3 h-3 sm:w-3.5 sm:h-3.5 transition-transform group-hover:-translate-x-0.5" />
               <span>Back to Home</span>
             </a>
           </div>
@@ -132,7 +132,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                   {header.badge || 'MANDATORY STATUTORY DISCLOSURE'}
                 </span>
               </div>
-              <h1 className="font-times text-2xl sm:text-3xl lg:text-[2.6rem] font-medium text-[#0c2340] leading-[1.15]">
+              <h1 className="font-times text-[22px] sm:text-3xl lg:text-[2.6rem] font-medium text-[#0c2340] leading-[1.15]">
                 Self Public Disclosure
               </h1>
             </div>
@@ -268,7 +268,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
                   title="Print Public Disclosure Table"
                   aria-label="Print Table"
                 >
-                  <Printer size={15} weight="bold" className="shrink-0" />
+                  <Printer size={16} weight="bold" className="shrink-0" />
                   <span className="hidden sm:inline">Print Table</span>
                 </button>
               </div>
@@ -286,8 +286,8 @@ export default function PublicDisclosureExplorer({ onBack }) {
             <div className="flex items-center justify-between gap-2 mb-2.5 sm:mb-3">
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-4 bg-gold rounded-full" />
-                <h2 className="text-xs font-bold uppercase tracking-[0.11em] text-[#0c2340]">
-                  Quick Statutory Downloads
+                <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.08em] text-[#0c2340]">
+                  Quick Downloads
                 </h2>
               </div>
               <span className="hidden sm:inline text-[12px] text-slate-500 font-medium">
@@ -297,7 +297,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
 
             <div
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-              className="flex sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4 overflow-x-auto sm:overflow-visible pb-2 sm:pb-0 no-scrollbar snap-x snap-mandatory sm:snap-none -mx-5 px-5 sm:mx-0 sm:px-0"
+              className="flex sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4 overflow-x-auto sm:overflow-visible pb-2 sm:pb-0 no-scrollbar snap-x snap-mandatory sm:snap-none -mx-3.5 sm:mx-0"
             >
               {quickDownloads.map((doc, idx) => (
                 <a

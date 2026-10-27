@@ -127,7 +127,7 @@ export default function Navbar() {
               href="https://student.biuerp.com/studentpanel/student/stulogin"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block font-medium text-white transition-colors hover:text-blue-200/95"
+              className="inline-block font-medium text-white underline underline-offset-2 transition-colors hover:text-blue-200/95"
             >
               Student Portal
             </a>
@@ -176,17 +176,17 @@ export default function Navbar() {
           onMouseLeave={handleMouseLeave}
         >
           {/* University Brand Logo */}
-          <a href="/" className="group flex items-center gap-3 shrink-0" aria-label="BIU Home">
+          <a href="/" className="group flex items-center gap-1 sm:gap-3 shrink-0" aria-label="BIU Home">
             <img
               src="/biu-logo.jpg.jpeg"
               alt="Bareilly International University"
               className="h-9 w-auto sm:h-11 object-contain transition-transform duration-300 group-hover:scale-110"
             />
             <span className="flex flex-col leading-tight">
-              <span className="font-newsreader text-[18px] sm:text-[19px] tracking-[0.001em] font-semibold text-slate-900">
+              <span className="font-newsreader text-[16px] sm:text-[19px] tracking-[0.00001em] sm:tracking-[0.001em] font-semibold text-slate-900">
                 {siteData.name || 'Bareilly International University'}
               </span>
-              <span className="font-fraunces text-[9px] uppercase tracking-[0.09em] text-[#0c2340]/85 font-semibold sm:text-[9.5px]">
+              <span className="font-fraunces text-[8px] uppercase tracking-[0.06em] sm:tracking-[0.09em] text-[#0c2340]/85 font-semibold sm:text-[9.5px]">
                 {siteData.accreditation || 'UGC Approved | NAAC A+ Grade'}
               </span>
             </span>
