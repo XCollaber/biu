@@ -500,199 +500,199 @@ export default function PublicDisclosureExplorer({ onBack }) {
               >
                 <div className="overflow-x-auto print:overflow-visible print:w-full">
                   <table className="w-full text-left border-collapse text-xs sm:text-[13px] print:text-[10px] print:w-full">
-                  {/* 4 Standard Statutory Columns - Styled with EducationStreams blue gradient ribbon */}
-                  <thead
-                    style={{
-                      background: 'linear-gradient(to right, rgba(7, 22, 44, 0.9) 0%, rgba(12, 35, 64, 0.75) 50%, rgba(7, 22, 44, 0.5) 100%)'
-                    }}
-                    className="bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 text-white"
-                  >
-                    <tr
+                    {/* 4 Standard Statutory Columns - Styled with EducationStreams blue gradient ribbon */}
+                    <thead
                       style={{
                         background: 'linear-gradient(to right, rgba(7, 22, 44, 0.9) 0%, rgba(12, 35, 64, 0.75) 50%, rgba(7, 22, 44, 0.5) 100%)'
                       }}
-                      className="bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 text-white border-b border-slate-200/80"
+                      className="bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 text-white"
                     >
-                      <th className="py-3 px-2 sm:px-4 w-12 sm:w-20 text-center uppercase tracking-wider text-xs sm:text-[11.5px] font-semibold text-white border-r border-r-slate-200">
-                        Sr. No.
-                      </th>
-                      <th className="py-3 px-2.5 sm:px-4 w-24 sm:w-40 uppercase tracking-wider text-xs font-semibold text-white border-r border-r-slate-200">
-                        Title
-                      </th>
-                      <th className="py-3 px-3 sm:px-5 uppercase tracking-wider text-xs font-semibold text-white border-r border-r-slate-200 min-w-[220px] sm:min-w-[440px] print:min-w-0">
-                        Subtitle
-                      </th>
-                      <th className="py-3 px-5 sm:px-5 w-64 sm:w-80 uppercase tracking-wider text-xs font-semibold text-white print:w-auto">
-                        Links on Website
-                      </th>
-                    </tr>
-                  </thead>
+                      <tr
+                        style={{
+                          background: 'linear-gradient(to right, rgba(7, 22, 44, 0.9) 0%, rgba(12, 35, 64, 0.75) 50%, rgba(7, 22, 44, 0.5) 100%)'
+                        }}
+                        className="bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 text-white border-b border-slate-200/80"
+                      >
+                        <th className="py-3 px-2 sm:px-4 w-12 sm:w-20 text-center uppercase tracking-wider text-xs sm:text-[11.5px] font-semibold text-white border-r border-r-slate-200">
+                          Sr. No.
+                        </th>
+                        <th className="py-3 px-2.5 sm:px-4 w-24 sm:w-40 uppercase tracking-wider text-xs font-semibold text-white border-r border-r-slate-200">
+                          Title
+                        </th>
+                        <th className="py-3 px-3 sm:px-5 uppercase tracking-wider text-xs font-semibold text-white border-r border-r-slate-200 min-w-[220px] sm:min-w-[440px] print:min-w-0">
+                          Subtitle
+                        </th>
+                        <th className="py-3 px-5 sm:px-5 w-64 sm:w-80 uppercase tracking-wider text-xs font-semibold text-white print:w-auto">
+                          Links on Website
+                        </th>
+                      </tr>
+                    </thead>
 
-                  <tbody>
-                    {filteredCategories.map((cat, catIdx) => {
-                      const rowCount = cat.items.length;
-                      if (rowCount === 0) return null;
-                      const col1Bg = catIdx % 2 === 0 ? 'bg-slate-50/90' : 'bg-white';
-                      const col2Bg = catIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50/90';
+                    <tbody>
+                      {filteredCategories.map((cat, catIdx) => {
+                        const rowCount = cat.items.length;
+                        if (rowCount === 0) return null;
+                        const col1Bg = catIdx % 2 === 0 ? 'bg-slate-50/90' : 'bg-white';
+                        const col2Bg = catIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50/90';
 
-                      return cat.items.map((item, idx) => {
-                        const isFirst = idx === 0;
-                        const isLast = idx === rowCount - 1;
-                        const rawTarget = item.url || item.link;
-                        const targetUrl = rawTarget && !rawTarget.startsWith('http') && !rawTarget.startsWith('mailto:') && !rawTarget.startsWith('tel:')
-                          ? `https://www.biu.edu.in${rawTarget.startsWith('/') ? '' : '/'}${rawTarget}`
-                          : rawTarget;
-                        const isPdf = item.type === 'pdf' || (targetUrl && targetUrl.toLowerCase().endsWith('.pdf')) || (item.link && item.link.toLowerCase().endsWith('.pdf'));
-                        const isExternal = targetUrl && (targetUrl.startsWith('http') || isPdf);
+                        return cat.items.map((item, idx) => {
+                          const isFirst = idx === 0;
+                          const isLast = idx === rowCount - 1;
+                          const rawTarget = item.url || item.link;
+                          const targetUrl = rawTarget && !rawTarget.startsWith('http') && !rawTarget.startsWith('mailto:') && !rawTarget.startsWith('tel:')
+                            ? `https://www.biu.edu.in${rawTarget.startsWith('/') ? '' : '/'}${rawTarget}`
+                            : rawTarget;
+                          const isPdf = item.type === 'pdf' || (targetUrl && targetUrl.toLowerCase().endsWith('.pdf')) || (item.link && item.link.toLowerCase().endsWith('.pdf'));
+                          const isExternal = targetUrl && (targetUrl.startsWith('http') || isPdf);
 
-                        return (
-                          <tr
-                            key={`${cat.id}-${idx}`}
-                            className={`transition-colors ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/90'
-                              } hover:bg-blue-50/90`}
-                          >
-                            {/* 1. Sr. No. (Rowspanned across all items in section) */}
-                            {isFirst && (
-                              <td
-                                rowSpan={rowCount}
-                                className={`py-3 px-2 sm:px-4 text-center font-bold text-slate-700 align-top ${col1Bg} transition-colors border-r border-r-slate-200 border-b-2 border-b-slate-400 tabular-nums text-xs sm:text-sm pt-4`}
-                              >
-                                {cat.number}
-                              </td>
-                            )}
-
-                            {/* 2. Title (Rowspanned across all items in section) */}
-                            {isFirst && (
-                              <td
-                                rowSpan={rowCount}
-                                className={`py-3 px-2.5 sm:px-4 font-bold text-[#0c2340] align-top ${col2Bg} transition-colors border-r border-r-slate-200 border-b-2 border-b-slate-400 text-xs sm:text-sm leading-snug pt-4`}
-                              >
-                                <span>{cat.shortTitle || cat.title}</span>
-                              </td>
-                            )}
-
-                            {/* 3. Subtitle */}
-                            <td className={`py-3 px-3 sm:px-5 align-top border-r border-r-slate-200 ${isLast ? 'border-b-2 border-b-slate-400' : 'border-b border-b-slate-200'
-                              }`}>
-                              <span className="font-semibold font-sans text-[13px] text-slate-800 leading-snug block">
-                                {item.subtitle}
-                              </span>
-                            </td>
-
-                            {/* 4. Links on Website */}
-                            <td className={`py-3 px-5 sm:px-5 align-top ${isLast ? 'border-b-2 border-b-slate-400' : 'border-b border-b-slate-200'
-                              }`}>
-                              {/* Contact Person Details */}
-                              {item.contact ? (
-                                <div className="space-y-1 text-xs text-slate-800 font-sans">
-                                  {item.contact.name && (
-                                    <div className="flex items-baseline gap-1.5">
-                                      <span className="text-slate-500 shrink-0 font-semibold">Name:</span>
-                                      <span className="font-bold text-[#0c2340]">{item.contact.name}</span>
-                                    </div>
-                                  )}
-                                  {item.contact.email && (
-                                    <div className="flex items-center gap-1.5">
-                                      <span className="text-slate-500">Email:</span>
-                                      <a
-                                        href={`mailto:${item.contact.email}`}
-                                        className="text-cyan-600 hover:text-cyan-800 hover:underline break-all font-medium truncate print:text-cyan-800 print:underline"
-                                      >
-                                        {item.contact.email}
-                                      </a>
-                                      <button
-                                        type="button"
-                                        onClick={() => handleCopy(item.contact.email, `email-${cat.id}-${idx}`)}
-                                        className="text-slate-400 hover:text-slate-700 p-0.5 cursor-pointer print:hidden"
-                                        title="Copy email"
-                                      >
-                                        {copiedId === `email-${cat.id}-${idx}` ? (
-                                          <Check size={11} className="text-emerald-600" />
-                                        ) : (
-                                          <Copy size={11} />
-                                        )}
-                                      </button>
-                                    </div>
-                                  )}
-                                  {item.contact.phone && (
-                                    <div className="flex items-center gap-1.5">
-                                      <span className="text-slate-500">Mobile:</span>
-                                      <a
-                                        href={`tel:${item.contact.phone.replace(/[^0-9+]/g, '')}`}
-                                        className="text-cyan-600 hover:text-cyan-800 hover:underline font-medium print:text-cyan-800 print:underline"
-                                      >
-                                        {item.contact.phone}
-                                      </a>
-                                      <button
-                                        type="button"
-                                        onClick={() => handleCopy(item.contact.phone, `phone-${cat.id}-${idx}`)}
-                                        className="text-slate-400 hover:text-slate-700 p-0.5 cursor-pointer print:hidden"
-                                        title="Copy phone"
-                                      >
-                                        {copiedId === `phone-${cat.id}-${idx}` ? (
-                                          <Check size={11} className="text-emerald-600" />
-                                        ) : (
-                                          <Copy size={11} />
-                                        )}
-                                      </button>
-                                    </div>
-                                  )}
-                                </div>
-                              ) : item.link ? (
-                                isPdf ? (
-                                  /* Boxed PDF Document Link matching top Quick Statutory Downloads card style */
-                                  <a
-                                    href={targetUrl}
-                                    target={isExternal ? '_blank' : undefined}
-                                    rel={isExternal ? 'noopener noreferrer' : undefined}
-                                    className="group inline-flex items-center justify-between -ml-2 gap-3 px-1.5 py-1.5 rounded-lg bg-white border border-slate-200/80 hover:border-cyan-800/30 hover:shadow-xs transition-all duration-150 max-w-full cursor-pointer print:border print:border-slate-300 print:bg-white print:inline-flex print:m-0 print:py-1 print:px-2"
-                                  >
-                                    <div className="flex items-center gap-2 min-w-0">
-                                      <div className="w-7 h-7 rounded-md bg-red-50 text-red-600 flex items-center justify-center shrink-0 border border-red-100 group-hover:scale-105 transition-transform print:border-red-200">
-                                        <FilePdf size={22} weight="fill" />
-                                      </div>
-                                      <span className="text-[12px] sm:text-[12.5px] font-semibold text-[#0c2340] group-hover:text-cyan-800 break-all leading-tight print:text-cyan-900 print:underline">
-                                        {item.link}
-                                      </span>
-                                    </div>
-                                    <DownloadSimple size={14} weight="bold" className="text-slate-400 group-hover:text-cyan-800 transition-colors shrink-0 ml-1 print:text-slate-500" />
-                                  </a>
-                                ) : (
-                                  /* Regular Web Link */
-                                  <a
-                                    href={targetUrl}
-                                    target={isExternal ? '_blank' : undefined}
-                                    rel={isExternal ? 'noopener noreferrer' : undefined}
-                                    className="text-cyan-600 hover:text-cyan-800 hover:underline inline-flex items-start gap-1.5 break-all text-[12px] sm:text-[13px] font-semibold leading-snug group print:text-cyan-800 print:underline"
-                                  >
-                                    <ArrowSquareOut size={15} weight="bold" className="text-cyan-800 shrink-0 mt-0.5 print:inline-block" />
-                                    <span>{item.link}</span>
-                                  </a>
-                                )
-                              ) : item.type === 'na' || item.status === 'NA' ? (
-                                <span className="text-slate-400/80 text-[11px] font-medium">NA</span>
-                              ) : (
-                                <span className="text-slate-400/80 text-[11px] leading-tight block">
-                                  Under Process
-                                </span>
+                          return (
+                            <tr
+                              key={`${cat.id}-${idx}`}
+                              className={`transition-colors ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/90'
+                                } hover:bg-blue-50/90`}
+                            >
+                              {/* 1. Sr. No. (Rowspanned across all items in section) */}
+                              {isFirst && (
+                                <td
+                                  rowSpan={rowCount}
+                                  className={`py-3 px-2 sm:px-4 text-center font-bold text-slate-700 align-top ${col1Bg} transition-colors border-r border-r-slate-200 border-b-2 border-b-slate-400 tabular-nums text-xs sm:text-sm pt-4`}
+                                >
+                                  {cat.number}
+                                </td>
                               )}
-                            </td>
-                          </tr>
-                        );
-                      });
-                    })}
-                  </tbody>
-                </table>
-              </div>
-            </div>
 
-            {/* Print-Only Footer Note */}
-            <div className="hidden print:flex items-center justify-between mt-4 pt-2 border-t border-slate-300 text-[9px] text-slate-500 font-sans">
-              <span>Bareilly International University (UGC Approved &bull; NAAC A+ Accredited)</span>
-              <span>Mandatory Public Self-Disclosure &bull; Verify live at biu.edu.in/public-disclosure</span>
-            </div>
-          </>
-        )}
+                              {/* 2. Title (Rowspanned across all items in section) */}
+                              {isFirst && (
+                                <td
+                                  rowSpan={rowCount}
+                                  className={`py-3 px-2.5 sm:px-4 font-bold text-[#0c2340] align-top ${col2Bg} transition-colors border-r border-r-slate-200 border-b-2 border-b-slate-400 text-xs sm:text-sm leading-snug pt-4`}
+                                >
+                                  <span>{cat.shortTitle || cat.title}</span>
+                                </td>
+                              )}
+
+                              {/* 3. Subtitle */}
+                              <td className={`py-3 px-3 sm:px-5 align-top border-r border-r-slate-200 ${isLast ? 'border-b-2 border-b-slate-400' : 'border-b border-b-slate-200'
+                                }`}>
+                                <span className="font-semibold font-sans text-[13px] text-slate-800 leading-snug block print:text-[8.5pt] print:font-medium">
+                                  {item.subtitle}
+                                </span>
+                              </td>
+
+                              {/* 4. Links on Website */}
+                              <td className={`py-3 px-5 sm:px-5 align-top ${isLast ? 'border-b-2 border-b-slate-400' : 'border-b border-b-slate-200'
+                                }`}>
+                                {/* Contact Person Details */}
+                                {item.contact ? (
+                                  <div className="space-y-1 text-xs text-slate-800 font-sans print:text-[8.5pt]">
+                                    {item.contact.name && (
+                                      <div className="flex items-baseline gap-1.5">
+                                        <span className="text-slate-500 shrink-0 font-semibold print:text-[8.5pt]">Name:</span>
+                                        <span className="font-bold text-[#0c2340] print:text-[8.5pt]">{item.contact.name}</span>
+                                      </div>
+                                    )}
+                                    {item.contact.email && (
+                                      <div className="flex items-center gap-1.5">
+                                        <span className="text-slate-500 print:text-[8.5pt]">Email:</span>
+                                        <a
+                                          href={`mailto:${item.contact.email}`}
+                                          className="text-cyan-600 hover:text-cyan-800 hover:underline break-all font-medium truncate print:text-cyan-800 print:underline print:text-[8.5pt]"
+                                        >
+                                          {item.contact.email}
+                                        </a>
+                                        <button
+                                          type="button"
+                                          onClick={() => handleCopy(item.contact.email, `email-${cat.id}-${idx}`)}
+                                          className="text-slate-400 hover:text-slate-700 p-0.5 cursor-pointer print:hidden"
+                                          title="Copy email"
+                                        >
+                                          {copiedId === `email-${cat.id}-${idx}` ? (
+                                            <Check size={11} className="text-emerald-600" />
+                                          ) : (
+                                            <Copy size={11} />
+                                          )}
+                                        </button>
+                                      </div>
+                                    )}
+                                    {item.contact.phone && (
+                                      <div className="flex items-center gap-1.5">
+                                        <span className="text-slate-500 print:text-[8.5pt]">Mobile:</span>
+                                        <a
+                                          href={`tel:${item.contact.phone.replace(/[^0-9+]/g, '')}`}
+                                          className="text-cyan-600 hover:text-cyan-800 hover:underline font-medium print:text-cyan-800 print:underline print:text-[8.5pt]"
+                                        >
+                                          {item.contact.phone}
+                                        </a>
+                                        <button
+                                          type="button"
+                                          onClick={() => handleCopy(item.contact.phone, `phone-${cat.id}-${idx}`)}
+                                          className="text-slate-400 hover:text-slate-700 p-0.5 cursor-pointer print:hidden"
+                                          title="Copy phone"
+                                        >
+                                          {copiedId === `phone-${cat.id}-${idx}` ? (
+                                            <Check size={11} className="text-emerald-600" />
+                                          ) : (
+                                            <Copy size={11} />
+                                          )}
+                                        </button>
+                                      </div>
+                                    )}
+                                  </div>
+                                ) : item.link ? (
+                                  isPdf ? (
+                                    /* Boxed PDF Document Link matching top Quick Statutory Downloads card style */
+                                    <a
+                                      href={targetUrl}
+                                      target={isExternal ? '_blank' : undefined}
+                                      rel={isExternal ? 'noopener noreferrer' : undefined}
+                                      className="group inline-flex items-center justify-between -ml-2 gap-3 px-1.5 py-1.5 rounded-lg bg-white border border-slate-200/80 hover:border-cyan-800/30 hover:shadow-xs transition-all duration-150 max-w-full cursor-pointer print:border print:border-slate-300 print:bg-white print:inline-flex print:m-0 print:py-1 print:px-2"
+                                    >
+                                      <div className="flex items-center gap-2 min-w-0">
+                                        <div className="w-7 h-7 rounded-md bg-red-50 text-red-600 flex items-center justify-center shrink-0 border border-red-100 group-hover:scale-105 transition-transform print:border-red-200">
+                                          <FilePdf size={22} weight="fill" />
+                                        </div>
+                                        <span className="text-[12px] sm:text-[12.5px] font-semibold text-[#0c2340] group-hover:text-cyan-800 break-all leading-tight print:text-cyan-900 print:underline print:text-[8.5pt]">
+                                          {item.link}
+                                        </span>
+                                      </div>
+                                      <DownloadSimple size={14} weight="bold" className="text-slate-400 group-hover:text-cyan-800 transition-colors shrink-0 ml-1 print:text-slate-500" />
+                                    </a>
+                                  ) : (
+                                    /* Regular Web Link */
+                                    <a
+                                      href={targetUrl}
+                                      target={isExternal ? '_blank' : undefined}
+                                      rel={isExternal ? 'noopener noreferrer' : undefined}
+                                      className="text-cyan-600 hover:text-cyan-800 hover:underline inline-flex items-start gap-1.5 break-all text-[12px] sm:text-[13px] font-semibold leading-snug group print:text-cyan-800 print:underline print:text-[8.5pt]"
+                                    >
+                                      <ArrowSquareOut size={15} weight="bold" className="text-cyan-800 shrink-0 mt-0.5 print:inline-block" />
+                                      <span>{item.link}</span>
+                                    </a>
+                                  )
+                                ) : item.type === 'na' || item.status === 'NA' ? (
+                                  <span className="text-slate-400/80 text-[11px] font-medium print:text-[8.5pt]">NA</span>
+                                ) : (
+                                  <span className="text-slate-400/80 text-[11px] leading-tight block print:text-[8.5pt]">
+                                    Under Process
+                                  </span>
+                                )}
+                              </td>
+                            </tr>
+                          );
+                        });
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Print-Only Footer Note */}
+              <div className="hidden print:flex items-center justify-between mt-4 pt-2 border-t border-slate-300 text-[9px] text-slate-500 font-sans">
+                <span>Bareilly International University (UGC Approved &bull; NAAC A+ Accredited)</span>
+                <span>Mandatory Public Self-Disclosure &bull; Verify live at biu.edu.in/public-disclosure</span>
+              </div>
+            </>
+          )}
         </div>
       </section>
     </>
