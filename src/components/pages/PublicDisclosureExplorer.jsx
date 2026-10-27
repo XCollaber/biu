@@ -476,20 +476,36 @@ export default function PublicDisclosureExplorer({ onBack }) {
                                   )}
                                 </div>
                               ) : item.link ? (
-                                /* Clickable Link (URL or PDF) triggering actual destination while displaying short name */
-                                <a
-                                  href={targetUrl}
-                                  target={isExternal ? '_blank' : undefined}
-                                  rel={isExternal ? 'noopener noreferrer' : undefined}
-                                  className="text-cyan-600 hover:text-cyan-800 hover:underline inline-flex items-start gap-1.5 break-all text-[12px] sm:text-[13px] font-semibold leading-snug group"
-                                >
-                                  {isPdf ? (
-                                    <FilePdf size={24} weight="fill" className="text-red-600 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                                  ) : (
+                                isPdf ? (
+                                  /* Boxed PDF Document Link matching top Quick Statutory Downloads card style */
+                                  <a
+                                    href={targetUrl}
+                                    target={isExternal ? '_blank' : undefined}
+                                    rel={isExternal ? 'noopener noreferrer' : undefined}
+                                    className="group inline-flex items-center justify-between -ml-2 gap-3 px-1.5 py-1.5 rounded-lg bg-white border border-slate-200/80 hover:border-cyan-800/30 hover:shadow-xs transition-all duration-150 max-w-full cursor-pointer"
+                                  >
+                                    <div className="flex items-center gap-2 min-w-0">
+                                      <div className="w-7 h-7 rounded-md bg-red-50 text-red-600 flex items-center justify-center shrink-0 border border-red-100 group-hover:scale-105 transition-transform">
+                                        <FilePdf size={22} weight="fill" />
+                                      </div>
+                                      <span className="text-[12px] sm:text-[12.5px] font-semibold text-[#0c2340] group-hover:text-cyan-800 break-all leading-tight">
+                                        {item.link}
+                                      </span>
+                                    </div>
+                                    <DownloadSimple size={14} weight="bold" className="text-slate-400 group-hover:text-cyan-800 transition-colors shrink-0 ml-1" />
+                                  </a>
+                                ) : (
+                                  /* Regular Web Link */
+                                  <a
+                                    href={targetUrl}
+                                    target={isExternal ? '_blank' : undefined}
+                                    rel={isExternal ? 'noopener noreferrer' : undefined}
+                                    className="text-cyan-600 hover:text-cyan-800 hover:underline inline-flex items-start gap-1.5 break-all text-[12px] sm:text-[13px] font-semibold leading-snug group"
+                                  >
                                     <ArrowSquareOut size={15} weight="bold" className="text-cyan-800 shrink-0 mt-0.5" />
-                                  )}
-                                  <span>{item.link}</span>
-                                </a>
+                                    <span>{item.link}</span>
+                                  </a>
+                                )
                               ) : item.type === 'na' || item.status === 'NA' ? (
                                 <span className="text-slate-500 text-xs font-medium">NA</span>
                               ) : (
