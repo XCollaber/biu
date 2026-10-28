@@ -457,7 +457,7 @@
             "icon": "Briefcase",
             "items": [
               { "title": "Placements", "href": "https://biu.edu.in/placements.php", "desc": "Corporate placement drives & hospital residencies" },
-              { "title": "Careers", "href": "https://biu.edu.in/career.php", "desc": "Faculty, medical & administrative openings" },
+              { "title": "Careers", "href": "/career", "desc": "Faculty, medical & administrative openings" },
               { "title": "Alumni", "href": "https://biu.edu.in/alumni.php", "desc": "Global alumni association & networking" },
               { "title": "Grievance & RTI", "href": "https://biu.edu.in/notice/RTI.pdf", "desc": "Student grievance redressal & RTI circulars" }
             ]

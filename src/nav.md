@@ -233,7 +233,7 @@
 * **Latest Events**: [https://page.biu.edu.in/latest-events/](https://page.biu.edu.in/latest-events/)
 * **RTI**: [https://biu.edu.in/notice/RTI.pdf](https://biu.edu.in/notice/RTI.pdf)
 * **Alumni**: [https://biu.edu.in/alumni.php](https://biu.edu.in/alumni.php)
-* **Career**: [https://biu.edu.in/career.php](https://biu.edu.in/career.php)
+* **Career**: [/career](/career)
 * **Placements**: [https://biu.edu.in/placements.php](https://biu.edu.in/placements.php)
 * **Recognition by the University to Faculty Members**: [https://biu.edu.in/recognition-university-faculty-members.php](https://biu.edu.in/recognition-university-faculty-members.php)
 

@@ -1,0 +1,12 @@
+---
+// src/pages/careers.astro — Route alias for /career
+import Layout from '../layouts/Layout.astro';
+import CareerPage from '../components/pages/CareerPage.jsx';
+---
+
+<Layout
+  title="Careers & Current Openings - Bareilly International University"
+  description="Explore academic and faculty career opportunities at Bareilly International University. Apply online for specialized teaching, nursing, and medical positions."
+>
+  <CareerPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

@@ -132,9 +132,7 @@ export default function Navbar() {
               Student Portal
             </a>
             <a
-              href="https://biu.edu.in/career.php"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/career"
               className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2 sm:px-2.5 py-0.5 text-[10.5px] sm:text-[11px] font-semibold text-white border border-white/20 transition-all hover:bg-white/20"
             >
               <Briefcase size={13} weight="fill" className="text-blue-300 shrink-0" />

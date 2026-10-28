@@ -1,0 +1,50 @@
+{
+  "pageHeader": {
+    "badge": "CAREERS AT BIU",
+    "title": "Build Your Career at Bareilly International University",
+    "subtitle": "Join a NAAC A+ accredited premier university campus dedicated to medical excellence, higher education research, and transformative pedagogy.",
+    "breadcrumb": "Careers"
+  },
+  "openingsHeader": {
+    "badge": "CURRENT OPENINGS",
+    "title": "Vacancy Announcement",
+    "subtitle": "Applications are invited from eligible candidates for faculty and academic positions in specialized departments.",
+    "experienceNotice": "Experience: Minimum three (03) years of experience for both the posts."
+  },
+  "openings": [
+    {
+      "id": "asst-prof-oncology-nursing",
+      "number": "01",
+      "title": "Assistant Professor - Oncology Specialty Nursing",
+      "department": "Rohilkhand College of Nursing / Faculty of Nursing Sciences",
+      "posts": "01",
+      "qualification": "M.Sc. Nursing with Medical Surgical Nursing – Oncology Specialty Nursing",
+      "experience": "Minimum 3 years of clinical / teaching experience in Oncology Specialty Nursing",
+      "type": "Full Time",
+      "location": "BIU Main Campus, Bareilly"
+    },
+    {
+      "id": "tutor-oncology-nursing",
+      "number": "02",
+      "title": "Nursing Tutor - Oncology Specialty Nursing",
+      "department": "Rohilkhand College of Nursing / Faculty of Nursing Sciences",
+      "posts": "01",
+      "qualification": "Post Basic Diploma in Oncology Specialty Nursing with Basic B.Sc. (Nursing) / P.B.B.Sc. (Nursing)",
+      "experience": "Minimum 3 years of clinical / teaching experience",
+      "type": "Full Time",
+      "location": "BIU Main Campus, Bareilly"
+    }
+  ],
+  "submissionGuidelines": [
+    "Upload resume in PDF format only (maximum file size: 1 MB).",
+    "Ensure contact numbers and email addresses are valid and active for interview scheduling.",
+    "Candidates may optionally attach their duly filled university application form.",
+    "Shortlisted candidates will be notified via email / telephone for the interview process."
+  ],
+  "contactHR": {
+    "email": "careers@biu.edu.in",
+    "altEmail": "hr@biu.edu.in",
+    "phone": "+91-581-2526051",
+    "address": "HR & Recruitment Cell, Administrative Block, Bareilly International University, Pilibhit Bypass Road, Bareilly, Uttar Pradesh 243006"
+  }
+}
