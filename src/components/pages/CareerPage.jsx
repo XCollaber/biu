@@ -342,7 +342,7 @@ export default function CareerPage({ onBack }) {
             <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-start text-left">
               {/* Eyebrow Tag */}
               <div className="flex items-center gap-2.5 mb-3.5">
-                <span className="w-8 h-[3.5px] bg-gold rounded-full" />
+                <span className="w-9 h-[4px] bg-gradient-to-r from-cyan-600 via-sky-500 to-transparent rounded-full" />
                 <span className="font-sans text-[12px] sm:text-xs font-black uppercase tracking-[0.22em] text-[#0c2340]">
                   {openingsHeader.badge || 'CURRENT OPENINGS'}
                 </span>
@@ -351,9 +351,8 @@ export default function CareerPage({ onBack }) {
               {/* Heading with accent underline */}
               <div className="relative mb-4">
                 <h2 className="font-times text-3xl sm:text-4xl lg:text-[2.65rem] font-medium text-[#0c2340] leading-[1.12]">
-                  Current <span className="font-bold">Openings</span>
+                  Vacancies / <span className="font-semibold">Openings</span>
                 </h2>
-                <div className="mt-2.5 h-1 w-16 bg-gradient-to-r from-cyan-600 via-sky-500 to-transparent rounded-full" />
               </div>
 
               {/* Description */}
@@ -515,7 +514,7 @@ export default function CareerPage({ onBack }) {
             >
               {/* Eyebrow Tag */}
               <div className="flex items-center gap-2.5 mb-3.5">
-                <span className="w-8 h-[3.5px] bg-gold rounded-full" />
+                <span className="w-9 h-[4px] bg-gradient-to-r from-cyan-600 via-sky-500 to-transparent rounded-full" />
                 <span className="font-sans text-[12px] sm:text-xs font-black uppercase tracking-[0.22em] text-[#0c2340]">
                   RECRUITMENT CELL
                 </span>

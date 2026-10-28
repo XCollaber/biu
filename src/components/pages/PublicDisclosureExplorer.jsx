@@ -410,7 +410,7 @@ export default function PublicDisclosureExplorer({ onBack }) {
           <div className="mb-6 print:hidden">
             <div className="flex items-center justify-between gap-2 mb-2.5 sm:mb-3">
               <div className="flex items-center gap-2">
-                <span className="w-5 sm:w-6 h-[3px] bg-gold rounded-full -ml-2 sm:ml-0.5 " />
+                <span className="w-5 sm:w-7 h-[4px] bg-gradient-to-r from-cyan-600 via-sky-500 to-transparent rounded-full -ml-2 sm:ml-0.5 " />
                 <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.08em] text-[#0c2340]">
                   Quick Downloads
                 </h2>
