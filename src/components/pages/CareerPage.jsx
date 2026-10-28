@@ -277,7 +277,7 @@ export default function CareerPage({ onBack }) {
 
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 sm:gap-6">
             <div>
-              <div className="flex items-center gap-2.5 mb-2.5">
+              <div className="hidden sm:flex items-center gap-2.5 mb-2.5">
                 <span className="w-8 h-[3.5px] bg-gold rounded-full" />
                 <span className="font-sans text-[12px] sm:text-xs font-black uppercase tracking-[0.09em] text-[#0c2340]">
                   {pageHeader.badge || 'CAREERS & CURRENT OPENINGS'}
@@ -294,11 +294,11 @@ export default function CareerPage({ onBack }) {
 
             {/* Quick action buttons & status badges matching Disclosure Page toolbar style */}
             <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
-              <div className="inline-flex items-center gap-2 rounded-lg border border-slate-300/80 bg-white px-3 sm:px-3.5 py-2 font-sans text-xs font-semibold text-slate-700 shadow-2xs">
+              <div className="hidden sm:inline-flex items-center gap-2 rounded-lg border border-slate-300/80 bg-white px-3 sm:px-3.5 py-2 font-sans text-xs font-semibold text-slate-700 shadow-2xs">
                 <ShieldCheck size={16} weight="fill" className="text-amber-500" />
                 <span>NAAC A+ Accredited</span>
               </div>
-              <div className="inline-flex items-center gap-2 rounded-lg border border-slate-300/80 bg-white px-3 sm:px-3.5 py-2 font-sans text-xs font-semibold text-slate-700 shadow-2xs">
+              <div className="hidden sm:inline-flex items-center gap-2 rounded-lg border border-slate-300/80 bg-white px-3 sm:px-3.5 py-2 font-sans text-xs font-semibold text-slate-700 shadow-2xs">
                 <Buildings size={16} weight="fill" className="text-cyan-700" />
                 <span>100-Acre Campus</span>
               </div>
@@ -309,7 +309,7 @@ export default function CareerPage({ onBack }) {
                     formRef.current.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-white brightness-125 transition-all duration-200 hover:brightness-140 hover:shadow-sm active:scale-[0.98] cursor-pointer shadow-2xs"
+                className="inline-flex lg:hidden items-center gap-2 rounded-lg bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-white brightness-125 transition-all duration-200 hover:brightness-140 hover:shadow-sm active:scale-[0.98] cursor-pointer shadow-2xs"
               >
                 <PaperPlaneTilt size={14} weight="fill" className="text-blue-100" />
                 <span>Apply Online</span>
