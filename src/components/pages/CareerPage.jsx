@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import {
   ArrowLeft,
@@ -31,8 +31,17 @@ const MAX_FILE_SIZE = 1 * 1024 * 1024; // 1 MB in bytes
 export default function CareerPage({ onBack }) {
   const reduceMotion = useReducedMotion();
   const formRef = useRef(null);
+  const scrollAnimRef = useRef(null);
   const resumeInputRef = useRef(null);
   const appFormInputRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (scrollAnimRef.current) {
+        cancelAnimationFrame(scrollAnimRef.current);
+      }
+    };
+  }, []);
 
   const [form, setForm] = useState({
     name: '',
@@ -54,18 +63,72 @@ export default function CareerPage({ onBack }) {
   const guidelines = careerData.submissionGuidelines || [];
   const hr = careerData.contactHR || {};
 
-  // Scroll directly to application form on first click with navbar offset
-  const scrollToForm = () => {
-    if (formRef.current) {
-      const navbarOffset = 80;
-      const elementPosition = formRef.current.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navbarOffset;
+  // Programmatic smooth scroll to application form that cannot be cancelled by Navbar re-render / layout transitions
+  const scrollToForm = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
+    // Cancel any ongoing scroll animation
+    if (scrollAnimRef.current) {
+      cancelAnimationFrame(scrollAnimRef.current);
+      scrollAnimRef.current = null;
     }
+
+    const target = formRef.current || document.getElementById('application-form');
+    if (!target) return;
+
+    // In mobile view when scrolled, the fixed navbar sits at ~68px high.
+    // An offset of 75px leaves a clean, comfortable margin above the Recruitment Cell header.
+    const navbarOffset = 75;
+    const startY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    const targetY = Math.max(0, target.getBoundingClientRect().top + startY - navbarOffset);
+    const distance = targetY - startY;
+
+    if (Math.abs(distance) < 2) return;
+
+    if (reduceMotion) {
+      window.scrollTo(0, targetY);
+      return;
+    }
+
+    // Dynamic duration based on distance: ~380ms to 580ms for a swift, natural gliding feel
+    const duration = Math.min(Math.max(Math.abs(distance) * 0.4, 380), 580);
+    let startTime = null;
+
+    // Cubic ease-out curve (framer-motion standard feel)
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+    const cleanupListeners = () => {
+      window.removeEventListener('wheel', cancelOnUserInteraction);
+      window.removeEventListener('touchstart', cancelOnUserInteraction);
+    };
+
+    const cancelOnUserInteraction = () => {
+      if (scrollAnimRef.current) {
+        cancelAnimationFrame(scrollAnimRef.current);
+        scrollAnimRef.current = null;
+      }
+      cleanupListeners();
+    };
+
+    window.addEventListener('wheel', cancelOnUserInteraction, { passive: true });
+    window.addEventListener('touchstart', cancelOnUserInteraction, { passive: true });
+
+    const step = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      window.scrollTo(0, startY + distance * easeOutCubic(progress));
+
+      if (progress < 1) {
+        scrollAnimRef.current = requestAnimationFrame(step);
+      } else {
+        scrollAnimRef.current = null;
+        cleanupListeners();
+      }
+    };
+
+    scrollAnimRef.current = requestAnimationFrame(step);
   };
 
   // Quick Apply handler from opening cards
@@ -363,14 +426,14 @@ export default function CareerPage({ onBack }) {
                 </div>
 
                 {/* Heading */}
-                <div className="relative mb-4">
+                <div className="relative mb-1 sm:mb-4">
                   <h2 className="font-times text-3xl sm:text-4xl lg:text-[2.65rem] font-medium text-[#0c2340] leading-[1.12]">
                     Vacancies
                   </h2>
                 </div>
 
                 {/* Description */}
-                <p className="font-sans text-xs sm:text-sm md:text-[14.5px] text-slate-600 font-normal leading-relaxed mb-6 max-w-xl">
+                <p className="font-sans ml-1 sm:ml-0 text-xs sm:text-sm md:text-[14.5px] text-slate-600 font-normal leading-relaxed mb-6 max-w-xl">
                   {openingsHeader.subtitle ||
                     'Applications are invited from eligible candidates for faculty and academic positions in specialized departments.'}
                 </p>
@@ -439,10 +502,10 @@ export default function CareerPage({ onBack }) {
                           <button
                             type="button"
                             onClick={() => handleQuickApply(job.title)}
-                            className="group inline-flex items-center gap-1.5 rounded-lg bg-slate-50 border border-slate-200 px-4 py-2 font-sans text-xs font-semibold text-[#0c2340] shadow-2xs transition-all duration-200 hover:border-transparent hover:bg-gradient-to-r hover:from-[#0c2340]/90 hover:via-[#102d52]/90 hover:to-[#163860]/70 hover:text-white hover:brightness-125 hover:shadow-md active:scale-[0.98] cursor-pointer"
+                            className="group inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-4 py-2 font-sans text-xs font-semibold text-white brightness-125 shadow-2xs transition-all duration-200 hover:brightness-140 hover:shadow-md active:scale-[0.98] cursor-pointer"
                           >
                             <span>Apply for this Post</span>
-                            <CaretRight size={13} weight="bold" className="transition-transform group-hover:translate-x-0.5" />
+                            <CaretRight size={13} weight="bold" className="text-blue-100 transition-transform group-hover:translate-x-0.5" />
                           </button>
                         </div>
                       </div>
@@ -484,6 +547,7 @@ export default function CareerPage({ onBack }) {
             ========================================================= */}
             <div
               ref={formRef}
+              id="application-form"
               className="lg:col-span-6 xl:col-span-6 flex flex-col text-left relative w-full scroll-mt-24"
             >
               {/* Header Container */}
@@ -497,14 +561,14 @@ export default function CareerPage({ onBack }) {
                 </div>
 
                 {/* Heading from Image 1 */}
-                <div className="relative mb-4">
+                <div className="relative mb-1 sm:mb-4">
                   <h2 className="font-times text-3xl sm:text-4xl lg:text-[2.65rem] font-medium text-[#0c2340] leading-[1.12]">
                     Want to join us?
                   </h2>
                 </div>
 
                 {/* Description from Image 1 */}
-                <p className="font-sans text-xs sm:text-sm md:text-[14.5px] text-slate-600 font-normal leading-relaxed mb-6 max-w-xl">
+                <p className="font-sans ml-1 sm:ml-0 text-xs sm:text-sm md:text-[14.5px] text-slate-600 font-normal leading-relaxed mb-6 max-w-xl">
                   Fill the form below and send your resume. Our recruitment committee will review your credentials.
                 </p>
               </div>
@@ -748,7 +812,7 @@ export default function CareerPage({ onBack }) {
                               <p className="text-[11px] text-slate-400">PDF file only, <strong className="text-slate-500/80 font-semibold">max 1 MB</strong></p>
                             </div>
                           </div>
-                          <span className="rounded-md bg-white border border-slate-200 px-2.5 py-1 text-xs font-semibold text-slate-700 shadow-2xs">
+                          <span className="rounded-md bg-white border border-slate-200 px-2.5 py-1 text-[11px] sm:text-xs font-semibold text-slate-700 shadow-2xs">
                             Choose File
                           </span>
                         </div>
@@ -819,13 +883,13 @@ export default function CareerPage({ onBack }) {
                               <UploadSimple size={18} weight="bold" />
                             </div>
                             <div className="text-left">
-                              <p className="text-xs sm:text-[13px] font-medium text-slate-700">
+                              <p className="text-[12px] sm:text-[13px] font-medium text-slate-700 truncate">
                                 Attach filled application form
                               </p>
                               <p className="text-[11px] text-slate-400">PDF file only,  <strong className="text-slate-500/80 font-semibold">max 1 MB</strong></p>
                             </div>
                           </div>
-                          <span className="rounded-md bg-white border border-slate-200 px-2.5 py-1 text-xs font-semibold text-slate-700 shadow-2xs">
+                          <span className="rounded-md bg-white border border-slate-200 px-2.5 py-1 text-[11px] sm:text-xs font-semibold text-slate-700 shadow-2xs">
                             Choose File
                           </span>
                         </div>
