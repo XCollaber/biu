@@ -17,7 +17,7 @@ import {
   WarningCircle,
   EnvelopeSimple,
   Phone,
-  Sparkle,
+  Info,
   ShieldCheck,
   Buildings,
 } from '@phosphor-icons/react';
@@ -874,18 +874,18 @@ export default function CareerPage({ onBack }) {
           {/* =========================================================
               SECONDARY SUPPORT SECTION: INSTRUCTIONS & INQUIRIES
           ========================================================= */}
-          <div className="mt-10 lg:mt-12 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-            {/* Submission Guidelines Card */}
-            <div className="lg:col-span-7 rounded-xl bg-slate-50/90 border border-slate-200/80 p-5 sm:p-6 text-left shadow-2xs flex flex-col justify-between">
+          <div className="mt-8 lg:mt-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-14 items-stretch">
+            {/* Submission Guidelines Card - Width Matches Top Vacancy Card Exactly */}
+            <div className="lg:col-span-6 xl:col-span-6 rounded-xl bg-slate-50/90 border border-slate-200/80 p-5 sm:p-6 text-left shadow-2xs flex flex-col justify-between">
               <div>
                 <h4 className="font-sans text-xs sm:text-[13px] font-bold uppercase tracking-wider text-[#0c2340] mb-3 flex items-center gap-2">
-                  <Sparkle size={16} weight="fill" className="text-amber-500" />
+                  <Info size={20} weight="bold" className="text-cyan-700 shrink-0" />
                   <span>Important Instructions for Applicants</span>
                 </h4>
                 <ul className="space-y-2 text-xs sm:text-[13px] text-slate-600 font-sans leading-relaxed">
                   {guidelines.map((guide, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <span className="text-cyan-700 font-bold shrink-0">•</span>
+                      <span className="text-cyan-800 ml-1 font-bold shrink-0">•</span>
                       <span>{guide}</span>
                     </li>
                   ))}
@@ -893,16 +893,16 @@ export default function CareerPage({ onBack }) {
               </div>
             </div>
 
-            {/* HR Cell Direct Contacts */}
-            <div className="lg:col-span-5 rounded-xl bg-white border border-slate-200/80 p-5 sm:p-6 text-left text-xs sm:text-[13px] text-slate-600 shadow-2xs flex flex-col justify-between">
+            {/* HR Cell Direct Contacts - Width Matches Top Form Card Exactly */}
+            <div className="lg:col-span-6 xl:col-span-6 rounded-xl bg-white border border-slate-200/80 p-5 sm:p-6 text-left text-xs sm:text-[13px] text-slate-600 shadow-2xs flex flex-col justify-between">
               <div>
                 <p className="font-semibold text-slate-800 mb-3 font-sans text-xs sm:text-[13px] uppercase tracking-wider text-[#0c2340] flex items-center gap-2">
-                  <Users size={16} weight="bold" className="text-cyan-700" />
+                  <Users size={20} weight="bold" className="text-cyan-700" />
                   <span>For Inquiries & Application Support</span>
                 </p>
                 <div className="space-y-2.5 font-sans">
                   <div className="flex items-center gap-2">
-                    <EnvelopeSimple size={15} className="text-cyan-700 shrink-0" />
+                    <EnvelopeSimple size={16} className="text-cyan-700 shrink-0" />
                     <span className="text-slate-500 font-medium">Email:</span>
                     <a href={`mailto:${hr.email}`} className="text-cyan-700 hover:underline font-medium">
                       {hr.email}
@@ -918,7 +918,7 @@ export default function CareerPage({ onBack }) {
                   </div>
                   {hr.phone && (
                     <div className="flex items-center gap-2">
-                      <Phone size={15} className="text-cyan-700 shrink-0" />
+                      <Phone size={16} className="text-cyan-700 shrink-0" />
                       <span className="text-slate-500 font-medium">Helpline:</span>
                       <a href={`tel:${hr.phone}`} className="text-slate-800 font-medium hover:underline">
                         {hr.phone}
@@ -927,7 +927,7 @@ export default function CareerPage({ onBack }) {
                   )}
                   {hr.address && (
                     <div className="flex items-start gap-2 text-slate-500 text-[12px] pt-1 border-t border-slate-100">
-                      <MapPin size={15} className="text-slate-400 shrink-0 mt-0.5" />
+                      <MapPin size={16} className="text-slate-400 shrink-0 mt-0.5" />
                       <span>{hr.address}</span>
                     </div>
                   )}
