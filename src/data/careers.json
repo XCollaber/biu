@@ -42,9 +42,10 @@
     "Shortlisted candidates will be notified via email / telephone for the interview process."
   ],
   "contactHR": {
-    "email": "careers@biu.edu.in",
-    "altEmail": "hr@biu.edu.in",
+    "email": "rcnbareilly11@gmail.com",
+    "altEmail": "careers@biu.edu.in",
     "phone": "+91-581-2526051",
+    "mobiles": ["9368382930", "9917854402"],
     "address": "HR & Recruitment Cell, Administrative Block, Bareilly International University, Pilibhit Bypass Road, Bareilly, Uttar Pradesh 243006"
   }
 }

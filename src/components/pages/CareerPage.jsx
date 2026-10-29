@@ -18,7 +18,7 @@ import {
   EnvelopeSimple,
   Phone,
   Info,
-  ShieldCheck,
+  SealCheck,
   Buildings,
 } from '@phosphor-icons/react';
 import Navbar from '../Navbar';
@@ -295,11 +295,11 @@ export default function CareerPage({ onBack }) {
             {/* Quick action buttons & status badges matching Disclosure Page toolbar style */}
             <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
               <div className="hidden sm:inline-flex items-center gap-2 rounded-lg border border-slate-300/80 bg-white px-3 sm:px-3.5 py-2 font-sans text-xs font-semibold text-slate-700 shadow-2xs">
-                <ShieldCheck size={16} weight="fill" className="text-amber-500" />
+                <SealCheck size={18} weight="bold" className="text-cyan-700 shrink-0" />
                 <span>NAAC A+ Accredited</span>
               </div>
               <div className="hidden sm:inline-flex items-center gap-2 rounded-lg border border-slate-300/80 bg-white px-3 sm:px-3.5 py-2 font-sans text-xs font-semibold text-slate-700 shadow-2xs">
-                <Buildings size={16} weight="fill" className="text-cyan-700" />
+                <Buildings size={18} weight="bold" className="text-cyan-700 shrink-0" />
                 <span>100-Acre Campus</span>
               </div>
               <button
@@ -399,7 +399,7 @@ export default function CareerPage({ onBack }) {
                             {job.number ? `${job.number}. ` : `${idx + 1}. `}
                             {job.title}
                           </h3>
-                          <span className="shrink-0 rounded-md bg-blue-50 px-2 py-0.5 text-[11px] font-semibold text-[#0c2340] border border-blue-100/80">
+                          <span className="shrink-0 rounded-md bg-blue-50/50 px-2 py-0.5 text-[11px] font-semibold text-[#0c2340] border border-blue-100/80">
                             {job.type || 'Full Time'}
                           </span>
                         </div>
@@ -438,17 +438,63 @@ export default function CareerPage({ onBack }) {
                   </div>
 
                   {/* Common Experience Requirement Dark Navy Banner */}
-                  <div className="pt-6 sm:pt-7 mt-auto shrink-0">
+                  <div className="pt-5 sm:pt-6 mt-auto shrink-0">
                     <div
                       style={{
                         background: 'linear-gradient(to right, rgba(7, 22, 44, 0.9) 0%, rgba(12, 35, 64, 0.75) 50%, rgba(7, 22, 44, 0.5) 100%)',
                       }}
-                      className="rounded-xl bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 p-4 sm:p-4.5 text-white shadow-sm border border-slate-200/80 flex items-start sm:items-center gap-3"
+                      className="rounded-xl bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 p-3.5 sm:p-4 text-white shadow-sm border border-slate-200/80 flex items-start sm:items-center gap-3"
                     >
-                      <Clock size={22} weight="fill" className="text-gray-100 shrink-0 mt-0.5 sm:mt-0" />
-                      <p className="font-sans text-xs sm:text-[13.5px] font-medium leading-relaxed text-white">
+                      <Clock size={20} weight="fill" className="text-gray-100 shrink-0 mt-0.5 sm:mt-0" />
+                      <p className="font-sans text-xs sm:text-[13px] font-medium leading-relaxed text-white">
                         Experience: Minimum <span className="underline underline-offset-2">Three (03) years of experience</span> for both the posts.
                       </p>
+                    </div>
+                  </div>
+
+                  {/* Submission Request Prompt from Official Announcement Image */}
+                  <div className="pt-3 pb-1 text-center shrink-0">
+                    <p className="font-sans text-xs sm:text-[13px] font-medium text-slate-700">
+                      Eligible candidates are requested to send their resume to:
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bottom Direct Contact Ribbon Flush with Card - Exact Match of Original Image */}
+                <div
+                  style={{
+                    background: 'linear-gradient(to right, rgba(7, 22, 44, 0.98) 0%, rgba(12, 35, 64, 0.92) 50%, rgba(7, 22, 44, 0.98) 100%)',
+                  }}
+                  className="shrink-0 border-t-[3.5px] border-gold px-5 py-3.5 sm:px-6 sm:py-4 text-white"
+                >
+                  <div className="flex flex-col sm:flex-row items-center justify-around gap-2.5 sm:gap-4 font-sans text-xs sm:text-[13px]">
+                    {/* Official Email */}
+                    <a
+                      href="mailto:rcnbareilly11@gmail.com"
+                      className="inline-flex items-center gap-2 text-white/95 hover:text-white transition-colors group"
+                    >
+                      <EnvelopeSimple size={16} weight="fill" className="text-cyan-300 shrink-0 group-hover:scale-110 transition-transform" />
+                      <span>
+                        <strong className="font-semibold text-white/80">E-mail:</strong>{' '}
+                        <span className="font-bold text-white tracking-wide underline underline-offset-2 decoration-cyan-400/40 hover:decoration-cyan-400">
+                          rcnbareilly11@gmail.com
+                        </span>
+                      </span>
+                    </a>
+
+                    {/* Official Mobile Numbers */}
+                    <div className="inline-flex items-center gap-2 text-white/95">
+                      <Phone size={16} weight="fill" className="text-rose-400 shrink-0" />
+                      <span>
+                        <strong className="font-semibold text-white/80">Mobile No.:</strong>{' '}
+                        <a href="tel:9368382930" className="font-bold text-white hover:underline">
+                          9368382930
+                        </a>
+                        <span className="text-white/60 mx-1">,</span>
+                        <a href="tel:9917854402" className="font-bold text-white hover:underline">
+                          9917854402
+                        </a>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -878,7 +924,7 @@ export default function CareerPage({ onBack }) {
             {/* Submission Guidelines Card - Width Matches Top Vacancy Card Exactly */}
             <div className="lg:col-span-6 xl:col-span-6 rounded-xl bg-slate-50/90 border border-slate-200/80 p-5 sm:p-6 text-left shadow-2xs flex flex-col justify-between">
               <div>
-                <h4 className="font-sans text-xs sm:text-[13px] font-bold uppercase tracking-wider text-[#0c2340] mb-3 flex items-center gap-2">
+                <h4 className="font-sans text-xs sm:text-[13px] font-bold uppercase tracking-wider underline text-[#0c2340] mb-3 flex items-center gap-2">
                   <Info size={20} weight="bold" className="text-cyan-700 shrink-0" />
                   <span>Important Instructions for Applicants</span>
                 </h4>
@@ -896,35 +942,37 @@ export default function CareerPage({ onBack }) {
             {/* HR Cell Direct Contacts - Width Matches Top Form Card Exactly */}
             <div className="lg:col-span-6 xl:col-span-6 rounded-xl bg-white border border-slate-200/80 p-5 sm:p-6 text-left text-xs sm:text-[13px] text-slate-600 shadow-2xs flex flex-col justify-between">
               <div>
-                <p className="font-semibold text-slate-800 mb-3 font-sans text-xs sm:text-[13px] uppercase tracking-wider text-[#0c2340] flex items-center gap-2">
+                <p className="font-semibold text-slate-800 mb-3 font-sans text-xs sm:text-[13px] underline uppercase tracking-wider text-[#0c2340] flex items-center gap-2">
                   <Users size={20} weight="bold" className="text-cyan-700" />
                   <span>For Inquiries & Application Support</span>
                 </p>
                 <div className="space-y-2.5 font-sans">
                   <div className="flex items-center gap-2">
-                    <EnvelopeSimple size={16} className="text-cyan-700 shrink-0" />
+                    <EnvelopeSimple size={16} className="text-slate-400 shrink-0" />
                     <span className="text-slate-500 font-medium">Email:</span>
-                    <a href={`mailto:${hr.email}`} className="text-cyan-700 hover:underline font-medium">
-                      {hr.email}
+                    <a href="mailto:rcnbareilly11@gmail.com" className="text-cyan-700 hover:underline font-semibold">
+                      rcnbareilly11@gmail.com
                     </a>
-                    {hr.altEmail && (
-                      <>
-                        <span className="text-slate-300">/</span>
-                        <a href={`mailto:${hr.altEmail}`} className="text-cyan-700 hover:underline font-medium">
-                          {hr.altEmail}
-                        </a>
-                      </>
-                    )}
+                    <span className="text-slate-300">/</span>
+                    <a href="mailto:careers@biu.edu.in" className="text-cyan-700 hover:underline font-medium">
+                      careers@biu.edu.in
+                    </a>
                   </div>
-                  {hr.phone && (
-                    <div className="flex items-center gap-2">
-                      <Phone size={16} className="text-cyan-700 shrink-0" />
-                      <span className="text-slate-500 font-medium">Helpline:</span>
-                      <a href={`tel:${hr.phone}`} className="text-slate-800 font-medium hover:underline">
-                        {hr.phone}
-                      </a>
-                    </div>
-                  )}
+                  <div className="flex items-center gap-2">
+                    <Phone size={16} className="text-slate-400 shrink-0" />
+                    <span className="text-slate-500 font-medium">Mobile / Helpline:</span>
+                    <a href="tel:9368382930" className="text-slate-800 font-bold hover:underline">
+                      9368382930
+                    </a>
+                    <span className="text-slate-300">,</span>
+                    <a href="tel:9917854402" className="text-slate-800 font-bold hover:underline">
+                      9917854402
+                    </a>
+                    <span className="text-slate-300">|</span>
+                    <a href={`tel:${hr.phone}`} className="text-slate-600 font-medium hover:underline">
+                      {hr.phone}
+                    </a>
+                  </div>
                   {hr.address && (
                     <div className="flex items-start gap-2 text-slate-500 text-[12px] pt-1 border-t border-slate-100">
                       <MapPin size={16} className="text-slate-400 shrink-0 mt-0.5" />
