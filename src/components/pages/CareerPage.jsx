@@ -334,47 +334,50 @@ export default function CareerPage({ onBack }) {
         </div>
 
         <div className="relative z-10 mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-14 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-14">
 
             {/* =========================================================
                 LEFT COLUMN: CURRENT OPENINGS & VACANCY ANNOUNCEMENTS
             ========================================================= */}
-            <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-start text-left">
-              {/* Eyebrow Tag */}
-              <div className="flex items-center gap-2.5 mb-3.5">
-                <span className="w-9 h-[4px] bg-gradient-to-r from-cyan-600 via-sky-500 to-transparent rounded-full" />
-                <span className="font-sans text-[12px] sm:text-xs font-black uppercase tracking-[0.22em] text-[#0c2340]">
-                  {openingsHeader.badge || 'CURRENT OPENINGS'}
-                </span>
+            <div className="lg:col-span-6 xl:col-span-6 flex flex-col text-left">
+              {/* Header Container */}
+              <div className="flex flex-col justify-start">
+                {/* Eyebrow Tag */}
+                <div className="flex items-center gap-2.5 mb-3.5">
+                  <span className="w-9 h-[4px] bg-gradient-to-r from-cyan-600 via-sky-500 to-transparent rounded-full" />
+                  <span className="font-sans text-[12px] sm:text-xs font-black uppercase tracking-[0.22em] text-[#0c2340]">
+                    {openingsHeader.badge || 'CURRENT OPENINGS'}
+                  </span>
+                </div>
+
+                {/* Heading */}
+                <div className="relative mb-4">
+                  <h2 className="font-times text-3xl sm:text-4xl lg:text-[2.65rem] font-medium text-[#0c2340] leading-[1.12]">
+                    Vacancies
+                  </h2>
+                </div>
+
+                {/* Description */}
+                <p className="font-sans text-xs sm:text-sm md:text-[14.5px] text-slate-600 font-normal leading-relaxed mb-6 max-w-xl">
+                  {openingsHeader.subtitle ||
+                    'Applications are invited from eligible candidates for faculty and academic positions in specialized departments.'}
+                </p>
               </div>
 
-              {/* Heading with accent underline */}
-              <div className="relative mb-4">
-                <h2 className="font-times text-3xl sm:text-4xl lg:text-[2.65rem] font-medium text-[#0c2340] leading-[1.12]">
-                  Vacancies / <span className="font-semibold">Openings</span>
-                </h2>
-              </div>
-
-              {/* Description */}
-              <p className="font-sans text-xs sm:text-sm md:text-[14.5px] text-slate-600 font-normal leading-relaxed mb-6 max-w-xl">
-                {openingsHeader.subtitle ||
-                  'Applications are invited from eligible candidates for faculty and academic positions in specialized departments.'}
-              </p>
-
-              {/* Vacancy Announcement Master Container */}
+              {/* Vacancy Announcement Master Container - Equal Height with Right Form Card */}
               <motion.div
                 initial={reduceMotion ? false : { opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.8, ease: EASE }}
-                className="overflow-hidden rounded-xl bg-white border border-slate-200/90 shadow-[0_12px_36px_-10px_rgba(12,35,64,0.08)] mb-8"
+                className="flex-1 flex flex-col justify-between overflow-hidden rounded-xl bg-white border border-slate-200/90 shadow-[0_12px_36px_-10px_rgba(12,35,64,0.08)]"
               >
                 {/* Vacancy Announcement Header Ribbon - Exact Match of Disclosure Page Table Top Blue Strip Gradient */}
                 <div
                   style={{
                     background: 'linear-gradient(to right, rgba(7, 22, 44, 0.9) 0%, rgba(12, 35, 64, 0.75) 50%, rgba(7, 22, 44, 0.5) 100%)',
                   }}
-                  className="bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 px-5 py-3.5 sm:px-6 sm:py-4 flex items-center justify-between border-b border-slate-200/80 text-white"
+                  className="bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 px-5 py-3.5 sm:px-6 sm:py-4 flex items-center justify-between border-b border-slate-200/80 text-white shrink-0"
                 >
                   <div className="flex items-center gap-2.5">
                     <Briefcase size={20} weight="fill" className="text-gray-100 shrink-0" />
@@ -384,55 +387,58 @@ export default function CareerPage({ onBack }) {
                   </div>
                 </div>
 
-                {/* Job Openings List */}
-                <div className="p-5 sm:p-6 lg:p-7 space-y-6 divide-y divide-slate-100">
-                  {openings.map((job, idx) => (
-                    <div key={job.id || idx} className={`${idx > 0 ? 'pt-6' : ''}`}>
-                      {/* Job Title */}
-                      <div className="flex items-start justify-between gap-3 mb-3.5">
-                        <h3 className="font-sans text-base sm:text-lg font-bold text-[#0c2340] leading-snug">
-                          {job.number ? `${job.number}. ` : `${idx + 1}. `}
-                          {job.title}
-                        </h3>
-                        <span className="shrink-0 rounded-md bg-blue-50 px-2 py-0.5 text-[11px] font-semibold text-[#0c2340] border border-blue-100/80">
-                          {job.type || 'Full Time'}
-                        </span>
-                      </div>
+                {/* Content Area: Job Openings List & Experience Requirement Banner */}
+                <div className="p-5 sm:p-6 lg:p-7 xl:p-8 flex-1 flex flex-col justify-between">
+                  {/* Job Openings List */}
+                  <div className="space-y-6 sm:space-y-8 divide-y divide-slate-100 flex-1 flex flex-col justify-around">
+                    {openings.map((job, idx) => (
+                      <div key={job.id || idx} className={`${idx > 0 ? 'pt-6 sm:pt-8' : ''}`}>
+                        {/* Job Title */}
+                        <div className="flex items-start justify-between gap-3 mb-3.5">
+                          <h3 className="font-sans text-base sm:text-lg font-bold text-[#0c2340] leading-snug">
+                            {job.number ? `${job.number}. ` : `${idx + 1}. `}
+                            {job.title}
+                          </h3>
+                          <span className="shrink-0 rounded-md bg-blue-50 px-2 py-0.5 text-[11px] font-semibold text-[#0c2340] border border-blue-100/80">
+                            {job.type || 'Full Time'}
+                          </span>
+                        </div>
 
-                      {/* Number of Post pill box */}
-                      <div className="mb-2.5 rounded-lg bg-[#f0f6fc] border border-[#d2e4f6] px-4 py-2.5 text-slate-800 text-xs sm:text-[13px] font-sans flex items-center gap-2">
-                        <Users size={16} weight="bold" className="text-cyan-700 shrink-0" />
-                        <span>
-                          <strong className="font-semibold text-slate-900">Number of Post:</strong>{' '}
-                          <span className="text-[#0c2340] font-bold">{job.posts}</span>
-                        </span>
-                      </div>
+                        {/* Number of Post pill box */}
+                        <div className="mb-2.5 rounded-lg bg-[#f0f6fc] border border-[#d2e4f6] px-4 py-2.5 text-slate-800 text-xs sm:text-[13px] font-sans flex items-center gap-2">
+                          <Users size={16} weight="bold" className="text-cyan-700 shrink-0" />
+                          <span>
+                            <strong className="font-semibold text-slate-900">Number of Post:</strong>{' '}
+                            <span className="text-[#0c2340] font-bold">{job.posts}</span>
+                          </span>
+                        </div>
 
-                      {/* Qualification pill box */}
-                      <div className="mb-3.5 rounded-lg bg-[#f0f6fc] border border-[#d2e4f6] px-4 py-2.5 text-slate-800 text-xs sm:text-[13px] font-sans flex items-start gap-2">
-                        <GraduationCap size={16} weight="bold" className="text-cyan-700 shrink-0 mt-0.5" />
-                        <div className="leading-relaxed">
-                          <strong className="font-semibold text-slate-900">Qualification:</strong>{' '}
-                          <span className="text-slate-700">{job.qualification}</span>
+                        {/* Qualification pill box */}
+                        <div className="mb-3.5 rounded-lg bg-[#f0f6fc] border border-[#d2e4f6] px-4 py-2.5 text-slate-800 text-xs sm:text-[13px] font-sans flex items-start gap-2">
+                          <GraduationCap size={16} weight="bold" className="text-cyan-700 shrink-0 mt-0.5" />
+                          <div className="leading-relaxed">
+                            <strong className="font-semibold text-slate-900">Qualification:</strong>{' '}
+                            <span className="text-slate-700">{job.qualification}</span>
+                          </div>
+                        </div>
+
+                        {/* Quick Apply button - Centered in the middle of the card */}
+                        <div className="flex justify-center pt-2">
+                          <button
+                            type="button"
+                            onClick={() => handleQuickApply(job.title)}
+                            className="group inline-flex items-center gap-1.5 rounded-lg bg-slate-50 border border-slate-200 px-4 py-2 font-sans text-xs font-semibold text-[#0c2340] shadow-2xs transition-all duration-200 hover:border-transparent hover:bg-gradient-to-r hover:from-[#0c2340]/90 hover:via-[#102d52]/90 hover:to-[#163860]/70 hover:text-white hover:brightness-125 hover:shadow-md active:scale-[0.98] cursor-pointer"
+                          >
+                            <span>Apply for this Post</span>
+                            <CaretRight size={13} weight="bold" className="transition-transform group-hover:translate-x-0.5" />
+                          </button>
                         </div>
                       </div>
+                    ))}
+                  </div>
 
-                      {/* Quick Apply button - Centered in the middle of the card */}
-                      <div className="flex justify-center pt-3">
-                        <button
-                          type="button"
-                          onClick={() => handleQuickApply(job.title)}
-                          className="group inline-flex items-center gap-1.5 rounded-lg bg-slate-50 border border-slate-200 px-4 py-2 font-sans text-xs font-semibold text-[#0c2340] shadow-2xs transition-all duration-200 hover:border-transparent hover:bg-gradient-to-r hover:from-[#0c2340]/90 hover:via-[#102d52]/90 hover:to-[#163860]/70 hover:text-white hover:brightness-125 hover:shadow-md active:scale-[0.98] cursor-pointer"
-                        >
-                          <span>Apply for this Post</span>
-                          <CaretRight size={13} weight="bold" className="transition-transform group-hover:translate-x-0.5" />
-                        </button>
-                      </div>
-                    </div>
-                  ))}
-
-                  {/* Common Experience Requirement Dark Navy Banner from Image 1 - Exact Match of Vacancy Announcement Strip Gradient */}
-                  <div className="pt-6">
+                  {/* Common Experience Requirement Dark Navy Banner */}
+                  <div className="pt-6 sm:pt-7 mt-auto shrink-0">
                     <div
                       style={{
                         background: 'linear-gradient(to right, rgba(7, 22, 44, 0.9) 0%, rgba(12, 35, 64, 0.75) 50%, rgba(7, 22, 44, 0.5) 100%)',
@@ -441,66 +447,12 @@ export default function CareerPage({ onBack }) {
                     >
                       <Clock size={22} weight="fill" className="text-gray-100 shrink-0 mt-0.5 sm:mt-0" />
                       <p className="font-sans text-xs sm:text-[13.5px] font-medium leading-relaxed text-white">
-                        {openingsHeader.experienceNotice ||
-                          'Experience: Minimum three (03) years of experience for both the posts.'}
+                        Experience: Minimum <span className="underline underline-offset-2">Three (03) years of experience</span> for both the posts.
                       </p>
                     </div>
                   </div>
                 </div>
               </motion.div>
-
-              {/* Submission Guidelines Card */}
-              <div className="rounded-xl bg-slate-50/90 border border-slate-200/80 p-5 sm:p-6 mb-8 text-left">
-                <h4 className="font-sans text-xs sm:text-[13px] font-bold uppercase tracking-wider text-[#0c2340] mb-3 flex items-center gap-2">
-                  <Sparkle size={16} weight="fill" className="text-amber-500" />
-                  <span>Important Instructions for Applicants</span>
-                </h4>
-                <ul className="space-y-2 text-xs sm:text-[13px] text-slate-600 font-sans leading-relaxed">
-                  {guidelines.map((guide, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <span className="text-cyan-700 font-bold shrink-0">•</span>
-                      <span>{guide}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* HR Cell Direct Contacts */}
-              <div className="rounded-xl bg-white border border-slate-200/80 p-5 text-left text-xs sm:text-[13px] text-slate-600 shadow-2xs">
-                <p className="font-semibold text-slate-800 mb-2 font-sans">For Inquiries & Application Support:</p>
-                <div className="space-y-1.5 font-sans">
-                  <div className="flex items-center gap-2">
-                    <EnvelopeSimple size={15} className="text-cyan-700" />
-                    <span>Email:</span>
-                    <a href={`mailto:${hr.email}`} className="text-cyan-700 hover:underline font-medium">
-                      {hr.email}
-                    </a>
-                    {hr.altEmail && (
-                      <>
-                        <span className="text-slate-300">/</span>
-                        <a href={`mailto:${hr.altEmail}`} className="text-cyan-700 hover:underline font-medium">
-                          {hr.altEmail}
-                        </a>
-                      </>
-                    )}
-                  </div>
-                  {hr.phone && (
-                    <div className="flex items-center gap-2">
-                      <Phone size={15} className="text-cyan-700" />
-                      <span>Helpline:</span>
-                      <a href={`tel:${hr.phone}`} className="text-slate-800 font-medium hover:underline">
-                        {hr.phone}
-                      </a>
-                    </div>
-                  )}
-                  {hr.address && (
-                    <div className="flex items-start gap-2 text-slate-500 text-[12px] pt-1">
-                      <MapPin size={15} className="text-slate-400 shrink-0 mt-0.5" />
-                      <span>{hr.address}</span>
-                    </div>
-                  )}
-                </div>
-              </div>
             </div>
 
             {/* =========================================================
@@ -508,25 +460,30 @@ export default function CareerPage({ onBack }) {
             ========================================================= */}
             <div
               ref={formRef}
-              className="lg:col-span-6 xl:col-span-6 flex flex-col justify-start text-left relative w-full scroll-mt-24"
+              className="lg:col-span-6 xl:col-span-6 flex flex-col text-left relative w-full scroll-mt-24"
             >
-              {/* Eyebrow Tag */}
-              <div className="flex items-center gap-2.5 mb-3.5">
-                <span className="w-9 h-[4px] bg-gradient-to-r from-cyan-600 via-sky-500 to-transparent rounded-full" />
-                <span className="font-sans text-[12px] sm:text-xs font-black uppercase tracking-[0.22em] text-[#0c2340]">
-                  RECRUITMENT CELL
-                </span>
+              {/* Header Container */}
+              <div className="flex flex-col justify-start">
+                {/* Eyebrow Tag */}
+                <div className="flex items-center gap-2.5 mb-3.5">
+                  <span className="w-9 h-[4px] bg-gradient-to-r from-cyan-600 via-sky-500 to-transparent rounded-full" />
+                  <span className="font-sans text-[12px] sm:text-xs font-black uppercase tracking-[0.22em] text-[#0c2340]">
+                    RECRUITMENT CELL
+                  </span>
+                </div>
+
+                {/* Heading from Image 1 */}
+                <div className="relative mb-4">
+                  <h2 className="font-times text-3xl sm:text-4xl lg:text-[2.65rem] font-medium text-[#0c2340] leading-[1.12]">
+                    Want to join us?
+                  </h2>
+                </div>
+
+                {/* Description from Image 1 */}
+                <p className="font-sans text-xs sm:text-sm md:text-[14.5px] text-slate-600 font-normal leading-relaxed mb-6 max-w-xl">
+                  Fill the form below and send your resume. Our recruitment committee will review your credentials.
+                </p>
               </div>
-
-              {/* Heading from Image 1 */}
-              <h2 className="font-times text-3xl sm:text-4xl lg:text-[2.65rem] font-medium text-[#0c2340] leading-[1.12] mt-2 mb-4">
-                Want to join us?
-              </h2>
-
-              {/* Description from Image 1 */}
-              <p className="font-sans text-xs sm:text-sm md:text-[14.5px] text-slate-600 font-normal leading-relaxed mb-8 max-w-xl">
-                Fill the form below and send your resume. Our recruitment committee will review your credentials.
-              </p>
 
               {/* Form Card Container matching Contact Form in Image 2 */}
               <motion.div
@@ -534,14 +491,14 @@ export default function CareerPage({ onBack }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.9, ease: EASE, delay: 0.15 }}
-                className="relative w-full rounded-xl bg-white border border-slate-200/80 shadow-[0_22px_65px_-15px_rgba(12,35,64,0.13)] p-6 sm:p-8 lg:p-9 xl:p-10"
+                className="flex-1 flex flex-col justify-between relative w-full rounded-xl bg-white border border-slate-200/80 shadow-[0_22px_65px_-15px_rgba(12,35,64,0.13)] p-6 sm:p-8 lg:p-9 xl:p-10"
               >
                 {sent ? (
                   <motion.div
                     initial={reduceMotion ? false : { opacity: 0, scale: 0.96 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, ease: EASE }}
-                    className="my-6 flex flex-col items-center rounded-2xl bg-slate-50 border border-slate-200/80 p-8 text-center"
+                    className="my-auto flex flex-col items-center rounded-2xl bg-slate-50 border border-slate-200/80 p-8 text-center"
                   >
                     <CheckCircle size={52} weight="fill" className="text-[#0c2340]" />
                     <h3 className="mt-4 font-times text-2xl sm:text-3xl text-[#0c2340] font-bold">
@@ -569,7 +526,7 @@ export default function CareerPage({ onBack }) {
                     </button>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5 sm:gap-6">
+                  <form onSubmit={handleSubmit} noValidate className="flex flex-col justify-between h-full gap-5 sm:gap-6">
                     {/* Row 1: Name * & Email * */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                       {/* Name * */}
@@ -912,6 +869,71 @@ export default function CareerPage({ onBack }) {
               </motion.div>
             </div>
 
+          </div>
+
+          {/* =========================================================
+              SECONDARY SUPPORT SECTION: INSTRUCTIONS & INQUIRIES
+          ========================================================= */}
+          <div className="mt-10 lg:mt-12 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+            {/* Submission Guidelines Card */}
+            <div className="lg:col-span-7 rounded-xl bg-slate-50/90 border border-slate-200/80 p-5 sm:p-6 text-left shadow-2xs flex flex-col justify-between">
+              <div>
+                <h4 className="font-sans text-xs sm:text-[13px] font-bold uppercase tracking-wider text-[#0c2340] mb-3 flex items-center gap-2">
+                  <Sparkle size={16} weight="fill" className="text-amber-500" />
+                  <span>Important Instructions for Applicants</span>
+                </h4>
+                <ul className="space-y-2 text-xs sm:text-[13px] text-slate-600 font-sans leading-relaxed">
+                  {guidelines.map((guide, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="text-cyan-700 font-bold shrink-0">•</span>
+                      <span>{guide}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* HR Cell Direct Contacts */}
+            <div className="lg:col-span-5 rounded-xl bg-white border border-slate-200/80 p-5 sm:p-6 text-left text-xs sm:text-[13px] text-slate-600 shadow-2xs flex flex-col justify-between">
+              <div>
+                <p className="font-semibold text-slate-800 mb-3 font-sans text-xs sm:text-[13px] uppercase tracking-wider text-[#0c2340] flex items-center gap-2">
+                  <Users size={16} weight="bold" className="text-cyan-700" />
+                  <span>For Inquiries & Application Support</span>
+                </p>
+                <div className="space-y-2.5 font-sans">
+                  <div className="flex items-center gap-2">
+                    <EnvelopeSimple size={15} className="text-cyan-700 shrink-0" />
+                    <span className="text-slate-500 font-medium">Email:</span>
+                    <a href={`mailto:${hr.email}`} className="text-cyan-700 hover:underline font-medium">
+                      {hr.email}
+                    </a>
+                    {hr.altEmail && (
+                      <>
+                        <span className="text-slate-300">/</span>
+                        <a href={`mailto:${hr.altEmail}`} className="text-cyan-700 hover:underline font-medium">
+                          {hr.altEmail}
+                        </a>
+                      </>
+                    )}
+                  </div>
+                  {hr.phone && (
+                    <div className="flex items-center gap-2">
+                      <Phone size={15} className="text-cyan-700 shrink-0" />
+                      <span className="text-slate-500 font-medium">Helpline:</span>
+                      <a href={`tel:${hr.phone}`} className="text-slate-800 font-medium hover:underline">
+                        {hr.phone}
+                      </a>
+                    </div>
+                  )}
+                  {hr.address && (
+                    <div className="flex items-start gap-2 text-slate-500 text-[12px] pt-1 border-t border-slate-100">
+                      <MapPin size={15} className="text-slate-400 shrink-0 mt-0.5" />
+                      <span>{hr.address}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
