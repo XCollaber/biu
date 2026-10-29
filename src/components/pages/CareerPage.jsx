@@ -801,18 +801,18 @@ export default function CareerPage({ onBack }) {
                             errors.resume ? 'border-red-400 bg-red-50/30' : 'border-slate-200 hover:border-slate-300'
                           }`}
                         >
-                          <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-600 shadow-2xs">
+                          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                            <div className="w-8 h-8 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-600 shadow-2xs shrink-0">
                               <UploadSimple size={18} weight="bold" />
                             </div>
-                            <div className="text-left">
-                              <p className="text-xs sm:text-[13px] font-medium text-slate-700">
+                            <div className="text-left min-w-0">
+                              <p className="text-xs sm:text-[13px] font-medium text-slate-700 truncate">
                                 Click to choose PDF
                               </p>
-                              <p className="text-[11px] text-slate-400">PDF file only, <strong className="text-slate-500/80 font-semibold">max 1 MB</strong></p>
+                              <p className="text-[11px] text-slate-400 truncate">PDF file only, <strong className="text-slate-500/80 font-semibold">max 1 MB</strong></p>
                             </div>
                           </div>
-                          <span className="rounded-md bg-white border border-slate-200 px-2.5 py-1 text-[11px] sm:text-xs font-semibold text-slate-700 shadow-2xs">
+                          <span className="rounded-md bg-white border border-slate-200 px-2.5 py-1 text-[11px] sm:text-xs font-semibold text-slate-700 shadow-2xs shrink-0 whitespace-nowrap">
                             Choose File
                           </span>
                         </div>
@@ -841,7 +841,7 @@ export default function CareerPage({ onBack }) {
                       )}
 
                       {errors.resume && (
-                        <span className="font-sans text-[11px] text-red-600 font-medium flex items-center gap-1">
+                        <span className="font-sans text-[10.5px] sm:text-[11px] text-red-600 font-medium flex items-center gap-1">
                           <WarningCircle size={13} weight="bold" />
                           {errors.resume}
                         </span>
@@ -878,18 +878,18 @@ export default function CareerPage({ onBack }) {
                             errors.appForm ? 'border-red-400 bg-red-50/30' : 'border-slate-200 hover:border-slate-300'
                           }`}
                         >
-                          <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-600 shadow-2xs">
+                          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                            <div className="w-8 h-8 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-600 shadow-2xs shrink-0">
                               <UploadSimple size={18} weight="bold" />
                             </div>
-                            <div className="text-left">
+                            <div className="text-left min-w-0">
                               <p className="text-[12px] sm:text-[13px] font-medium text-slate-700 truncate">
                                 Attach filled application form
                               </p>
-                              <p className="text-[11px] text-slate-400">PDF file only,  <strong className="text-slate-500/80 font-semibold">max 1 MB</strong></p>
+                              <p className="text-[11px] text-slate-400 truncate">PDF file only, <strong className="text-slate-500/80 font-semibold">max 1 MB</strong></p>
                             </div>
                           </div>
-                          <span className="rounded-md bg-white border border-slate-200 px-2.5 py-1 text-[11px] sm:text-xs font-semibold text-slate-700 shadow-2xs">
+                          <span className="rounded-md bg-white border border-slate-200 px-2.5 py-1 text-[11px] sm:text-xs font-semibold text-slate-700 shadow-2xs shrink-0 whitespace-nowrap">
                             Choose File
                           </span>
                         </div>
@@ -926,29 +926,29 @@ export default function CareerPage({ onBack }) {
                     </div>
 
                     {/* Row 6: Submit & Reset Buttons */}
-                    <div className="mt-3 flex flex-col sm:flex-row items-center gap-3">
+                    <div className="mt-3 flex items-center gap-2.5 sm:gap-3">
                       {/* Submit Button */}
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="group flex h-13 sm:h-14 flex-1 w-full items-center justify-center gap-2.5 rounded-lg bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-8 font-sans text-xs sm:text-[15px] font-semibold text-white shadow-sm brightness-125 transition-all duration-200 hover:shadow-lg hover:brightness-125 active:scale-[0.98] cursor-pointer disabled:opacity-75 disabled:pointer-events-none"
+                        className="group flex h-12 sm:h-14 flex-1 items-center justify-center gap-2 sm:gap-2.5 rounded-lg bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-3 sm:px-8 font-sans text-xs sm:text-[15px] font-semibold text-white shadow-sm brightness-125 transition-all duration-200 hover:shadow-lg hover:brightness-125 active:scale-[0.98] cursor-pointer disabled:opacity-75 disabled:pointer-events-none whitespace-nowrap"
                       >
                         <PaperPlaneTilt
-                          size={18}
+                          size={16}
                           weight="fill"
-                          className="text-blue-100 transition-transform duration-200 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                          className="text-blue-100 transition-transform duration-200 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 shrink-0"
                         />
-                        <span>{isSubmitting ? 'Submitting Application...' : 'Submit Application'}</span>
-                        <CaretRight size={15} weight="bold" className="text-white/90 transition-transform duration-200 group-hover:translate-x-0.5" />
+                        <span>{isSubmitting ? 'Submitting...' : 'Submit Application'}</span>
+                        <CaretRight size={14} weight="bold" className="text-white/90 transition-transform duration-200 group-hover:translate-x-0.5 shrink-0" />
                       </button>
 
                       {/* Reset Button */}
                       <button
                         type="button"
                         onClick={handleReset}
-                        className="group flex h-13 sm:h-14 items-center justify-center gap-2 rounded-lg border border-slate-300/80 bg-white px-5 sm:px-6 font-sans text-xs sm:text-[14px] font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-all duration-200 active:scale-[0.98] cursor-pointer shrink-0 w-full sm:w-auto"
+                        className="group flex h-12 sm:h-14 items-center justify-center gap-1.5 sm:gap-2 rounded-lg border border-slate-300/80 bg-white px-3.5 sm:px-6 font-sans text-xs sm:text-[14px] font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-all duration-200 active:scale-[0.98] cursor-pointer shrink-0 whitespace-nowrap"
                       >
-                        <ArrowCounterClockwise size={16} weight="bold" className="text-slate-500 transition-transform duration-200 group-hover:-rotate-45" />
+                        <ArrowCounterClockwise size={15} weight="bold" className="text-slate-500 transition-transform duration-200 group-hover:-rotate-45 shrink-0" />
                         <span>Reset</span>
                       </button>
                     </div>
@@ -966,11 +966,11 @@ export default function CareerPage({ onBack }) {
             {/* Submission Guidelines Card - Width Matches Top Vacancy Card Exactly */}
             <div className="lg:col-span-6 xl:col-span-6 rounded-xl bg-slate-50/90 border border-slate-200/80 p-5 sm:p-6 text-left shadow-2xs flex flex-col justify-between">
               <div>
-                <h4 className="font-sans text-xs sm:text-[13px] font-bold uppercase tracking-wider underline text-[#0c2340] mb-3 flex items-center gap-2">
+                <h4 className="font-sans text-[11px] sm:text-[13px] font-bold uppercase tracking-wider underline text-[#0c2340] mb-3 flex items-center gap-2">
                   <Info size={20} weight="bold" className="text-cyan-700 shrink-0" />
                   <span>Important Instructions for Applicants</span>
                 </h4>
-                <ul className="space-y-2 text-xs sm:text-[13px] text-slate-600 font-sans leading-relaxed">
+                <ul className="space-y-2 text-[11.5px] sm:text-[13px] text-slate-600 font-sans leading-relaxed">
                   {guidelines.map((guide, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <span className="text-cyan-800 ml-1 font-bold shrink-0">•</span>
@@ -984,41 +984,55 @@ export default function CareerPage({ onBack }) {
             {/* HR Cell Direct Contacts - Width Matches Top Form Card Exactly */}
             <div className="lg:col-span-6 xl:col-span-6 rounded-xl bg-white border border-slate-200/80 p-5 sm:p-6 text-left text-xs sm:text-[13px] text-slate-600 shadow-2xs flex flex-col justify-between">
               <div>
-                <p className="font-semibold text-slate-800 mb-3 font-sans text-xs sm:text-[13px] underline uppercase tracking-wider text-[#0c2340] flex items-center gap-2">
+                <p className="font-semibold text-slate-800 mb-3 font-sans text-[11.5px] sm:text-[13px] underline uppercase tracking-wider text-[#0c2340] flex items-center gap-2">
                   <Users size={20} weight="bold" className="text-cyan-700" />
                   <span>For Inquiries & Application Support</span>
                 </p>
-                <div className="space-y-2.5 font-sans">
-                  <div className="flex items-center gap-2">
-                    <EnvelopeSimple size={16} className="text-slate-400 shrink-0" />
-                    <span className="text-slate-500 font-medium">Email:</span>
-                    <a href="mailto:rcnbareilly11@gmail.com" className="text-cyan-700 hover:underline font-semibold">
-                      rcnbareilly11@gmail.com
-                    </a>
-                    <span className="text-slate-300">/</span>
-                    <a href="mailto:careers@biu.edu.in" className="text-cyan-700 hover:underline font-medium">
-                      careers@biu.edu.in
-                    </a>
+                <div className="space-y-3 font-sans">
+                  {/* Email row: stacks cleanly on mobile, inline on desktop */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                    <div className="flex items-center gap-2 shrink-0">
+                      <EnvelopeSimple size={16} className="text-slate-400 shrink-0" />
+                      <span className="text-slate-500 font-medium whitespace-nowrap">Email:</span>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 pl-6 sm:pl-0 text-xs sm:text-[13px]">
+                      <a href="mailto:rcnbareilly11@gmail.com" className="text-cyan-700 hover:underline font-semibold break-all">
+                        rcnbareilly11@gmail.com
+                      </a>
+                      <span className="text-slate-300">/</span>
+                      <a href="mailto:careers@biu.edu.in" className="text-cyan-700 hover:underline font-medium break-all">
+                        careers@biu.edu.in
+                      </a>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Phone size={16} className="text-slate-400 shrink-0" />
-                    <span className="text-slate-500 font-medium">Mobile / Helpline:</span>
-                    <a href="tel:9368382930" className="text-slate-800 font-bold hover:underline">
-                      9368382930
-                    </a>
-                    <span className="text-slate-300">,</span>
-                    <a href="tel:9917854402" className="text-slate-800 font-bold hover:underline">
-                      9917854402
-                    </a>
-                    <span className="text-slate-300">|</span>
-                    <a href={`tel:${hr.phone}`} className="text-slate-600 font-medium hover:underline">
-                      {hr.phone}
-                    </a>
+
+                  {/* Phone row: stacks cleanly on mobile, inline on desktop */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                    <div className="flex items-center gap-2 shrink-0">
+                      <Phone size={16} className="text-slate-400 shrink-0" />
+                      <span className="text-slate-500 font-medium whitespace-nowrap">Mobile / Helpline:</span>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 pl-6 sm:pl-0 text-xs sm:text-[13px]">
+                      <a href="tel:9368382930" className="text-slate-800 font-bold hover:underline whitespace-nowrap">
+                        9368382930
+                      </a>
+                      <span className="text-slate-300">,</span>
+                      <a href="tel:9917854402" className="text-slate-800 font-bold hover:underline whitespace-nowrap">
+                        9917854402
+                      </a>
+                      <span className="text-slate-300 hidden sm:inline">|</span>
+                      <span className="text-slate-300 sm:hidden">,</span>
+                      <a href={`tel:${hr.phone}`} className="text-slate-600 font-medium hover:underline whitespace-nowrap">
+                        {hr.phone}
+                      </a>
+                    </div>
                   </div>
+
+                  {/* Address row */}
                   {hr.address && (
-                    <div className="flex items-start gap-2 text-slate-500 text-[12px] pt-1 border-t border-slate-100">
+                    <div className="flex items-start gap-2 text-slate-500 text-[11.5px] sm:text-[12px] pt-2 sm:pt-1 border-t border-slate-100 leading-relaxed">
                       <MapPin size={16} className="text-slate-400 shrink-0 mt-0.5" />
-                      <span>{hr.address}</span>
+                      <span className="leading-relaxed">{hr.address}</span>
                     </div>
                   )}
                 </div>
