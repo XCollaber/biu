@@ -54,16 +54,27 @@ export default function CareerPage({ onBack }) {
   const guidelines = careerData.submissionGuidelines || [];
   const hr = careerData.contactHR || {};
 
+  // Scroll directly to application form on first click with navbar offset
+  const scrollToForm = () => {
+    if (formRef.current) {
+      const navbarOffset = 80;
+      const elementPosition = formRef.current.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   // Quick Apply handler from opening cards
   const handleQuickApply = (positionTitle) => {
     setForm((prev) => ({ ...prev, applyingFor: positionTitle }));
     if (errors.applyingFor) {
       setErrors((prev) => ({ ...prev, applyingFor: '' }));
     }
-    // Smooth scroll to form card
-    if (formRef.current) {
-      formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    scrollToForm();
   };
 
   // Text inputs handlers
@@ -286,9 +297,14 @@ export default function CareerPage({ onBack }) {
               <h1 className="font-times text-[22px] sm:text-3xl lg:text-[2.6rem] font-medium text-[#0c2340] leading-[1.15]">
                 Careers & Current Openings
               </h1>
-              <p className="mt-2 text-xs sm:text-sm text-slate-500 font-sans max-w-xl leading-relaxed">
-                {pageHeader.subtitle ||
-                  'Join a NAAC A+ accredited premier university campus dedicated to medical excellence, higher education research, and transformative pedagogy.'}
+              <p className="mt-2 text-[11.5px] sm:text-sm text-slate-500 font-sans max-w-xl leading-relaxed">
+                <span className="sm:hidden">
+                  Join a NAAC A+ accredited premier university campus dedicated to medical and academic excellence.
+                </span>
+                <span className="hidden sm:inline">
+                  {pageHeader.subtitle ||
+                    'Join a NAAC A+ accredited premier university campus dedicated to medical excellence, higher education research, and transformative pedagogy.'}
+                </span>
               </p>
             </div>
 
@@ -304,11 +320,7 @@ export default function CareerPage({ onBack }) {
               </div>
               <button
                 type="button"
-                onClick={() => {
-                  if (formRef.current) {
-                    formRef.current.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
+                onClick={scrollToForm}
                 className="inline-flex lg:hidden items-center gap-2 rounded-lg bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-white brightness-125 transition-all duration-200 hover:brightness-140 hover:shadow-sm active:scale-[0.98] cursor-pointer shadow-2xs"
               >
                 <PaperPlaneTilt size={14} weight="fill" className="text-blue-100" />
@@ -320,16 +332,16 @@ export default function CareerPage({ onBack }) {
       </section>
 
       {/* Main 2-Column Content Section matching Contact Section Layout & Aesthetics */}
-      <section className="relative z-[2] w-full bg-[#fbfbfd] py-10 sm:py-14 lg:py-16 font-sans">
+      <section className="relative z-[2] w-full overflow-hidden bg-[#fbfbfd] py-10 sm:py-14 lg:py-16 font-sans">
         {/* Atmospheric Background Wave Blob */}
         <div className="pointer-events-none absolute -right-28 sm:-right-10 top-20 w-[650px] lg:w-[850px] h-[650px] lg:h-[850px] bg-gradient-to-bl from-[#d9ebfb]/55 via-[#eaf4fd]/40 to-transparent rounded-full filter blur-3xl z-0 opacity-60" />
 
         {/* Center Background Banyan Tree Watermark (Consistent with Home Page Contact Section) */}
-        <div className="pointer-events-none absolute inset-0 z-0 select-none">
+        <div className="pointer-events-none absolute inset-0 z-0 select-none overflow-hidden">
           <img
             src="/tree.png"
             alt=""
-            className="absolute top-12 left-[50%] -translate-x-1/2 lg:-translate-x-0 lg:left-[12%] w-[850px] lg:w-[1100px] h-auto max-w-none opacity-[0.14] filter brightness-0"
+            className="absolute top-12 left-1/2 -translate-x-1/2 w-[calc(100%-2.5rem)] sm:w-[calc(100%-4rem)] max-w-md sm:max-w-xl lg:w-[1100px] lg:max-w-none lg:left-[12%] lg:translate-x-0 h-auto opacity-[0.14] filter brightness-0"
           />
         </div>
 
@@ -707,7 +719,7 @@ export default function CareerPage({ onBack }) {
                         htmlFor="career-resume"
                         className="font-sans text-[10.5px] font-bold uppercase tracking-wider text-slate-700"
                       >
-                        Attach Resume (Only PDF file less than 1Mb) <span className="text-red-500">*</span>
+                        Attach Resume<span className="text-red-500">*</span>
                       </label>
 
                       <input
@@ -734,7 +746,7 @@ export default function CareerPage({ onBack }) {
                               <p className="text-xs sm:text-[13px] font-medium text-slate-700">
                                 Click to choose PDF
                               </p>
-                              <p className="text-[11px] text-slate-400">PDF file only, max 1 MB</p>
+                              <p className="text-[11px] text-slate-400">PDF file only, <strong className="text-slate-500/80 font-semibold">max 1 MB</strong></p>
                             </div>
                           </div>
                           <span className="rounded-md bg-white border border-slate-200 px-2.5 py-1 text-xs font-semibold text-slate-700 shadow-2xs">
@@ -780,7 +792,7 @@ export default function CareerPage({ onBack }) {
                           htmlFor="career-appForm"
                           className="font-sans text-[10.5px] font-bold uppercase tracking-wider text-slate-700"
                         >
-                          Application Form (Only PDF file less than 1Mb)
+                          Application Form
                         </label>
                         <span className="font-sans text-[11px] text-amber-700 font-bold uppercase tracking-wider">
                           (OPTIONAL)
@@ -809,9 +821,9 @@ export default function CareerPage({ onBack }) {
                             </div>
                             <div className="text-left">
                               <p className="text-xs sm:text-[13px] font-medium text-slate-700">
-                                Optional: Attach filled application form
+                                Attach filled application form
                               </p>
-                              <p className="text-[11px] text-slate-400">PDF file only, max 1 MB</p>
+                              <p className="text-[11px] text-slate-400">PDF file only,  <strong className="text-slate-500/80 font-semibold">max 1 MB</strong></p>
                             </div>
                           </div>
                           <span className="rounded-md bg-white border border-slate-200 px-2.5 py-1 text-xs font-semibold text-slate-700 shadow-2xs">
