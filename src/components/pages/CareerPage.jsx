@@ -369,18 +369,19 @@ export default function CareerPage({ onBack }) {
                 transition={{ duration: 0.8, ease: EASE }}
                 className="overflow-hidden rounded-xl bg-white border border-slate-200/90 shadow-[0_12px_36px_-10px_rgba(12,35,64,0.08)] mb-8"
               >
-                {/* Vacancy Announcement Header Ribbon */}
-                <div className="bg-gradient-to-r from-[#07162c] via-[#0c2340] to-[#163860] px-5 py-3.5 sm:px-6 sm:py-4 flex items-center justify-between border-b border-white/10 text-white">
+                {/* Vacancy Announcement Header Ribbon - Exact Match of Disclosure Page Table Top Blue Strip Gradient */}
+                <div
+                  style={{
+                    background: 'linear-gradient(to right, rgba(7, 22, 44, 0.9) 0%, rgba(12, 35, 64, 0.75) 50%, rgba(7, 22, 44, 0.5) 100%)',
+                  }}
+                  className="bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 px-5 py-3.5 sm:px-6 sm:py-4 flex items-center justify-between border-b border-slate-200/80 text-white"
+                >
                   <div className="flex items-center gap-2.5">
-                    <Briefcase size={20} weight="fill" className="text-amber-300 shrink-0" />
-                    <span className="font-sans text-xs sm:text-[13px] font-bold uppercase tracking-[0.18em] text-white">
+                    <Briefcase size={20} weight="fill" className="text-gray-100 shrink-0" />
+                    <span className="font-sans text-xs sm:text-[13px] font-bold uppercase tracking-[0.08em] text-white">
                       VACANCY ANNOUNCEMENT
                     </span>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-200 border border-emerald-400/30">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    Active Openings
-                  </span>
                 </div>
 
                 {/* Job Openings List */}
@@ -397,14 +398,6 @@ export default function CareerPage({ onBack }) {
                           {job.type || 'Full Time'}
                         </span>
                       </div>
-
-                      {/* Department / Faculty */}
-                      {job.department && (
-                        <p className="font-sans text-xs text-slate-500 mb-3 flex items-center gap-1.5">
-                          <Buildings size={14} className="text-slate-400 shrink-0" />
-                          <span>{job.department}</span>
-                        </p>
-                      )}
 
                       {/* Number of Post pill box */}
                       <div className="mb-2.5 rounded-lg bg-[#f0f6fc] border border-[#d2e4f6] px-4 py-2.5 text-slate-800 text-xs sm:text-[13px] font-sans flex items-center gap-2">
@@ -424,12 +417,12 @@ export default function CareerPage({ onBack }) {
                         </div>
                       </div>
 
-                      {/* Quick Apply button */}
-                      <div className="flex justify-end">
+                      {/* Quick Apply button - Centered in the middle of the card */}
+                      <div className="flex justify-center pt-1">
                         <button
                           type="button"
                           onClick={() => handleQuickApply(job.title)}
-                          className="group inline-flex items-center gap-1.5 rounded-lg bg-slate-50 hover:bg-[#0c2340] px-3.5 py-1.5 font-sans text-xs font-semibold text-[#0c2340] hover:text-white border border-slate-200 hover:border-[#0c2340] transition-all duration-200 cursor-pointer shadow-2xs active:scale-[0.98]"
+                          className="group inline-flex items-center gap-1.5 rounded-lg bg-slate-50 hover:bg-[#0c2340] px-4 py-1.5 font-sans text-xs font-semibold text-[#0c2340] hover:text-white border border-slate-200 hover:border-[#0c2340] transition-all duration-200 cursor-pointer shadow-2xs active:scale-[0.98]"
                         >
                           <span>Apply for this Post</span>
                           <CaretRight size={13} weight="bold" className="transition-transform group-hover:translate-x-0.5" />
@@ -764,7 +757,7 @@ export default function CareerPage({ onBack }) {
                             </div>
                             <div className="text-left">
                               <p className="text-xs sm:text-[13px] font-medium text-slate-700">
-                                Click to choose PDF or drag file here
+                                Click to choose PDF
                               </p>
                               <p className="text-[11px] text-slate-400">PDF file only, max 1 MB</p>
                             </div>
