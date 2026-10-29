@@ -247,18 +247,23 @@ export default function GrievanceRedressalPage({ onBack }) {
                 Grievance Redressal Form
               </h1>
               <p className="mt-2 text-[12px] sm:text-sm text-slate-500 font-sans max-w-2xl leading-relaxed">
-                Statutory student grievance redressal portal under UGC Regulations for prompt, confidential, and unbiased resolution of academic, hostel, and campus concerns.
+                <span className="sm:hidden">
+                  Statutory student grievance portal under UGC Regulations for prompt, confidential resolution.
+                </span>
+                <span className="hidden sm:inline">
+                  Statutory student grievance redressal portal under UGC Regulations for prompt, confidential, and unbiased resolution of academic, hostel, and campus concerns.
+                </span>
               </p>
             </div>
 
             {/* Badges toolbar matching BIU style */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
-              <div className="inline-flex items-center gap-2 rounded-lg border border-slate-300/80 bg-white px-3 sm:px-3.5 py-2 font-sans text-xs font-semibold text-slate-700 shadow-2xs">
-                <SealCheck size={18} weight="bold" className="text-cyan-700 shrink-0" />
+            <div className="flex flex-nowrap sm:flex-wrap items-center gap-1.5 sm:gap-2.5">
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-lg border border-slate-300/80 bg-white px-2 sm:px-3.5 py-1.5 sm:py-2 font-sans text-[10.5px] sm:text-xs font-semibold text-slate-700 shadow-2xs whitespace-nowrap shrink-0">
+                <SealCheck size={18} weight="bold" className="w-3.5 h-3.5 sm:w-[18px] sm:h-[18px] text-cyan-700 shrink-0" />
                 <span>UGC SGRC Compliant</span>
               </div>
-              <div className="hidden sm:inline-flex items-center gap-2 rounded-lg border border-slate-300/80 bg-white px-3 sm:px-3.5 py-2 font-sans text-xs font-semibold text-slate-700 shadow-2xs">
-                <ShieldCheck size={18} weight="bold" className="text-cyan-700 shrink-0" />
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-lg border border-slate-300/80 bg-white px-2 sm:px-3.5 py-1.5 sm:py-2 font-sans text-[10.5px] sm:text-xs font-semibold text-slate-700 shadow-2xs whitespace-nowrap shrink-0">
+                <ShieldCheck size={18} weight="bold" className="w-3.5 h-3.5 sm:w-[18px] sm:h-[18px] text-cyan-700 shrink-0" />
                 <span>100% Confidential Redressal</span>
               </div>
             </div>
@@ -290,7 +295,12 @@ export default function GrievanceRedressalPage({ onBack }) {
                   Submit Your Suggestion / Grievance
                 </h2>
                 <p className="font-sans text-xs sm:text-[13.5px] text-slate-600 font-normal leading-relaxed mt-1">
-                  Please fill out the details accurately. All submissions are directly logged in the university grievance registry for committee review.
+                  <span className="sm:hidden">
+                    Please fill out the details accurately for committee review.
+                  </span>
+                  <span className="hidden sm:inline">
+                    Please fill out the details accurately. All submissions are directly logged in the university grievance registry for committee review.
+                  </span>
                 </p>
               </div>
 
