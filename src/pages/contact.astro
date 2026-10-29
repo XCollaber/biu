@@ -1,0 +1,19 @@
+---
+// Redirect /contact to /#contact
+return Astro.redirect('/#contact', 302);
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0;url=/#contact" />
+    <link rel="canonical" href="/#contact" />
+    <script is:inline>
+      window.location.replace('/#contact');
+    </script>
+    <title>Redirecting to Contact...</title>
+  </head>
+  <body>
+    <p>Redirecting to <a href="/#contact">Contact</a>...</p>
+  </body>
+</html>

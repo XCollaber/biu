@@ -13,6 +13,9 @@ export default defineConfig({
       '.trycloudflare.com',
     ],
   },
+  redirects: {
+    '/contact': '/#contact',
+  },
   integrations: [react()],
   vite: {
     optimizeDeps: {

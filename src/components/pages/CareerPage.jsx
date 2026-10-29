@@ -553,7 +553,7 @@ export default function CareerPage({ onBack }) {
               {/* Header Container */}
               <div className="flex flex-col justify-start">
                 {/* Eyebrow Tag */}
-                <div className="flex items-center gap-2.5 mb-3.5">
+                <div className="flex items-center gap-2.5 mb-3.5 sm:mt-0 mt-10">
                   <span className="w-9 h-[4px] bg-gradient-to-r from-cyan-600 via-sky-500 to-transparent rounded-full" />
                   <span className="font-sans text-[12px] sm:text-xs font-black uppercase tracking-[0.22em] text-[#0c2340]">
                     RECRUITMENT CELL
@@ -966,7 +966,7 @@ export default function CareerPage({ onBack }) {
             {/* Submission Guidelines Card - Width Matches Top Vacancy Card Exactly */}
             <div className="lg:col-span-6 xl:col-span-6 rounded-xl bg-slate-50/90 border border-slate-200/80 p-5 sm:p-6 text-left shadow-2xs flex flex-col justify-between">
               <div>
-                <h4 className="font-sans text-[11px] sm:text-[13px] font-bold uppercase tracking-wider underline text-[#0c2340] mb-3 flex items-center gap-2">
+                <h4 className="font-sans text-[11.5px] sm:text-[13px] font-bold uppercase tracking-wider underline text-[#0c2340] mb-3 flex items-center gap-2">
                   <Info size={20} weight="bold" className="text-cyan-700 shrink-0" />
                   <span>Important Instructions for Applicants</span>
                 </h4>
@@ -1013,16 +1013,16 @@ export default function CareerPage({ onBack }) {
                       <span className="text-slate-500 font-medium whitespace-nowrap">Mobile / Helpline:</span>
                     </div>
                     <div className="flex flex-wrap items-center gap-x-2 gap-y-1 pl-6 sm:pl-0 text-xs sm:text-[13px]">
-                      <a href="tel:9368382930" className="text-slate-800 font-bold hover:underline whitespace-nowrap">
+                      <a href="tel:9368382930" className="text-slate-800 sm:text-xs text-[11.5px] font-bold hover:underline whitespace-nowrap">
                         9368382930
                       </a>
                       <span className="text-slate-300">,</span>
-                      <a href="tel:9917854402" className="text-slate-800 font-bold hover:underline whitespace-nowrap">
+                      <a href="tel:9917854402" className="text-slate-800 sm:text-xs text-[11.5px] font-bold hover:underline whitespace-nowrap">
                         9917854402
                       </a>
                       <span className="text-slate-300 hidden sm:inline">|</span>
                       <span className="text-slate-300 sm:hidden">,</span>
-                      <a href={`tel:${hr.phone}`} className="text-slate-600 font-medium hover:underline whitespace-nowrap">
+                      <a href={`tel:${hr.phone}`} className="text-slate-600 sm:text-xs text-[11.5px] font-medium hover:underline whitespace-nowrap">
                         {hr.phone}
                       </a>
                     </div>
