@@ -1,0 +1,12 @@
+---
+// src/pages/grievance-redressal-form.astro — Bareilly International University (BIU)
+import Layout from '../layouts/Layout.astro';
+import GrievanceRedressalPage from '../components/pages/GrievanceRedressalPage.jsx';
+---
+
+<Layout
+  title="Grievance Redressal Form | Bareilly International University (BIU)"
+  description="Official student and stakeholder grievance redressal portal under UGC Regulations for Bareilly International University (BIU)."
+>
+  <GrievanceRedressalPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

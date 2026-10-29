@@ -15,6 +15,8 @@ export default defineConfig({
   },
   redirects: {
     '/contact': '/#contact',
+    '/grievance': '/grievance-redressal-form',
+    '/grievance-redressal': '/grievance-redressal-form',
   },
   integrations: [react()],
   vite: {
