@@ -452,50 +452,17 @@ export default function CareerPage({ onBack }) {
                     </div>
                   </div>
 
-                  {/* Submission Request Prompt from Official Announcement Image */}
-                  <div className="pt-3 pb-1 text-center shrink-0">
-                    <p className="font-sans text-xs sm:text-[13px] font-medium text-slate-700">
-                      Eligible candidates are requested to send their resume to:
+                  {/* Submission Request Line with Inline Email */}
+                  <div className="pt-3.5 sm:pt-4 text-center shrink-0">
+                    <p className="font-sans text-xs sm:text-[13px] font-medium text-slate-700 flex flex-wrap items-center justify-center gap-1.5 leading-relaxed">
+                      <span>Eligible candidates are requested to send their resume to:</span>
+                      <a
+                        href="mailto:rcnbareilly11@gmail.com"
+                        className="font-bold text-cyan-700 hover:text-cyan-800 underline underline-offset-2 transition-colors"
+                      >
+                        rcnbareilly11@gmail.com
+                      </a>
                     </p>
-                  </div>
-                </div>
-
-                {/* Bottom Direct Contact Ribbon Flush with Card - Exact Match of Original Image */}
-                <div
-                  style={{
-                    background: 'linear-gradient(to right, rgba(7, 22, 44, 0.98) 0%, rgba(12, 35, 64, 0.92) 50%, rgba(7, 22, 44, 0.98) 100%)',
-                  }}
-                  className="shrink-0 border-t-[3.5px] border-gold px-5 py-3.5 sm:px-6 sm:py-4 text-white"
-                >
-                  <div className="flex flex-col sm:flex-row items-center justify-around gap-2.5 sm:gap-4 font-sans text-xs sm:text-[13px]">
-                    {/* Official Email */}
-                    <a
-                      href="mailto:rcnbareilly11@gmail.com"
-                      className="inline-flex items-center gap-2 text-white/95 hover:text-white transition-colors group"
-                    >
-                      <EnvelopeSimple size={16} weight="fill" className="text-cyan-300 shrink-0 group-hover:scale-110 transition-transform" />
-                      <span>
-                        <strong className="font-semibold text-white/80">E-mail:</strong>{' '}
-                        <span className="font-bold text-white tracking-wide underline underline-offset-2 decoration-cyan-400/40 hover:decoration-cyan-400">
-                          rcnbareilly11@gmail.com
-                        </span>
-                      </span>
-                    </a>
-
-                    {/* Official Mobile Numbers */}
-                    <div className="inline-flex items-center gap-2 text-white/95">
-                      <Phone size={16} weight="fill" className="text-rose-400 shrink-0" />
-                      <span>
-                        <strong className="font-semibold text-white/80">Mobile No.:</strong>{' '}
-                        <a href="tel:9368382930" className="font-bold text-white hover:underline">
-                          9368382930
-                        </a>
-                        <span className="text-white/60 mx-1">,</span>
-                        <a href="tel:9917854402" className="font-bold text-white hover:underline">
-                          9917854402
-                        </a>
-                      </span>
-                    </div>
                   </div>
                 </div>
               </motion.div>
