@@ -163,7 +163,7 @@ export default function GrievanceRedressalPage({ onBack }) {
     }
 
     if (!form.message.trim()) {
-      newErrors.message = 'Please describe your suggestion or grievance.';
+      newErrors.message = 'Please describe your suggestion / grievance.';
     } else if (form.message.trim().length < 15) {
       newErrors.message = 'Please provide sufficient detail (at least 15 characters).';
     }
@@ -271,14 +271,6 @@ export default function GrievanceRedressalPage({ onBack }) {
         {/* Atmospheric Background Wave Blob */}
         <div className="pointer-events-none absolute -right-28 sm:-right-10 top-20 w-[650px] lg:w-[850px] h-[650px] lg:h-[850px] bg-gradient-to-bl from-[#d9ebfb]/55 via-[#eaf4fd]/40 to-transparent rounded-full filter blur-3xl z-0 opacity-60" />
 
-        {/* Center Background Banyan Tree Watermark */}
-        <div className="pointer-events-none absolute inset-0 z-0 select-none overflow-hidden">
-          <img
-            src="/tree.png"
-            alt=""
-            className="absolute top-12 left-1/2 -translate-x-1/2 w-[calc(100%-2.5rem)] sm:w-[calc(100%-4rem)] max-w-md sm:max-w-xl lg:w-[1100px] lg:max-w-none lg:left-[12%] lg:translate-x-0 h-auto opacity-[0.12] filter brightness-0"
-          />
-        </div>
 
         <div className="relative z-10 mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-14">
@@ -294,8 +286,8 @@ export default function GrievanceRedressalPage({ onBack }) {
                     OFFICIAL SUBMISSION PORTAL
                   </span>
                 </div>
-                <h2 className="font-times text-2xl sm:text-3xl font-medium text-[#0c2340]">
-                  Submit Your Suggestion or Grievance
+                <h2 className="font-times text-[23.5px] sm:text-3xl font-medium text-[#0c2340]">
+                  Submit Your Suggestion / Grievance
                 </h2>
                 <p className="font-sans text-xs sm:text-[13.5px] text-slate-600 font-normal leading-relaxed mt-1">
                   Please fill out the details accurately. All submissions are directly logged in the university grievance registry for committee review.
@@ -318,11 +310,11 @@ export default function GrievanceRedressalPage({ onBack }) {
                 >
                   <div className="flex items-center gap-2.5">
                     <ShieldCheck size={20} weight="fill" className="text-gray-100 shrink-0" />
-                    <span className="font-sans text-xs sm:text-[13px] font-bold uppercase tracking-[0.08em] text-white">
-                      STUDENT GRIEVANCE REDRESSAL (SGRC) APPLICATION
+                    <span className="font-sans text-[10px] sm:text-[13px] font-bold uppercase tracking-[0.08em] text-white">
+                      STUDENT GRIEVANCE REDRESSAL<span className="hidden sm:inline"> (SGRC)</span> APPLICATION
                     </span>
                   </div>
-                  <span className="text-[11px] font-medium text-blue-200 hidden sm:inline">
+                  <span className="text-[11px] font-medium text-blue-50 hidden sm:inline">
                     Confidential & Protected
                   </span>
                 </div>
@@ -344,9 +336,9 @@ export default function GrievanceRedressalPage({ onBack }) {
 
                       {/* Ticket Summary Box */}
                       <div className="w-full max-w-lg rounded-xl border border-slate-200 bg-slate-50/80 p-5 sm:p-6 text-left mb-6 font-sans">
-                        <div className="flex items-center justify-between border-b border-slate-200 pb-3 mb-3.5">
-                          <span className="text-xs font-medium text-slate-500 uppercase tracking-wider">Reference Ticket ID</span>
-                          <span className="font-mono text-sm sm:text-base font-bold text-cyan-800 bg-cyan-100/70 border border-cyan-200 px-2.5 py-0.5 rounded-md">
+                        <div className="flex items-center justify-between border-b border-slate-200 pb-3 mb-3.5 sm:mr-10 -mr-1">
+                          <span className="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase tracking-wider">Reference Ticket ID</span>
+                          <span className="font-mono text-[11px] sm:text-base font-bold text-cyan-800 bg-cyan-100/70 border border-cyan-200 sm:px-2 px-1 py-0.5 rounded-md">
                             {ticketData.ticketId}
                           </span>
                         </div>
@@ -378,9 +370,9 @@ export default function GrievanceRedressalPage({ onBack }) {
                         <button
                           type="button"
                           onClick={() => window.print()}
-                          className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 shadow-2xs transition-all active:scale-[0.98]"
+                          className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-[13px] font-semibold text-slate-700 hover:bg-slate-50 shadow-2xs transition-all active:scale-[0.98]"
                         >
-                          <Printer size={16} weight="bold" />
+                          <Printer size={20} weight="bold" />
                           <span>Print Acknowledgement</span>
                         </button>
                         <button
@@ -389,7 +381,7 @@ export default function GrievanceRedressalPage({ onBack }) {
                             setTicketData(null);
                             handleReset();
                           }}
-                          className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-5 py-2.5 text-xs font-semibold text-white brightness-125 hover:brightness-140 shadow-sm transition-all active:scale-[0.98]"
+                          className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-5 py-2.5 text-[13px] font-semibold text-white brightness-125 hover:brightness-140 shadow-sm transition-all active:scale-[0.98]"
                         >
                           <span>Submit Another Grievance</span>
                           <CaretRight size={14} weight="bold" />
@@ -702,7 +694,7 @@ export default function GrievanceRedressalPage({ onBack }) {
                             htmlFor="grievance-message"
                             className="font-sans text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-700"
                           >
-                            Enter Your Suggestion / Grievance <span className="text-red-500">*</span>
+                            Enter Your Grievance <span className="text-red-500">*</span>
                           </label>
                           <span className="text-[11px] text-slate-400 font-mono">
                             {form.message.length}/1500 chars
@@ -715,8 +707,8 @@ export default function GrievanceRedressalPage({ onBack }) {
                             maxLength={1500}
                             value={form.message}
                             onChange={(e) => handleChange('message', e.target.value)}
-                            placeholder="Please enter your suggestion or detail your grievance clearly including relevant dates, faculty, or incident context..."
-                            className={`w-full rounded-lg border p-3.5 text-xs sm:text-sm text-slate-800 placeholder-slate-400 shadow-2xs transition-all duration-200 resize-y focus:bg-white focus:outline-none focus:ring-2 ${
+                            placeholder="Please enter your suggestion / grievance clearly including relevant dates, faculty, or incident context..."
+                            className={`w-full rounded-lg border p-3.5 text-[12px] sm:text-sm text-slate-800 placeholder-slate-400 shadow-2xs transition-all duration-200 resize-y focus:bg-white focus:outline-none focus:ring-2 ${
                               errors.message
                                 ? 'border-red-400 bg-red-50/20 focus:border-red-500 focus:ring-red-400/20'
                                 : 'border-slate-300/80 bg-white hover:border-slate-400 focus:border-cyan-700 focus:ring-cyan-700/20'
@@ -732,11 +724,11 @@ export default function GrievanceRedressalPage({ onBack }) {
                       </div>
 
                       {/* Row 6: Submit & Reset Action Buttons */}
-                      <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+                      <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full">
                         <button
                           type="submit"
                           disabled={isSubmitting}
-                          className="group flex h-12 sm:h-14 flex-1 w-full items-center justify-center gap-2.5 rounded-lg bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-8 font-sans text-xs sm:text-[14px] font-bold uppercase tracking-wider text-white shadow-sm brightness-125 transition-all duration-200 hover:shadow-lg hover:brightness-140 active:scale-[0.98] cursor-pointer disabled:opacity-75 disabled:pointer-events-none"
+                          className="group flex h-11 sm:h-14 w-full sm:w-auto sm:flex-1 items-center justify-center gap-2 sm:gap-2.5 rounded-lg bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-4 sm:px-8 font-sans text-xs sm:text-[14px] font-bold uppercase tracking-wider text-white shadow-sm brightness-125 transition-all duration-200 hover:shadow-lg hover:brightness-140 active:scale-[0.98] cursor-pointer disabled:opacity-75 disabled:pointer-events-none whitespace-nowrap shrink-0"
                         >
                           <PaperPlaneTilt
                             size={17}
@@ -750,7 +742,7 @@ export default function GrievanceRedressalPage({ onBack }) {
                         <button
                           type="button"
                           onClick={handleReset}
-                          className="group flex h-12 sm:h-14 items-center justify-center gap-1.5 sm:gap-2 rounded-lg border border-slate-300/80 bg-white px-5 sm:px-6 font-sans text-xs sm:text-[13px] font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-all duration-200 active:scale-[0.98] cursor-pointer shrink-0 w-full sm:w-auto"
+                          className="group flex h-10 sm:h-14 items-center justify-center gap-1.5 sm:gap-2 rounded-lg border border-slate-300/80 bg-white px-5 sm:px-6 font-sans text-xs sm:text-[13px] font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-all duration-200 active:scale-[0.98] cursor-pointer shrink-0 w-full sm:w-auto whitespace-nowrap"
                         >
                           <ArrowCounterClockwise size={15} weight="bold" className="text-slate-500 transition-transform duration-200 group-hover:-rotate-45 shrink-0" />
                           <span>Reset Form</span>
@@ -766,10 +758,10 @@ export default function GrievanceRedressalPage({ onBack }) {
             {/* =========================================================
                 RIGHT SIDEBAR COLUMN: STATUTORY INFO & SUPPORT (4 COLS)
             ========================================================= */}
-            <div className="lg:col-span-4 flex flex-col gap-6">
+            <div className="lg:col-span-4 flex flex-col gap-6 sm:mt-24 mt-0">
 
               {/* Card 1: Statutory Guidelines & SGRC Mechanism */}
-              <div className="rounded-xl bg-white border border-slate-200/90 p-5 sm:p-6 shadow-[0_12px_36px_-10px_rgba(12,35,64,0.08)] text-left">
+              <div className="rounded-xl bg-white mt-2 border border-slate-200/90 p-5 sm:p-6 shadow-[0_12px_36px_-10px_rgba(12,35,64,0.08)] text-left">
                 <div className="flex items-center gap-2 mb-3.5">
                   <Info size={20} weight="bold" className="text-cyan-700 shrink-0" />
                   <h3 className="font-sans text-xs sm:text-[13px] font-bold uppercase tracking-wider text-[#0c2340]">
