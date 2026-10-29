@@ -458,22 +458,21 @@ export default function CareerPage({ onBack }) {
                       className="rounded-xl bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 p-3.5 sm:p-4 text-white shadow-sm border border-slate-200/80 flex items-start sm:items-center gap-3"
                     >
                       <Clock size={20} weight="fill" className="text-gray-100 shrink-0 mt-0.5 sm:mt-0" />
-                      <p className="font-sans text-xs sm:text-[13px] font-medium leading-relaxed text-white">
-                        Experience: Minimum <span className="underline underline-offset-2">Three (03) years of experience</span> for both the posts.
+                      <p className="font-sans text-[11.5px] sm:text-[13px] font-medium leading-relaxed text-white">
+                        Experience : Minimum <span className="underline underline-offset-2">Three (03) years of experience</span> for both the posts.
                       </p>
                     </div>
                   </div>
 
                   {/* Submission Request Line with Inline Email */}
                   <div className="pt-3.5 sm:pt-4 text-center shrink-0">
-                    <p className="font-sans text-xs sm:text-[13px] font-medium text-slate-700 flex flex-wrap items-center justify-center gap-1.5 leading-relaxed">
-                      <span>Eligible candidates are requested to send their resume to:</span>
-                      <a
+                    <p className="font-sans text-[11px] sm:text-[13px] font-medium text-slate-700 flex flex-wrap items-center justify-center gap-1.5 leading-relaxed">
+                      <span>Eligible candidates are requested to send their resume to : <a
                         href="mailto:rcnbareilly11@gmail.com"
                         className="font-bold text-cyan-700 hover:text-cyan-800 underline underline-offset-2 transition-colors"
                       >
                         rcnbareilly11@gmail.com
-                      </a>
+                      </a></span>
                     </p>
                   </div>
                 </div>
