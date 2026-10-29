@@ -418,11 +418,11 @@ export default function CareerPage({ onBack }) {
                       </div>
 
                       {/* Quick Apply button - Centered in the middle of the card */}
-                      <div className="flex justify-center pt-1">
+                      <div className="flex justify-center pt-3">
                         <button
                           type="button"
                           onClick={() => handleQuickApply(job.title)}
-                          className="group inline-flex items-center gap-1.5 rounded-lg bg-slate-50 hover:bg-[#0c2340] px-4 py-1.5 font-sans text-xs font-semibold text-[#0c2340] hover:text-white border border-slate-200 hover:border-[#0c2340] transition-all duration-200 cursor-pointer shadow-2xs active:scale-[0.98]"
+                          className="group inline-flex items-center gap-1.5 rounded-lg bg-slate-50 border border-slate-200 px-4 py-2 font-sans text-xs font-semibold text-[#0c2340] shadow-2xs transition-all duration-200 hover:border-transparent hover:bg-gradient-to-r hover:from-[#0c2340]/90 hover:via-[#102d52]/90 hover:to-[#163860]/70 hover:text-white hover:brightness-125 hover:shadow-md active:scale-[0.98] cursor-pointer"
                         >
                           <span>Apply for this Post</span>
                           <CaretRight size={13} weight="bold" className="transition-transform group-hover:translate-x-0.5" />
@@ -431,11 +431,16 @@ export default function CareerPage({ onBack }) {
                     </div>
                   ))}
 
-                  {/* Common Experience Requirement Dark Navy Banner from Image 1 */}
+                  {/* Common Experience Requirement Dark Navy Banner from Image 1 - Exact Match of Vacancy Announcement Strip Gradient */}
                   <div className="pt-6">
-                    <div className="rounded-xl bg-gradient-to-r from-[#07162c] via-[#0c2340] to-[#102d52] p-4 sm:p-4.5 text-white shadow-sm border border-white/10 flex items-start sm:items-center gap-3">
-                      <Clock size={22} weight="fill" className="text-amber-300 shrink-0 mt-0.5 sm:mt-0" />
-                      <p className="font-sans text-xs sm:text-[13.5px] font-medium leading-relaxed text-slate-100">
+                    <div
+                      style={{
+                        background: 'linear-gradient(to right, rgba(7, 22, 44, 0.9) 0%, rgba(12, 35, 64, 0.75) 50%, rgba(7, 22, 44, 0.5) 100%)',
+                      }}
+                      className="rounded-xl bg-gradient-to-r from-[#07162c]/90 via-[#0c2340]/75 to-[#07162c]/50 p-4 sm:p-4.5 text-white shadow-sm border border-slate-200/80 flex items-start sm:items-center gap-3"
+                    >
+                      <Clock size={22} weight="fill" className="text-gray-100 shrink-0 mt-0.5 sm:mt-0" />
+                      <p className="font-sans text-xs sm:text-[13.5px] font-medium leading-relaxed text-white">
                         {openingsHeader.experienceNotice ||
                           'Experience: Minimum three (03) years of experience for both the posts.'}
                       </p>
