@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
   ArrowLeft,
-  ArrowSquareOut,
-  Sparkle
+  ArrowSquareOut
 } from '@phosphor-icons/react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
@@ -251,22 +250,20 @@ export default function HistoryPage({ onBack }) {
                   <button
                     type="button"
                     onClick={() => setChronicleTab('events')}
-                    className={`px-2.5 py-1 rounded-md transition-all cursor-pointer ${
-                      chronicleTab === 'events'
+                    className={`px-2.5 py-1 rounded-md transition-all cursor-pointer ${chronicleTab === 'events'
                         ? 'bg-white text-cyan-800 shadow-2xs font-bold'
                         : 'hover:text-slate-900 text-slate-500'
-                    }`}
+                      }`}
                   >
                     Highlights (3)
                   </button>
                   <button
                     type="button"
                     onClick={() => setChronicleTab('videos')}
-                    className={`px-2.5 py-1 rounded-md transition-all cursor-pointer ${
-                      chronicleTab === 'videos'
+                    className={`px-2.5 py-1 rounded-md transition-all cursor-pointer ${chronicleTab === 'videos'
                         ? 'bg-white text-cyan-800 shadow-2xs font-bold'
                         : 'hover:text-slate-900 text-slate-500'
-                    }`}
+                      }`}
                   >
                     Videos (2)
                   </button>
@@ -275,7 +272,7 @@ export default function HistoryPage({ onBack }) {
 
               {/* View 1: 3 Featured Event Chronicle Cards */}
               {chronicleTab === 'events' && (
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {CHRONICLE_UPDATES.map((item) => (
                     <a
                       key={item.id}
@@ -308,10 +305,6 @@ export default function HistoryPage({ onBack }) {
                         <p className="mt-1 font-sans text-[11px] sm:text-xs text-slate-600 leading-relaxed line-clamp-2">
                           {item.description}
                         </p>
-                        <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-semibold text-cyan-700 group-hover:text-cyan-800">
-                          <span>Read Chronicle</span>
-                          <span className="group-hover:translate-x-1 transition-transform">→</span>
-                        </div>
                       </div>
                     </a>
                   ))}
@@ -348,30 +341,6 @@ export default function HistoryPage({ onBack }) {
                   ))}
                 </div>
               )}
-
-              {/* Bottom Quick-Link to page.biu.edu.in */}
-              <div className="rounded-xl bg-gradient-to-br from-[#0c2340] to-[#143258] p-4 text-white text-left shadow-md flex items-center justify-between gap-3">
-                <div className="min-w-0">
-                  <div className="flex items-center gap-1.5 mb-0.5">
-                    <Sparkle size={13} weight="fill" className="text-cyan-300 shrink-0" />
-                    <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-cyan-300">
-                      page.biu.edu.in
-                    </span>
-                  </div>
-                  <p className="font-sans text-[11px] text-white/80 line-clamp-1">
-                    Explore 50+ event galleries & video archives
-                  </p>
-                </div>
-                <a
-                  href="https://page.biu.edu.in/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="shrink-0 inline-flex items-center gap-1.5 rounded-lg bg-white/15 hover:bg-white/25 border border-white/20 px-3 py-1.5 font-sans text-xs font-semibold text-white transition-all active:scale-[0.98] cursor-pointer"
-                >
-                  <span>Visit</span>
-                  <ArrowSquareOut size={13} weight="bold" />
-                </a>
-              </div>
 
             </div>
 
