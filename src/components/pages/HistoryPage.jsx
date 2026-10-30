@@ -43,7 +43,7 @@ export default function HistoryPage({ onBack }) {
           <img
             src="/biu-building.png"
             alt="Bareilly International University Campus"
-            className="h-full w-full object-cover object-center opacity-45 sm:opacity-50 filter contrast-110 brightness-95 transform scale-x-100 scale-y-[0.75] mt-9 origin-center transition-transform duration-300"
+            className="h-full w-full object-cover object-center opacity-45 sm:opacity-50 filter contrast-110 brightness-95 transform scale-x-100 sm:scale-x-90 scale-y-[0.85] sm:scale-y-[0.75] mt-9 ml-0 sm:ml-20 origin-center transition-transform duration-300"
             onError={(e) => {
               e.currentTarget.src = '/hero-section.webp';
             }}
@@ -67,39 +67,21 @@ export default function HistoryPage({ onBack }) {
         </div>
 
         <div className="relative z-10 mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
-          {/* Breadcrumb / Back button & Badges Toolbar */}
-          <div className="mb-4 sm:mb-6 flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-2 font-sans text-xs text-slate-500">
-              <a
-                href="/"
-                onClick={(e) => {
-                  if (onBack) {
-                    e.preventDefault();
-                    onBack();
-                  }
-                }}
-                className="group inline-flex items-center gap-1.5 sm:gap-2 rounded-md border border-slate-200/70 sm:border-slate-300/80 bg-white px-2.5 py-1 sm:px-3.5 sm:py-1.5 font-sans text-[11px] sm:text-xs font-medium sm:font-semibold text-slate-600 sm:text-slate-700 shadow-2xs transition-all duration-200 hover:border-transparent hover:bg-gradient-to-r hover:from-[#0c2340]/90 hover:via-[#102d52]/90 hover:to-[#163860]/70 hover:text-white hover:brightness-125 hover:shadow-md active:scale-[0.98]"
-              >
-                <ArrowLeft size={13} weight="bold" className="w-3 h-3 sm:w-3.5 sm:h-3.5 transition-transform group-hover:-translate-x-0.5" />
-                <span>Back to Home</span>
-              </a>
-              <span className="text-slate-300">•</span>
-              <span className="hidden sm:inline">Pages</span>
-              <span className="text-slate-300 hidden sm:inline">»</span>
-              <span className="text-[#0c2340] font-semibold">University History</span>
-            </div>
-
-            {/* Badges toolbar matching BIU style */}
-            <div className="flex flex-nowrap sm:flex-wrap items-center gap-1.5 sm:gap-2.5">
-              <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-lg border border-slate-300/80 bg-white px-2 sm:px-3.5 py-1.5 sm:py-2 font-sans text-[10.5px] sm:text-xs font-semibold text-slate-700 shadow-2xs whitespace-nowrap shrink-0">
-                <SealCheck size={18} weight="bold" className="w-3.5 h-3.5 sm:w-[18px] sm:h-[18px] text-cyan-700 shrink-0" />
-                <span>UP Govt. Act No. 26 of 2016</span>
-              </div>
-              <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-lg border border-slate-300/80 bg-white px-2 sm:px-3.5 py-1.5 sm:py-2 font-sans text-[10.5px] sm:text-xs font-semibold text-slate-700 shadow-2xs whitespace-nowrap shrink-0">
-                <ShieldCheck size={18} weight="bold" className="w-3.5 h-3.5 sm:w-[18px] sm:h-[18px] text-cyan-700 shrink-0" />
-                <span>UGC Act 1956 Recognized</span>
-              </div>
-            </div>
+          {/* Back button */}
+          <div className="mb-4 sm:mb-6 flex items-center">
+            <a
+              href="/"
+              onClick={(e) => {
+                if (onBack) {
+                  e.preventDefault();
+                  onBack();
+                }
+              }}
+              className="group inline-flex items-center gap-1.5 sm:gap-2 rounded-md border border-slate-200/70 sm:border-slate-300/80 bg-white px-2.5 py-1 sm:px-3.5 sm:py-1.5 font-sans text-[11px] sm:text-xs font-medium sm:font-semibold text-slate-600 sm:text-slate-700 shadow-2xs transition-all duration-200 hover:border-transparent hover:bg-gradient-to-r hover:from-[#0c2340]/90 hover:via-[#102d52]/90 hover:to-[#163860]/70 hover:text-white hover:brightness-125 hover:shadow-md active:scale-[0.98]"
+            >
+              <ArrowLeft size={13} weight="bold" className="w-3 h-3 sm:w-3.5 sm:h-3.5 transition-transform group-hover:-translate-x-0.5" />
+              <span>Back to Home</span>
+            </a>
           </div>
 
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 sm:gap-6">
@@ -113,7 +95,7 @@ export default function HistoryPage({ onBack }) {
               <h1 className="font-times text-[26px] sm:text-3xl lg:text-[2.65rem] font-medium text-[#0c2340] leading-[1.15]">
                 History
               </h1>
-              <p className="mt-2 text-[12px] sm:text-sm text-slate-500 font-sans max-w-2xl leading-relaxed">
+              <p className="mt-2 text-[12px] sm:text-sm text-slate-500 font-sans max-w-xl leading-relaxed">
                 <span className="sm:hidden">
                   Foundational statutory background and academic chronicle of Bareilly International University.
                 </span>
@@ -197,7 +179,7 @@ export default function HistoryPage({ onBack }) {
                 {/* Action Section: Read More Button Linking to https://page.biu.edu.in/ */}
                 <div className="mt-10 pt-6 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="text-xs text-slate-500 font-sans text-center sm:text-left">
-                    <span>Explore university publications & extended archives at </span>
+                    <span>Explore university publications & extended archives at → </span>
                     <a
                       href="https://page.biu.edu.in/"
                       className="font-medium text-cyan-800 hover:underline"
@@ -208,13 +190,13 @@ export default function HistoryPage({ onBack }) {
 
                   <a
                     href="https://page.biu.edu.in/"
-                    className="group inline-flex h-11 sm:h-12 w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-[#0c2340] px-6 sm:px-8 font-sans text-xs sm:text-[14px] font-bold text-white shadow-sm transition-all duration-200 hover:bg-[#102d52] hover:shadow-md hover:brightness-110 active:scale-[0.98] cursor-pointer whitespace-nowrap"
+                    className="group inline-flex h-11 sm:h-12 w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#0c2340]/90 via-[#102d52]/90 to-[#163860]/70 px-5 sm:px-6 font-sans text-xs sm:text-[14px] font-semibold text-white shadow-sm brightness-125 transition-all duration-200 hover:shadow-md hover:brightness-140 active:scale-[0.98] cursor-pointer whitespace-nowrap"
                   >
-                    <span>Read More</span>
-                    <ArrowRight
+                    <span>Visit page.biu.edu.in</span>
+                    <ArrowSquareOut
                       size={16}
                       weight="bold"
-                      className="transition-transform duration-200 group-hover:translate-x-1"
+                      className="transition-transform duration-200 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 shrink-0"
                     />
                   </a>
                 </div>
