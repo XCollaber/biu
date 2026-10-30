@@ -1,0 +1,12 @@
+---
+// src/pages/history.astro — Bareilly International University (BIU)
+import Layout from '../layouts/Layout.astro';
+import HistoryPage from '../components/pages/HistoryPage.jsx';
+---
+
+<Layout
+  title="History & Heritage | Bareilly International University (BIU)"
+  description="Statutory establishment, founding heritage, and academic chronicle of Bareilly International University under UP Govt. Act No. 26 of 2016."
+>
+  <HistoryPage client:load onBack={() => window.location.href = '/'} />
+</Layout>

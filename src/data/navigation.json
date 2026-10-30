@@ -14,7 +14,7 @@
             "icon": "Buildings",
             "items": [
               { "title": "About BIU", "href": "https://biu.edu.in/about.php", "desc": "Premier university established under UP State Act" },
-              { "title": "History", "href": "https://biu.edu.in/history.php", "desc": "Legacy of transformative academic & clinical excellence" },
+              { "title": "History", "href": "/history", "desc": "Legacy of transformative academic & clinical excellence" },
               { "title": "Vision & Mission", "href": "https://biu.edu.in/visionmission.php", "desc": "Global standards in education, healthcare & research" }
             ]
           },

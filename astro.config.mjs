@@ -17,6 +17,7 @@ export default defineConfig({
     '/contact': '/#contact',
     '/grievance': '/grievance-redressal-form',
     '/grievance-redressal': '/grievance-redressal-form',
+    '/history.php': '/history',
   },
   integrations: [react()],
   vite: {
