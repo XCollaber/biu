@@ -237,10 +237,10 @@ export default function HistoryPage({ onBack }) {
             <div className="lg:col-span-4 flex flex-col gap-5">
 
               {/* Sidebar Header with Live Chronicle Title and Tabs */}
-              <div className="flex items-center justify-between gap-2 pb-2 border-b border-slate-200/80">
+              <div className="flex items-center justify-between gap-2 pb-2 mt-12 sm:mt-0 border-b border-slate-200/80">
                 <div className="inline-flex items-center gap-2">
-                  <span className="w-5 h-[2.5px] bg-gradient-to-r from-cyan-600 to-cyan-400 rounded-full" />
-                  <h3 className="font-sans text-[11px] sm:text-xs font-bold uppercase tracking-[0.14em] text-[#0c2340]">
+                  <span className="w-7 h-[3px] bg-gradient-to-r from-cyan-600 via-cyan-400 to-transparent rounded-full" />
+                  <h3 className="font-sans text-[11px] sm:text-xs font-bold uppercase tracking-[0.10em] text-[#0c2340]">
                     Campus Chronicle
                   </h3>
                 </div>
@@ -272,14 +272,14 @@ export default function HistoryPage({ onBack }) {
 
               {/* View 1: 3 Featured Event Chronicle Cards */}
               {chronicleTab === 'events' && (
-                <div className="space-y-6">
+                <div className="flex flex-row overflow-x-auto snap-x snap-mandatory gap-4 pb-3 pt-1 px-1 sm:px-0 sm:flex-col sm:space-y-6 sm:gap-0 sm:overflow-visible [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden after:shrink-0 after:w-3 sm:after:hidden">
                   {CHRONICLE_UPDATES.map((item) => (
                     <a
                       key={item.id}
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group block rounded-xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_6px_20px_-8px_rgba(12,35,64,0.06)] hover:shadow-[0_14px_32px_-8px_rgba(12,35,64,0.12)] hover:border-cyan-400/80 transition-all duration-200 text-left cursor-pointer"
+                      className="group block w-[82vw] max-w-[315px] shrink-0 snap-start sm:w-full sm:max-w-none rounded-xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_6px_20px_-8px_rgba(12,35,64,0.06)] hover:shadow-[0_14px_32px_-8px_rgba(12,35,64,0.12)] hover:border-cyan-400/80 transition-all duration-200 text-left cursor-pointer"
                     >
                       <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-100">
                         <img
@@ -313,11 +313,11 @@ export default function HistoryPage({ onBack }) {
 
               {/* View 2: 2 Official Video Highlights */}
               {chronicleTab === 'videos' && (
-                <div className="space-y-4">
+                <div className="flex flex-row overflow-x-auto snap-x snap-mandatory gap-4 pb-3 pt-1 px-1 sm:px-0 sm:flex-col sm:space-y-4 sm:gap-0 sm:overflow-visible [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden after:shrink-0 after:w-3 sm:after:hidden">
                   {CHRONICLE_VIDEOS.map((video) => (
                     <div
                       key={video.id}
-                      className="rounded-xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_6px_20px_-8px_rgba(12,35,64,0.06)] text-left"
+                      className="w-[84vw] max-w-[335px] shrink-0 snap-start sm:w-full sm:max-w-none rounded-xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_6px_20px_-8px_rgba(12,35,64,0.06)] text-left"
                     >
                       <div className="relative aspect-video w-full bg-slate-900">
                         <iframe
