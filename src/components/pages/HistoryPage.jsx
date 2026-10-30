@@ -1,29 +1,65 @@
+import { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
   ArrowLeft,
-  ArrowRight,
-  Buildings,
-  GraduationCap,
-  CalendarBlank,
-  Scroll,
-  SealCheck,
-  Sparkle,
-  Compass,
-  Books,
   ArrowSquareOut,
-  CaretRight,
-  Target,
-  Lightbulb,
-  CheckCircle,
-  ShieldCheck
+  Sparkle
 } from '@phosphor-icons/react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 
 const EASE = [0.16, 1, 0.3, 1];
 
+const CHRONICLE_UPDATES = [
+  {
+    id: 'endo-spine-2026',
+    title: 'Advanced Endo Spine course 2026',
+    tag: 'Surgical Workshop',
+    tagClass: 'text-emerald-700 bg-emerald-50 border-emerald-200/60',
+    description: "Dr. Varun's hands-on endoscopic spine surgery masterclass with live operative demonstrations and clinical sessions.",
+    image: 'https://page.biu.edu.in/wp-content/uploads/2026/08/Dr-Varun-Advanced-Endo-Spine-Course-1-scaled-600x450.jpg',
+    href: 'https://page.biu.edu.in/dr-varuns-advanced-endo-spine-course-2026/'
+  },
+  {
+    id: 'faculty-fine-arts',
+    title: 'Inauguration of Faculty of Fine Arts',
+    tag: 'Campus Milestone',
+    tagClass: 'text-amber-700 bg-amber-50 border-amber-200/60',
+    description: 'Expanding interdisciplinary academic horizons with dedicated studios for contemporary visual design and creative arts.',
+    image: 'https://page.biu.edu.in/wp-content/uploads/2026/08/Inauguration-Faculty-of-Fine-Arts-39-600x450.jpeg',
+    href: 'https://page.biu.edu.in/inauguration-of-faculty-of-fine-arts/'
+  },
+  {
+    id: 'vitalis-2026',
+    title: 'Vitalis 2026',
+    tag: 'Medical Confluence',
+    tagClass: 'text-cyan-700 bg-cyan-50 border-cyan-200/60',
+    description: 'A confluence of medical education, advanced clinical skills, and healthcare leadership at Rohilkhand Medical College.',
+    image: 'https://page.biu.edu.in/wp-content/uploads/2026/09/Vitalis-2026-19-600x450.jpeg',
+    href: 'https://page.biu.edu.in/vitalis-2026-a-confluence-of-medical-education-skills-and-leadership/'
+  }
+];
+
+const CHRONICLE_VIDEOS = [
+  {
+    id: 'rmch-tour',
+    title: 'Rohilkhand Medical College & Hospital',
+    subtitle: 'Institutional Overview & Healthcare Facilities',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/BLglXs29744',
+    href: 'https://www.youtube.com/watch?v=BLglXs29744'
+  },
+  {
+    id: 'biu-campus',
+    title: 'Bareilly International University',
+    subtitle: 'Campus Documentary & Academic Faculties',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/kNSBFoUWSCc',
+    href: 'https://www.youtube.com/watch?v=kNSBFoUWSCc'
+  }
+];
+
 export default function HistoryPage({ onBack }) {
   const reduceMotion = useReducedMotion();
+  const [chronicleTab, setChronicleTab] = useState('events'); // 'events' | 'videos'
 
   const handleReadMore = () => {
     window.location.href = 'https://page.biu.edu.in/';
@@ -198,108 +234,142 @@ export default function HistoryPage({ onBack }) {
               </div>
             </motion.div>
 
-            {/* Right 4 Cols: University Identity & Core Tenets */}
-            <div className="lg:col-span-4 flex flex-col gap-6">
+            {/* Right 4 Cols: Live Chronicle & Highlights from page.biu.edu.in */}
+            <div className="lg:col-span-4 flex flex-col gap-5">
 
-              {/* Card 1: University Identity Summary */}
-              <div className="rounded-xl bg-white border border-slate-200/90 p-5 sm:p-6 shadow-[0_12px_36px_-10px_rgba(12,35,64,0.08)] text-left">
-                <div className="flex items-center gap-2 mb-3.5">
-                  <Buildings size={20} weight="bold" className="text-cyan-800 shrink-0" />
-                  <h3 className="font-sans text-xs sm:text-[13px] font-bold uppercase tracking-wider text-[#0c2340]">
-                    Institutional Charter
+              {/* Sidebar Header with Live Chronicle Title and Tabs */}
+              <div className="flex items-center justify-between gap-2 pb-2 border-b border-slate-200/80">
+                <div className="inline-flex items-center gap-2">
+                  <span className="w-5 h-[2.5px] bg-gradient-to-r from-cyan-600 to-cyan-400 rounded-full" />
+                  <h3 className="font-sans text-[11px] sm:text-xs font-bold uppercase tracking-[0.14em] text-[#0c2340]">
+                    Campus Chronicle
                   </h3>
                 </div>
 
-                <div className="space-y-3 font-sans text-xs sm:text-[13px] text-slate-600">
-                  <div className="rounded-lg bg-slate-50 p-3 border border-slate-200/60">
-                    <span className="block text-[10.5px] uppercase tracking-wider font-bold text-slate-400 mb-0.5">
-                      Statutory Enactment
-                    </span>
-                    <span className="font-semibold text-slate-800">
-                      UP Govt. Act No. 26 of 2016
-                    </span>
-                  </div>
-
-                  <div className="rounded-lg bg-slate-50 p-3 border border-slate-200/60">
-                    <span className="block text-[10.5px] uppercase tracking-wider font-bold text-slate-400 mb-0.5">
-                      Academic Jurisdiction
-                    </span>
-                    <span className="font-semibold text-slate-800">
-                      University Grants Commission (UGC Act 1956)
-                    </span>
-                  </div>
-
-                  <div className="rounded-lg bg-slate-50 p-3 border border-slate-200/60">
-                    <span className="block text-[10.5px] uppercase tracking-wider font-bold text-slate-400 mb-0.5">
-                      Campus Headquarters
-                    </span>
-                    <span className="font-semibold text-slate-800">
-                      Pilibhit Bypass Road, Bareilly, UP 243006
-                    </span>
-                  </div>
+                {/* Tab Pill Toggle */}
+                <div className="inline-flex items-center p-0.5 rounded-lg bg-slate-100 border border-slate-200/80 text-[10.5px] sm:text-[11px] font-semibold text-slate-600">
+                  <button
+                    type="button"
+                    onClick={() => setChronicleTab('events')}
+                    className={`px-2.5 py-1 rounded-md transition-all cursor-pointer ${
+                      chronicleTab === 'events'
+                        ? 'bg-white text-cyan-800 shadow-2xs font-bold'
+                        : 'hover:text-slate-900 text-slate-500'
+                    }`}
+                  >
+                    Highlights (3)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setChronicleTab('videos')}
+                    className={`px-2.5 py-1 rounded-md transition-all cursor-pointer ${
+                      chronicleTab === 'videos'
+                        ? 'bg-white text-cyan-800 shadow-2xs font-bold'
+                        : 'hover:text-slate-900 text-slate-500'
+                    }`}
+                  >
+                    Videos (2)
+                  </button>
                 </div>
               </div>
 
-              {/* Card 2: Core Academic Pillars */}
-              <div className="rounded-xl bg-white border border-slate-200/90 p-5 sm:p-6 shadow-[0_12px_36px_-10px_rgba(12,35,64,0.08)] text-left">
-                <div className="flex items-center gap-2 mb-4">
-                  <Target size={20} weight="bold" className="text-red-700 shrink-0" />
-                  <h3 className="font-sans text-xs sm:text-[13px] font-bold uppercase tracking-wider text-[#0c2340]">
-                    Core Academic Pillars
-                  </h3>
+              {/* View 1: 3 Featured Event Chronicle Cards */}
+              {chronicleTab === 'events' && (
+                <div className="space-y-4">
+                  {CHRONICLE_UPDATES.map((item) => (
+                    <a
+                      key={item.id}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group block rounded-xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_6px_20px_-8px_rgba(12,35,64,0.06)] hover:shadow-[0_14px_32px_-8px_rgba(12,35,64,0.12)] hover:border-cyan-400/80 transition-all duration-200 text-left cursor-pointer"
+                    >
+                      <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-100">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                          loading="lazy"
+                        />
+                        <div className="absolute top-2.5 left-2.5">
+                          <span className={`inline-flex items-center rounded-md px-2 py-0.5 text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider backdrop-blur-md border ${item.tagClass}`}>
+                            {item.tag}
+                          </span>
+                        </div>
+                        <div className="absolute top-2.5 right-2.5 opacity-0 group-hover:opacity-100 transition-opacity bg-white/95 backdrop-blur-sm p-1.5 rounded-md text-[#0c2340] shadow-2xs">
+                          <ArrowSquareOut size={13} weight="bold" />
+                        </div>
+                      </div>
+
+                      <div className="p-3.5 sm:p-4">
+                        <h4 className="font-sans text-[12.5px] sm:text-[13.5px] font-bold text-[#0c2340] group-hover:text-cyan-800 transition-colors line-clamp-1">
+                          {item.title}
+                        </h4>
+                        <p className="mt-1 font-sans text-[11px] sm:text-xs text-slate-600 leading-relaxed line-clamp-2">
+                          {item.description}
+                        </p>
+                        <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-semibold text-cyan-700 group-hover:text-cyan-800">
+                          <span>Read Chronicle</span>
+                          <span className="group-hover:translate-x-1 transition-transform">→</span>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
                 </div>
+              )}
 
-                <ul className="space-y-3.5 font-sans text-xs sm:text-[13px] text-slate-600">
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle size={16} weight="fill" className="text-emerald-600 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-slate-800 font-semibold">Social Commitment:</strong> Fostering value-based education for societal transformation.
+              {/* View 2: 2 Official Video Highlights */}
+              {chronicleTab === 'videos' && (
+                <div className="space-y-4">
+                  {CHRONICLE_VIDEOS.map((video) => (
+                    <div
+                      key={video.id}
+                      className="rounded-xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_6px_20px_-8px_rgba(12,35,64,0.06)] text-left"
+                    >
+                      <div className="relative aspect-video w-full bg-slate-900">
+                        <iframe
+                          src={video.embedUrl}
+                          title={video.title}
+                          className="w-full h-full border-0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="p-3.5 sm:p-4">
+                        <h4 className="font-sans text-[12.5px] sm:text-[13.5px] font-bold text-[#0c2340]">
+                          {video.title}
+                        </h4>
+                        <p className="mt-0.5 font-sans text-[11px] sm:text-xs text-slate-500">
+                          {video.subtitle}
+                        </p>
+                      </div>
                     </div>
-                  </li>
-
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle size={16} weight="fill" className="text-emerald-600 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-slate-800 font-semibold">Transdisciplinary Study:</strong> Cross-faculty research and curriculum integration.
-                    </div>
-                  </li>
-
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle size={16} weight="fill" className="text-emerald-600 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-slate-800 font-semibold">Academic Autonomy:</strong> Empowering educators and students with dynamic choices.
-                    </div>
-                  </li>
-
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle size={16} weight="fill" className="text-emerald-600 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-slate-800 font-semibold">Holistic Development:</strong> Cultivating ethical leaders, researchers, and healthcare professionals.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Card 3: Quick Direct Link */}
-              <div className="rounded-xl bg-gradient-to-br from-[#0c2340] to-[#163860] p-5 sm:p-6 text-white text-left shadow-lg">
-                <div className="flex items-center gap-2 mb-2">
-                  <Sparkle size={18} weight="fill" className="text-gold shrink-0" />
-                  <span className="font-sans text-xs font-bold uppercase tracking-wider text-gold">
-                    Extended Portal
-                  </span>
+                  ))}
                 </div>
-                <h4 className="font-serif text-lg font-medium text-white mb-2">
-                  Institutional Chronicle
-                </h4>
-                <p className="font-sans text-xs text-white/75 leading-relaxed mb-4">
-                  Access archival documentation, annual achievements, and department milestones on the BIU portal.
-                </p>
+              )}
+
+              {/* Bottom Quick-Link to page.biu.edu.in */}
+              <div className="rounded-xl bg-gradient-to-br from-[#0c2340] to-[#143258] p-4 text-white text-left shadow-md flex items-center justify-between gap-3">
+                <div className="min-w-0">
+                  <div className="flex items-center gap-1.5 mb-0.5">
+                    <Sparkle size={13} weight="fill" className="text-cyan-300 shrink-0" />
+                    <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-cyan-300">
+                      page.biu.edu.in
+                    </span>
+                  </div>
+                  <p className="font-sans text-[11px] text-white/80 line-clamp-1">
+                    Explore 50+ event galleries & video archives
+                  </p>
+                </div>
                 <a
                   href="https://page.biu.edu.in/"
-                  className="inline-flex items-center gap-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 px-4 py-2 font-sans text-xs font-bold text-white transition-all active:scale-[0.98]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 inline-flex items-center gap-1.5 rounded-lg bg-white/15 hover:bg-white/25 border border-white/20 px-3 py-1.5 font-sans text-xs font-semibold text-white transition-all active:scale-[0.98] cursor-pointer"
                 >
-                  <span>Visit page.biu.edu.in</span>
-                  <ArrowSquareOut size={14} weight="bold" />
+                  <span>Visit</span>
+                  <ArrowSquareOut size={13} weight="bold" />
                 </a>
               </div>
 
