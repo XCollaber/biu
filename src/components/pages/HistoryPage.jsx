@@ -43,14 +43,14 @@ export default function HistoryPage({ onBack }) {
           <img
             src="/biu-building.png"
             alt="Bareilly International University Campus"
-            className="h-full w-full object-cover object-center opacity-25 filter contrast-105"
+            className="h-full w-full object-cover object-center opacity-45 sm:opacity-50 filter contrast-110 brightness-95 transform scale-x-100 scale-y-[0.75] mt-9 origin-center transition-transform duration-300"
             onError={(e) => {
               e.currentTarget.src = '/hero-section.webp';
             }}
           />
-          {/* Subtle Directional White Fog: Keeps left text crystal clear while showcasing campus architecture */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/65" />
-          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent" />
+          {/* Subtle Directional White Fog: Keeps left text crystal clear while making the architecture clearly visible */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-white/35" />
+          <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-white to-transparent" />
         </div>
 
         {/* Heritage Diamond Lattice Background Overlay */}
@@ -162,7 +162,7 @@ export default function HistoryPage({ onBack }) {
 
                 {/* Narrative Text Paragraphs Exactly Matching Reference Content */}
                 <div className="space-y-5 sm:space-y-6 text-slate-700 font-sans text-[14px] sm:text-[15.5px] leading-[1.8] sm:leading-[1.85]">
-                  
+
                   {/* Paragraph 1 */}
                   <div className="rounded-xl border-l-4 border-red-600 bg-red-50/25 p-4 sm:p-5 text-slate-800">
                     <p>
