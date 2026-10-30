@@ -35,42 +35,41 @@ export default function HistoryPage({ onBack }) {
       <Navbar />
 
       {/* =========================================================
-          HERO BANNER: UNIVERSITY HISTORY & HERITAGE
+          HERO HEADER: UNIVERSITY HISTORY & HERITAGE (BIU THEME)
       ========================================================= */}
-      <section className="relative overflow-hidden bg-[#0c2340] pt-28 pb-14 sm:pt-36 sm:pb-20 text-white z-20">
-        {/* Subtle Architectural Silhouette / Campus Backdrop */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-15 mix-blend-luminosity">
+      <section className="relative bg-white border-b border-slate-200/80 pt-28 pb-10 sm:pt-32 sm:pb-14 font-sans z-20 overflow-hidden">
+        {/* College Building Image Background Overlay */}
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
           <img
             src="/biu-building.png"
             alt="Bareilly International University Campus"
-            className="h-full w-full object-cover object-center filter saturate-0 scale-105"
+            className="h-full w-full object-cover object-center opacity-25 filter contrast-105"
             onError={(e) => {
               e.currentTarget.src = '/hero-section.webp';
             }}
           />
+          {/* Subtle Directional White Fog: Keeps left text crystal clear while showcasing campus architecture */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/65" />
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent" />
         </div>
 
-        {/* Heritage Diamond Lattice Overlay */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.04]" aria-hidden="true">
+        {/* Heritage Diamond Lattice Background Overlay */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.035] z-[1]" aria-hidden="true">
           <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
             <defs>
-              <pattern id="history-lattice" width="48" height="48" patternUnits="userSpaceOnUse">
-                <path d="M 24 0 L 48 24 L 24 48 L 0 24 Z" fill="none" stroke="white" strokeWidth="0.8" />
-                <path d="M 24 8 L 40 24 L 24 40 L 8 24 Z" fill="none" stroke="white" strokeWidth="0.5" />
+              <pattern id="history-heritage-lattice" width="48" height="48" patternUnits="userSpaceOnUse">
+                <path d="M 24 0 L 48 24 L 24 48 L 0 24 Z" fill="none" stroke="#0c2340" strokeWidth="0.65" />
+                <path d="M 24 9 L 39 24 L 24 39 L 9 24 Z" fill="none" stroke="#0c2340" strokeWidth="0.60" />
               </pattern>
             </defs>
-            <rect width="100%" height="100%" fill="url(#history-lattice)" />
+            <rect width="100%" height="100%" fill="url(#history-heritage-lattice)" />
           </svg>
         </div>
 
-        {/* Ambient Warm Crimson & Gold Glows */}
-        <div className="pointer-events-none absolute -top-24 -left-20 h-96 w-96 rounded-full bg-red-600/15 blur-[120px]" />
-        <div className="pointer-events-none absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-gold/15 blur-[100px]" />
-
         <div className="relative z-10 mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
-          {/* Breadcrumb / Back button */}
-          <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-2 font-sans text-xs text-white/70">
+          {/* Breadcrumb / Back button & Badges Toolbar */}
+          <div className="mb-4 sm:mb-6 flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-2 font-sans text-xs text-slate-500">
               <a
                 href="/"
                 onClick={(e) => {
@@ -79,116 +78,48 @@ export default function HistoryPage({ onBack }) {
                     onBack();
                   }
                 }}
-                className="group inline-flex items-center gap-1.5 rounded-md border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/90 backdrop-blur-md transition-all duration-200 hover:border-white/30 hover:bg-white/15 hover:text-white"
+                className="group inline-flex items-center gap-1.5 sm:gap-2 rounded-md border border-slate-200/70 sm:border-slate-300/80 bg-white px-2.5 py-1 sm:px-3.5 sm:py-1.5 font-sans text-[11px] sm:text-xs font-medium sm:font-semibold text-slate-600 sm:text-slate-700 shadow-2xs transition-all duration-200 hover:border-transparent hover:bg-gradient-to-r hover:from-[#0c2340]/90 hover:via-[#102d52]/90 hover:to-[#163860]/70 hover:text-white hover:brightness-125 hover:shadow-md active:scale-[0.98]"
               >
-                <ArrowLeft size={14} weight="bold" className="transition-transform group-hover:-translate-x-0.5" />
+                <ArrowLeft size={13} weight="bold" className="w-3 h-3 sm:w-3.5 sm:h-3.5 transition-transform group-hover:-translate-x-0.5" />
                 <span>Back to Home</span>
               </a>
-              <span className="text-white/30">•</span>
-              <span className="text-white/60">Pages</span>
-              <span className="text-white/30">»</span>
-              <span className="text-gold font-medium">University History</span>
+              <span className="text-slate-300">•</span>
+              <span className="hidden sm:inline">Pages</span>
+              <span className="text-slate-300 hidden sm:inline">»</span>
+              <span className="text-[#0c2340] font-semibold">University History</span>
             </div>
 
-            {/* Statutory Badge */}
-            <div className="hidden sm:inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-semibold text-white/90 backdrop-blur-md shadow-2xs">
-              <SealCheck size={16} weight="fill" className="text-gold shrink-0" />
-              <span>UP Govt. Act No. 26 of 2016</span>
+            {/* Badges toolbar matching BIU style */}
+            <div className="flex flex-nowrap sm:flex-wrap items-center gap-1.5 sm:gap-2.5">
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-lg border border-slate-300/80 bg-white px-2 sm:px-3.5 py-1.5 sm:py-2 font-sans text-[10.5px] sm:text-xs font-semibold text-slate-700 shadow-2xs whitespace-nowrap shrink-0">
+                <SealCheck size={18} weight="bold" className="w-3.5 h-3.5 sm:w-[18px] sm:h-[18px] text-cyan-700 shrink-0" />
+                <span>UP Govt. Act No. 26 of 2016</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-lg border border-slate-300/80 bg-white px-2 sm:px-3.5 py-1.5 sm:py-2 font-sans text-[10.5px] sm:text-xs font-semibold text-slate-700 shadow-2xs whitespace-nowrap shrink-0">
+                <ShieldCheck size={18} weight="bold" className="w-3.5 h-3.5 sm:w-[18px] sm:h-[18px] text-cyan-700 shrink-0" />
+                <span>UGC Act 1956 Recognized</span>
+              </div>
             </div>
           </div>
 
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-2.5 mb-3">
-              <span className="w-8 h-[3.5px] bg-gold rounded-full" />
-              <span className="font-sans text-[11px] sm:text-xs font-black uppercase tracking-[0.2em] text-gold">
-                STATUTORY ORIGINS & CHRONICLE
-              </span>
-            </div>
-
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-tight">
-              History
-            </h1>
-
-            <p className="mt-4 font-sans text-sm sm:text-base font-light leading-relaxed text-white/80 max-w-2xl">
-              Tracing the foundational origins, statutory inception under the Uttar Pradesh Government Act, and transformative evolution of Bareilly International University into a seat of global learning.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================
-          KEY STATUTORY MILESTONES BAR
-      ========================================================= */}
-      <section className="relative z-30 -mt-6 sm:-mt-8 mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-          {/* Card 1 */}
-          <div className="rounded-xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-[0_12px_30px_-10px_rgba(12,35,64,0.08)] flex items-start gap-3.5">
-            <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-lg bg-blue-50 text-cyan-800 shrink-0">
-              <Scroll size={22} weight="duotone" />
-            </div>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 sm:gap-6">
             <div>
-              <span className="block font-mono text-[11px] sm:text-xs font-bold text-cyan-800 uppercase tracking-wider">
-                16 Sept 2016
-              </span>
-              <h4 className="mt-0.5 font-sans text-xs sm:text-sm font-bold text-[#0c2340]">
-                UP Act No. 26
-              </h4>
-              <p className="mt-0.5 text-[11px] text-slate-500 font-sans hidden sm:block">
-                Enacted by UP State Legislature
-              </p>
-            </div>
-          </div>
-
-          {/* Card 2 */}
-          <div className="rounded-xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-[0_12px_30px_-10px_rgba(12,35,64,0.08)] flex items-start gap-3.5">
-            <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-lg bg-emerald-50 text-emerald-800 shrink-0">
-              <SealCheck size={22} weight="duotone" />
-            </div>
-            <div>
-              <span className="block font-mono text-[11px] sm:text-xs font-bold text-emerald-800 uppercase tracking-wider">
-                UGC Act 1956
-              </span>
-              <h4 className="mt-0.5 font-sans text-xs sm:text-sm font-bold text-[#0c2340]">
-                Statutory Authority
-              </h4>
-              <p className="mt-0.5 text-[11px] text-slate-500 font-sans hidden sm:block">
-                UGC Section 2(f) recognized
-              </p>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="rounded-xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-[0_12px_30px_-10px_rgba(12,35,64,0.08)] flex items-start gap-3.5">
-            <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-lg bg-amber-50 text-amber-800 shrink-0">
-              <CalendarBlank size={22} weight="duotone" />
-            </div>
-            <div>
-              <span className="block font-mono text-[11px] sm:text-xs font-bold text-amber-800 uppercase tracking-wider">
-                Session 2016–17
-              </span>
-              <h4 className="mt-0.5 font-sans text-xs sm:text-sm font-bold text-[#0c2340]">
-                Commenced
-              </h4>
-              <p className="mt-0.5 text-[11px] text-slate-500 font-sans hidden sm:block">
-                First academic batch enrolled
-              </p>
-            </div>
-          </div>
-
-          {/* Card 4 */}
-          <div className="rounded-xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-[0_12px_30px_-10px_rgba(12,35,64,0.08)] flex items-start gap-3.5">
-            <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-lg bg-purple-50 text-purple-800 shrink-0">
-              <GraduationCap size={22} weight="duotone" />
-            </div>
-            <div>
-              <span className="block font-mono text-[11px] sm:text-xs font-bold text-purple-800 uppercase tracking-wider">
-                Pedagogy
-              </span>
-              <h4 className="mt-0.5 font-sans text-xs sm:text-sm font-bold text-[#0c2340]">
-                Transdisciplinary
-              </h4>
-              <p className="mt-0.5 text-[11px] text-slate-500 font-sans hidden sm:block">
-                Medical, tech & sciences
+              <div className="hidden sm:flex items-center gap-2.5 mb-2.5">
+                <span className="w-8 h-[3.5px] bg-gold rounded-full" />
+                <span className="font-sans text-[12px] sm:text-xs font-black uppercase tracking-[0.09em] text-[#0c2340]">
+                  HERITAGE & STATUTORY ESTABLISHMENT
+                </span>
+              </div>
+              <h1 className="font-times text-[26px] sm:text-3xl lg:text-[2.65rem] font-medium text-[#0c2340] leading-[1.15]">
+                History
+              </h1>
+              <p className="mt-2 text-[12px] sm:text-sm text-slate-500 font-sans max-w-2xl leading-relaxed">
+                <span className="sm:hidden">
+                  Foundational statutory background and academic chronicle of Bareilly International University.
+                </span>
+                <span className="hidden sm:inline">
+                  Foundational statutory background, academic inception, and institutional evolution of Bareilly International University.
+                </span>
               </p>
             </div>
           </div>
