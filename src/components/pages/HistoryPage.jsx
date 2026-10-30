@@ -130,34 +130,29 @@ export default function HistoryPage({ onBack }) {
                 {/* Heading Block Matching Original Style */}
                 <div className="mb-8">
                   <div className="inline-flex items-center gap-2 mb-2.5">
-                    <span className="w-7 h-[3px] bg-gradient-to-r from-red-600 via-rose-500 to-transparent rounded-full" />
-                    <span className="font-sans text-[11px] sm:text-xs font-black uppercase tracking-[0.22em] text-[#0c2340]">
+                    <span className="w-7 h-[3px] bg-gradient-to-r from-cyan-600 via-cyan-500 to-transparent rounded-full" />
+                    <span className="font-sans text-[11px] sm:text-xs font-black uppercase tracking-[0.15em] text-[#0c2340]">
                       HISTORICAL CHRONICLE
                     </span>
                   </div>
 
                   <h2 className="font-times text-2xl sm:text-3xl lg:text-[2.25rem] font-medium text-[#0c2340] tracking-tight">
-                    Overview <span className="text-red-700 font-normal">& Identity</span>
+                    Overview <span className="text-cyan-700 font-normal">& Identity</span>
                   </h2>
-                  <div className="mt-2.5 h-[2.5px] w-14 bg-gradient-to-r from-red-600 via-red-500 to-transparent rounded-full" />
+                  <div className="mt-2.5 h-[2.5px] w-14 bg-gradient-to-r from-cyan-600 via-cyan-500 to-transparent rounded-full" />
                 </div>
 
                 {/* Narrative Text Paragraphs Exactly Matching Reference Content */}
-                <div className="space-y-5 sm:space-y-6 text-slate-700 font-sans text-[14px] sm:text-[15.5px] leading-[1.8] sm:leading-[1.85]">
+                <div className="space-y-4 sm:space-y-6 text-slate-700 font-sans sm:text-[13.5px] text-[11.5px] leading-[1.75] sm:leading-[1.85]">
 
                   {/* Paragraph 1 */}
-                  <div className="rounded-xl border-l-4 border-red-600 bg-red-50/25 p-4 sm:p-5 text-slate-800">
-                    <p>
-                      <strong className="font-serif text-[#0c2340] font-bold text-[15px] sm:text-[16.5px]">
-                        Bareilly International University, Bareilly
-                      </strong>{' '}
-                      is established in accordance to UGC Act 1956 by the Uttar Pradesh Govt. Act No. 26 of 2016 dated 16th Sept 2016. The University has commenced academic activities from session 2016-17 with various courses.
-                    </p>
-                  </div>
+                  <p>
+                    <strong className="font-semibold text-slate-900">Bareilly International University, Bareilly</strong> is established in accordance to UGC Act 1956 by the Uttar Pradesh Govt. Act No. 26 of 2016 dated 16th Sept 2016. The University has commenced academic activities from session 2016-17 with various courses.
+                  </p>
 
                   {/* Paragraph 2 */}
                   <p>
-                    The University is in the process to design its own milestone in the pursuit of social commitment and excellence reflecting by establishing world class practices. It has reached the shores of developing into a seat of global learning to bring about transformation of the society through value based education, research promotions.
+                    The University is in the process to design its own milestone in the pursuit of social commitment and excellence reflecting by establishing world class practices. It has reached the shores of developing into a seat of global learning to bring about transformation of the society through value-based education, research promotions.
                   </p>
 
                   {/* Paragraph 3 */}
@@ -178,7 +173,7 @@ export default function HistoryPage({ onBack }) {
 
                 {/* Action Section: Read More Button Linking to https://page.biu.edu.in/ */}
                 <div className="mt-10 pt-6 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="text-xs text-slate-500 font-sans text-center sm:text-left">
+                  <div className="text-[11.5px] sm:text-xs text-slate-500 font-sans text-center sm:text-left">
                     <span>Explore university publications & extended archives at → </span>
                     <a
                       href="https://page.biu.edu.in/"
