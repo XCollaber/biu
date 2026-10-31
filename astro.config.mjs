@@ -6,7 +6,7 @@ import react from '@astrojs/react';
 export default defineConfig({
   // site: 'https://biu.edu.in',
   site: 'https://biu-edu.vercel.app',
-  server: { 
+  server: {
     host: true,
     allowedHosts: [
       'implementation-pointed-basename-preventing.trycloudflare.com',
@@ -21,6 +21,19 @@ export default defineConfig({
   },
   integrations: [react()],
   vite: {
+    server: {
+      warmup: {
+        clientFiles: [
+          './src/components/*.jsx',
+          './src/components/icons.js',
+          './src/index.css'
+        ],
+        ssrFiles: [
+          './src/pages/index.astro',
+          './src/layouts/Layout.astro'
+        ]
+      }
+    },
     optimizeDeps: {
       exclude: ['@phosphor-icons/react'],
       include: ['framer-motion', 'react', 'react-dom']
