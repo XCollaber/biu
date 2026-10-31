@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { Phone } from '@phosphor-icons/react';
+import { Phone } from './icons';
 import enquiryData from '../data/enquiryNumbers.json';
 
 const EASE = [0.16, 1, 0.3, 1];

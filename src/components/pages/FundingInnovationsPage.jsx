@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowLeft } from '@phosphor-icons/react';
+import { ArrowLeft } from '../icons';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import FundingInnovationsExplorer from './FundingInnovationsExplorer';

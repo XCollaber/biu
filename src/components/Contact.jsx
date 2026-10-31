@@ -1,26 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import {
-  CheckCircle,
-  PaperPlaneTilt,
-  GraduationCap,
-  Plus,
-  Minus,
-  ArrowRight,
-  Stethoscope,
-  Tooth,
-  Heart,
-  Pill,
-  ChartBar,
-  Newspaper,
-  FirstAid,
-  Fingerprint,
-  Plant,
-  Palette,
-  SquaresFour,
-  Question,
-  CaretRight,
-} from '@phosphor-icons/react';
+import { CheckCircle, PaperPlaneTilt, GraduationCap, Plus, Minus, ArrowRight, Stethoscope, Tooth, Heart, Pill, ChartBar, Newspaper, FirstAid, Fingerprint, Plant, Palette, SquaresFour, Question, CaretRight } from './icons';
 import contactData from '../data/contact.json';
 import faqData from '../data/faq.json';
 import siteData from '../data/site.json';

@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { Star } from '@phosphor-icons/react';
+import { Star } from './icons';
 import testData from '../data/testimonials.json';
 import Img from './Img';
 

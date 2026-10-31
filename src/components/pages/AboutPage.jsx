@@ -1,27 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import {
-  ArrowLeft,
-  ArrowRight,
-  Sparkle,
-  Star,
-  Crown,
-  Heart,
-  ShieldCheck,
-  WhatsappLogo,
-  Car,
-  UserCheck,
-  Wheelchair,
-  Lightning,
-  Wind,
-  ForkKnife,
-  Compass,
-  WifiHigh,
-  Coffee,
-  Suitcase,
-  Snowflake,
-  Elevator,
-  Users
-} from '@phosphor-icons/react';
+import { ArrowLeft, ArrowRight, Sparkle, Star, Crown, Heart, ShieldCheck, WhatsappLogo, Car, UserCheck, Wheelchair, Lightning, Wind, ForkKnife, Compass, WifiHigh, Coffee, Suitcase, Snowflake, Elevator, Users } from '../icons';
 import aboutData from '../../data/about.json';
 import Navbar from '../Navbar';
 import Footer from '../Footer';

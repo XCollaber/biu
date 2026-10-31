@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Sparkle, Star, Users, ArrowsOut, ShieldCheck, Lightning, Car, Armchair, WhatsappLogo } from '@phosphor-icons/react';
+import { ArrowLeft, ArrowRight, Sparkle, Star, Users, ArrowsOut, ShieldCheck, Lightning, Car, Armchair, WhatsappLogo } from '../icons';
 import spacesData from '../../data/faculties.json';
 import Navbar from '../Navbar';
 import Footer from '../Footer';

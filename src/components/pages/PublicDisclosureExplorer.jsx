@@ -1,20 +1,5 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
-import {
-  MagnifyingGlass,
-  FilePdf,
-  ArrowSquareOut,
-  Printer,
-  ShieldCheck,
-  DownloadSimple,
-  X,
-  PhoneCall,
-  EnvelopeSimple,
-  Check,
-  Copy,
-  Funnel,
-  CaretDown,
-  ArrowLeft
-} from '@phosphor-icons/react';
+import { MagnifyingGlass, FilePdf, ArrowSquareOut, Printer, ShieldCheck, DownloadSimple, X, PhoneCall, EnvelopeSimple, Check, Copy, Funnel, CaretDown, ArrowLeft } from '../icons';
 import disclosureData from '../../data/disclosure.json';
 
 export default function PublicDisclosureExplorer({ onBack }) {

@@ -1,26 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import {
-  Buildings,
-  Scroll,
-  ShieldCheck,
-  Certificate,
-  ArrowSquareOut,
-  ShareNetwork,
-  Printer,
-  Check,
-  List,
-  X,
-  CaretRight,
-  FilePdf,
-  DownloadSimple,
-  ArrowRight,
-  Sparkle,
-  BookOpen,
-  Globe,
-  Info,
-  ArrowsOut,
-} from '@phosphor-icons/react';
+import { Buildings, Scroll, ShieldCheck, Certificate, ArrowSquareOut, ShareNetwork, Printer, Check, List, X, CaretRight, FilePdf, DownloadSimple, ArrowRight, Sparkle, BookOpen, Globe, Info, ArrowsOut } from '../icons';
 import researchData from '../../data/research.json';
 
 const EASE = [0.16, 1, 0.3, 1];

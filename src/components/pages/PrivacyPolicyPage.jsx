@@ -1,19 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import {
-  ShieldCheck,
-  ArrowLeft,
-  Lock,
-  Eye,
-  FileText,
-  EnvelopeSimple,
-  Phone,
-  Handshake,
-  CalendarCheck,
-  Scales,
-  CheckCircle,
-  ShieldWarning,
-  Gavel,
-} from '@phosphor-icons/react';
+import { ShieldCheck, ArrowLeft, Lock, Eye, FileText, EnvelopeSimple, Phone, Handshake, CalendarCheck, Scales, CheckCircle, ShieldWarning, Gavel } from '../icons';
 import privacyData from '../../data/privacyPolicy.json';
 import siteData from '../../data/site.json';
 import Footer from '../Footer';

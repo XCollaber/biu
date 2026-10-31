@@ -1,11 +1,5 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
-import {
-  ArrowLeft,
-  ArrowRight,
-  CaretLeft,
-  CaretRight,
-  NewspaperClipping
-} from '@phosphor-icons/react';
+import { ArrowLeft, ArrowRight, CaretLeft, CaretRight, NewspaperClipping } from '../icons';
 import journalData from '../../data/news.json';
 import Navbar from '../Navbar';
 import Footer from '../Footer';

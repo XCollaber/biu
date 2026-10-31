@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import {
-  ArrowLeft,
-  ArrowSquareOut
-} from '@phosphor-icons/react';
+import { ArrowLeft, ArrowSquareOut } from '../icons';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 

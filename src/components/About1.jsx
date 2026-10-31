@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { GraduationCap, Lightbulb, UsersThree, Buildings, ArrowRight, CaretRight, Compass } from '@phosphor-icons/react';
+import { GraduationCap, Lightbulb, UsersThree, Buildings, ArrowRight, CaretRight, Compass } from './icons';
 
 const EASE = [0.16, 1, 0.3, 1];
 

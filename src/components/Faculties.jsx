@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, SquaresFour } from '@phosphor-icons/react';
+import { ArrowRight, SquaresFour } from './icons';
 import Img from './Img';
 import spacesData from '../data/faculties.json';
 

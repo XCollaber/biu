@@ -1,13 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import {
-  ArrowLeft,
-  Sparkle,
-  Star,
-  Hospital,
-  ShieldCheck,
-  Certificate,
-  Flask,
-} from '@phosphor-icons/react';
+import { ArrowLeft, Sparkle, Star, Hospital, ShieldCheck, Certificate, Flask } from '../icons';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import ResearchExplorer from './ResearchExplorer';

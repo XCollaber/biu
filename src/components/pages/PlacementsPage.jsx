@@ -1,24 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import {
-  ArrowLeft,
-  ArrowRight,
-  Sparkle,
-  Star,
-  Users,
-  ArrowsOut,
-  ShieldCheck,
-  Lightning,
-  Car,
-  WifiHigh,
-  Briefcase,
-  Trophy,
-  UsersThree,
-  ForkKnife,
-  CheckCircle,
-  X,
-  Buildings,
-} from '@phosphor-icons/react';
+import { ArrowLeft, ArrowRight, Sparkle, Star, Users, ArrowsOut, ShieldCheck, Lightning, Car, WifiHigh, Briefcase, Trophy, UsersThree, ForkKnife, CheckCircle, X, Buildings } from '../icons';
 import corpData from '../../data/placements.json';
 import Navbar from '../Navbar';
 import Footer from '../Footer';

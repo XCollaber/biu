@@ -22,7 +22,7 @@ export default defineConfig({
   integrations: [react()],
   vite: {
     optimizeDeps: {
-      include: ['@phosphor-icons/react', 'framer-motion', 'react', 'react-dom']
+      include: ['framer-motion', 'react', 'react-dom']
     }
   }
 });

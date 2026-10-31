@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { ArrowLeft, X, CaretLeft, CaretRight, MagnifyingGlassPlus } from '@phosphor-icons/react';
+import { ArrowLeft, X, CaretLeft, CaretRight, MagnifyingGlassPlus } from '../icons';
 import galleryData from '../../data/gallery.json';
 import Navbar from '../Navbar';
 import Footer from '../Footer';

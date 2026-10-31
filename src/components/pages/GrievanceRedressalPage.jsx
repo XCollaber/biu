@@ -1,29 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import {
-  ArrowLeft,
-  IdentificationCard,
-  User,
-  UsersThree,
-  GraduationCap,
-  CalendarBlank,
-  Buildings,
-  EnvelopeSimple,
-  Phone,
-  ChatTeardropText,
-  FileText,
-  PaperPlaneTilt,
-  ArrowCounterClockwise,
-  CheckCircle,
-  WarningCircle,
-  ShieldCheck,
-  Info,
-  Clock,
-  MapPin,
-  SealCheck,
-  Printer,
-  CaretRight,
-} from '@phosphor-icons/react';
+import { ArrowLeft, IdentificationCard, User, UsersThree, GraduationCap, CalendarBlank, Buildings, EnvelopeSimple, Phone, ChatTeardropText, FileText, PaperPlaneTilt, ArrowCounterClockwise, CheckCircle, WarningCircle, ShieldCheck, Info, Clock, MapPin, SealCheck, Printer, CaretRight } from '../icons';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 

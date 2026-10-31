@@ -1,35 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import {
-  Stethoscope,
-  Tooth,
-  FirstAid,
-  Pill,
-  Buildings,
-  BookOpenText,
-  PaintBrush,
-  Heartbeat,
-  Flask,
-  Plant,
-  GraduationCap,
-  Plus,
-  Minus,
-  MagnifyingGlass,
-  FilePdf,
-  ArrowSquareOut,
-  CheckCircle,
-  Clock,
-  Users,
-  Check,
-  ShareNetwork,
-  Printer,
-  Sparkle,
-  ArrowRight,
-  CaretRight,
-  Info,
-  List,
-  X,
-} from '@phosphor-icons/react';
+import { Stethoscope, Tooth, FirstAid, Pill, Buildings, BookOpenText, PaintBrush, Heartbeat, Flask, Plant, GraduationCap, Plus, Minus, MagnifyingGlass, FilePdf, ArrowSquareOut, CheckCircle, Clock, Users, Check, ShareNetwork, Printer, Sparkle, ArrowRight, CaretRight, Info, List, X } from '../icons';
 import programmesData from '../../data/programmes.json';
 
 const EASE = [0.16, 1, 0.3, 1];

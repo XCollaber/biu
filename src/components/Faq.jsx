@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { Plus } from '@phosphor-icons/react';
+import { Plus } from './icons';
 import faqData from '../data/faq.json';
 
 const EASE = [0.16, 1, 0.3, 1];

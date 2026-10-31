@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import NewsDetailPage from './NewsDetailPage';
 import journalData from '../../data/news.json';
-import { Eye, ArrowSquareOut, FloppyDisk, ArrowsClockwise, Code } from '@phosphor-icons/react';
+import { Eye, ArrowSquareOut, FloppyDisk, ArrowsClockwise, Code } from '../icons';
 
 export default function NewsPreviewPage() {
   const allPosts = journalData.posts || [];

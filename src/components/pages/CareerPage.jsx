@@ -1,26 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import {
-  ArrowLeft,
-  Briefcase,
-  GraduationCap,
-  Users,
-  Clock,
-  MapPin,
-  CheckCircle,
-  PaperPlaneTilt,
-  CaretRight,
-  FilePdf,
-  UploadSimple,
-  Trash,
-  ArrowCounterClockwise,
-  WarningCircle,
-  EnvelopeSimple,
-  Phone,
-  Info,
-  SealCheck,
-  Buildings,
-} from '@phosphor-icons/react';
+import { ArrowLeft, Briefcase, GraduationCap, Users, Clock, MapPin, CheckCircle, PaperPlaneTilt, CaretRight, FilePdf, UploadSimple, Trash, ArrowCounterClockwise, WarningCircle, EnvelopeSimple, Phone, Info, SealCheck, Buildings } from '../icons';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import careerData from '../../data/careers.json';

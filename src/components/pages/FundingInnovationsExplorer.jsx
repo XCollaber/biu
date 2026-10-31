@@ -1,30 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import {
-  HandCoins,
-  Flask,
-  Certificate,
-  RocketLaunch,
-  ArrowSquareOut,
-  ShareNetwork,
-  Printer,
-  Check,
-  List,
-  X,
-  CaretRight,
-  FilePdf,
-  DownloadSimple,
-  ArrowRight,
-  Sparkle,
-  MagnifyingGlass,
-  Funnel,
-  ShieldCheck,
-  Buildings,
-  CheckCircle,
-  Lightbulb,
-  ArrowsOut,
-  FileXls,
-} from '@phosphor-icons/react';
+import { HandCoins, Flask, Certificate, RocketLaunch, ArrowSquareOut, ShareNetwork, Printer, Check, List, X, CaretRight, FilePdf, DownloadSimple, ArrowRight, Sparkle, MagnifyingGlass, Funnel, ShieldCheck, Buildings, CheckCircle, Lightbulb, ArrowsOut, FileXls } from '../icons';
 import fundingData from '../../data/fundingInnovations.json';
 
 const EASE = [0.16, 1, 0.3, 1];

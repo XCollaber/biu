@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { Check } from '@phosphor-icons/react';
+import { Check } from './icons';
 import Img from './Img';
 import roomData from '../data/hostels.json';
 

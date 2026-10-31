@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { CaretLeft, CaretRight } from '@phosphor-icons/react';
+import { CaretLeft, CaretRight } from './icons';
 import Img from './Img';
 import { assetUrl } from '../utils/assetUrl';
 import collegesData from '../data/colleges.json';

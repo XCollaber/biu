@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { MapPin, Clock, ArrowUpRight, QrCode as QrCodeIcon } from '@phosphor-icons/react';
+import { MapPin, Clock, ArrowUpRight, QrCode as QrCodeIcon } from './icons';
 import Img from './Img';
 import locData from '../data/location.json';
 

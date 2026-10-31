@@ -1,16 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import {
-  WhatsappLogo,
-  InstagramLogo,
-  FacebookLogo,
-  YoutubeLogo,
-  ArrowRight,
-  MapPin,
-  Phone,
-  EnvelopeSimple,
-  CaretRight,
-  GraduationCap,
-} from '@phosphor-icons/react';
+import { WhatsappLogo, InstagramLogo, FacebookLogo, YoutubeLogo, ArrowRight, MapPin, Phone, EnvelopeSimple, CaretRight, GraduationCap } from './icons';
 import Img from './Img';
 import footerData from '../data/footer.json';
 import siteData from '../data/site.json';

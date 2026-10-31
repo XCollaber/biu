@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, Images } from '@phosphor-icons/react';
+import { ArrowRight, Images } from './icons';
 import Img from './Img';
 import galleryData from '../data/gallery.json';
 

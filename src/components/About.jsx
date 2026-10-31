@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, BookOpenText, CalendarPlus } from '@phosphor-icons/react';
+import { ArrowRight, BookOpenText, CalendarPlus } from './icons';
 import Img from './Img';
 import aboutData from '../data/about.json';
 

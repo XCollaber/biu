@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion, useReducedMotion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Sparkle, CaretDown, ArrowRight, GraduationCap, CaretRight } from '@phosphor-icons/react';
+import { Sparkle, CaretDown, ArrowRight, GraduationCap, CaretRight } from './icons';
 import heroData from '../data/hero.json';
 import siteData from '../data/site.json';
 

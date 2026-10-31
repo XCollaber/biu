@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, NewspaperClipping, CaretRight, CaretLeft } from '@phosphor-icons/react';
+import { ArrowRight, NewspaperClipping, CaretRight, CaretLeft } from './icons';
 import Img from './Img';
 import journalData from '../data/news.json';
 

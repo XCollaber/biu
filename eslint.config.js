@@ -8,6 +8,7 @@ export default defineConfig([
   globalIgnores(['dist']),
   {
     files: ['**/*.{js,jsx}'],
+    ignores: ['src/components/icons.js'],
     extends: [
       js.configs.recommended,
       reactHooks.configs.flat.recommended,
@@ -17,5 +18,22 @@ export default defineConfig([
       globals: globals.browser,
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@phosphor-icons/react', '@phosphor-icons/react/*'],
+              message: 'Import icons from src/components/icons (or ./icons / ../icons) instead.',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ['src/components/icons.js'],
+    extends: [js.configs.recommended],
   },
 ])

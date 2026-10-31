@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, Briefcase } from '@phosphor-icons/react';
+import { ArrowRight, Briefcase } from './icons';
 import Img from './Img';
 import corpData from '../data/placements.json';
 

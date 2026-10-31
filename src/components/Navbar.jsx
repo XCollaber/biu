@@ -1,27 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent, useReducedMotion } from 'framer-motion';
-import {
-  List,
-  X,
-  GraduationCap,
-  EnvelopeSimple,
-  Phone,
-  CaretDown,
-  CaretRight,
-  Briefcase,
-  User,
-  Buildings,
-  UsersThree,
-  ShieldCheck,
-  Trophy,
-  Compass,
-  Scales,
-  CheckCircle,
-  Flask,
-  BookOpen,
-  Sparkle,
-  FileText,
-} from '@phosphor-icons/react';
+import { List, X, GraduationCap, EnvelopeSimple, Phone, CaretDown, CaretRight, Briefcase, User, Buildings, UsersThree, ShieldCheck, Trophy, Compass, Scales, CheckCircle, Flask, BookOpen, Sparkle, FileText } from './icons';
 import siteData from '../data/site.json';
 import NAV_ITEMS from '../data/navigation.json';
 

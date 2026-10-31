@@ -1,13 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { 
-  BookOpen, 
-  Bank,
-  Buildings, 
-  UsersThree, 
-  FirstAidKit, 
-  ArrowRight 
-} from '@phosphor-icons/react';
+import { BookOpen, Bank, Buildings, UsersThree, FirstAidKit, ArrowRight } from './icons';
 import whyChooseUsData from '../data/whyChooseUs.json';
 
 const EASE = [0.16, 1, 0.3, 1];

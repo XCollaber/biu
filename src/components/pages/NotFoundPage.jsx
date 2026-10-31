@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { House, Sparkle, ArrowRight, Bed, MapPin, WhatsappLogo } from '@phosphor-icons/react';
+import { House, Sparkle, ArrowRight, Bed, MapPin, WhatsappLogo } from '../icons';
 import Logo from '../Logo';
 import siteData from '../../data/site.json';
 import Navbar from '../Navbar';

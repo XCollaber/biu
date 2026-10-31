@@ -1,24 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import {
-  ArrowLeft,
-  ArrowRight,
-  Calendar,
-  FolderSimple,
-  User,
-  FacebookLogo,
-  TwitterLogo,
-  LinkedinLogo,
-  PinterestLogo,
-  WhatsappLogo,
-  LinkSimple,
-  Check,
-  PaperPlaneTilt,
-  Quotes,
-  X,
-  CaretLeft,
-  CaretRight,
-  MagnifyingGlassPlus
-} from '@phosphor-icons/react';
+import { ArrowLeft, ArrowRight, Calendar, FolderSimple, User, FacebookLogo, TwitterLogo, LinkedinLogo, PinterestLogo, WhatsappLogo, LinkSimple, Check, PaperPlaneTilt, Quotes, X, CaretLeft, CaretRight, MagnifyingGlassPlus } from '../icons';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import Img from '../Img';

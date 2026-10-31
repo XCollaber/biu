@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { CaretRight, BellSimple, CalendarBlank, DownloadSimple } from '@phosphor-icons/react';
+import { CaretRight, BellSimple, CalendarBlank, DownloadSimple } from './icons';
 import noticesData from '../data/notices.json';
 
 const EASE = [0.16, 1, 0.3, 1];

@@ -1,13 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import {
-  ArrowLeft,
-  GraduationCap,
-  Sparkle,
-  Star,
-  Hospital,
-  ShieldCheck,
-  Certificate,
-} from '@phosphor-icons/react';
+import { ArrowLeft, GraduationCap, Sparkle, Star, Hospital, ShieldCheck, Certificate } from '../icons';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import ProgrammesExplorer from './ProgrammesExplorer';
