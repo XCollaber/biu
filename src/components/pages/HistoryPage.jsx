@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import {
   ArrowLeft,
   ArrowSquareOut
@@ -270,77 +270,92 @@ export default function HistoryPage({ onBack }) {
                 </div>
               </div>
 
-              {/* View 1: 3 Featured Event Chronicle Cards */}
-              {chronicleTab === 'events' && (
-                <div className="flex flex-row overflow-x-auto snap-x snap-mandatory gap-4 pb-3 pt-1 px-1 sm:px-0 sm:flex-col sm:space-y-6 sm:gap-0 sm:overflow-visible [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden after:shrink-0 after:w-3 sm:after:hidden">
-                  {CHRONICLE_UPDATES.map((item) => (
-                    <a
-                      key={item.id}
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group block w-[82vw] max-w-[315px] shrink-0 snap-start sm:w-full sm:max-w-none rounded-xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_6px_20px_-8px_rgba(12,35,64,0.06)] hover:shadow-[0_14px_32px_-8px_rgba(12,35,64,0.12)] hover:border-cyan-400/80 transition-all duration-200 text-left cursor-pointer"
+              {/* Tab Views with Fixed Mobile Height and Smooth Crossfade */}
+              <div className="min-h-[276px] sm:min-h-0">
+                <AnimatePresence mode="wait" initial={false}>
+                  {chronicleTab === 'events' ? (
+                    <motion.div
+                      key="events"
+                      initial={reduceMotion ? false : { opacity: 0, y: 4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={reduceMotion ? false : { opacity: 0, y: -4 }}
+                      transition={{ duration: 0.18, ease: EASE }}
+                      className="flex flex-row overflow-x-auto snap-x snap-mandatory gap-4 pb-3 pt-1 px-1 sm:px-0 sm:flex-col sm:space-y-6 sm:gap-0 sm:overflow-visible [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden after:shrink-0 after:w-3 sm:after:hidden"
                     >
-                      <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-100">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                          loading="lazy"
-                        />
-                        <div className="absolute top-2.5 left-2.5">
-                          <span className={`inline-flex items-center rounded-md px-2 py-0.5 text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider backdrop-blur-md border ${item.tagClass}`}>
-                            {item.tag}
-                          </span>
-                        </div>
-                        <div className="absolute top-2.5 right-2.5 opacity-0 group-hover:opacity-100 transition-opacity bg-white/95 backdrop-blur-sm p-1.5 rounded-md text-[#0c2340] shadow-2xs">
-                          <ArrowSquareOut size={13} weight="bold" />
-                        </div>
-                      </div>
+                      {CHRONICLE_UPDATES.map((item) => (
+                        <a
+                          key={item.id}
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group block w-[82vw] max-w-[315px] h-[260px] sm:h-auto flex flex-col justify-between shrink-0 snap-start sm:w-full sm:max-w-none rounded-xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_6px_20px_-8px_rgba(12,35,64,0.06)] hover:shadow-[0_14px_32px_-8px_rgba(12,35,64,0.12)] hover:border-cyan-400/80 transition-all duration-200 text-left cursor-pointer"
+                        >
+                          <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-100 shrink-0">
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                              loading="lazy"
+                            />
+                            <div className="absolute top-2.5 left-2.5">
+                              <span className={`inline-flex items-center rounded-md px-2 py-0.5 text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider backdrop-blur-md border ${item.tagClass}`}>
+                                {item.tag}
+                              </span>
+                            </div>
+                            <div className="absolute top-2.5 right-2.5 opacity-0 group-hover:opacity-100 transition-opacity bg-white/95 backdrop-blur-sm p-1.5 rounded-md text-[#0c2340] shadow-2xs">
+                              <ArrowSquareOut size={13} weight="bold" />
+                            </div>
+                          </div>
 
-                      <div className="p-3.5 sm:p-4">
-                        <h4 className="font-sans text-[12.5px] sm:text-[13.5px] font-bold text-[#0c2340] group-hover:text-cyan-800 transition-colors line-clamp-1">
-                          {item.title}
-                        </h4>
-                        <p className="mt-1 font-sans text-[11px] sm:text-xs text-slate-600 leading-relaxed line-clamp-2">
-                          {item.description}
-                        </p>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              )}
-
-              {/* View 2: 2 Official Video Highlights */}
-              {chronicleTab === 'videos' && (
-                <div className="flex flex-row overflow-x-auto snap-x snap-mandatory gap-4 pb-3 pt-1 px-1 sm:px-0 sm:flex-col sm:space-y-4 sm:gap-0 sm:overflow-visible [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden after:shrink-0 after:w-3 sm:after:hidden">
-                  {CHRONICLE_VIDEOS.map((video) => (
-                    <div
-                      key={video.id}
-                      className="w-[84vw] max-w-[335px] shrink-0 snap-start sm:w-full sm:max-w-none rounded-xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_6px_20px_-8px_rgba(12,35,64,0.06)] text-left"
+                          <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-center">
+                            <h4 className="font-sans text-[12.5px] sm:text-[13.5px] font-bold text-[#0c2340] group-hover:text-cyan-800 transition-colors line-clamp-1">
+                              {item.title}
+                            </h4>
+                            <p className="mt-1 font-sans text-[11px] sm:text-xs text-slate-600 leading-relaxed line-clamp-2">
+                              {item.description}
+                            </p>
+                          </div>
+                        </a>
+                      ))}
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="videos"
+                      initial={reduceMotion ? false : { opacity: 0, y: 4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={reduceMotion ? false : { opacity: 0, y: -4 }}
+                      transition={{ duration: 0.18, ease: EASE }}
+                      className="flex flex-row overflow-x-auto snap-x snap-mandatory gap-4 pb-3 pt-1 px-1 sm:px-0 sm:flex-col sm:space-y-4 sm:gap-0 sm:overflow-visible [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden after:shrink-0 after:w-3 sm:after:hidden"
                     >
-                      <div className="relative aspect-video w-full bg-slate-900">
-                        <iframe
-                          src={video.embedUrl}
-                          title={video.title}
-                          className="w-full h-full border-0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          allowFullScreen
-                          loading="lazy"
-                        />
-                      </div>
-                      <div className="p-3.5 sm:p-4">
-                        <h4 className="font-sans text-[12.5px] sm:text-[13.5px] font-bold text-[#0c2340]">
-                          {video.title}
-                        </h4>
-                        <p className="mt-0.5 font-sans text-[11px] sm:text-xs text-slate-500">
-                          {video.subtitle}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
+                      {CHRONICLE_VIDEOS.map((video) => (
+                        <div
+                          key={video.id}
+                          className="w-[82vw] max-w-[315px] h-[260px] sm:h-auto flex flex-col justify-between shrink-0 snap-start sm:w-full sm:max-w-none rounded-xl bg-white border border-slate-200/90 overflow-hidden shadow-[0_6px_20px_-8px_rgba(12,35,64,0.06)] text-left"
+                        >
+                          <div className="relative aspect-[16/9] w-full bg-slate-900 shrink-0">
+                            <iframe
+                              src={video.embedUrl}
+                              title={video.title}
+                              className="w-full h-full border-0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              allowFullScreen
+                              loading="lazy"
+                            />
+                          </div>
+                          <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-center">
+                            <h4 className="font-sans text-[12.5px] sm:text-[13.5px] font-bold text-[#0c2340] line-clamp-1">
+                              {video.title}
+                            </h4>
+                            <p className="mt-1 font-sans text-[11px] sm:text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                              {video.subtitle}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
 
             </div>
 
