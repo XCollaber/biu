@@ -7,13 +7,13 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Cormorant Garamond"', '"Newsreader"', 'Georgia', 'serif'],
-        cormorant: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        newsreader: ['"Newsreader"', 'Georgia', 'serif'],
-        fraunces: ['"Fraunces"', 'Georgia', 'serif'],
-        times: ['"Times New Roman"', 'Times', 'serif'],
-        sans: ['"Plus Jakarta Sans"', '"Instrument Sans"', 'system-ui', '-apple-system', 'sans-serif'],
-        heading: ['"Plus Jakarta Sans"', '"Instrument Sans"', 'sans-serif'],
+        serif: ['"Cormorant Garamond Variable"', '"Cormorant Garamond"', '"Newsreader Variable"', '"Newsreader"', 'Georgia', 'serif'],
+        cormorant: ['"Cormorant Garamond Variable"', '"Cormorant Garamond"', 'Georgia', 'serif'],
+        newsreader: ['"Newsreader Variable"', '"Newsreader"', 'Georgia', 'serif'],
+        fraunces: ['"Fraunces Variable"', '"Fraunces"', 'Georgia', 'serif'],
+        times: ['"Times New Roman"', 'Times', 'Tinos', 'serif'],
+        sans: ['"Plus Jakarta Sans Variable"', '"Plus Jakarta Sans"', '"Instrument Sans Variable"', '"Instrument Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: ['"Plus Jakarta Sans Variable"', '"Plus Jakarta Sans"', '"Instrument Sans Variable"', '"Instrument Sans"', 'sans-serif'],
       },
       colors: {
         navy: {

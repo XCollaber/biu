@@ -4,13 +4,13 @@
 
 @layer utilities {
   .font-cormorant {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Cormorant Garamond Variable', 'Cormorant Garamond', Georgia, serif !important;
   }
   .font-newsreader {
-    font-family: 'Newsreader', Georgia, serif !important;
+    font-family: 'Newsreader Variable', 'Newsreader', Georgia, serif !important;
   }
   .font-fraunces {
-    font-family: 'Fraunces', Georgia, serif !important;
+    font-family: 'Fraunces Variable', 'Fraunces', Georgia, serif !important;
   }
   .font-times {
     font-family: 'Times New Roman', Times, 'Tinos', serif !important;
@@ -23,11 +23,11 @@
 
 /* 1. Global Variables */
 :root {
-  --font-sans: 'Plus Jakarta Sans', 'Instrument Sans', system-ui, -apple-system, sans-serif;
-  --font-heading: 'Plus Jakarta Sans', 'Instrument Sans', sans-serif;
-  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
-  --font-newsreader: 'Newsreader', Georgia, serif;
-  --font-fraunces: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', 'Instrument Sans Variable', 'Instrument Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', 'Instrument Sans Variable', 'Instrument Sans', sans-serif;
+  --font-cormorant: 'Cormorant Garamond Variable', 'Cormorant Garamond', Georgia, serif;
+  --font-newsreader: 'Newsreader Variable', 'Newsreader', Georgia, serif;
+  --font-fraunces: 'Fraunces Variable', 'Fraunces', Georgia, serif;
   --font-times: 'Times New Roman', Times, 'Tinos', serif;
 
   /* Radius */
