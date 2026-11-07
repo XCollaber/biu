@@ -124,10 +124,10 @@ export default function HistoryPage({ onBack }) {
                   HERITAGE & STATUTORY ESTABLISHMENT
                 </span>
               </div>
-              <h1 className="font-times text-[26px] sm:text-3xl lg:text-[2.65rem] font-medium text-[#0c2340] leading-[1.15]">
+              <h1 className="font-times text-[28px] sm:text-3xl lg:text-[2.75rem] font-medium text-[#0c2340] leading-[1.15]">
                 History
               </h1>
-              <p className="mt-2 text-[12px] sm:text-sm text-slate-500 font-sans max-w-xl leading-relaxed">
+              <p className="mt-2 sm:mt-3 text-[12px] sm:text-[13px] text-slate-500 font-sans max-w-xl leading-relaxed">
                 <span className="sm:hidden">
                   Foundational statutory background and academic chronicle of Bareilly International University.
                 </span>
